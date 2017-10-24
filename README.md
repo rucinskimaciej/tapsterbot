@@ -22,15 +22,15 @@
 - Feel free to help the community behind Tapster so as to bring fun, automation and bot on your desk!
 
 # Some references and things to see
-- www.tapster.io
-- twitter.com/tapsterbot
-- www.tindie.com/products/hugs/tapster/
-- github.com/hugs/tapsterbot
-- github.com/tapsterbot/tapsterbot
-- github.com/appium/appium
-- github.com/appium/robots 
-- github.com/penguinho/tapsterbot
-- www.slideshare.net/PierreYvesLapersonne/why-not-tapster
+- http://www.tapster.io
+- https://twitter.com/tapsterbot
+- https://www.tindie.com/products/hugs/tapster/
+- https://github.com/hugs/tapsterbot
+- https://github.com/tapsterbot/tapsterbot
+- https://github.com/appium/appium
+- https://github.com/appium/robots 
+- https://github.com/penguinho/tapsterbot
+- https://www.slideshare.net/PierreYvesLapersonne/why-not-tapster
 
 # TODO
 - Add calibration app for iOS devices
