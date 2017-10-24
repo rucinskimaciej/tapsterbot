@@ -33,9 +33,7 @@
 - https://www.slideshare.net/PierreYvesLapersonne/why-not-tapster
 
 # TODO
-- Add calibration app for iOS devices
 - Improve calibration workflow(s) so as to use Tapster with Appium for Android and iOS devices
-- Push to legacy repository
 - Add drivers to Appium project & dependencies (not in this repository)
 
 # Getting Started
