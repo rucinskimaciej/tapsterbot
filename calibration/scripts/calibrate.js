@@ -27,6 +27,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [This is the BSD 2-Clause License, http://opensource.org/licenses/BSD-2-Clause]
 */
 
+
+// **************************************
+// Dependencies and parameters management
+// **************************************
+
 var prompt = require("prompt"),
   fs = require("fs"),
   eol = require('os').EOL,
@@ -37,6 +42,12 @@ var prompt = require("prompt"),
 var args = {},
   newCalibrationData = {};
 
+var androidInUse = false;
+var iOSInUse = false;
+
+var androidCoordRegex = /text[^\(,]+\((\d+\.*\d*),\s+(\d+\.*\d*)\)/ ;
+var iOSCoordRegex = /label[^\(,]+\((\d+\.*\d*),\s+(\d+\.*\d*)\)/ ;
+
 function CalibrationManager(argv){
   args = argv;
   prompt.message = '';
@@ -46,6 +57,9 @@ function CalibrationManager(argv){
 
 exports.CalibrationManager = CalibrationManager;
 
+/**
+ * Gets the arguments of the command lines
+ */
 var getCommandLineArgs = function(){
   var parser = new ArgumentParser({
     version: '0.0.1',
@@ -61,6 +75,10 @@ var getCommandLineArgs = function(){
   return parser.parseArgs();
 };
 
+/**
+ * Runs the calibrate workflow.
+ * Will ask to user if he or she wants yto claibrate the arms of the bot and the corddinates mapping with a dedicated device.
+ */
 CalibrationManager.prototype.calibrate = function(){
   robot.calibrationData(function (calibrationData) {
     console.log("Receiving existing calibration data.");
@@ -76,6 +94,9 @@ CalibrationManager.prototype.calibrate = function(){
   });
 };
 
+/**
+ * Ask the user if he or she wants to calibrate the robot, here the arms of the bot
+ */
 var askToCalibrateRobot = function(cb){
   var schema = {
     name:"answer",
@@ -91,6 +112,9 @@ var askToCalibrateRobot = function(cb){
   });
 };
 
+/**
+ * Ask the user if he or she wants to calibrate the robot with a dedicated device
+ */
 var askToCalibrateDevice = function(cb){
   var schema = {
     name:"answer",
@@ -106,6 +130,9 @@ var askToCalibrateDevice = function(cb){
   });
 };
 
+/**
+ * Saves the calibration data in JSON format
+ */
 var saveCalibrationData = function(cb){
   console.log("New calibration data generated.");
   console.log(JSON.stringify(newCalibrationData));
@@ -122,6 +149,11 @@ var saveCalibrationData = function(cb){
   });
 };
 
+/**
+ * Calibrates the robot.
+ * Asks the user to remove the arms and to define good agngles for them.
+ * Will then let the suer choose the good angles for each arm.
+ */
 var calibrateRobot = function(cb){
 
   var schema = {
@@ -188,6 +220,70 @@ var calibrateRobot = function(cb){
 
 }; // End of var calibrateRobot = function(cb)
 
+/**
+ * Asks the user the OS of its device.
+ * Indeed if there is an iPhone with iOS or an Android handset, the capabilities to use with Appium or the regex
+ * in use to retrieve the coordinates will not be the same.
+ *
+ * @param {function} cb - An error clalback
+ * @return {json} capabilities - The desired capabilities to use so as to deal with the good calibration app in the good device
+ */
+var askForTypeOfDeviceOs = function(cb){
+
+  var schema = {
+    name:"answer",
+    description: 'What is the operating system of the device? Android (a) or iOS (i) or something else?',
+    type: 'string'
+  };
+
+  prompt.get(schema, function (err, result){
+
+    // Android handset
+    if (result.answer.toLowerCase().substr(0,1) == "a") {
+      console.log("Using desired capabilities for Android handset");
+      androidInUse = true;
+      iOSInUse = false;
+      return {
+         app:"../android/calibration-android/app/build/outputs/apk/app-debug.apk", // NOTE Change here the path to the APK of the calibration app
+         platformName:"Android",
+         platformVersion:"5.1",                                                   // NOTE Here the version of Android in your device
+         deviceName:"my handeet",                                                 // NOTE You can write a name for your device
+         appPackage:"pylapp.tapster.calibration.android",
+         appActivity:"pylapp.tapster.calibration.android.MainActivity"
+      }
+
+    // iPhone
+    } else if (result.answer.toLowerCase().substr(0,1) == "i") {
+      console.log("Using desired capabilities for iPhone");
+      androidInUse = false;
+      iOSInUse = true;
+      return {
+        udid: "03a4ff866d98c9ca3da29606c6b92b7ca4095b1c",       // NOTE Change here the UDID of your device
+        app: "com.orange.bp.tapster.RobotCalibration", //app: "pylapp.tapster.calibration.ios.RobotCalibration",
+        platformName: "iOS",
+        deviceName: "iPhone 5",                                 // NOTE Change here the name of your device
+        platformVersion: "10.3",                                // NOTE Change here the version of iOS in your device
+        xcodeSigningId: "iPhone Developer",                     // NOTE Might be optional
+        xcodeOrgId: "68WW93567Z"                                // NOTE May be defined, here is the ID you can get from your purchased Apple developper account
+        //showXcodeLog: "true",
+        //autoLaunch: "true"
+      }
+
+    // Not supported OS (we are in 2017 guys... ;-D)
+    } else {
+      return cb();
+    }
+
+  });
+
+}; // End of var askForTypeOfDeviceOs = function(cb)
+
+/**
+ * Caliibrates the robot for a dedicated device.
+ * Will lower the arms of the bot so as ot have contact points.
+ * Then will get coordinates displayed by a dedicated app in the device.
+ * The task will be made for 3 points.
+ */
 var calibrateDevice = function(cb){
 
   newCalibrationData.device = {
@@ -207,11 +303,9 @@ var calibrateDevice = function(cb){
     return robot.setPosition(x,y,currentZ,function() {
 
       setTimeout(function() {
-        var coordRegex = /label[^\(,]+\((\d+\.*\d*),\s+(\d+\.*\d*)\)/ ;
-        //var coordRegex = /text[^\(,]+\((\d+\.*\d*),\s+(\d+\.*\d*)\)/ ;      // how to get the valeur
+        var coordRegex = ( androidInUse ? androidCoordRegex : iOSCoordRegex );
         return driver.source(function(err, pageSource) {
-          if (coordRegex.test(pageSource)) {                    //pageSource from Appium??
-            console.log("123");
+          if (coordRegex.test(pageSource)) {
             var match = coordRegex.exec(pageSource);
             var screenX = parseFloat(match[1]);
             var screenY = parseFloat(match[2]);
@@ -233,31 +327,9 @@ var calibrateDevice = function(cb){
 
   }; // End of var lowerAndCheckForContact = function(x,y,currentZ, cb)
 
-  return driver.init({
+  var desiredCapabilities = askForTypeOfDeviceOs(function(){console.log("Not supported OS");});
 
-    udid: "03a4ff866d98c9ca3da29606c6b92b7ca4095b1c",
-    app: "com.orange.bp.tapster.RobotCalibration",
-    platformName: "iOS",
-    deviceName: "iPhone 5",
-    platformVersion: "10.3",
-    xcodeSigningId: "iPhone Developer",
-    xcodeOrgId: "68WW93567Z"
-    //	  showXcodeLog: "true",
-    //	  autoLaunch: "true"
-
-    //    app:"Appiumzzz.RobotCalibration",
-    //    platformName:"iOS",
-    //    platformVersion:"10.3",
-    //    deviceName:"iPhone 6",
-
-    //      app:"/Users/tapster/AndroidStudioProjects/calibration-android/calibration-android/app/build/outputs/apk/app-debug.apk",
-    //      platformName:"Android",
-    //      platformVersion:"5.X",
-    //      deviceName:"Nexus",
-    //      appPackage:"com.example.tapster.myapplication",
-    //      appActivity:"com.example.tapster.myapplication.MainActivity"
-
-  }, function() {
+  return driver.init(desiredCapabilities, function() {
     driver.setImplicitWaitTimeout(1000, function () {
       return lowerAndCheckForContact(0, 0, -145, function (x, y, screenX, screenY, robotZ) {
         newCalibrationData.device.contactPoint.position = {x: x, y: y, z:robotZ};
