@@ -258,13 +258,13 @@ var askForTypeOfDeviceOs = function(cb){
       androidInUse = false;
       iOSInUse = true;
       return {
-        udid: "03a4ff866d98c9ca3da29606c6b92b7ca4095b1c",       // NOTE Change here the UDID of your device
-        app: "com.orange.bp.tapster.RobotCalibration", //app: "pylapp.tapster.calibration.ios.RobotCalibration",
+        udid: "",       // NOTE Change here the UDID of your device
+        app: "pylapp.tapster.calibration.ios.RobotCalibration",
         platformName: "iOS",
         deviceName: "iPhone 5",                                 // NOTE Change here the name of your device
         platformVersion: "10.3",                                // NOTE Change here the version of iOS in your device
         xcodeSigningId: "iPhone Developer",                     // NOTE Might be optional
-        xcodeOrgId: "68WW93567Z"                                // NOTE May be defined, here is the ID you can get from your purchased Apple developper account
+        xcodeOrgId: ""                                // NOTE May be defined, here is the ID you can get from your purchased Apple developper account
         //showXcodeLog: "true",
         //autoLaunch: "true"
       }
