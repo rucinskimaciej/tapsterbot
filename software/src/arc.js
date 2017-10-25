@@ -3,7 +3,11 @@
 
 var tau = Math.TAU = 2*Math.PI;
 
-function areValid(arguments) {
+/**
+ *
+ */
+function areValid(arguments){
+
   // Check for correct number of arguments
   if (arguments.length < 6) { return false; }
   if (arguments.length > 7) { return false; }
@@ -13,16 +17,25 @@ function areValid(arguments) {
     if (!isFinite(arguments[parameter])) { return false; }
     if (isNaN(arguments[parameter])) { return false; }
   }
+
   return true;
+
 }
 
-function calcPoint(cX, cY, r, radian) {
+/**
+ *
+ */
+function calcPoint(cX, cY, r, radian){
   var pointX = cX + r * Math.cos(radian);
   var pointY = cY + r * Math.sin(radian);
   return {x: pointX, y: pointY}
 }
 
-function arc(centerX, centerY, centerZ, radius, startAngle, endAngle, anticlockwise) {
+/**
+ *
+ */
+function arc(centerX, centerY, centerZ, radius, startAngle, endAngle, anticlockwise){
+
   var arcPoints = [];
 
   if (!areValid(arguments)) return;
@@ -43,6 +56,7 @@ function arc(centerX, centerY, centerZ, radius, startAngle, endAngle, anticlockw
 
   var clockwise = !anticlockwise;
   if (clockwise === false) {
+
     // If needed, offset startAngle by one full turn so the loop works
     if (startAngle >= endAngle) {
       startAngle -= tau;
@@ -53,7 +67,9 @@ function arc(centerX, centerY, centerZ, radius, startAngle, endAngle, anticlockw
       var point = calcPoint(centerX, centerY, radius, radian);;
       arcPoints.push({x:point.x, y:point.y, z:centerZ})
     }
+
   } else {
+
     // If needed, offset startAngle by one full turn so the loop works
     if (startAngle <= endAngle) {
       startAngle += tau;
@@ -64,10 +80,12 @@ function arc(centerX, centerY, centerZ, radius, startAngle, endAngle, anticlockw
       var point = calcPoint(centerX, centerY, radius, radian);
       arcPoints.push({x:point.x, y:point.y, z:centerZ})
     }
-  }
-  return arcPoints;
-}
 
+  }
+
+  return arcPoints;
+
+}
 
 //-----------------------------------------------------
 // Example #1: startAngle > endAngle, clockwise

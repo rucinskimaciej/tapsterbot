@@ -1,167 +1,84 @@
-
 <!doctype html>
+
+<!--
+  Copyright (c) 2011-2016, Tapster Committers
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice, this
+     list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  [This is the BSD 2-Clause License, http://opensource.org/licenses/BSD-2-Clause]
+-->
+
 <html lang="en">
+
+<!-- ********************************************* -->
+<!-- Head of the web page defining base components -->
+<!-- ********************************************* -->
 <head lang=en>
-<meta charset="utf-8">
-<title>Tracing a line with d3.js</title>
-<style>
-
-svg {
-  background: #ddd;
-  font: 10px sans-serif;
-  cursor: crosshair;
-}
-
-.line {
-  cursor: crosshair;
-  fill: none;
-  stroke: #000;
-  stroke-width: 2px;
-  stroke-linejoin: round;
-}
-
-#output {
-  position: relative;
-  top: -2em;
-  left: 0.67em;
-  font: 12px/1.4 monospace;
-}
-
-
-</style>
+  <meta charset="utf-8">
+  <title>Recorder</title>
+  <!-- Basic style sheet -->
+  <style>
+    svg {
+      background: #dddddd;
+      font: 10px sans-serif;
+      cursor: crosshair;
+    }
+    .line {
+      cursor: crosshair;
+      fill: none;
+      stroke: #000;
+      stroke-width: 2px;
+      stroke-linejoin: round;
+    }
+    body {
+      float: left;
+      clear: none;
+    }
+    #output {
+      top: -2em;
+      left: 0.67em;
+      font: 12px/1.4 monospace;
+    }
+    #logger {
+      background: #dddddd;
+      font: 10px sans-serif;
+      left: 0.67em;
+    }
+  </style>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="simplify.js"></script>
+  <script src="utils.js"></script>
 </head>
 
+<!-- ************************* -->
+<!-- Body of the recorder page -->
+<!-- ************************* -->
 <body>
-<div id="sketch"></div>
-<div id="output"></div>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="simplify.js"></script>
-
-<script>
-// based on http://bl.ocks.org/cloudshapes/5661984 by cloudshapes
-
-var margin = {top: 0, right: 0, bottom: 0, left: 0},
-    width = 300 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
-
-// var npoints = 100;
-var ptdata = [];
-var session = [];
-var path;
-var drawing = false;
-
-var output = d3.select('#output');
-
-var line = d3.svg.line()
-    .interpolate("bundle") // basis, see http://bl.ocks.org/mbostock/4342190
-    .tension(1)
-    .x(function(d, i) { return d.x; })
-    .y(function(d, i) { return d.y; });
-
-var svg = d3.select("#sketch").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-
-svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-svg
-  .on("mousedown", listen)
-  .on("touchstart", listen)
-  .on("touchend", ignore)
-  .on("touchleave", ignore)
-  .on("mouseup", ignore)
-  .on("mouseleave", ignore);
-
-
-// ignore default touch behavior
-var touchEvents = ['touchstart', 'touchmove', 'touchend'];
-touchEvents.forEach(function (eventName) {
-  document.body.addEventListener(eventName, function(e){
-    e.preventDefault();
-  });  
-});
-
-
-function listen () {
-  drawing = true;
-  output.text('event: ' + d3.event.type);
-  ptdata = []; // reset point data
-  path = svg.append("path") // start a new line
-    .data([ptdata])
-    .attr("class", "line")
-    .attr("d", line);
-
-  if (d3.event.type === 'mousedown') {
-    svg.on("mousemove", onmove);
-  } else {
-    svg.on("touchmove", onmove);
-  }
-}
-
-function ignore () {
-  var before, after;
-  output.text('event: ' + d3.event.type);
-  svg.on("mousemove", null);
-  svg.on("touchmove", null);
-
-  // skip out if we're not drawing
-  if (!drawing) return;
-  drawing = false;
-
-  before = ptdata.length;
-  console.group('Line Simplification');
-  console.log("Before simplification:", before)
-  
-  // simplify
-  ptdata = simplify(ptdata);
-  after = ptdata.length;
-
-  console.log("After simplification:", ptdata.length)
-  console.groupEnd();
-
-  var percentage = parseInt(100 - (after/before)*100, 10);
-  output.html('Points: ' + before + ' => ' + after + '. <b>' + percentage + '% simplification.</b>');
-
-  // add newly created line to the drawing session
-  session.push(ptdata);
-  
-  // redraw the line after simplification
-  tick();
-}
-
-
-function onmove (e) {
-  var type = d3.event.type;
-  var point;
-
-  if (type === 'mousemove') {
-    point = d3.mouse(this);
-    output.text('event: ' + type + ': ' + d3.mouse(this));
-  } else {
-    // only deal with a single touch input
-    point = d3.touches(this)[0];
-    output.text('event: ' + type + ': ' + d3.touches(this)[0]);
-  }
-
-  // push a new data point onto the back
-  ptdata.push({ x: point[0], y: point[1] });
-  tick();
-}
-
-function tick() {
-  path.attr("d", function(d) { return line(d); }) // Redraw the path:
-}
-
-function exportData() {
-  for (var i = 0; i < session.length; i++)
-    console.log(JSON.stringify(session[i], null, '\t'));
-}
-</script>
+  <div id="sketch"></div>
+  <div id="output"></div>
+  <div id="logger"></div>
+  <script>
+    prepareRecorder();
+  </script>
 </body>
+
 </html>
-
-
-
-

@@ -28,13 +28,9 @@
 - https://github.com/hugs/tapsterbot
 - https://github.com/tapsterbot/tapsterbot
 - https://github.com/appium/appium
-- https://github.com/appium/robots 
+- https://github.com/appium/robots
 - https://github.com/penguinho/tapsterbot
 - https://www.slideshare.net/PierreYvesLapersonne/why-not-tapster
-
-# TODO
-- Improve calibration workflow(s) so as to use Tapster with Appium for Android and iOS devices
-- Add drivers to Appium project & dependencies (not in this repository)
 
 # Getting Started
 1. Download and install the Arduino Client: [http://arduino.cc/en/Guide/HomePage](http://arduino.cc/en/Guide/HomePage)

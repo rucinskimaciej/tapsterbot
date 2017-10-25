@@ -1,3 +1,30 @@
+/*
+  Copyright (c) 2011-2016, Tapster Committers
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice, this
+     list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  [This is the BSD 2-Clause License, http://opensource.org/licenses/BSD-2-Clause]
+*/
+
 // Trigonometric constants
 var s = 165 * 2;
 var sqrt3 = Math.sqrt(3.0);
@@ -8,30 +35,32 @@ var tan60 = sqrt3;
 var sin30 = 0.5;
 var tan30 = 1.0 / sqrt3;
 
-function Kinematics(args) {
+function Kinematics(args){
+
   //Side of end effector
   this.e = 0;
-  
-  //Side of top triangle  
-  this.f = 0;  
-  
+
+  //Side of top triangle
+  this.f = 0;
+
   //Length of parallelogram joint
-  this.re = 0;  
+  this.re = 0;
 
   //Length of upper joint
   this.rf = 0;
-    
+
   if (args) {
     var keys = Object.keys(args)
     keys.forEach(function(key){
       this[key] = args[key]
     }, this)
   }
+
 }
 
 // Forward kinematics: (theta1, theta2, theta3) -> (x0, y0, z0)
 // Returned {error code,theta1,theta2,theta3}
-Kinematics.prototype.forward = function(theta1, theta2, theta3) {
+Kinematics.prototype.forward = function(theta1, theta2, theta3){
   var x0 = 0.0;
   var y0 = 0.0;
   var z0 = 0.0;
@@ -86,13 +115,10 @@ Kinematics.prototype.forward = function(theta1, theta2, theta3) {
   return new Array(0, x0, y0, z0);
 };
 
-
-
-
 // Inverse kinematics
 
 // Helper functions, calculates angle theta1 (for YZ-pane)
-Kinematics.prototype.delta_calcAngleYZ = function(x0, y0, z0) {
+Kinematics.prototype.delta_calcAngleYZ = function(x0, y0, z0){
   var y1 = -0.5 * 0.57735 * this.f; // f/2 * tg 30
   y0 -= 0.5 * 0.57735 * this.e; // shift center to edge
   // z = a + b*y
@@ -110,10 +136,10 @@ Kinematics.prototype.delta_calcAngleYZ = function(x0, y0, z0) {
   var theta = Math.atan(-zj / (y1 - yj)) * 180.0 / pi + ((yj > y1) ? 180.0 : 0.0);
 
   return new Array(0, theta); // return error, theta
-  };
+};
 
+Kinematics.prototype.inverse = function(x0, y0, z0){
 
-Kinematics.prototype.inverse = function(x0, y0, z0) {
   var theta1 = 0;
   var theta2 = 0;
   var theta3 = 0;
@@ -123,13 +149,16 @@ Kinematics.prototype.inverse = function(x0, y0, z0) {
     theta1 = status[1];
     status = this.delta_calcAngleYZ(x0 * cos120 + y0 * sin120, y0 * cos120 - x0 * sin120, z0, theta2);
   }
+
   if (status[0] === 0) {
     theta2 = status[1];
     status = this.delta_calcAngleYZ(x0 * cos120 - y0 * sin120, y0 * cos120 + x0 * sin120, z0, theta3);
   }
+
   theta3 = status[1];
 
   return new Array(status[0], theta1, theta2, theta3);
+
 };
 
 module.exports.Kinematics = Kinematics;
