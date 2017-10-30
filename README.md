@@ -24,6 +24,7 @@
 - https://github.com/appium/appium
 - https://github.com/appium/robots
 - https://github.com/penguinho/tapsterbot
+- https://github.com/jackskalitzky/tapsterbot
 - https://www.slideshare.net/PierreYvesLapersonne/why-not-tapster
 
 # Dependencies
