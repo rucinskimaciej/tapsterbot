@@ -33,7 +33,7 @@
 - nvm (0.33.4)
 - one Tapster robot
 
-# Some commands to run to isntall Node.js libs
+# Some commands to run to install Node.js libs
 ```shell
   npm install argparse;
   npm install hapi;
