@@ -1,0 +1,8 @@
+{
+   "app":"../android/calibration-android/app/build/outputs/apk/app-debug.apk",
+   "platformName":"Android",
+   "platformVersion":"",
+   "deviceName":"my handset",
+   "appPackage":"pylapp.tapster.calibration.android",
+   "appActivity":"pylapp.tapster.calibration.android.MainActivity"
+}

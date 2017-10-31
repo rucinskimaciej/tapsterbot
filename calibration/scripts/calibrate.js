@@ -221,6 +221,24 @@ var calibrateRobot = function(cb){
 }; // End of var calibrateRobot = function(cb)
 
 /**
+ * Reads JSON file containing desired capabilities for iOS device so as to run the calibraiton app.
+ *
+ * @return {json} capabilities - The desired capabilities to use so as to deal with the good calibration app in the good device
+ */
+var readIosDesiredCapabilities = function(){
+  return JSON.parse(fs.readFileSync('../capabilities/ios-desired-capabilities.json', 'utf8'));
+}
+
+/**
+ * Reads JSON file containing desired capabilities for Android device so as to run the calibraiton app.
+ *
+ * @return {json} capabilities - The desired capabilities to use so as to deal with the good calibration app in the good device
+ */
+var readAndroidDesiredCapabilities = function(){
+  return JSON.parse(fs.readFileSync('../capabilities/android-desired-capabilities.json', 'utf8'));
+}
+
+/**
  * Asks the user the OS of its device.
  * Indeed if there is an iPhone with iOS or an Android handset, the capabilities to use with Appium or the regex
  * in use to retrieve the coordinates will not be the same.
@@ -240,34 +258,19 @@ var askForTypeOfDeviceOs = function(cb){
 
     // Android handset
     if (result.answer.toLowerCase().substr(0,1) == "a") {
+
       console.log("Using desired capabilities for Android handset");
       androidInUse = true;
       iOSInUse = false;
-      return {
-         app:"../android/calibration-android/app/build/outputs/apk/app-debug.apk", // NOTE Change here the path to the APK of the calibration app
-         platformName:"Android",
-         platformVersion:"5.1",                                                   // NOTE Here the version of Android in your device
-         deviceName:"my handeet",                                                 // NOTE You can write a name for your device
-         appPackage:"pylapp.tapster.calibration.android",
-         appActivity:"pylapp.tapster.calibration.android.MainActivity"
-      }
+      return readAndroidDesiredCapabilities();
 
     // iPhone
     } else if (result.answer.toLowerCase().substr(0,1) == "i") {
+      
       console.log("Using desired capabilities for iPhone");
       androidInUse = false;
       iOSInUse = true;
-      return {
-        udid: "",       // NOTE Change here the UDID of your device
-        app: "pylapp.tapster.calibration.ios.RobotCalibration",
-        platformName: "iOS",
-        deviceName: "iPhone 5",                                 // NOTE Change here the name of your device
-        platformVersion: "10.3",                                // NOTE Change here the version of iOS in your device
-        xcodeSigningId: "iPhone Developer",                     // NOTE Might be optional
-        xcodeOrgId: ""                                // NOTE May be defined, here is the ID you can get from your purchased Apple developper account
-        //showXcodeLog: "true",
-        //autoLaunch: "true"
-      }
+      return readIosDesiredCapabilities();
 
     // Not supported OS (we are in 2017 guys... ;-D)
     } else {
