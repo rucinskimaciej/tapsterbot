@@ -4,8 +4,9 @@
 
 # Why using such bot?
 - Bring fun in your office
-- Gring automation four your tests
+- Bring automation for your tests
 - Extend your software-based instrumented tests (UI Automator, Espresso, Kakao, Appium or whatever) with hardware-based tests
+- Deal with secured elements on which no software can click
 
 # If you are using Tapster with Appium
 - Do not install Appium or Node.js with sudo
@@ -92,7 +93,7 @@ For Android
 
 
 # Versions
-1. astro - The base version of the project, with calibrations workflows and assets. Done.
+1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets. Done.
 2. bb8 - A new version of the project with a client which allows to make HTTP requests to drive the bot. On going.
 3. c3po - A future version with Robot Framework keywords to use to drive the bot. Not started.
 4. deckard - A future badass version of the project with maybe cool things but I do not know which ones. Not started.
