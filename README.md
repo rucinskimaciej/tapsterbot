@@ -94,5 +94,5 @@ For Android
 # Versions
 1. astro - The base version of the project, with calibrations workflows and assets. Done.
 2. bb8 - A new version of the project with a client which allows to make HTTP requests to drive the bot. On going.
-3. c3po - A future version with Robot Framework keywords to use to drive the bot
-4. deckard - A future badass version of the project with maybe cool things but I do not know which ones.
+3. c3po - A future version with Robot Framework keywords to use to drive the bot. Not started.
+4. deckard - A future badass version of the project with maybe cool things but I do not know which ones. Not started.
