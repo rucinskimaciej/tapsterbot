@@ -16,7 +16,7 @@
 - Feel free to help the community behind Tapster so as to bring fun, automation and bot on your desk!
 
 # Some references and things to see
-- http://www.tapster.io
+- http://www.tapster.io (the creator of the tapster bots)
 - https://twitter.com/tapsterbot
 - https://www.tindie.com/products/hugs/tapster/
 - https://github.com/hugs/tapsterbot
@@ -25,13 +25,13 @@
 - https://github.com/appium/robots
 - https://github.com/penguinho/tapsterbot
 - https://github.com/jackskalitzky/tapsterbot
-- https://www.slideshare.net/PierreYvesLapersonne/why-not-tapster
+- https://speakerdeck.com/pylapp/why-not-tapster
 
 # Dependencies
 - Node.js (8.6.0) (required)
 - npm (5.3.0) (required)
 - nvm (0.33.4)
-- one Tapster robot
+- one Tapster robot (OpenSCAD, STL, JavaScript and other files available in this repo)
 
 # Some commands to run to install Node.js libs
 ```shell
