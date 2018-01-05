@@ -89,3 +89,10 @@ For Android
 4. Install the dependencies: `cd software; npm install`
 5. Start'er up: `node src/bot.js`
 6. Start moving: `go(0,0,-140)`
+
+
+# Versions
+1. astro - The base version of the project, with calibrations workflows and assets. Done.
+2. bb8 - A new version of the project with a client which allows to make HTTP requests to drive the bot. On going.
+3. c3po - A future version with Robot Framework keywords to use to drive the bot
+4. deckard - A future badass version of the project with maybe cool things but I do not know which ones.
