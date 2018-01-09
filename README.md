@@ -7,10 +7,10 @@
 - Bring automation for your tests
 - Extend your software-based instrumented tests (using UI Automator, Espresso, Kakao, Appium or whatever) with hardware-based tests
 - Deal with secured elements on which no software can click
-- Be as close as possible of the use case (users use their fingers to click :3)
+- Be as close as possible of the ideal use case (users use their fingers to click :3)
 
 ## Some references and things to see
-- http://www.tapster.io (the creator of the tapster bots)
+- http://www.tapster.io (the creator of the Tapster bots)
 - https://twitter.com/tapsterbot
 - https://www.tindie.com/products/hugs/tapster/
 - https://github.com/hugs/tapsterbot
