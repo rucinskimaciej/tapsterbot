@@ -26,7 +26,7 @@ _Results:_ {"status":0,"data":[16.447287034628303,16.447287034628303,16.44728703
 **Tap on (0,0)**  
 _Command:_ curl --data "x=0&y=0" http://127.0.0.1:4242/tap  
 _Results:_ {"message":"An internal server error occurred","statusCode":500,"error":"Internal Server Error"}  
-_Note:_ See screen capture "screen-capture_internal-error-with-tap-curl", maybe because the calibration has not been previously made?
+_Note:_ You can use this request if you have started your server with the calibration data you got during the calibration workflow. otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
 
 
 **Get calibration data**  
