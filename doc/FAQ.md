@@ -34,4 +34,4 @@
   * You can have a look on [this file](https://raw.githubusercontent.com/pylapp/tapsterbot/bb8/.dev/calibration-samsung-galaxy-a3.json "JSON calibration data")
 
 * How can I test quickly the HTTP requests the robot can deal?
-  * You can have a look on [this file](https://github.com/pylapp/tapsterbot/blob/bb8/.dev/curl-commands.md "CURL commands and results")
+  * You can have a look on [this file](https://github.com/pylapp/tapsterbot/blob/bb8/doc/curl-commands.md "CURL commands and results")
