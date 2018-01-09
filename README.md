@@ -21,8 +21,15 @@
 - https://github.com/jackskalitzky/tapsterbot
 - https://speakerdeck.com/pylapp/why-not-tapster
 
-# Versions
+## Documentation
+- [Getting started](https://github.com/pylapp/tapsterbot/blob/bb8/doc/getting-started.md)
+- [Calibration of the bot](https://github.com/pylapp/tapsterbot/blob/bb8/doc/calibration-workflow.md)
+- [Robot HTTP API](https://github.com/pylapp/tapsterbot/blob/bb8/doc/robot-api.md)
+- [Technical details](https://github.com/pylapp/tapsterbot/blob/bb8/doc/technical-details.md)
+- [FAQ](https://github.com/pylapp/tapsterbot/blob/bb8/doc/FAQ.md)
+
+## Versions
 1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets. Done.
 2. bb8 - A new version of the project with a client which allows to make HTTP requests to drive the bot. On going.
 3. c3po - A future version with Robot Framework keywords to use to drive the bot. Not started.
-4. deckard - A future badass version of the project with maybe cool things but I do not know which ones. Not started.
+4. dalek - A future badass version of the project with maybe cool things but I do not know which ones. Not started.
