@@ -20,7 +20,7 @@
 #
 #
 # Author..............: pylapp
-# Version.............: 5.0.0
+# Version.............: 5.0.1
 # Since...............: 23/10/2017
 # Description........:
 #			Bash script which can make sync with repositories, get content from them and save modifications to some of them.
@@ -253,6 +253,10 @@ fSyncWithLegacy(){
 				# For each git folder retrieve new versions using git pull
 				if [ -d ".git" ]; then
 					echo "NOTE: with $foundFile - git repository"
+
+					# If we face some problems with timemout on GitHub side, we can try to
+					# get rid of SSH connection a time, and go back to HTTPS connection
+					# git config --global url."https://".insteadOf git://
 
 					git checkout $MASTER_BRANCH
 					git fetch $ALIAS_REMOTE_FORKED
