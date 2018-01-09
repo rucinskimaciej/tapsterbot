@@ -78,6 +78,11 @@ For Android
   }'
 ```
 
+Be sure you have adb in your PATH
+```shell
+  PATH=$PATH:path-to-Android/sdk/platform-tools
+```
+
 3 - Run the calibration process
 ```shell
 	node calibrate.js -o calibration.json
