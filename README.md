@@ -33,5 +33,5 @@
 2. bb8 - Verson with documentation and CURL commands. On going.
 3. c3po - A future version with a client (written in Python?) to use to drive the bot. Not started.
 4. dalek - A future version with Robot Framework keywords to use to drive the bot. Not started.
-5. deckard - A future version with laybe an Android app which can drive the bot? Not started.
+5. deckard - A future version with maybe an Android app which can drive the bot? Not started.
 6. eve -  A future badass version of the project with maybe cool things but I do not know which ones. Not started.
