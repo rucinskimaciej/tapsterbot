@@ -48,7 +48,7 @@ _Note:_ Command available with bot.js and not server.js (and its HTTP client)?
 **Go to (20,25,10)**  
 _Command:_ curl --data "{\"x\":20,\"y\":25,\"z\":10}"  http://127.0.0.1:4242/go  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
+_Note:_ Command available with bot.js and not server.js (and its HTTP cdelient)?
 
 
 **Draw a circle**  

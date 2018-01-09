@@ -118,7 +118,7 @@ var askToCalibrateRobot = function(cb){
 var askToCalibrateDevice = function(cb){
   var schema = {
     name:"answer",
-    description: 'Would you like to calibrate the robot to a device?',
+    description: 'Would you like to calibrate the robot to a device? If so, plug the arms of the bot.',
     type: 'string'
   };
   prompt.get(schema, function (err, result){
@@ -266,7 +266,7 @@ var askForTypeOfDeviceOs = function(cb){
 
     // iPhone
     } else if (result.answer.toLowerCase().substr(0,1) == "i") {
-      
+
       console.log("Using desired capabilities for iPhone");
       androidInUse = false;
       iOSInUse = true;
