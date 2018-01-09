@@ -30,8 +30,8 @@
 
 ## Versions
 1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets. Done.
-2. bb8 - Verson with documentation and CURL commands. Done.
-3. c3po - A future version with a client (written in Python?) to use to drive the bot. Not started.
+2. bb8 - (tag: vBb8) - Verson with documentation and CURL commands. Done.
+3. c3po - Version with a client (written in Python) to use to drive the bot. Work in progress.
 4. dalek - A future version with Robot Framework keywords to use to drive the bot. Not started.
 5. deckard - A future version with maybe an Android app which can drive the bot? Not started.
 6. eve -  A future badass version of the project with maybe cool things but I do not know which ones. Not started.
