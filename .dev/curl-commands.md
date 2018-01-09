@@ -1,3 +1,5 @@
+# Test the bot with HTTP commands sent with CURL
+
 **Get values of angles of servomotors**  
 _Command:_ curl http://127.0.0.1:4242/angles  
 _Results:_ {"status":0,"data":[16.447287034628303,16.447287034628303,16.447287034628303]}
@@ -42,22 +44,22 @@ _Results:_ {"status":0,"data":{"status":0,"data":{"restPoint":{"x":30,"y":30,"z"
 **Welcome**  
 _Command:_ curl http://127.0.0.1:4242/  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)
 
 
 **Go to (20,25,10)**  
 _Command:_ curl --data "{\"x\":20,\"y\":25,\"z\":10}"  http://127.0.0.1:4242/go  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP cdelient)?
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)
 
 
 **Draw a circle**  
 _Command:_ curl http://127.0.0.1:4242/circle  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)
 
 
 **Draw an arc**  
 _Command:_ curl http://127.0.0.1:4242/arc  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)
