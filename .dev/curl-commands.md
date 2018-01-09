@@ -3,17 +3,17 @@ _Command:_ curl http://127.0.0.1:4242/angles
 _Results:_ {"status":0,"data":[16.447287034628303,16.447287034628303,16.447287034628303]}
 
 
-**Define values of angles of servomotors**  
+**Define values (16, 16, 16) for angles of servomotors**  
 _Command:_ curl --data "theta1=16&theta2=16&theta3=16" http://127.0.0.1:4242/setAngles  
 _Results:_ {"status":0,"data":[16,16,16]}
 
 
-**Get poisition in 3D**  
+**Get 3D position**  
 _Command:_ curl http://127.0.0.1:4242/position  
 _Results:_ {"status":0,"data":[0,0,0,-150.19971782711525]}
 
 
-**Define 3D position**  
+**Define 3D position (10, 20, -140)**  
 _Command:_ curl --data "x=10&y=20&z=-140" http://127.0.0.1:4242/setPosition  
 _Results:_ {"status":0,"data":"\"OK\""}
 
@@ -23,7 +23,7 @@ _Command:_ curl --data "" http://127.0.0.1:4242/reset
 _Results:_ {"status":0,"data":[16.447287034628303,16.447287034628303,16.447287034628303]}
 
 
-**Tap on (x,y)**  
+**Tap on (0,0)**  
 _Command:_ curl --data "x=0&y=0" http://127.0.0.1:4242/tap  
 _Results:_ {"message":"An internal server error occurred","statusCode":500,"error":"Internal Server Error"}  
 _Note:_ See screen capture "screen-capture_internal-error-with-tap-curl", maybe because the calibration has not been previously made?
@@ -41,19 +41,23 @@ _Results:_ {"status":0,"data":{"status":0,"data":{"restPoint":{"x":30,"y":30,"z"
 
 **Welcome**  
 _Command:_ curl http://127.0.0.1:4242/  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}
+_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
 
 
-**Go to (x,y,z)**  
+**Go to (20,25,10)**  
 _Command:_ curl --data "{\"x\":20,\"y\":25,\"z\":10}"  http://127.0.0.1:4242/go  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}
+_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
 
 
 **Draw a circle**  
 _Command:_ curl http://127.0.0.1:4242/circle  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}
+_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
 
 
 **Draw an arc**  
 _Command:_ curl http://127.0.0.1:4242/arc  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}
+_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
+_Note:_ Command available with bot.js and not server.js (and its HTTP client)?
