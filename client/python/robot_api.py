@@ -42,7 +42,7 @@ def robot_getAngles():
 # End of Function: robot_getAngles()
 
 # Function robot_setAngles( theta1, theta1, theta3 )
-def robot_setAngles( theta1, theta1, theta3 ):
+def robot_setAngles( theta1, theta2, theta3 ):
         """
             Sends to the robot's server an HTTP request so as to set the arms' angles values.
             Parameters: theta1, theta2, theta3 as float numbers.
