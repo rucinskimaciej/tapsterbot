@@ -228,16 +228,30 @@ def robot_ntap( n, x, y ):
         return request.json()
 # End of Function: robot_ntap( n, x, y )
 
-# Function: robot_pos3d( x, y )
-def robot_pos3d( x, y ):
+# Function: robot_posForScreen( x, y )
+def robot_posForScreen( x, y ):
         """
             Sends to the robot's server an HTTP request so as to get the 3D coordinates according to the (x,y) 2D coordinates.
             Parameters: x, y as integer numbers.
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        print "Sending pos3d request..."
+        print "Sending posForScreen request..."
         request = requests.get( ROBOT_URL + ROBOT_URL_POSITION_FOR_SCREEN_COORD+"/x/"+x+"/y/"+y)
         print request.text
         return request.json()
-# End of Function: robot_pos3d( x, y )
+# End of Function: robot_posForScreen( x, y )
+
+# Function: robot_angForPos( x, y, z )
+def robot_angForPos( x, y, z ):
+        """
+            Sends to the robot's server an HTTP request so as to get the angles of the arms for the (x,y,z) 3D coordinates
+            Parameters: x, y, z as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending angForPos request..."
+        request = requests.get( ROBOT_URL + ROBOT_URL_ANGLES_FOR_POSITION+"/x/"+x+"/y/"+y+"/z/"+z)
+        print request.text
+        return request.json()
+# End of Function: robot_angForPos( x, y, z )

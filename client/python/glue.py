@@ -68,7 +68,8 @@ def help():
         print "\tset-angles a b c..........: Define the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
         print "\tget-position..............: Get the posiition of the arms in its 3D landmark"
         print "\tset-position x y z........: Set the position of the bot in its 3D landmark at (x,y,z) coordinates"
-        print "\tpos3d x y.................: Get the 3D landmark coordinates for the (x,y) screen-based coordinates"
+        print "\tposForScreen x y..........: Get the position of the bot for these (x,y) screen-based coordinates"
+        print "\tangForPos x y z...........: Get the angles of the arms for the (x,y,z) 3D coordinates"
         print "\treset.....................: Reset the position of the bot"
         print "\tconfig....................: Display the global configuration in use"
         print "\tstatus....................: What is the status of the bot?"
@@ -177,8 +178,13 @@ def isRobotCommand( command ):
     if result:
         return True
 
-    # pos3d
+    # posForScreen
     result = bool(ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD.match(command))
+    if result:
+        return True
+
+    # angForPos
+    result = bool(ROBOT_PATTERN_ANGLES_FOR_POSITION.match(command))
     if result:
         return True
 
@@ -331,12 +337,23 @@ def parseCommand( command ):
             print "Bad parameters"
             return False
 
-    # pos3d
+    # posForScreen
     result = bool(ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD.match(command))
     if result:
         splits = command.split( )
         if len(splits) == 3:
-            robot_pos3d(x=splits[1], y=splits[2])
+            robot_posForScreen(x=splits[1], y=splits[2])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
+    # angForPos
+    result = bool(ROBOT_PATTERN_ANGLES_FOR_POSITION.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_angForPos(x=splits[1], y=splits[2], z=splits[3])
             return True
         else:
             print "Bad parameters"

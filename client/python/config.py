@@ -70,15 +70,16 @@ ROBOT_URL_DANCE = "/dance"
 ROBOT_URL_STOP_DANCE = "/stopDancing"
 ROBOT_URL_SWIPE = "/swipe"
 ROBOT_URL_POSITION_FOR_SCREEN_COORD = "/positionForScreenCoordinates"
+ROBOT_URL_ANGLES_FOR_POSITION = "/anglesForPosition"
 
 # ********************************
 # Regular expressions for commands
 # ********************************
 
 ROBOT_PATTERN_GET_ANGLES = re.compile("^get-angles$")
-ROBOT_PATTERN_SET_ANGLES = re.compile("^set-angles (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
+ROBOT_PATTERN_SET_ANGLES = re.compile("^set-angles (-*\d+(\.\d+)?) (-*\d+(\.\d+)?) (-*\d+(\.\d+)?)$")
 ROBOT_PATTERN_GET_POSITION = re.compile("^get-position$")
-ROBOT_PATTERN_SET_POSITION = re.compile("^set-position (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
+ROBOT_PATTERN_SET_POSITION = re.compile("^set-position (-*\d+(\.\d+)?) (-*\d+(\.\d+)?) (-*\d+(\.\d+)?)$")
 ROBOT_PATTERN_TAP = re.compile("^tap (\d+) (\d+)$")
 ROBOT_PATTERN_RESET = re.compile("^reset$")
 ROBOT_PATTERN_GET_CALIBRATION = re.compile("^get-calibration$")
@@ -91,4 +92,5 @@ ROBOT_PATTERN_DANCE = re.compile("^dance$")
 ROBOT_PATTERN_STOP_DANCE = re.compile("^stop-dance$")
 ROBOT_PATTERN_SWIPE = re.compile("^swipe (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_N_TAP = re.compile("^n-tap (\d+) (\d+) (\d+)$")
-ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD = re.compile("^pos3d (\d+) (\d+)$")
+ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD = re.compile("^posForScreen (\d+) (\d+)$")
+ROBOT_PATTERN_ANGLES_FOR_POSITION = re.compile("^angForPos (-*\d+) (-*\d+) (-*\d+)$")
