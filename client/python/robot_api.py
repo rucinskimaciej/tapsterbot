@@ -118,7 +118,6 @@ def robot_reset():
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        # TODO
         print "Sending reset request..."
         payload = {}
         request = requests.post( ROBOT_URL + ROBOT_URL_RESET, data=payload)
@@ -133,9 +132,10 @@ def robot_getCalibration():
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_getCalibration"
+        print "Sending get-calibration request..."
+        request = requests.get( ROBOT_URL + ROBOT_URL_GET_CALIBRATION )
+        print request.text
+        return request.json()
 # End of Function: robot_getCalibration()
 
 # Function: robot_setCalibration( jsonData )
