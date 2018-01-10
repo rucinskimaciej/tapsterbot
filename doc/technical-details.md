@@ -23,3 +23,7 @@
   npm install prompt;
   npm install wd;
 ```
+
+## Warning
+The [hapi](https://hapijs.com/ "Go to hapi") dependence had a major evolution with its [v17](https://github.com/hapijs/hapi/issues/3658 "Breaking changes"), and the "legacy" server.js in the orignal tapsterbot repository won't work.
+So be sure you have installed at least v17 for hapi. For more details see those 2 issues on GitHub ([here](https://github.com/hapijs/discuss/issues/567) and [here](https://github.com/hapijs/hapi/issues/3697)).
