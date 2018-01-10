@@ -96,7 +96,7 @@ def askForCommand():
         Asks for a command to the user.
         Returns the written command.
     """
-    return raw_input("Enter a command: ")
+    return raw_input("> Enter a command: ")
 # End of Function: askForCommand()
 
 # Function: isRobotCommand( command )
