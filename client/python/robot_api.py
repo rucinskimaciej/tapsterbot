@@ -166,3 +166,17 @@ def robot_status():
         print request.text
         return request.json()
 # End of Function: robot_status()
+
+# Function: robot_dance()
+def robot_dance():
+        """
+            Sends to the robot's server an HTTP request so as to make it dance.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending dance request..."
+        payload = {}
+        request = requests.post( ROBOT_URL + ROBOT_URL_DANCE )
+        print request.text
+        return request.json()
+# End of Function: robot_dance()

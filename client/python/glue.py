@@ -72,6 +72,7 @@ def help():
         print "\tconfig....................: Displays the global configuration in use"
         print "\thelp......................: Displays this help"
         print "\tstatus....................: What is the status of the bot?"
+        print "\tdance.....................: Let's dance!"
         print "\tbye.......................: Good bye!"
         print ""
         return
@@ -149,6 +150,11 @@ def isRobotCommand( command ):
 
     # status
     result = bool(ROBOT_PATTERN_STATUS.match(command))
+    if result:
+        return True
+
+    # dance
+    result = bool(ROBOT_PATTERN_DANCE.match(command))
     if result:
         return True
 
@@ -265,6 +271,12 @@ def parseCommand( command ):
     result = bool(ROBOT_PATTERN_STATUS.match(command))
     if result:
         robot_status()
+        return True
+
+    # dance
+    result = bool(ROBOT_PATTERN_DANCE.match(command))
+    if result:
+        robot_dance()
         return True
 
 # End of Function: parseCommand( command )
