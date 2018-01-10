@@ -62,10 +62,11 @@ def help():
         print ""
         print "Here are the commands you can use for the Tapster2 bot:"
         print "\tget-angles................: Get the angles of the arms of the bot"
-        print "\tset-angles a b c..........: Defines the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
+        print "\tset-angles a b c..........: Define the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
         print "\tget-position..............: Get the posiition of the arms in its 3D landmark"
         print "\tset-position x y z........: Sets the position of the bot in its 3D landmark at (x,y,z) coordinates"
         print "\ttap x y...................: Tap on (x,y) using the 2D landmark of the device"
+        print "\tswipe x1 y1 x2 y2.........: Swipe from (x1, y1) to (x2, y2) using the 2D landmark of the device"
         print "\treset.....................: Resets the position of the bot"
         print "\tget-calibration...........: Gets the calibration data in use for the bot"
         print "\tset-calibration JSON......: Defines the calibraiton data to use for the bot, defined in JSON format"
@@ -161,6 +162,11 @@ def isRobotCommand( command ):
 
     # stop dancing
     result = bool(ROBOT_PATTERN_STOP_DANCE.match(command))
+    if result:
+        return True
+
+    # swipe
+    result = bool(ROBOT_PATTERN_SWIPE.match(command))
     if result:
         return True
 
@@ -290,5 +296,16 @@ def parseCommand( command ):
     if result:
         robot_stopDance()
         return True
+
+    # swipe
+    result = bool(ROBOT_PATTERN_SWIPE.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 5:
+            robot_swipe(startX=splits[1], startY=splits[2], endX=splits[3], endY=splits[4])
+            return True
+        else:
+            print "Bad parameters"
+            return False
 
 # End of Function: parseCommand( command )

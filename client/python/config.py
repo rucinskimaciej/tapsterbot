@@ -60,6 +60,7 @@ ROBOT_URL_SET_CALIBRATION = "/setCalibrationData"
 ROBOT_URL_STATUS = "/status"
 ROBOT_URL_DANCE = "/dance"
 ROBOT_URL_STOP_DANCE = "/stopDancing"
+ROBOT_URL_SWIPE = "/swipe"
 
 # ********************************
 # Regular expressions for commands
@@ -79,3 +80,4 @@ ROBOT_PATTERN_BYE = re.compile("^bye$")
 ROBOT_PATTERN_STATUS = re.compile("^status$")
 ROBOT_PATTERN_DANCE = re.compile("^dance$")
 ROBOT_PATTERN_STOP_DANCE = re.compile("^stop-dance$")
+ROBOT_PATTERN_SWIPE = re.compile("^swipe (\d+) (\d+) (\d+) (\d+)$")

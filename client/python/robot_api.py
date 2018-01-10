@@ -194,3 +194,18 @@ def robot_stopDance():
         print request.text
         return request.json()
 # End of Function: robot_stopDance()
+
+# Function: robot_swipe( startX, startY, endX, endY )
+def robot_swipe( startX, startY, endX, endY ):
+        """
+            Sends to the robot's server an HTTP request so as to swipe from (startX, startY) to (endX, endY).
+            Parameters: startX, startY, endX, endY as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending set-position request..."
+        payload = {'startX': startX, 'startY': startY, 'endX': endX, 'endY': endY}
+        request = requests.post( ROBOT_URL + ROBOT_URL_SWIPE, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_swipe( x, y, z )
