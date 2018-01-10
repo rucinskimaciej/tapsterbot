@@ -36,6 +36,8 @@ Since......: 10/01/2018
 # For regular expressions and patterns
 from config import *
 
+# Robot API
+from robot_api import *
 
 # *********
 # FUNCTIONS
@@ -180,8 +182,48 @@ def parseCommand( command ):
     """
         Parses the command the user has written.
         It will get the main keyword and then the arguments if needed.
-        Once the real command has been found, the dedicated frazture in the API will be triggered
+        Once the real command has been found, the dedicated feature in the API will be triggered
     """
-    # TODO
-    print "ERROR: Not implemented"
+
+    # get-angles
+    result = bool(PATTERN_GET_ANGLES.match(command))
+    if result:
+        robot_getAngles()
+        return True
+
+    # set-angles a b c
+    result = bool(PATTERN_SET_ANGLES.match(command))
+    if result:
+        return True
+
+    # get-position
+    result = bool(PATTERN_GET_POSITION.match(command))
+    if result:
+        return True
+
+    # set-position x y z
+    result = bool(PATTERN_SET_POSITION.match(command))
+    if result:
+        return True
+
+    # tap x y
+    result = bool(PATTERN_TAP.match(command))
+    if result:
+        return True
+
+    # reset
+    result = bool(PATTERN_RESET.match(command))
+    if result:
+        return True
+
+    # get-calibration
+    result = bool(PATTERN_GET_CALIBRATION.match(command))
+    if result:
+        return True
+
+    # set-calibration JSON
+    result = bool(PATTERN_SET_CALIBRATION.match(command))
+    if result:
+        return True
+
 # End of Function: parseCommand( command )
