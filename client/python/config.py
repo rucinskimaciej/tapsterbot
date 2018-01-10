@@ -69,6 +69,7 @@ ROBOT_URL_STATUS = "/status"
 ROBOT_URL_DANCE = "/dance"
 ROBOT_URL_STOP_DANCE = "/stopDancing"
 ROBOT_URL_SWIPE = "/swipe"
+ROBOT_URL_POSITION_FOR_SCREEN_COORD = "/positionForScreenCoordinates"
 
 # ********************************
 # Regular expressions for commands
@@ -90,3 +91,4 @@ ROBOT_PATTERN_DANCE = re.compile("^dance$")
 ROBOT_PATTERN_STOP_DANCE = re.compile("^stop-dance$")
 ROBOT_PATTERN_SWIPE = re.compile("^swipe (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_N_TAP = re.compile("^n-tap (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD = re.compile("^pos3d (\d+) (\d+)$")

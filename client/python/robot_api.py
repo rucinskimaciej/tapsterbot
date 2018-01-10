@@ -227,3 +227,17 @@ def robot_ntap( n, x, y ):
             time.sleep(WAIT_TIME_BETWEEN_TAP)
         return request.json()
 # End of Function: robot_ntap( n, x, y )
+
+# Function: robot_pos3d( x, y )
+def robot_pos3d( x, y ):
+        """
+            Sends to the robot's server an HTTP request so as to get the 3D coordinates according to the (x,y) 2D coordinates.
+            Parameters: x, y as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending pos3d request..."
+        request = requests.get( ROBOT_URL + ROBOT_URL_POSITION_FOR_SCREEN_COORD+"/x/"+x+"/y/"+y)
+        print request.text
+        return request.json()
+# End of Function: robot_pos3d( x, y )

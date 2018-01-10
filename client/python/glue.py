@@ -61,21 +61,22 @@ def help():
         """
         print ""
         print "Here are the commands you can use for the Tapster2 bot:"
-        print "\tget-angles................: Get the angles of the arms of the bot"
-        print "\tset-angles a b c..........: Define the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
-        print "\tget-position..............: Get the posiition of the arms in its 3D landmark"
-        print "\tset-position x y z........: Sets the position of the bot in its 3D landmark at (x,y,z) coordinates"
         print "\ttap x y...................: Tap on (x,y) using the 2D landmark of the device"
         print "\tn-tap n x y...............: Tap n times on (x,y) using the 2D landmark of the device"
         print "\tswipe x1 y1 x2 y2.........: Swipe from (x1, y1) to (x2, y2) using the 2D landmark of the device"
-        print "\treset.....................: Resets the position of the bot"
-        print "\tget-calibration...........: Gets the calibration data in use for the bot"
-        print "\tset-calibration JSON......: Defines the calibraiton data to use for the bot, defined in JSON format"
-        print "\tconfig....................: Displays the global configuration in use"
-        print "\thelp......................: Displays this help"
+        print "\tget-angles................: Get the angles of the arms of the bot"
+        print "\tset-angles a b c..........: Define the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
+        print "\tget-position..............: Get the posiition of the arms in its 3D landmark"
+        print "\tset-position x y z........: Set the position of the bot in its 3D landmark at (x,y,z) coordinates"
+        print "\tpos3d x y.................: Get the 3D landmark coordinates for the (x,y) screen-based coordinates"
+        print "\treset.....................: Reset the position of the bot"
+        print "\tconfig....................: Display the global configuration in use"
         print "\tstatus....................: What is the status of the bot?"
         print "\tdance.....................: Let's dance!"
         print "\tstop-dance................: Stop dancing"
+        print "\tget-calibration...........: Get the calibration data in use for the bot"
+        print "\tset-calibration JSON......: Define the calibraiton data to use for the bot, defined in JSON format"
+        print "\thelp......................: Display this help"
         print "\tbye.......................: Good bye!"
         print ""
         return
@@ -173,6 +174,11 @@ def isRobotCommand( command ):
 
     # n-click
     result = bool(ROBOT_PATTERN_N_TAP.match(command))
+    if result:
+        return True
+
+    # pos3d
+    result = bool(ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD.match(command))
     if result:
         return True
 
@@ -320,6 +326,17 @@ def parseCommand( command ):
         splits = command.split( )
         if len(splits) == 4:
             robot_ntap(n=splits[1], x=splits[2], y=splits[3])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
+    # pos3d
+    result = bool(ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 3:
+            robot_pos3d(x=splits[1], y=splits[2])
             return True
         else:
             print "Bad parameters"
