@@ -34,6 +34,18 @@ import re
 # Version of this Tapster2 Python client
 CLIENT_VERSION = "v1.0.0"
 
+# IP address where the Tapster2 bot is reachable
+ROBOT_IP_ADDRESS = "127.0.0.1"
+
+# Port to use to as to reach the robot
+ROBOT_PORT = "4242"
+
+# The protocol to use for the robot
+ROBOT_PROTOCOL = "http"
+
+# The URL to use to as to reach the robot
+ROBOT_URL = ROBOT_PROTOCOL + "://" + ROBOT_IP_ADDRESS + ":" + ROBOT_PORT
+
 # Regular expressions for commands
 PATTERN_GET_ANGLES = re.compile("^get-angles$")
 PATTERN_SET_ANGLES = re.compile("^set-angles (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")

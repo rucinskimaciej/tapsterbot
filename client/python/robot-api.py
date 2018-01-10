@@ -28,3 +28,95 @@ Author.....: pylapp
 Version....: 1.0.0
 Since......: 10/01/2018
 """
+
+# Function: robot_getAngles()
+def robot_getAngles():
+        """
+            Sends to the robot's server an HTTP request so as to get the arms' angles values.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_getAngles"
+# End of Function: robot_getAngles()
+
+# Function robot_setAngles( theta1, theta1, theta3 )
+def robot_setAngles( theta1, theta1, theta3 ):
+        """
+            Sends to the robot's server an HTTP request so as to set the arms' angles values.
+            Parameters: theta1, theta2, theta3 as float numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_setAngles"
+# End of Function: robot_setAngles( theta1, theta1, theta3 )
+
+# Function: robot_getPosition()
+def robot_getPosition():
+        """
+            Sends to the robot's server an HTTP request so as to get its position in 3D landmark
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_getPosition"
+# End of Function: robot_getPosition()
+
+# Function: robot_setPosition( x, y, z )
+def robot_setPosition( x, y, z ):
+        """
+            Sends to the robot's server an HTTP request so as to set the position of its arms in 3D landmark.
+            Parameters: x, y, z as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_setPosition"
+# End of Function: robot_setPosition( x, y, z )
+
+# Function: robot_tap( x, y )
+def robot_tap( x, y ):
+        """
+            Sends to the robot's server an HTTP request so as to make it tp at (x, y) using the device's 2D landmark.
+            Parameters: x, y as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_tap"
+# End of Function: robot_tap( x, y )
+
+# Function: robot_reset()
+def robot_reset():
+        """
+            Sends to the robot's server an HTTP request so as to reset it.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_reset"
+# End of Function: robot_reset()
+
+# Function: robot_getCalibration()
+def robot_getCalibration():
+        """
+            Sends to the robot's server an HTTP request so as to get its calibration data.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_getCalibration"
+# End of Function: robot_getCalibration()
+
+# Function: robot_setCalibration( jsonData )
+def robot_setCalibration( jsonData ):
+        """
+            Sends to the robot's server an HTTP request so as to define its calibration data to use.
+            Parameter: the calibration data in JSON format.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        # TODO
+        print "robot_setCalibration"
+# End of Function: robot_setCalibration( jsonData )

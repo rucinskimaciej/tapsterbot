@@ -59,20 +59,34 @@ def help():
         """
         print ""
         print "Here are the commands you can use for the Tapster2 bot:"
-        print "\t get-angles................: Get the angles of the arms of the bot"
-        print "\t set-angles a b c..........: Defines the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
-        print "\t get-position..............: Get the posiition of the arms in its 3D landmark"
-        print "\t set-position x y z........: Sets the position of the bot in its 3D landmark at (x,y,z) coordinates"
-        print "\t tap x y...................: Tap on (x,y) using the 2D landmark of the device"
-        print "\t reset.....................: Resets the position of the bot"
-        print "\t get-calibration...........: Gets the calibration data in use for the bot"
-        print "\t set-calibration JSON......: Defines the calibraiton data to use for the bot, defined in JSON format"
-        print "\t config....................: Displays the global configuration in use"
-        print "\t help......................: Displays this help"
-        print "\t bye.......................: Good bye!"
+        print "\tget-angles................: Get the angles of the arms of the bot"
+        print "\tset-angles a b c..........: Defines the 3 angles (a = theta 1, b = theta 2, c = theta3) for the arms of the bot"
+        print "\tget-position..............: Get the posiition of the arms in its 3D landmark"
+        print "\tset-position x y z........: Sets the position of the bot in its 3D landmark at (x,y,z) coordinates"
+        print "\ttap x y...................: Tap on (x,y) using the 2D landmark of the device"
+        print "\treset.....................: Resets the position of the bot"
+        print "\tget-calibration...........: Gets the calibration data in use for the bot"
+        print "\tset-calibration JSON......: Defines the calibraiton data to use for the bot, defined in JSON format"
+        print "\tconfig....................: Displays the global configuration in use"
+        print "\thelp......................: Displays this help"
+        print "\tbye.......................: Good bye!"
         print ""
         return
 # End of Function: welcome()
+
+# Function: config()
+def config():
+    """
+        Displays the configuration in use.
+    """
+    print ""
+    print "\tVersion of Python client.......: " + CLIENT_VERSION
+    print "\tIP address of the robot........: " + ROBOT_IP_ADDRESS
+    print "\tPort fo the robot..............: " + ROBOT_PORT
+    print "\tProtocol of the robot..........: " + ROBOT_PROTOCOL
+    print "\tURl of the robot...............: " + ROBOT_URL
+    print ""
+# End of Function: config()
 
 # Function: askForCommand()
 def askForCommand():
@@ -81,10 +95,10 @@ def askForCommand():
         Returns the written command.
     """
     return raw_input("Enter a command: ")
-# End of function: askForCommand()
+# End of Function: askForCommand()
 
-# Function: isSuitableCommand( command )
-def isSuitableCommand( command ):
+# Function: isRobotCommand( command )
+def isRobotCommand( command ):
     """
         Checks if the command is suitable, i.e. if it matches one of the managed commands.
         Returns a boolean value, true if the command is good, false otherwise.
@@ -130,19 +144,9 @@ def isSuitableCommand( command ):
     if result:
         return True
 
-    # config
-    result = bool(PATTERN_CONFIG.match(command))
-    if result:
-        return True
-
-    # help
-    result = bool(PATTERN_HELP.match(command))
-    if result:
-        return True
-
     return False
 
-# End of function: isSuitableCommand( command )
+# End of Function: isRobotCommand( command )
 
 # Function isStopCommand( command )
 def isStopCommand( command ):
@@ -151,7 +155,25 @@ def isStopCommand( command ):
             Returns a boolean value, true if the command is good, false otherwise.
         """
         return bool(PATTERN_BYE.match(command))
-# End of function isStopCommand( command )
+# End of Function isStopCommand( command )
+
+# Function isHelpCommand( command )
+def isHelpCommand( command ):
+        """
+            Checks if the command is an help command.
+            Returns a boolean value, true if the command is good, false otherwise.
+        """
+        return bool(PATTERN_HELP.match(command))
+# End of Function isHelpCommand( command )
+
+# Function isConfigCommand( command )
+def isConfigCommand( command ):
+        """
+            Checks if the command is a config command.
+            Returns a boolean value, true if the command is good, false otherwise.
+        """
+        return bool(PATTERN_CONFIG.match(command))
+# End of Function isConfigCommand( command )
 
 # Function: parseCommand( command )
 def parseCommand( command ):
@@ -161,3 +183,4 @@ def parseCommand( command ):
         Once the real command has been found, the dedicated frazture in the API will be triggered
     """
     print "Ok I'll parse it!"
+# End of Function: parseCommand( command )

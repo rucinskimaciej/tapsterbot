@@ -42,8 +42,12 @@ if __name__ == "__main__":
     stop = False
     while not stop:
         command = askForCommand()
-        if isSuitableCommand( command ):
+        if isRobotCommand( command ):
             parseCommand( command )
+        elif isHelpCommand(command):
+            help()
+        elif isConfigCommand(command):
+            config()
         elif isStopCommand(command):
             stop = True
         else:
