@@ -34,6 +34,7 @@ Since......: 10/01/2018
 # *******
 
 import requests # You must install previously this module
+import json
 from config import *
 
 # *********
@@ -146,7 +147,9 @@ def robot_setCalibration( jsonData ):
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_setCalibration " + jsonData
+        print "Sending set-calibration request..."
+        payload = json.loads(jsonData)
+        request = requests.post( ROBOT_URL + ROBOT_URL_RESET, data=payload)
+        print request.text
+        return request.json()
 # End of Function: robot_setCalibration( jsonData )
