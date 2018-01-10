@@ -29,5 +29,19 @@ Version....: 1.0.0
 Since......: 10/01/2018
 """
 
+import re
+
 # Version of this Tapster2 Python client
 CLIENT_VERSION = "v1.0.0"
+
+# Regular expressions for commands
+PATTERN_GET_ANGLES = re.compile("^get-angles$")
+PATTERN_SET_ANGLES = re.compile("^set-angles (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
+PATTERN_GET_POSITION = re.compile("^get-position$")
+PATTERN_SET_POSITION = re.compile("^set-position (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
+PATTERN_TAP = re.compile("^tap (\d+) (\d+)$")
+PATTERN_RESET = re.compile("^reset$")
+PATTERN_GET_CALIBRATION = re.compile("^get-calibration$")
+PATTERN_SET_CALIBRATION = re.compile("^set-calibration .+$") #FIXME Improve the regex to make it match to JSON calibration data string
+PATTERN_CONFIG = re.compile("^config$")
+PATTERN_HELP = re.compile("^help$")

@@ -29,6 +29,18 @@ Version....: 1.0.0
 Since......: 10/01/2018
 """
 
+# *******
+# IMPORTS
+# *******
+
+# For regular expressions and patterns
+from config import *
+
+
+# *********
+# FUNCTIONS
+# *********
+
 # Function: welcome()
 def welcome():
         """
@@ -77,10 +89,59 @@ def isSuitableCommand( command ):
         Checks if the command is suitable, i.e. if it matches one of the managed commands.
         Returns a boolean value, true if the command is good, false otherwise.
     """
-    if command == "OK":
+
+    # get-angles
+    result = bool(PATTERN_GET_ANGLES.match(command))
+    if result:
         return True
-    else:
-        return False
+
+    # set-angles a b c
+    result = bool(PATTERN_SET_ANGLES.match(command))
+    if result:
+        return True
+
+    # get-position
+    result = bool(PATTERN_GET_POSITION.match(command))
+    if result:
+        return True
+
+    # set-position x y z
+    result = bool(PATTERN_SET_POSITION.match(command))
+    if result:
+        return True
+
+    # tap x y
+    result = bool(PATTERN_TAP.match(command))
+    if result:
+        return True
+
+    # reset
+    result = bool(PATTERN_RESET.match(command))
+    if result:
+        return True
+
+    # get-calibration
+    result = bool(PATTERN_GET_CALIBRATION.match(command))
+    if result:
+        return True
+
+    # set-calibration JSON
+    result = bool(PATTERN_SET_CALIBRATION.match(command))
+    if result:
+        return True
+
+    # config
+    result = bool(PATTERN_CONFIG.match(command))
+    if result:
+        return True
+
+    # help
+    result = bool(PATTERN_HELP.match(command))
+    if result:
+        return True
+
+    return False
+
 # End of function: isSuitableCommand( command )
 
 # Function: parseCommand( command )
