@@ -37,6 +37,7 @@ def robot_getAngles():
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_getAngles"
 # End of Function: robot_getAngles()
 
@@ -49,6 +50,7 @@ def robot_setAngles( theta1, theta1, theta3 ):
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_setAngles"
 # End of Function: robot_setAngles( theta1, theta1, theta3 )
 
@@ -60,6 +62,7 @@ def robot_getPosition():
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_getPosition"
 # End of Function: robot_getPosition()
 
@@ -72,6 +75,7 @@ def robot_setPosition( x, y, z ):
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_setPosition"
 # End of Function: robot_setPosition( x, y, z )
 
@@ -84,6 +88,7 @@ def robot_tap( x, y ):
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_tap"
 # End of Function: robot_tap( x, y )
 
@@ -95,6 +100,7 @@ def robot_reset():
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_reset"
 # End of Function: robot_reset()
 
@@ -106,6 +112,7 @@ def robot_getCalibration():
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_getCalibration"
 # End of Function: robot_getCalibration()
 
@@ -118,5 +125,6 @@ def robot_setCalibration( jsonData ):
             Returns the results of the command.
         """
         # TODO
+        print "ERROR: Not implemented"
         print "robot_setCalibration"
 # End of Function: robot_setCalibration( jsonData )

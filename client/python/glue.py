@@ -182,5 +182,6 @@ def parseCommand( command ):
         It will get the main keyword and then the arguments if needed.
         Once the real command has been found, the dedicated frazture in the API will be triggered
     """
-    print "Ok I'll parse it!"
+    # TODO
+    print "ERROR: Not implemented"
 # End of Function: parseCommand( command )
