@@ -35,5 +35,5 @@
 4. chappie - A future version with a web client to use to drive the bot. Not started.
 5. case - A future version with Robot Framework keywords to use to drive the bot. Not started.
 6. dalek - A future version with an Android client to use to drive the bot. Not started.
-7. deckard - A future version with updated clients and keywords (draw star / circle / square / arc). Not started.
+7. deckard - A future version with updated clients and keywords (draw star / circle / square / arc / SVG). Not started.
 8. Next step: integration in Appium?
