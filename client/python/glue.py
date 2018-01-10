@@ -107,42 +107,42 @@ def isRobotCommand( command ):
     """
 
     # get-angles
-    result = bool(PATTERN_GET_ANGLES.match(command))
+    result = bool(ROBOT_PATTERN_GET_ANGLES.match(command))
     if result:
         return True
 
     # set-angles a b c
-    result = bool(PATTERN_SET_ANGLES.match(command))
+    result = bool(ROBOT_PATTERN_SET_ANGLES.match(command))
     if result:
         return True
 
     # get-position
-    result = bool(PATTERN_GET_POSITION.match(command))
+    result = bool(ROBOT_PATTERN_GET_POSITION.match(command))
     if result:
         return True
 
     # set-position x y z
-    result = bool(PATTERN_SET_POSITION.match(command))
+    result = bool(ROBOT_PATTERN_SET_POSITION.match(command))
     if result:
         return True
 
     # tap x y
-    result = bool(PATTERN_TAP.match(command))
+    result = bool(ROBOT_PATTERN_TAP.match(command))
     if result:
         return True
 
     # reset
-    result = bool(PATTERN_RESET.match(command))
+    result = bool(ROBOT_PATTERN_RESET.match(command))
     if result:
         return True
 
     # get-calibration
-    result = bool(PATTERN_GET_CALIBRATION.match(command))
+    result = bool(ROBOT_PATTERN_GET_CALIBRATION.match(command))
     if result:
         return True
 
     # set-calibration JSON
-    result = bool(PATTERN_SET_CALIBRATION.match(command))
+    result = bool(ROBOT_PATTERN_SET_CALIBRATION.match(command))
     if result:
         return True
 
@@ -156,7 +156,7 @@ def isStopCommand( command ):
             Checks if the command is a stop command.
             Returns a boolean value, true if the command is good, false otherwise.
         """
-        return bool(PATTERN_BYE.match(command))
+        return bool(ROBOT_PATTERN_BYE.match(command))
 # End of Function isStopCommand( command )
 
 # Function isHelpCommand( command )
@@ -165,7 +165,7 @@ def isHelpCommand( command ):
             Checks if the command is an help command.
             Returns a boolean value, true if the command is good, false otherwise.
         """
-        return bool(PATTERN_HELP.match(command))
+        return bool(ROBOT_PATTERN_HELP.match(command))
 # End of Function isHelpCommand( command )
 
 # Function isConfigCommand( command )
@@ -174,7 +174,7 @@ def isConfigCommand( command ):
             Checks if the command is a config command.
             Returns a boolean value, true if the command is good, false otherwise.
         """
-        return bool(PATTERN_CONFIG.match(command))
+        return bool(ROBOT_PATTERN_CONFIG.match(command))
 # End of Function isConfigCommand( command )
 
 # Function: parseCommand( command )
@@ -188,13 +188,13 @@ def parseCommand( command ):
     """
 
     # get-angles
-    result = bool(PATTERN_GET_ANGLES.match(command))
+    result = bool(ROBOT_PATTERN_GET_ANGLES.match(command))
     if result:
         robot_getAngles()
         return True
 
     # set-angles a b c
-    result = bool(PATTERN_SET_ANGLES.match(command))
+    result = bool(ROBOT_PATTERN_SET_ANGLES.match(command))
     if result:
         splits = command.split( )
         if len(splits) == 4:
@@ -205,13 +205,13 @@ def parseCommand( command ):
             return False
 
     # get-position
-    result = bool(PATTERN_GET_POSITION.match(command))
+    result = bool(ROBOT_PATTERN_GET_POSITION.match(command))
     if result:
         robot_getPosition()
         return True
 
     # set-position x y z
-    result = bool(PATTERN_SET_POSITION.match(command))
+    result = bool(ROBOT_PATTERN_SET_POSITION.match(command))
     if result:
         splits = command.split( )
         if len(splits) == 4:
@@ -222,7 +222,7 @@ def parseCommand( command ):
             return False
 
     # tap x y
-    result = bool(PATTERN_TAP.match(command))
+    result = bool(ROBOT_PATTERN_TAP.match(command))
     if result:
         splits = command.split( )
         if len(splits) == 3:
@@ -233,19 +233,19 @@ def parseCommand( command ):
             return False
 
     # reset
-    result = bool(PATTERN_RESET.match(command))
+    result = bool(ROBOT_PATTERN_RESET.match(command))
     if result:
         robot_reset()
         return True
 
     # get-calibration
-    result = bool(PATTERN_GET_CALIBRATION.match(command))
+    result = bool(ROBOT_PATTERN_GET_CALIBRATION.match(command))
     if result:
         robot_getCalibration()
         return True
 
     # set-calibration JSON
-    result = bool(PATTERN_SET_CALIBRATION.match(command))
+    result = bool(ROBOT_PATTERN_SET_CALIBRATION.match(command))
     if result:
         splits = command.split( )
         if len(splits) == 2:

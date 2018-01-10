@@ -46,15 +46,30 @@ ROBOT_PROTOCOL = "http"
 # The URL to use to as to reach the robot
 ROBOT_URL = ROBOT_PROTOCOL + "://" + ROBOT_IP_ADDRESS + ":" + ROBOT_PORT
 
+# ****************
+# URL of Robot API
+# ****************
+ROBOT_URL_GET_ANGLES = "/angles"
+ROBOT_URL_SET_ANGLES = "/setAngles"
+ROBOT_URL_GET_POSITION = "/position"
+ROBOT_URL_SET_POSITION = "/setPosition"
+ROBOT_URL_TAP = "/tap"
+ROBOT_URL_RESET = "/reset"
+ROBOT_URL_GET_CALIBRATION = "/calibrationData"
+ROBOT_URL_SET_CALIBRATION = "/setCalibrationData"
+
+# ********************************
 # Regular expressions for commands
-PATTERN_GET_ANGLES = re.compile("^get-angles$")
-PATTERN_SET_ANGLES = re.compile("^set-angles (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
-PATTERN_GET_POSITION = re.compile("^get-position$")
-PATTERN_SET_POSITION = re.compile("^set-position (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
-PATTERN_TAP = re.compile("^tap (\d+) (\d+)$")
-PATTERN_RESET = re.compile("^reset$")
-PATTERN_GET_CALIBRATION = re.compile("^get-calibration$")
-PATTERN_SET_CALIBRATION = re.compile("^set-calibration .+$") #FIXME Improve the regex to make it match to JSON calibration data string
-PATTERN_CONFIG = re.compile("^config$")
-PATTERN_HELP = re.compile("^help$")
-PATTERN_BYE = re.compile("^bye$")
+# ********************************
+
+ROBOT_PATTERN_GET_ANGLES = re.compile("^get-angles$")
+ROBOT_PATTERN_SET_ANGLES = re.compile("^set-angles (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
+ROBOT_PATTERN_GET_POSITION = re.compile("^get-position$")
+ROBOT_PATTERN_SET_POSITION = re.compile("^set-position (\d+(\.\d+)?) (\d+(\.\d+)?) (\d+(\.\d+)?)$")
+ROBOT_PATTERN_TAP = re.compile("^tap (\d+) (\d+)$")
+ROBOT_PATTERN_RESET = re.compile("^reset$")
+ROBOT_PATTERN_GET_CALIBRATION = re.compile("^get-calibration$")
+ROBOT_PATTERN_SET_CALIBRATION = re.compile("^set-calibration .+$") #FIXME Improve the regex to make it match to JSON calibration data string
+ROBOT_PATTERN_CONFIG = re.compile("^config$")
+ROBOT_PATTERN_HELP = re.compile("^help$")
+ROBOT_PATTERN_BYE = re.compile("^bye$")
