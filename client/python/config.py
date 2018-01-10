@@ -57,6 +57,7 @@ ROBOT_URL_TAP = "/tap"
 ROBOT_URL_RESET = "/reset"
 ROBOT_URL_GET_CALIBRATION = "/calibrationData"
 ROBOT_URL_SET_CALIBRATION = "/setCalibrationData"
+ROBOT_URL_STATUS = "/status"
 
 # ********************************
 # Regular expressions for commands
@@ -73,3 +74,4 @@ ROBOT_PATTERN_SET_CALIBRATION = re.compile("^set-calibration .+$") #FIXME Improv
 ROBOT_PATTERN_CONFIG = re.compile("^config$")
 ROBOT_PATTERN_HELP = re.compile("^help$")
 ROBOT_PATTERN_BYE = re.compile("^bye$")
+ROBOT_PATTERN_STATUS = re.compile("^status$")

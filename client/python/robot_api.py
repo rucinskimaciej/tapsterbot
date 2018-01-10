@@ -153,3 +153,16 @@ def robot_setCalibration( jsonData ):
         print request.text
         return request.json()
 # End of Function: robot_setCalibration( jsonData )
+
+# Function: robot_status()
+def robot_status():
+        """
+            Sends to the robot's server an HTTP request so as to get its status.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending get-status request..."
+        request = requests.get( ROBOT_URL + ROBOT_URL_STATUS )
+        print request.text
+        return request.json()
+# End of Function: robot_status()

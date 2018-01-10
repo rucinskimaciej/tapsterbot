@@ -71,6 +71,7 @@ def help():
         print "\tset-calibration JSON......: Defines the calibraiton data to use for the bot, defined in JSON format"
         print "\tconfig....................: Displays the global configuration in use"
         print "\thelp......................: Displays this help"
+        print "\tstatus....................: What is the status of the bot?"
         print "\tbye.......................: Good bye!"
         print ""
         return
@@ -143,6 +144,11 @@ def isRobotCommand( command ):
 
     # set-calibration JSON
     result = bool(ROBOT_PATTERN_SET_CALIBRATION.match(command))
+    if result:
+        return True
+
+    # status
+    result = bool(ROBOT_PATTERN_STATUS.match(command))
     if result:
         return True
 
@@ -254,5 +260,11 @@ def parseCommand( command ):
         else:
             print "Bad parameters"
             return False
+
+    # status
+    result = bool(ROBOT_PATTERN_STATUS.match(command))
+    if result:
+        robot_status()
+        return True
 
 # End of Function: parseCommand( command )
