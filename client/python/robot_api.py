@@ -104,9 +104,11 @@ def robot_tap( x, y ):
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_tap " + x + " " + y
+        print "Sending set-position request..."
+        payload = {'x': x, 'y': y}
+        request = requests.post( ROBOT_URL + ROBOT_URL_TAP, data=payload)
+        print request.text
+        return request.json()
 # End of Function: robot_tap( x, y )
 
 # Function: robot_reset()
