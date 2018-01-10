@@ -34,7 +34,7 @@ Since......: 10/01/2018
 # *******
 
 import requests # You must install previously this module
-from config import ROBOT_URL
+from config import *
 
 # *********
 # FUNCTIONS
@@ -47,13 +47,10 @@ def robot_getAngles():
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        #print "Sending get-angles request..."
-        #request = requests.get(ROBOT_URL)
-        #print request.text
-        #return request.json()
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_getAngles"
+        print "Sending get-angles request..."
+        request = requests.get( ROBOT_URL + ROBOT_URL_GET_ANGLES )
+        print request.text
+        return request.json()
 # End of Function: robot_getAngles()
 
 # Function robot_setAngles( theta1, theta1, theta3 )
@@ -64,13 +61,11 @@ def robot_setAngles( theta1, theta2, theta3 ):
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        #print "Sending get-angles request..."
-        #request = requests.get(ROBOT_URL)
-        #print request.text
-        #return request.json()
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_setAngles " + str(theta1) + " " + str(theta2) + " " + str(theta3)
+        print "Sending set-angles request..."
+        payload = {'theta1': theta1, 'theta2': theta2, 'theta3': theta3}
+        request = requests.post( ROBOT_URL + ROBOT_URL_SET_ANGLES, data=payload)
+        print request.text
+        return request.json()
 # End of Function: robot_setAngles( theta1, theta1, theta3 )
 
 # Function: robot_getPosition()
