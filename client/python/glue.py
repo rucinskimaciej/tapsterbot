@@ -73,6 +73,7 @@ def help():
         print "\thelp......................: Displays this help"
         print "\tstatus....................: What is the status of the bot?"
         print "\tdance.....................: Let's dance!"
+        print "\tstop-dance................: Stop dancing"
         print "\tbye.......................: Good bye!"
         print ""
         return
@@ -155,6 +156,11 @@ def isRobotCommand( command ):
 
     # dance
     result = bool(ROBOT_PATTERN_DANCE.match(command))
+    if result:
+        return True
+
+    # stop dancing
+    result = bool(ROBOT_PATTERN_STOP_DANCE.match(command))
     if result:
         return True
 
@@ -277,6 +283,12 @@ def parseCommand( command ):
     result = bool(ROBOT_PATTERN_DANCE.match(command))
     if result:
         robot_dance()
+        return True
+
+    # stop dancing
+    result = bool(ROBOT_PATTERN_STOP_DANCE.match(command))
+    if result:
+        robot_stopDance()
         return True
 
 # End of Function: parseCommand( command )

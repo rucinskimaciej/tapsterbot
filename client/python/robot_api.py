@@ -180,3 +180,17 @@ def robot_dance():
         print request.text
         return request.json()
 # End of Function: robot_dance()
+
+# Function: robot_stopDance()
+def robot_stopDance():
+        """
+            Sends to the robot's server an HTTP request so as to make it stop dancing.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending stop-dance request..."
+        payload = {}
+        request = requests.post( ROBOT_URL + ROBOT_URL_STOP_DANCE )
+        print request.text
+        return request.json()
+# End of Function: robot_stopDance()
