@@ -89,9 +89,11 @@ def robot_setPosition( x, y, z ):
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_setPosition " + x + " " + y + " " + z
+        print "Sending set-position request..."
+        payload = {'x': x, 'y': y, 'z': z}
+        request = requests.post( ROBOT_URL + ROBOT_URL_SET_POSITION, data=payload)
+        print request.text
+        return request.json()
 # End of Function: robot_setPosition( x, y, z )
 
 # Function: robot_tap( x, y )
