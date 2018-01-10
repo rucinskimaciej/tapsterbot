@@ -34,6 +34,10 @@ import re
 # Version of this Tapster2 Python client
 CLIENT_VERSION = "v1.0.0"
 
+# ************
+# Robot things
+# ************
+
 # IP address where the Tapster2 bot is reachable
 ROBOT_IP_ADDRESS = "127.0.0.1"
 
@@ -46,9 +50,13 @@ ROBOT_PROTOCOL = "http"
 # The URL to use to as to reach the robot
 ROBOT_URL = ROBOT_PROTOCOL + "://" + ROBOT_IP_ADDRESS + ":" + ROBOT_PORT
 
+# Delay in seconds between each tap
+WAIT_TIME_BETWEEN_TAP=0.3
+
 # ****************
 # URL of Robot API
 # ****************
+
 ROBOT_URL_GET_ANGLES = "/angles"
 ROBOT_URL_SET_ANGLES = "/setAngles"
 ROBOT_URL_GET_POSITION = "/position"
@@ -81,3 +89,4 @@ ROBOT_PATTERN_STATUS = re.compile("^status$")
 ROBOT_PATTERN_DANCE = re.compile("^dance$")
 ROBOT_PATTERN_STOP_DANCE = re.compile("^stop-dance$")
 ROBOT_PATTERN_SWIPE = re.compile("^swipe (\d+) (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_N_TAP = re.compile("^n-tap (\d+) (\d+) (\d+)$")

@@ -35,6 +35,7 @@ Since......: 10/01/2018
 
 import requests # You must install previously this module
 import json
+import time
 from config import *
 
 # *********
@@ -203,9 +204,26 @@ def robot_swipe( startX, startY, endX, endY ):
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        print "Sending set-position request..."
+        print "Sending swipe request..."
         payload = {'startX': startX, 'startY': startY, 'endX': endX, 'endY': endY}
         request = requests.post( ROBOT_URL + ROBOT_URL_SWIPE, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_swipe( x, y, z )
+
+# Function: robot_ntap( n, x, y )
+def robot_ntap( n, x, y ):
+        """
+            Sends to the robot's server n HTTP requests so as to tap n times on (x,y).
+            Parameters: n, x, y as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending "+ n + " tap requests..."
+        payload = {'x': x, 'y': y}
+        for i in range(0, int(n)):
+            request = requests.post( ROBOT_URL + ROBOT_URL_TAP, data=payload)
+            print request.text
+            time.sleep(WAIT_TIME_BETWEEN_TAP)
+        return request.json()
+# End of Function: robot_ntap( n, x, y )

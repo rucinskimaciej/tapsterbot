@@ -66,6 +66,7 @@ def help():
         print "\tget-position..............: Get the posiition of the arms in its 3D landmark"
         print "\tset-position x y z........: Sets the position of the bot in its 3D landmark at (x,y,z) coordinates"
         print "\ttap x y...................: Tap on (x,y) using the 2D landmark of the device"
+        print "\tn-tap n x y...............: Tap n times on (x,y) using the 2D landmark of the device"
         print "\tswipe x1 y1 x2 y2.........: Swipe from (x1, y1) to (x2, y2) using the 2D landmark of the device"
         print "\treset.....................: Resets the position of the bot"
         print "\tget-calibration...........: Gets the calibration data in use for the bot"
@@ -167,6 +168,11 @@ def isRobotCommand( command ):
 
     # swipe
     result = bool(ROBOT_PATTERN_SWIPE.match(command))
+    if result:
+        return True
+
+    # n-click
+    result = bool(ROBOT_PATTERN_N_TAP.match(command))
     if result:
         return True
 
@@ -303,6 +309,17 @@ def parseCommand( command ):
         splits = command.split( )
         if len(splits) == 5:
             robot_swipe(startX=splits[1], startY=splits[2], endX=splits[3], endY=splits[4])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
+    # n-tap
+    result = bool(ROBOT_PATTERN_N_TAP.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_ntap(n=splits[1], x=splits[2], y=splits[3])
             return True
         else:
             print "Bad parameters"
