@@ -75,9 +75,10 @@ def robot_getPosition():
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
-        # TODO
-        print "ERROR: Not implemented"
-        print "robot_getPosition"
+        print "Sending get-position request..."
+        request = requests.get( ROBOT_URL + ROBOT_URL_GET_POSITION )
+        print request.text
+        return request.json()
 # End of Function: robot_getPosition()
 
 # Function: robot_setPosition( x, y, z )
