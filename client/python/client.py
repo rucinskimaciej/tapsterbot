@@ -44,9 +44,9 @@ if __name__ == "__main__":
         command = askForCommand()
         if isSuitableCommand( command ):
             parseCommand( command )
-        elif command == "bye":
+        elif isStopCommand(command):
             stop = True
         else:
-            print "Nope."
+            print "Nope. Bad command."
     # Bye!
     print "Ok, bye!"

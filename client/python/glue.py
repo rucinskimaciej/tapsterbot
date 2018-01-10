@@ -144,6 +144,15 @@ def isSuitableCommand( command ):
 
 # End of function: isSuitableCommand( command )
 
+# Function isStopCommand( command )
+def isStopCommand( command ):
+        """
+            Checks if the command is a stop command.
+            Returns a boolean value, true if the command is good, false otherwise.
+        """
+        return bool(PATTERN_BYE.match(command))
+# End of function isStopCommand( command )
+
 # Function: parseCommand( command )
 def parseCommand( command ):
     """

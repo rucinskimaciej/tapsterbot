@@ -45,3 +45,4 @@ PATTERN_GET_CALIBRATION = re.compile("^get-calibration$")
 PATTERN_SET_CALIBRATION = re.compile("^set-calibration .+$") #FIXME Improve the regex to make it match to JSON calibration data string
 PATTERN_CONFIG = re.compile("^config$")
 PATTERN_HELP = re.compile("^help$")
+PATTERN_BYE = re.compile("^bye$")
