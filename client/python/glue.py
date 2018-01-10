@@ -181,8 +181,10 @@ def isConfigCommand( command ):
 def parseCommand( command ):
     """
         Parses the command the user has written.
+        Parameter: the command to parse.
         It will get the main keyword and then the arguments if needed.
         Once the real command has been found, the dedicated feature in the API will be triggered
+        Returns: True if the command has been weel parsed, False if a problem occred
     """
 
     # get-angles
@@ -194,36 +196,63 @@ def parseCommand( command ):
     # set-angles a b c
     result = bool(PATTERN_SET_ANGLES.match(command))
     if result:
-        return True
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_setAngles(theta1=splits[1], theta2=splits[2], theta3=splits[3])
+            return True
+        else:
+            print "Bad parameters"
+            return False
 
     # get-position
     result = bool(PATTERN_GET_POSITION.match(command))
     if result:
+        robot_getPosition()
         return True
 
     # set-position x y z
     result = bool(PATTERN_SET_POSITION.match(command))
     if result:
-        return True
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_setPosition(x=splits[1], y=splits[2], z=splits[3])
+            return True
+        else:
+            print "Bad parameters"
+            return False
 
     # tap x y
     result = bool(PATTERN_TAP.match(command))
     if result:
-        return True
+        splits = command.split( )
+        if len(splits) == 3:
+            robot_tap(x=splits[1], y=splits[2])
+            return True
+        else:
+            print "Bad parameters"
+            return False
 
     # reset
     result = bool(PATTERN_RESET.match(command))
     if result:
+        robot_reset()
         return True
 
     # get-calibration
     result = bool(PATTERN_GET_CALIBRATION.match(command))
     if result:
+        robot_getCalibration()
         return True
 
     # set-calibration JSON
     result = bool(PATTERN_SET_CALIBRATION.match(command))
     if result:
-        return True
+        splits = command.split( )
+        if len(splits) == 2:
+            robot_setCalibration(jsonData=splits[1])
+            return True
+        else:
+            print "Bad parameters"
+            return False
 
 # End of Function: parseCommand( command )

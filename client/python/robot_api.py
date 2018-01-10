@@ -51,7 +51,7 @@ def robot_setAngles( theta1, theta2, theta3 ):
         """
         # TODO
         print "ERROR: Not implemented"
-        print "robot_setAngles"
+        print "robot_setAngles " + str(theta1) + " " + str(theta2) + " " + str(theta3)
 # End of Function: robot_setAngles( theta1, theta1, theta3 )
 
 # Function: robot_getPosition()
@@ -76,7 +76,7 @@ def robot_setPosition( x, y, z ):
         """
         # TODO
         print "ERROR: Not implemented"
-        print "robot_setPosition"
+        print "robot_setPosition " + x + " " + y + " " + z
 # End of Function: robot_setPosition( x, y, z )
 
 # Function: robot_tap( x, y )
@@ -89,7 +89,7 @@ def robot_tap( x, y ):
         """
         # TODO
         print "ERROR: Not implemented"
-        print "robot_tap"
+        print "robot_tap " + x + " " + y
 # End of Function: robot_tap( x, y )
 
 # Function: robot_reset()
@@ -126,5 +126,5 @@ def robot_setCalibration( jsonData ):
         """
         # TODO
         print "ERROR: Not implemented"
-        print "robot_setCalibration"
+        print "robot_setCalibration " + jsonData
 # End of Function: robot_setCalibration( jsonData )
