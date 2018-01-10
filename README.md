@@ -32,7 +32,8 @@
 1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets. Done.
 2. bb8 - (tag: vBb8) - Verson with documentation and CURL commands. Done.
 3. c3po - Version with a client (written in Python) to use to drive the bot. Work in progress.
-4. dalek - A future version with a web client to use to drive the bot. Not started.
-5. deckard - A future version with Robot Framework keywords to use to drive the bot. Not started.
-6. eve - A future version with updated clients and keywords (draw star / circle / square / arc). Not started.
-7. Next step: integration in Appium?
+4. chappie - A future version with a web client to use to drive the bot. Not started.
+5. case - A future version with Robot Framework keywords to use to drive the bot. Not started.
+6. dalek - A future version with an Android client to use to drive the bot. Not started.
+7. deckard - A future version with updated clients and keywords (draw star / circle / square / arc). Not started.
+8. Next step: integration in Appium?
