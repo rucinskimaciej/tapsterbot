@@ -29,16 +29,47 @@ Version....: 1.0.0
 Since......: 10/01/2018
 """
 
+import argparse
+import sys
+
 from glue import *
 from config import *
 from commands_parser import *
 
 if __name__ == "__main__":
-    # Welcom guys!
+
+    # Check args if this execution is a "light" execution, i.e. without verbatims
+    parser = argparse.ArgumentParser(description='Python client for Tapster2 robot.')
+    parser.add_argument('--light', dest='command', help='Run in light mode, i.e. without verbatims nor prompts. Insert commands after --light', required=False)
+    parser.add_argument('--version', action='version', help='Displays the version of this program.', version='%(prog)s '+CLIENT_VERSION)
+    args = parser.parse_args()
+
+# In this case we are in light mode
+
+    if arg.command:
+        if isRobotCommand( command ):
+            parseCommand( command )
+        elif isHelpCommand(command):
+            help()
+        elif isConfigCommand(command):
+            config()
+        else:
+            print "ERROR: Bad command."
+        sys.exit()
+
+    if arg.version:
+        print "Version " + CLIENT_VERSION
+        sys.exit()
+
+# In that case we are in verbose / interactive mode
+
+    # Welcome guys!
     print "Version " + CLIENT_VERSION
     welcome()
+
     # Some help?
     help()
+
     # Deal with commands
     stop = False
     while not stop:
@@ -53,5 +84,6 @@ if __name__ == "__main__":
             stop = True
         else:
             print "Nope. Bad command."
+
     # Bye!
     print "Ok, bye!"
