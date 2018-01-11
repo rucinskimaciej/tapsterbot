@@ -57,10 +57,6 @@ if __name__ == "__main__":
             print "ERROR: Bad command."
         sys.exit()
 
-    if args.version:
-        print "Version " + CLIENT_VERSION
-        sys.exit()
-
 # In that case we are in verbose / interactive mode
 
     # Welcome guys!
