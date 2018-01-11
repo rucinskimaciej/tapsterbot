@@ -47,11 +47,11 @@ if __name__ == "__main__":
 # In this case we are in light mode
 
     if args.command:
-        if isRobotCommand( command ):
-            parseCommand( command )
-        elif isHelpCommand(command):
+        if isRobotCommand(args.command):
+            parseCommand(args.command)
+        elif isHelpCommand(args.command):
             help()
-        elif isConfigCommand(command):
+        elif isConfigCommand(args.command):
             config()
         else:
             print "ERROR: Bad command."
