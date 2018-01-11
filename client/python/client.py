@@ -70,7 +70,7 @@ if __name__ == "__main__":
     stop = False
     while not stop:
         command = askForCommand()
-        if isRobotCommand( command ):
+        if isRobotCommand(command):
             parseCommand( command )
         elif isHelpCommand(command):
             help()

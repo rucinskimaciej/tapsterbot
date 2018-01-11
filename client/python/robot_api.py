@@ -275,8 +275,8 @@ def robot_angForPos( x, y, z ):
 # Function: robot_stressSwipe( n, startX, startY, endX, endY )
 def robot_stressSwipe( n, startX, startY, endX, endY ):
         """
-            Sends to the robot's server an HTTP request so as to get the angles of the arms for the (x,y,z) 3D coordinates
-            Parameters: x, y, z as integer numbers.
+            Sends to the robot's server n HTTP requests for swipes from (startX, startY) to (endX, endY) with WAIT_TIME_STRESS_SWIPE duration between each swipe to as to stress the app.
+            Parameters:  n, startX, startY, endX, endY as integer numbers.
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
@@ -288,3 +288,20 @@ def robot_stressSwipe( n, startX, startY, endX, endY ):
             time.sleep(WAIT_TIME_STRESS_SWIPE)
         return request.json()
 # End of Function: robot_stressSwipe( n, startX, startY, endX, endY )
+
+# Function: robot_stressTap( n, x, y )
+def robot_stressTap( n, x, y  ):
+        """
+            Sends to the robot's server n HTTP requests for taps to (x, y) with WAIT_TIME_STRESS_TAP duration between each tap to as to stress the app.
+            Parameters:  n, x, y as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending "+ n + " tap requests..."
+        payload = {'x': x, 'y': y}
+        for i in range(0, int(n)):
+            request = requests.post( ROBOT_URL + ROBOT_URL_TAP, data=payload)
+            print request.text
+            time.sleep(WAIT_TIME_STRESS_TAP)
+        return request.json()
+# End of Function: robot_stressTap( n, x, y )

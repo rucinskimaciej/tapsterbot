@@ -56,6 +56,9 @@ WAIT_TIME_BETWEEN_TAP=0.5
 # Delay in seconds between each swipe during stress swipes process
 WAIT_TIME_STRESS_SWIPE=0.33
 
+# Delay in seconds between each tap during stress taps process
+WAIT_TIME_STRESS_TAP=0.25
+
 # ****************
 # URL of Robot API
 # ****************
@@ -99,3 +102,4 @@ ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD = re.compile("^posForScreen (\d+) (\d+)$
 ROBOT_PATTERN_ANGLES_FOR_POSITION = re.compile("^angForPos (-*\d+) (-*\d+) (-*\d+)$")
 ROBOT_PATTERN_CHECK = re.compile("^check$")
 ROBOT_PATTERN_STRESS_SWIPE = re.compile("^stress-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_STRESS_TAP = re.compile("^stress-tap (\d+) (\d+) (\d+)$")
