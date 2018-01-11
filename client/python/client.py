@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
 # In this case we are in light mode
 
-    if arg.command:
+    if args.command:
         if isRobotCommand( command ):
             parseCommand( command )
         elif isHelpCommand(command):
@@ -57,7 +57,7 @@ if __name__ == "__main__":
             print "ERROR: Bad command."
         sys.exit()
 
-    if arg.version:
+    if args.version:
         print "Version " + CLIENT_VERSION
         sys.exit()
 
