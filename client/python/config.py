@@ -51,7 +51,10 @@ ROBOT_PROTOCOL = "http"
 ROBOT_URL = ROBOT_PROTOCOL + "://" + ROBOT_IP_ADDRESS + ":" + ROBOT_PORT
 
 # Delay in seconds between each tap
-WAIT_TIME_BETWEEN_TAP=0.3
+WAIT_TIME_BETWEEN_TAP=0.5
+
+# Delay in seconds between each swipe during stress swipes process
+WAIT_TIME_STRESS_SWIPE=0.33
 
 # ****************
 # URL of Robot API
@@ -95,3 +98,4 @@ ROBOT_PATTERN_N_TAP = re.compile("^n-tap (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_POSITION_FOR_SCREEN_COORD = re.compile("^posForScreen (\d+) (\d+)$")
 ROBOT_PATTERN_ANGLES_FOR_POSITION = re.compile("^angForPos (-*\d+) (-*\d+) (-*\d+)$")
 ROBOT_PATTERN_CHECK = re.compile("^check$")
+ROBOT_PATTERN_STRESS_SWIPE = re.compile("^stress-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")

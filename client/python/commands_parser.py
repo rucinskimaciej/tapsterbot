@@ -129,6 +129,12 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # stress-swipe
+    result = bool(ROBOT_PATTERN_STRESS_SWIPE.match(command))
+    if result:
+        return True
+
+
     return False
 
 # End of Function: isRobotCommand( command )
@@ -278,5 +284,16 @@ def parseCommand( command ):
     if result:
         checkRobotConnection()
         return True
+
+    # stress swipe
+    result = bool(ROBOT_PATTERN_STRESS_SWIPE.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 6:
+            robot_stressSwipe(n=splits[1], startX=splits[2], startY=splits[3], endX=splits[4], endY=splits[5])
+            return True
+        else:
+            print "Bad parameters"
+            return False
 
 # End of Function: parseCommand( command )

@@ -271,3 +271,20 @@ def robot_angForPos( x, y, z ):
         print request.text
         return request.json()
 # End of Function: robot_angForPos( x, y, z )
+
+# Function: robot_stressSwipe( n, startX, startY, endX, endY )
+def robot_stressSwipe( n, startX, startY, endX, endY ):
+        """
+            Sends to the robot's server an HTTP request so as to get the angles of the arms for the (x,y,z) 3D coordinates
+            Parameters: x, y, z as integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending "+ n + " swipe requests..."
+        payload = {'startX': startX, 'startY': startY, 'endX': endX, 'endY': endY}
+        for i in range(0, int(n)):
+            request = requests.post( ROBOT_URL + ROBOT_URL_SWIPE, data=payload)
+            print request.text
+            time.sleep(WAIT_TIME_STRESS_SWIPE)
+        return request.json()
+# End of Function: robot_stressSwipe( n, startX, startY, endX, endY )
