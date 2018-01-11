@@ -68,8 +68,11 @@ if __name__ == "__main__":
 
     # Deal with commands
     stop = False
+    lastCommand = None
     while not stop:
         command = askForCommand()
+        if isRepeatCommand(command):
+            command = lastCommand
         if isRobotCommand(command):
             parseCommand( command )
         elif isHelpCommand(command):
@@ -80,6 +83,6 @@ if __name__ == "__main__":
             stop = True
         else:
             print "Nope. Bad command."
-
+        lastCommand = command
     # Bye!
     print "Ok, bye!"

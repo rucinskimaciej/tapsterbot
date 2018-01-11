@@ -78,6 +78,7 @@ def help():
         print "\tconfig....................: Display the global configuration in use"
         print "\tstatus....................: What is the status of the bot?"
         print "\tcheck.....................: Check if the robot's server is up"
+        print "\trepeat....................: Repeat the last executed command"
         print "\tdance.....................: Let's dance!"
         print "\tstop-dance................: Stop dancing"
         print "\tget-calibration...........: Get the calibration data in use for the bot"
@@ -139,3 +140,12 @@ def isConfigCommand( command ):
         """
         return bool(ROBOT_PATTERN_CONFIG.match(command))
 # End of Function isConfigCommand( command )
+
+# Function isRepeatCommand( command )
+def isRepeatCommand( command ):
+        """
+            Checks if the command is a repeat command.
+            Returns a boolean value, true if the command is good, false otherwise.
+        """
+        return bool(ROBOT_PATTERN_REPEAT.match(command))
+# End of Function isRepeatCommand( command )

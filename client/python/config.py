@@ -103,3 +103,4 @@ ROBOT_PATTERN_ANGLES_FOR_POSITION = re.compile("^angForPos (-*\d+) (-*\d+) (-*\d
 ROBOT_PATTERN_CHECK = re.compile("^check$")
 ROBOT_PATTERN_STRESS_SWIPE = re.compile("^stress-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_STRESS_TAP = re.compile("^stress-tap (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_REPEAT = re.compile("^repeat$")
