@@ -33,6 +33,9 @@ Since......: 10/01/2018
 # IMPORTS
 # *******
 
+# For robot connection check process
+import requests
+
 # For regular expressions and patterns
 from config import *
 
@@ -73,6 +76,7 @@ def help():
         print "\treset.....................: Reset the position of the bot"
         print "\tconfig....................: Display the global configuration in use"
         print "\tstatus....................: What is the status of the bot?"
+        print "\tcheck.....................: Check if the robot's server is up"
         print "\tdance.....................: Let's dance!"
         print "\tstop-dance................: Stop dancing"
         print "\tget-calibration...........: Get the calibration data in use for the bot"
@@ -188,6 +192,11 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # robot's connection
+    result = bool(ROBOT_PATTERN_CHECK.match(command))
+    if result:
+        return True
+
     return False
 
 # End of Function: isRobotCommand( command )
@@ -218,6 +227,22 @@ def isConfigCommand( command ):
         """
         return bool(ROBOT_PATTERN_CONFIG.match(command))
 # End of Function isConfigCommand( command )
+
+# Function: checkRobotConnection()
+def checkRobotConnection():
+    """
+        Checks the robot server's connection, i.e. if the server is running.
+        Returns the True if status code is 200, False otherwise
+    """
+    # FIXME Make a better management
+    try:
+        r = requests.head(ROBOT_URL+"/status")
+        print "Connection made. Status code: " + str(r.status_code)
+        return r.status_code == 200
+    except requests.exceptions.ConnectionError:
+        print "Connection error"
+        return False
+# End of Function: checkRobotConnection()
 
 # Function: parseCommand( command )
 def parseCommand( command ):
@@ -358,5 +383,11 @@ def parseCommand( command ):
         else:
             print "Bad parameters"
             return False
+
+    # check robot's server connection
+    result = bool(ROBOT_PATTERN_CHECK.match(command))
+    if result:
+        checkRobotConnection()
+        return True
 
 # End of Function: parseCommand( command )
