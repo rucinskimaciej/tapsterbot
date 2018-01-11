@@ -1,5 +1,8 @@
 ## Frequently Asked Questions
 
+* Who has created the Tapster bot ?
+  * Have a look on [Tapster ](http://tapster.io/ "Tapster.io website")
+  
 * Why use Appium?
   * Appium has been created by the same person who created Tapster
   * Appium is quite powerful is we want to deal with mobile native or web apps with only one script
