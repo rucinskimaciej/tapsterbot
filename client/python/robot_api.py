@@ -42,6 +42,22 @@ from config import *
 # FUNCTIONS
 # *********
 
+# Function: checkRobotConnection()
+def checkRobotConnection():
+    """
+        Checks the robot server's connection, i.e. if the server is running.
+        Returns the True if status code is 200, False otherwise
+    """
+    # FIXME Make a better management
+    try:
+        r = requests.head(ROBOT_URL+"/status")
+        print "Connection made. Status code: " + str(r.status_code)
+        return r.status_code == 200
+    except requests.exceptions.ConnectionError:
+        print "Connection error"
+        return False
+# End of Function: checkRobotConnection()
+
 # Function: robot_getAngles()
 def robot_getAngles():
         """

@@ -31,6 +31,7 @@ Since......: 10/01/2018
 
 from glue import *
 from config import *
+from commands_parser import *
 
 if __name__ == "__main__":
     # Welcom guys!
