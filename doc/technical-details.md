@@ -8,11 +8,15 @@
 - You can read the following issue: https://github.com/appium/appium/issues/9367
 - Feel free to help the community behind Tapster so as to bring fun, automation and bot on your desk!
 
-## Dependencies
+## Dependencies for bot Node.js server
 - Node.js (8.6.0) (required)
 - npm (5.3.0) (required)
 - nvm (0.33.4)
 - one Tapster robot (OpenSCAD, STL, JavaScript and other files available in this repo)
+- hapi.js (>= v17)
+
+## Dependencies for Python client
+ - requests
 
 ## Some commands to run to install Node.js libs
 ```shell

@@ -8,6 +8,7 @@
 - Extend your software-based instrumented tests (using UI Automator, Espresso, Kakao, Appium or whatever) with hardware-based tests
 - Deal with secured elements on which no software can click
 - Be as close as possible of the ideal use case (users use their fingers to click :3)
+- Get a new tool for software development and mobile app tests: robots!
 
 ## Some references and things to see
 - http://www.tapster.io (the creator of the Tapster bots)
@@ -31,7 +32,7 @@
 ## Versions
 1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets. Done.
 2. bb8 - (tag: vBb8) - Verson with documentation and CURL commands. Done.
-3. c3po - Version with a client (written in Python) to use to drive the bot. Work in progress.
+3. c3po - (tag: vC3po) - Version with a client (written in Python) to use to drive the bot. Done.
 4. chappie - A future version with a web client to use to drive the bot. Not started.
 5. case - A future version with Robot Framework keywords to use to drive the bot. Not started.
 6. dalek - A future version with an Android client to use to drive the bot. Not started.
