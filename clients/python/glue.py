@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: glue.py
 Brief......: File including all the Python glue to use for the client, except the API of the bot
 Author.....: pylapp
-Version....: 1.0.0
+Version....: 2.1.0
 Since......: 10/01/2018
 """
 
@@ -35,6 +35,12 @@ Since......: 10/01/2018
 
 # For robot connection check process
 import requests
+
+# To wait between each cascaded command
+import time
+
+# For files
+import os.path
 
 # For regular expressions and patterns
 from config import *
@@ -67,8 +73,9 @@ def help():
         print "Here are the commands you can use for the Tapster2 bot:"
         print "\ttap x y...................: Tap on (x,y) using the 2D landmark of the device"
         print "\tn-tap n x y...............: Tap n times on (x,y) using the 2D landmark of the device"
-        print "\tstress-tap n x y..........: Make n tap on (x, y) with a dedicated duration between each swipe which can be short enough to stress the app"
+        print "\tstress-tap n x y..........: Make n taps on (x, y) with a dedicated duration between each swipe which can be short enough to stress the app"
         print "\tswipe x1 y1 x2 y2.........: Swipe from (x1, y1) to (x2, y2) using the 2D landmark of the device"
+        print "\tn-swipe n x1 y1 x2 y2.....: Make n swipes from (x1, y1) to (x2, y2) using the 2D landmark of the device"
         print "\tstress-swipe n x1 y1 x2 y2: Make n swipe from (x1, y1) to (x2, y2) with a dedicated duration between each swipe which can be short enough to stress the app"
         print "\treset.....................: Reset the position of the bot"
         print "\tget-angles................: Get the angles of the arms of the bot"
@@ -83,6 +90,7 @@ def help():
         print "\tstop-dance................: Stop dancing"
         print "\tget-calibration...........: Get the calibration data in use for the bot"
         print "\tset-calibration JSON......: Define the calibraiton data to use for the bot, defined in JSON format"
+        print "\tcontact-z.................: Get the Z-axis value of the contact point, i.e. the point where the device's screen should be touched"
         print "\tposForScreen x y..........: Get the position of the bot for these (x,y) screen-based coordinates"
         print "\tangForPos x y z...........: Get the angles of the arms for the (x,y,z) 3D coordinates"
         print "\thelp......................: Display this help"
@@ -97,13 +105,77 @@ def config():
         Displays the configuration in use.
     """
     print ""
-    print "\tVersion of Python client.......: " + CLIENT_VERSION
-    print "\tIP address of the robot........: " + ROBOT_IP_ADDRESS
-    print "\tPort fo the robot..............: " + ROBOT_PORT
-    print "\tProtocol of the robot..........: " + ROBOT_PROTOCOL
-    print "\tURl of the robot...............: " + ROBOT_URL
+    print "\tVersion of Python client...............: " + CLIENT_VERSION
+    print "\tRobot's server URL.....................: " + config.ROBOT_URL
+    print "\tWait between tap (s)...................: " + str(WAIT_TIME_BETWEEN_TAP)
+    print "\tWait between stress swipe (s)..........: " + str(WAIT_TIME_STRESS_SWIPE)
+    print "\tWait between cascaded ops (s)..........: " + str(WAIT_BETWEEN_CASCADED_OPERATION)
+    print "\tWait between stress tap (s)............: " + str(WAIT_TIME_STRESS_TAP)
+    print "\tEscape symbol..........................: '" + ESCAPE_SYMBOL + "'"
+    print "\tDefault IP address of the robot........: " + DEFAULT_ROBOT_IP_ADDRESS
+    print "\tDefault port fo the robot..............: " + DEFAULT_ROBOT_PORT
+    print "\tDefault protocol of the robot..........: " + DEFAULT_ROBOT_PROTOCOL
+    print "\tDefault URl of the robot...............: " + DEFAULT_ROBOT_URL
     print ""
 # End of Function: config()
+
+# Function: checkFile( path )
+def checkFile( path ):
+    """
+        Checks if the target at the end of the path is a file.
+        Returns True if a file, False otherwise
+    """
+    return os.path.isfile(path)
+
+# Ed of Function: checkFile( path )
+
+# Function: processCommandsFile( path )
+def processCommandsFile( path ):
+    """
+        Processes the file at this path, file containing commands separated by a line break.
+        WIll parse each line as a command, except if the line starts with a #
+    """
+
+    # Parse the file
+    with open(path) as file:
+        lines = [line.strip() for line in file]
+
+    # Remove empty lines
+    lines = [line for line in lines if len(line) > 0]
+
+    # Process each line
+    lastCommand = None
+    command = None
+    for line in lines:
+
+        # Check if commented command
+        if line.startswith(ESCAPE_SYMBOL):
+            print "Escaped command."
+            continue
+        # Repeat command, but check previously if there was a previous command
+        if isRepeatCommand(line):
+            if lastCommand == None:
+                print "Nope. Did you want to repeat nothing?"
+                continue
+            command = lastCommand
+        else:
+            command = line
+        # Command for robot
+        if isRobotCommand(command):
+            parseCommand(command)
+        # Client-help command
+        elif isHelpCommand(command):
+            help()
+        # Client-config command
+        elif isConfigCommand(command):
+            config()
+        else:
+            print "Nope. Bad command: " + command
+            continue
+        lastCommand = command
+        time.sleep(WAIT_BETWEEN_CASCADED_OPERATION)
+
+# End of Function: processCommandsFile( path )
 
 # Function: askForCommand()
 def askForCommand():

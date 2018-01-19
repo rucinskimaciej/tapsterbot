@@ -29,7 +29,7 @@ For Android
     "platformName": "Android",
     "platformVersion": "the version of the OS",
     "deviceName": "a name for your device",
-    "autoLaunch": "true"
+    "autoLaunch": "true",
     "appPackage": "pylapp.tapster.calibration.android",
     "appActivity": "pylapp.tapster.calibration.android.MainActivity"
   }'
@@ -44,6 +44,9 @@ Be sure you have adb in your PATH
 ```shell
 	node calibrate.js -o calibration.json
 ```
+
+Be sure you have previously filled the JSON capabilities file available in the _capabilities_ folder.
+
 
 ## I didn't all understand
 

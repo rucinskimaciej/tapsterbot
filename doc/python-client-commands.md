@@ -1,77 +1,82 @@
-# Commands to sue with Python client
+# Commands to use with Python client
 
 **Tap on (x, y)**  
-```python
+```shell
   tap x y
 ```
 
 **Tap n times on (x, y)**  
-```python
+```shell
   n-tap n x y
 ```
 
 **Stress the app with n fast taps on (x, y)**  
-```python
+```shell
   stress-tap n x y
 ```
 
 **Swipe/scroll from (x1, y1) to (x2, y2)**  
-```python
+```shell
   swipe x1 y1 x2 y2
 ```
 
+**Swipe n times from (a,b) to (c,d)**  
+```shell
+  n-swipe n a b c d
+```
+
 **Stress the app with n fast swipes from (x1, y1) to (x2, y2)**  
-```python
+```shell
   stress-swipe n x1 y1 x2 y2
 ```
 
 **Reset position of the arms**  
-```python
+```shell
   reset
 ```
 
 **Get angles of the robot's arms**  
-```python
+```shell
   get-angles
 ```
 
 **Defines angles of the arms to a, b and c**  
-```python
+```shell
   set-angles a b c
 ```
 
 **Get the position of the robot (i.e. 3D coordinates in use)**  
-```python
+```shell
   get-position
 ```
 
 **Define the 3D position the robot should set**  
-```python
+```shell
   set-position x y z
 ```
 
 **Get the configuration of the robot**  
-```python
+```shell
   config
 ```
 
 **Get the status of the robot**  
-```python
+```shell
   status
 ```
 
 **Check if the connection to the robot server is made**  
-```python
+```shell
   check
 ```
 
 **Repeat the last executed command**  
-```python
+```shell
   repeat
 ```
 
 **Make the robot dance!**  
-```python
+```shell
   dance
 ```
 
@@ -81,12 +86,12 @@
 ```
 
 **Get calibration data in use**  
-```python
+```shell
   get-calibration
 ```
 
 **Set the calibration (JSON-data) the robot must use**  
-```python
+```shell
   set-calibration JSON-data
 ```
 
@@ -98,6 +103,11 @@
 **Get the angles of the bot arms for the (x, y, z) coordinates**  
 ```python
   angForPos x y z
+```
+
+**Get the Z-axis valiue where the contact between the bot's finger and the device's screen is amde**  
+```python
+  contactZ
 ```
 
 **I wanna help please!**  

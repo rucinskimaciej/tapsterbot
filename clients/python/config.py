@@ -25,39 +25,51 @@ SOFTWARE.
 File.......: config.py
 Brief......: File including configuration to use and to apply on the client
 Author.....: pylapp
-Version....: 1.0.0
+Version....: 1.2.0
 Since......: 10/01/2018
 """
 
 import re
 
 # Version of this Tapster2 Python client
-CLIENT_VERSION = "v1.0.0"
+CLIENT_VERSION = "v2.1.0"
 
 # ************
 # Robot things
 # ************
 
-# IP address where the Tapster2 bot is reachable
-ROBOT_IP_ADDRESS = "127.0.0.1"
+# Default IP address where the Tapster2 bot is reachable
+DEFAULT_ROBOT_IP_ADDRESS = "127.0.0.1"
 
-# Port to use to as to reach the robot
-ROBOT_PORT = "4242"
+# Default port to use to as to reach the robot
+DEFAULT_ROBOT_PORT = "4242"
 
-# The protocol to use for the robot
-ROBOT_PROTOCOL = "http"
+# Default protocol to use for the robot
+DEFAULT_ROBOT_PROTOCOL = "http"
 
-# The URL to use to as to reach the robot
-ROBOT_URL = ROBOT_PROTOCOL + "://" + ROBOT_IP_ADDRESS + ":" + ROBOT_PORT
+# Default URL to use to as to reach the robot
+DEFAULT_ROBOT_URL = DEFAULT_ROBOT_PROTOCOL + "://" + DEFAULT_ROBOT_IP_ADDRESS + ":" + DEFAULT_ROBOT_PORT
+
+# The URL of the robot's server which will be used / may be overriden by the user
+ROBOT_URL = DEFAULT_ROBOT_URL
 
 # Delay in seconds between each tap
 WAIT_TIME_BETWEEN_TAP=0.5
+
+# Delay in seconds between each swipe
+WAIT_TIME_BETWEEN_SWIPE=0.5
 
 # Delay in seconds between each swipe during stress swipes process
 WAIT_TIME_STRESS_SWIPE=0.33
 
 # Delay in seconds between each tap during stress taps process
 WAIT_TIME_STRESS_TAP=0.25
+
+# Deal in seconds between each operation picked and triggered from a commands file
+WAIT_BETWEEN_CASCADED_OPERATION = 2
+
+# The escape symbol to commnt a command store din the commands files
+ESCAPE_SYMBOL = "#"
 
 # ****************
 # URL of Robot API
@@ -77,6 +89,7 @@ ROBOT_URL_STOP_DANCE = "/stopDancing"
 ROBOT_URL_SWIPE = "/swipe"
 ROBOT_URL_POSITION_FOR_SCREEN_COORD = "/positionForScreenCoordinates"
 ROBOT_URL_ANGLES_FOR_POSITION = "/anglesForPosition"
+ROBOT_URL_CONTACT_Z = "/contactZ"
 
 # ********************************
 # Regular expressions for commands
@@ -104,3 +117,5 @@ ROBOT_PATTERN_CHECK = re.compile("^check$")
 ROBOT_PATTERN_STRESS_SWIPE = re.compile("^stress-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_STRESS_TAP = re.compile("^stress-tap (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_REPEAT = re.compile("^repeat$")
+ROBOT_PATTERN_CONTACT_Z = re.compile("^contact-z$")
+ROBOT_PATTERN_N_SWIPE = re.compile("^n-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")

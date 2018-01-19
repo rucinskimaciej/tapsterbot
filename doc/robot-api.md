@@ -16,16 +16,15 @@ Discovered files:
 
 HTTP methods in use: GET, POST
 
-| Method        	| Parameters    		| Encoding for results  | Format for results  |
-| ----------------------|:-----------------------------:|:---------------------:|:-------------------:|
-| GET           	| host, port, path 		| UTF-8              	| JSON                |
-| POST           	| host, port, path, method=POST | UTF-8              	| JSON                |
+| Method        	| Parameters    								| Encoding for results  | Format for results  |
+| ----------------|:-----------------------------:|:---------------------:|:-------------------:|
+| GET           	| host, port, path 							| UTF-8              		| JSON                |
+| POST           	| host, port, path, method=POST | UTF-8              		| JSON                |
 
 
 ### List of features
 
 This base URL matches the following pattern: https://_robot-address_:_robot-port_ _uri_ (e.g. http://127.0.0.1:4242)
-It matches the URL and payload format used in Python client using [hapi.js](https://hapijs.com/ "Hapi website") and [Requests](http://docs.python-requests.org/en/master/ "Requests webpage") libraries.
 
 
 | Feature       			    | Method        | Path                  			| Body data           							| Comment             															|
@@ -45,3 +44,4 @@ It matches the URL and payload format used in Python client using [hapi.js](http
 | Send keys		    		    | POST          | /sendKeys               			| 						 			| _Not implemented yet_ 														|
 | Get calibration data   		    | GET           | /calibrationData      			| _not defined_       							| Gets the claibration data used by the bot												|
 | Set calibration data    		    | POST          | /setCalibrationData   			| _JSON format of calibration data_					| Defines the claibration data the robot should use											|
+| Get the Z-axis value contact 		    | GET           | /contactZ		   			| _not define_								| Gets the Z-axis value of the robot where the device's screen should be touched							|

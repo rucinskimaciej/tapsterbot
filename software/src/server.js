@@ -201,9 +201,8 @@ board.on("ready", function(){
       console.log("POST " + request.path + ": ");
       var x = parseFloat(request.payload.x);
       var y = parseFloat(request.payload.y);
-      return robot.tap(x,y,function() {
-        return getCommonReponseObject(null, '"OK"');
-      });
+      robot.tap( x, y, function(){return getCommonReponseObject(null, '"OK"')} );
+      return getCommonReponseObject( null, robot.getPosition());
     }
   });
 
@@ -216,9 +215,8 @@ board.on("ready", function(){
       var startY = parseFloat(request.payload.startY);
       var endX = parseFloat(request.payload.endX);
       var endY = parseFloat(request.payload.endY);
-      return robot.swipe(startX,startY,endX,endY,function() {
-        return getCommonReponseObject(null, '"OK"');
-      });
+      robot.swipe( startX, startY, endX, endY, function(){return getCommonReponseObject(null, '"OK"')} );
+      return getCommonReponseObject( null, robot.getPosition());
     }
   });
 
@@ -251,6 +249,15 @@ board.on("ready", function(){
       var newData = JSON.parse(request.payload.newData);
       robot.setCalibrationData(newData);
       return getCommonReponseObject(null, robot.getCalibrationData());
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path:'/contactZ',
+    handler: function (request, h) {
+      console.log("GET " + request.path + ": ");
+      return getCommonReponseObject(null, {z: robot.getContactZ()} );
     }
   });
 

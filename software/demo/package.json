@@ -3,32 +3,25 @@
    "description": "Mobile automation robot",
    "version": "2.0.0",
    "homepage": "",
-   "authors": [
+   "author": [
       {
          "name": "Jason Huggins",
          "email": "jrhuggins@gmail.com"
-      },
-      {
-         "name": "Pierre-Yves Lapersonne",
-         "email": "pylapp.pylapp+tapster@gmail.com"
       }
    ],
    "repository": {
       "type": "git",
-      "url": "https://github.com/pylapp/tapsterbot"
+      "url": "https://github.com/tapsterbot/tapsterbot.git"
    },
    "engines": {
       "node": "*"
    },
    "dependencies": {
-      "prompt": "*",
-      "fs": "*",
-      "os": "*",
-      "argparse": "*",
-      "wd": "*",
-      "hapi": "*",
-      "path": "*",
       "johnny-five": "*",
-      "sylvester": "*"
+      "svg-path-parser": "*",
+      "xml2js": "*",
+      "express": "*",
+      "body-parser": "*",
+      "fs": "*"
    }
 }

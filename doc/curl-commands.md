@@ -41,6 +41,12 @@ _Command:_ curl --data "newData={\"status\":0,\"data\":{\"restPoint\":{\"x\":30,
 _Results:_ {"status":0,"data":{"status":0,"data":{"restPoint":{"x":30,"y":30,"z":-140},"servo1":{"minimumAngle":20,"maximumAngle":90},"servo2":{"minimumAngle":20,"maximumAngle":90},"servo3":{"minimumAngle":20,"maximumAngle":90}}}}
 
 
+**Get contact Z**  
+_Command:_ curl http://127.0.0.1:4242/contactZ  
+_Results:_
+{"status":0,"data":{"z":-151.5}}
+
+
 **Welcome**  
 _Command:_ curl http://127.0.0.1:4242/  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  

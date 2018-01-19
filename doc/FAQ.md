@@ -2,7 +2,7 @@
 
 * Who has created the Tapster bot ?
   * Have a look on [Tapster ](http://tapster.io/ "Tapster.io website")
-  
+
 * Why use Appium?
   * Appium has been created by the same person who created Tapster
   * Appium is quite powerful is we want to deal with mobile native or web apps with only one script
@@ -38,3 +38,10 @@
 
 * How can I test quickly the HTTP requests the robot can deal?
   * You can have a look on [this file](https://github.com/pylapp/tapsterbot/blob/bb8/doc/curl-commands.md "CURL commands and results")
+
+* How can I reach my bot available at xxx.xxx.xxx.xxx:yyyy?
+  * Define the IP address and the port in the client you use
+  * Run the bot's server with the dedicated parameters (--address and --port)
+
+* And if my Tapster robot screams "Exterminate!"?
+  * Call The Doctor.

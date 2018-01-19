@@ -226,7 +226,7 @@ var calibrateRobot = function(cb){
  * @return {json} capabilities - The desired capabilities to use so as to deal with the good calibration app in the good device
  */
 var readIosDesiredCapabilities = function(){
-  return JSON.parse(fs.readFileSync('../capabilities/ios-desired-capabilities.json', 'utf8'));
+  return JSON.parse(fs.readFileSync('../calibration/capabilities/ios-desired-capabilities.json', 'utf8'));
 }
 
 /**
@@ -235,7 +235,7 @@ var readIosDesiredCapabilities = function(){
  * @return {json} capabilities - The desired capabilities to use so as to deal with the good calibration app in the good device
  */
 var readAndroidDesiredCapabilities = function(){
-  return JSON.parse(fs.readFileSync('../capabilities/android-desired-capabilities.json', 'utf8'));
+  return JSON.parse(fs.readFileSync('../calibration/capabilities/android-desired-capabilities.json', 'utf8'));
 }
 
 /**

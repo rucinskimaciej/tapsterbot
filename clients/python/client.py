@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: client.py
 Brief......: The Python client to use soa s to drive the Tapster2 bot
 Author.....: pylapp
-Version....: 1.0.0
+Version....: 2.0.0
 Since......: 10/01/2018
 """
 
@@ -40,21 +40,44 @@ if __name__ == "__main__":
 
     # Check args if this execution is a "light" execution, i.e. without verbatims
     parser = argparse.ArgumentParser(description='Python client for Tapster2 robot.')
-    parser.add_argument('--light', dest='command', help='Run in light mode, i.e. without verbatims nor prompts. Insert commands after --light', required=False)
+    parser.add_argument('--url', dest='roborserverurl', help="The URL of the robot's server", required=False)
+    parser.add_argument('--light', dest='command', help='Run in light mode, i.e. without verbatims nor prompts.', required=False)
+    parser.add_argument('--file', dest='commandsfile', help='Load a file at this path containing a list of commands to process seperated by a line break.', required=False)
     parser.add_argument('--version', action='version', help='Displays the version of this program.', version='%(prog)s '+CLIENT_VERSION)
     args = parser.parse_args()
+
+    if args.roborserverurl:
+        config.ROBOT_URL = args.roborserverurl
+    else:
+        config.ROBOT_URL = DEFAULT_ROBOT_URL
 
 # In this case we are in light mode
 
     if args.command:
-        if isRobotCommand(args.command):
-            parseCommand(args.command)
-        elif isHelpCommand(args.command):
+        if not checkRobotConnection():
+            sys.exit()
+        command = args.command
+        if isRobotCommand(command):
+            parseCommand(command)
+        elif isHelpCommand(command):
             help()
-        elif isConfigCommand(args.command):
+        elif isConfigCommand(command):
             config()
         else:
-            print "ERROR: Bad command."
+            print "ERROR: Bad command: '" + command + "'"
+        sys.exit()
+
+# In this case we are in commandsfile mode
+
+    if args.commandsfile:
+        if not checkRobotConnection():
+            sys.exit()
+        pathOfFile = args.commandsfile
+        if checkFile(pathOfFile):
+            print "Will process file: '" + pathOfFile + "'"
+            processCommandsFile(pathOfFile)
+        else:
+            print "ERROR: File not found: '" + commandsFile + "'"
         sys.exit()
 
 # In that case we are in verbose / interactive mode
@@ -62,6 +85,8 @@ if __name__ == "__main__":
     # Welcome guys!
     print "Version " + CLIENT_VERSION
     welcome()
+
+    checkRobotConnection()
 
     # Some help?
     help()
@@ -82,7 +107,7 @@ if __name__ == "__main__":
         elif isStopCommand(command):
             stop = True
         else:
-            print "Nope. Bad command."
+            print "Nope. Bad command: '" + command + "'"
         lastCommand = command
     # Bye!
     print "Ok, bye!"
