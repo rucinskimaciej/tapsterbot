@@ -18,7 +18,10 @@
 ## Dependencies for Python client
  - requests
 
-## Some commands to run to install Node.js libs
+## Dependencies for Robot Framework keywords client
+ - robotframework-requests
+
+## Some commands to run to install Node.js, third-party libraries and other dependencies
 ```shell
   npm install argparse;
   npm install hapi;
@@ -26,7 +29,21 @@
   npm install sylvester;
   npm install prompt;
   npm install wd;
+  npm install fs;
+  npm install os;
+  npm install path;
+  npm install svg-path-parser;
+  npm install xml2js;
+  npm install express;
+  npm install body-parser;
+  pip install -U requests;
+  pip install -U robotframework-requests;
 ```
+You can also run
+```shell
+  npm install
+```
+in folders having a _package.json_ file.
 
 ## Warning
 The [hapi](https://hapijs.com/ "Go to hapi") dependence had a major evolution with its [v17](https://github.com/hapijs/hapi/issues/3658 "Breaking changes"), and the "legacy" server.js in the orignal tapsterbot repository won't work.

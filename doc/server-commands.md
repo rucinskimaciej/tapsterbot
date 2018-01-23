@@ -1,11 +1,11 @@
 # Commands to use to start the server
 
-## Run the server with the basic dconfiguration (127.0.0.1:4242):
+## Run the server with the basic configuration (127.0.0.1:4242):
 ```shell
   node server.js
 ```
 
-## Run the server with the basic dconfiguration (127.0.0.1:4242) and the claibration data:
+## Run the server with the basic configuration (127.0.0.1:4242) and the calibration data:
 ```shell
   node server.js --calibration path-to-JSON-file
 ```

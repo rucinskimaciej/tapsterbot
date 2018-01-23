@@ -43,5 +43,14 @@
   * Define the IP address and the port in the client you use
   * Run the bot's server with the dedicated parameters (--address and --port)
 
+* I cannot start the server.js script, an exception related to johnny-five or the board occurs.
+  * Be sure you can use the port on which the robot has been plugged.
+  * You can run the Arduino IDE, and get the port in use. For example on Ubuntu it may be _dev/ttyACM0_
+  * Then according to this [post](http://arduino-er.blogspot.fr/2014/08/arduino-ide-error-avrdude-seropen-cant.html), you may allow the use of this port using the commands:
+  ```shell
+    sudo usermod -a -G dialout <username>;
+    sudo chmod a+rw <port>;
+  ```
+
 * And if my Tapster robot screams "Exterminate!"?
-  * Call The Doctor.
+  * Call The Doctor and run you clever boy!
