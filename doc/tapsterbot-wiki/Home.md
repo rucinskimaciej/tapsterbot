@@ -7,3 +7,6 @@ Tapster is a robot which bring automation to your tests. Instead of using softwa
 Tapster can make all the basic things a user can do with one finger. Click, swipe, draw, there are a lot of combinations! It makes your test cases closer to the real use cases: users have fingers to click on widgets, not softwares ;-D
 
 Ready to start? Bring automation and fun to your office!
+
+
+![Usage of the robot](https://github.com/pylapp/tapsterbot/blob/update-doc/doc/tapsterbot-wiki/assets/0%20-%20misc/usage.jpeg)

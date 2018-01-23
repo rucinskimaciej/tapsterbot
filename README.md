@@ -1,6 +1,6 @@
 # Tapster - Mobile Automation Robot
 
-![A Taspter2 bot](desktop.jpeg)
+![A Taspter2 bot](Tapsterbot - Robot As A Service.png)
 
 ## Why using such bot?
 - Bring fun in your office
