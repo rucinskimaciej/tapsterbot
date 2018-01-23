@@ -30,7 +30,7 @@
 - [FAQ](https://github.com/pylapp/tapsterbot/blob/bb8/doc/FAQ.md)
 
 ## Versions
-1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets. Done.
-2. bb8 - (tag: vBb8) - Verson with documentation and CURL commands. Done.
-3. c3po - (tag: vC3po) - Version with a client (written in Python) to use to drive the bot. Done.
+1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets.
+2. bb8 - (tag: vBb8) - Verson with documentation and CURL commands.
+3. c3po - (tag: vC3po) - Version with a client (written in Python) to use to drive the bot.
 4. chappie - (tag: vChappie) - Version with Robot Framework keywords to use to drive the bot. Improved Python client. Cleaner files tree.
