@@ -9,4 +9,4 @@ Tapster can make all the basic things a user can do with one finger. Click, swip
 Ready to start? Bring automation and fun to your office!
 
 
-![Usage of the robot](https://github.com/pylapp/tapsterbot/blob/update-doc/doc/tapsterbot-wiki/assets/0%20-%20misc/usage.jpeg)
+![Usage of the robot](https://github.com/pylapp/tapsterbot/blob/master/doc/tapsterbot-wiki/assets/0%20-%20misc/usage.jpeg)

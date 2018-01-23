@@ -2,7 +2,7 @@
 
 ## If you are using Tapster with Appium
 - Do not install Appium or Node.js with sudo
-- Since massive refactoring (1.4 -> 1.5), only Appium 1.4 supports Tapster bot
+- Since massive refactoring (1.4 -> 1.5), only Appium 1.4 supports Tapster bot but this version is deprecated
 - Work is in progress to add drivers to Appium
 - You can read the following thread: https://discuss.appium.io/t/integration-of-tapster-2-to-appium/19010
 - You can read the following issue: https://github.com/appium/appium/issues/9367

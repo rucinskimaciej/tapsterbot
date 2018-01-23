@@ -1,16 +1,4 @@
-# API of Tapser robot
-
-### About files
-
-Discovered files:
-- calibrate.js
-	.. see HTTP client
-- robot_http_client.js
-	.. definitions of URL for agnles, positions, claibration data, tap...
-- bot.js
-	.. definitionss of URL for arc, circle, welcome and go
-- json-api.md
-	.. details about methods of bot.js
+# API of Tapster2 robot
 
 ### HTTP methods in use
 
