@@ -23,7 +23,7 @@
 - https://speakerdeck.com/pylapp/why-not-tapster
 
 ## Documentation
-- [Getting started](https://github.com/pylapp/tapsterbot/blob/master/doc/getting-started.md))
+- [Getting started](https://github.com/pylapp/tapsterbot/blob/master/doc/getting-started.md)
 - [Calibration of the bot](https://github.com/pylapp/tapsterbot/blob/master/doc/calibration-workflow.md)
 - [Robot HTTP API](https://github.com/pylapp/tapsterbot/blob/master/doc/robot-api.md)
 - [Technical details](https://github.com/pylapp/tapsterbot/blob/master/doc/technical-details.md)
