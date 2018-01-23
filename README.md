@@ -23,11 +23,11 @@
 - https://speakerdeck.com/pylapp/why-not-tapster
 
 ## Documentation
-- [Getting started](https://github.com/pylapp/tapsterbot/blob/bb8/doc/getting-started.md)
-- [Calibration of the bot](https://github.com/pylapp/tapsterbot/blob/bb8/doc/calibration-workflow.md)
-- [Robot HTTP API](https://github.com/pylapp/tapsterbot/blob/bb8/doc/robot-api.md)
-- [Technical details](https://github.com/pylapp/tapsterbot/blob/bb8/doc/technical-details.md)
-- [FAQ](https://github.com/pylapp/tapsterbot/blob/bb8/doc/FAQ.md)
+- [Getting started](https://github.com/pylapp/tapsterbot/blob/master/doc/getting-started.md))
+- [Calibration of the bot](https://github.com/pylapp/tapsterbot/blob/master/doc/calibration-workflow.md)
+- [Robot HTTP API](https://github.com/pylapp/tapsterbot/blob/master/doc/robot-api.md)
+- [Technical details](https://github.com/pylapp/tapsterbot/blob/master/doc/technical-details.md)
+- [FAQ](https://github.com/pylapp/tapsterbot/blob/master/doc/FAQ.md)
 
 ## Versions
 1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets.
