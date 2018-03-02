@@ -17,11 +17,11 @@
       "node": "*"
    },
    "dependencies": {
-      "johnny-five": "*",
-      "svg-path-parser": "*",
-      "xml2js": "*",
-      "express": "*",
-      "body-parser": "*",
-      "fs": "*"
+      "johnny-five": "0.13.0",
+      "svg-path-parser": "1.1.0",
+      "xml2js": "0.4.19",
+      "express": "4.16.2",
+      "body-parser": "1.18.2",
+      "fs": "0.0.2"
    }
 }

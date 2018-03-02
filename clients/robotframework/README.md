@@ -17,3 +17,4 @@ Here are elements defining [Robot Framework](http://robotframework.org/ "Robot F
 ## Note
  1. Here a the Robot Framework [user guide](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html "User guide")
  2. You may need to get the [robotframework-requests library](https://github.com/bulkan/robotframework-requests "GitHub of robotframework-requests")
+ 3. The installed version of _robotframework_requests_ library is **0.4.7**

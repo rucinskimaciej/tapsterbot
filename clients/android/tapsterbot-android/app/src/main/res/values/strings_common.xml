@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MIT License
+    Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- ************* -->
+    <!-- Global values -->
+    <!-- ************* -->
+
+    <string name="app_name">Tapster2 client</string>
+    <string name="app_settings">Settings</string>
+
+    <!-- **************** -->
+    <!-- Assistant screen -->
+    <!-- **************** -->
+
+    <string name="content_description_assistant_loading">Assistant loading&#8230;</string>
+    <string name="content_description_assistant_message">Message exchanged between the user and the assistant</string>
+    <string name="content_description_button_action">Button to start the assistant or talk with it</string>
+
+    <!-- **** -->
+    <!-- Tabs -->
+    <!-- **** -->
+
+    <string name="tab_title_assistant">Assistant</string>
+    <string name="tab_title_commands">Commands</string>
+
+    <!-- **** -->
+    <!-- Menu -->
+    <!-- **** -->
+
+    <string name="menu_display_settings_screen">Settings</string>
+    <string name="content_description_menu_display_settings_screen">Display the settings screen</string>
+    <string name="menu_display_credits_screen">Credits</string>
+    <string name="content_description_menu_display_credits_screen">Display the credits and licenses</string>
+
+    <!-- ******** -->
+    <!-- Settings -->
+    <!-- ******** -->
+
+    <string name="preferences_robot_section">Robot</string>
+    <string name="preferences_robot_server_protocol_title">Protocol</string>
+    <string name="preferences_robot_server_protocol_summary">Write here the protocol of the robot\'s server</string>
+    <string name="preferences_robot_server_ip_title">Address</string>
+    <string name="preferences_robot_server_ip_summary">Write here the IP address of the robot\'s server</string>
+    <string name="preferences_robot_server_port_title">Port</string>
+    <string name="preferences_robot_server_port_summary">Write here the port of the robot\'s server</string>
+
+    <string name="preferences_assistant_section">Assistant</string>
+    <string name="preferences_assistant_assets_title">Assistant\'s assets</string>
+    <string name="preferences_assistant_assets_summary">Path to the assets for the assistant, starting to root of external storage. Restart the app to apply changes.</string>
+    <string name="preferences_assistant_vocalization_enable_title">Vocalization</string>
+    <string name="preferences_assistant_vocalization_enable_summary">Check to allow the assistant to speak</string>
+    <string name="preferences_assistant_localization_enable_title">Locale</string>
+    <string name="preferences_assistant_localization_enable_summary">Choose the spoken language if the assistant. Restart the app to apply changes.</string>
+    <string name="preferences_assistant_vibrations_enable_title">Vibrations</string>
+    <string name="preferences_assistant_vibrations_enable_summary">Check to keep the assistant making vibrations.</string>
+
+    <string name="preferences_misc_section">About the app</string>
+    <string name="preferences_misc_section_version_title">Version</string>
+    <string name="preferences_misc_section_version_summary">\?</string>
+    <string name="preferences_misc_section_licenses_title">Licenses</string>
+    <string name="preferences_misc_section_licenses_summary">Click here to see third-party licenses</string>
+
+    <!-- **** -->
+    <!-- Misc -->
+    <!-- **** -->
+
+    <string name="state_command_success">Success</string>
+    <string name="state_command_failure">Failure</string>
+    <string name="state_command_failure_intent">Unknown intent</string>
+
+</resources>
+

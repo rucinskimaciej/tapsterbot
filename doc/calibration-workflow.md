@@ -45,7 +45,8 @@ Be sure you have adb in your PATH
 	node calibrate.js -o calibration.json
 ```
 
-Be sure you have previously filled the JSON capabilities file available in the _capabilities_ folder.
+Be sure you have previously filled the JSON capabilities file available in the _calibration/capabilities_ folder.
+Indeed the _calibrate.js_ script loads the suitable file so as to reach the good device.
 
 
 ## I didn't all understand

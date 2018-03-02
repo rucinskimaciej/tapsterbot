@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MIT License
+    Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="pref_app">
+
+    <!-- ***************** -->
+    <!-- The robot section -->
+    <!-- ***************** -->
+
+    <PreferenceCategory
+        android:title="@string/preferences_robot_section"
+        android:key="pref_key_settings_robot">
+
+        <!-- The protocol of the robot's server -->
+        <EditTextPreference
+            android:key="pref_key_settings_robot_protocol"
+            android:title="@string/preferences_robot_server_protocol_title"
+            android:summary="@string/preferences_robot_server_protocol_summary"
+            android:defaultValue="@string/default_value_server_protocol"/>
+
+
+        <!-- The IP address of the robot's server -->
+        <EditTextPreference
+            android:key="pref_key_settings_robot_ip"
+            android:title="@string/preferences_robot_server_ip_title"
+            android:summary="@string/preferences_robot_server_ip_summary"
+            android:defaultValue="@string/default_value_server_ip_address"/>
+
+        <!-- The port of the robot's server -->
+        <EditTextPreference
+            android:key="pref_key_settings_robot_port"
+            android:title="@string/preferences_robot_server_port_title"
+            android:summary="@string/preferences_robot_server_port_summary"
+            android:defaultValue="@string/default_value_server_port"/>
+
+    </PreferenceCategory>
+
+    <!-- ********************* -->
+    <!-- The assistant section -->
+    <!-- ********************* -->
+
+    <PreferenceCategory
+        android:title="@string/preferences_assistant_section"
+        android:key="pref_key_settings_assistant">
+
+        <!-- The path to the assets of the assistant -->
+        <EditTextPreference
+            android:key="pref_key_settings_assistant_assets"
+            android:title="@string/preferences_assistant_assets_title"
+            android:summary="@string/preferences_assistant_assets_summary"
+            android:defaultValue="@string/default_value_assistant_assets"/>
+
+        <!-- If we activate the vocalization or not -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_assistant_enable"
+            android:title="@string/preferences_assistant_vocalization_enable_title"
+            android:summary="@string/preferences_assistant_vocalization_enable_summary"
+            android:defaultValue="false"
+            android:checked="false"/>
+
+        <!-- The language in use for the vocalization -->
+        <ListPreference
+            android:key="pref_key_settings_assistant_language_locale"
+            android:title="@string/preferences_assistant_localization_enable_title"
+            android:summary="@string/preferences_assistant_localization_enable_summary"
+            android:entries="@array/assistant_locale_entries"
+            android:entryValues="@array/assistant_locale_values"
+            android:defaultValue="@string/default_value_assistant_language"/>
+
+        <!-- If we activate the vibrations or not -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_assistant_vibrations"
+            android:title="@string/preferences_assistant_vibrations_enable_title"
+            android:summary="@string/preferences_assistant_vibrations_enable_summary"
+            android:defaultValue="true"
+            android:checked="true"/>
+
+    </PreferenceCategory>
+
+    <!-- **** -->
+    <!-- Misc -->
+    <!-- **** -->
+    <PreferenceCategory
+        android:title="@string/preferences_misc_section"
+        android:key="pref_key_about">
+
+        <Preference
+            android:key="pref_key_about_app"
+            android:title="@string/preferences_misc_section_version_title"
+            android:summary="@string/preferences_misc_section_version_summary" />
+
+        <Preference
+            android:key="pref_key_about_licenses"
+            android:title="@string/preferences_misc_section_licenses_title"
+            android:summary="@string/preferences_misc_section_licenses_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

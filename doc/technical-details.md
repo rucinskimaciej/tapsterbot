@@ -16,28 +16,28 @@
 - hapi.js (>= v17)
 
 ## Dependencies for Python client
- - requests
+ - requests (2.18.4)
 
 ## Dependencies for Robot Framework keywords client
- - robotframework-requests
+ - robotframework-requests (0.4.7)
 
 ## Some commands to run to install Node.js, third-party libraries and other dependencies
 ```shell
-  npm install argparse;
-  npm install hapi;
-  npm install johnny-five;
-  npm install sylvester;
-  npm install prompt;
-  npm install wd;
-  npm install fs;
-  npm install os;
-  npm install path;
-  npm install svg-path-parser;
-  npm install xml2js;
-  npm install express;
-  npm install body-parser;
-  pip install -U requests;
-  pip install -U robotframework-requests;
+  npm install argparse;                       # Version 1.0.9
+  npm install hapi;                           # Version 17.2.0
+  npm install johnny-five;                    # Version 0.13.0
+  npm install sylvester;                      # Version 0.0.21
+  npm install prompt;                         # Version 1.0.0
+  npm install wd;                             # Version 1.5.0
+  npm install fs;                             # version 0.0.2
+  npm install os;                             # Version 0.1.1
+  npm install path;                           # Version 0.12.7
+  npm install svg-path-parser;                # Version 1.1.0
+  npm install xml2js;                         # Version 0.4.19
+  npm install express;                        # Version 4.16.2
+  npm install body-parser;                    # Version 1.18.2
+  pip install -U requests;                    # Version 2.18.4
+  pip install -U robotframework-requests;     # Version 0.4.7
 ```
 You can also run
 ```shell

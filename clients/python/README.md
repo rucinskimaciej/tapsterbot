@@ -40,6 +40,7 @@ If you want to get the version of the Python client, use:
 The default value for _--url_ parameter  is a combination of variables defined in _config.py_ like **http://127.0.0.1:4242**.
 If you want to use this client, you have to have ['requests'](docs.python-requests.org/en/latest/ "Requests module") module installed.
 To do so, you can run the following command or read this [topic](https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests "Stack Overflox post"):
+The installed version of _requests_ for this project is **2.18.4**
 
 ```shell
   sudo pip install requests

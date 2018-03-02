@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MIT License
+    Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- ****************** -->
+    <!-- For Dexter library -->
+    <!-- ****************** -->
+
+    <string name="permission_recordaudio_title">Permission d\'enregistrement audio</string>
+    <string name="permission_recordaudio_message">Cette permission est demandée pour vous permettre de parler avec l\'assistant</string>
+    <string name="permission_readexternalstorage_title">Permission de lecture de l\'espace de stockage</string>
+    <string name="permission_readexternalstorage_message">Cette permission est demandée pour pouvoir charger depuis la mémoire du téléphone les fichiers servant à configurer l\'assistant</string>
+    <string name="permission_internet_title">Permission Internet</string>
+    <string name="permission_internet_message">Cette permission est demandée pour pouvoir envoyer des requêtes HTTP au serveur du robot</string>
+    <string name="permission_title">Permission</string>
+    <string name="permission_message">Vous devriez accorder cette permission</string>
+
+    <string name="error_permission_not_granted_internet">Vous devez accorder la permission INTERNET pour faire cette action</string>
+    <string name="error_permission_not_granted_recordaudio">Vous devez accorder la permission ENREGISTREMENT AUDIO pour faire cette action</string>
+    <string name="error_permission_not_granted_storage">Vous devez accorder la permission LECTURE DU STOCKAGE pour faire cette action</string>
+
+</resources>
+

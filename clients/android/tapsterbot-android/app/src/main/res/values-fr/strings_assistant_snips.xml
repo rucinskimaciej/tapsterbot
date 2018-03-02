@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MIT License
+    Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- ********** -->
+    <!-- Snips mess -->
+    <!-- ********** -->
+
+    <string name="snips_service_started">Snips a été démarré</string>
+    <string name="snips_service_stopped">Snips a été stoppé</string>
+    <string name="snips_session_started">Une nouvelle session Snips a été démarrée</string>
+    <string name="snips_start_dialog_session">Parler au robot</string>
+
+    <string name="snips_need_record_audio_permission">La permission RECORD_AUDIO doit être accordée</string>
+
+    <string name="start_assistant">Démarrer l\'assistant</string>
+    <string name="assistant_loading">Assistant en cours de chargement&#8230;</string>
+    <string name="assistant_hotword_detected">Oui c\'est moi, Snips!</string>>
+    <string name="assistant_listening">Je suis à votre écoute</string>
+    <string name="assistant_session_ended">J\'en ai fini avec vous</string>
+
+    <string name="assistant_error_no_assets_found">Pas de fichiers trouvés pour l\'assistant ! Les avez-vous placés dans le bon dossier de votre appareil ? Corrigez et redémarrez l\'app.</string>
+    <string name="assistant_unknown_intent">Commande non reconnue</string>
+
+    <string name="assistant_command_sent">La commande a été traitée</string>
+
+</resources>
+

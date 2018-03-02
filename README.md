@@ -34,3 +34,4 @@
 2. bb8 - (tag: vBb8) - Verson with documentation and CURL commands.
 3. c3po - (tag: vC3po) - Version with a client (written in Python) to use to drive the bot.
 4. chappie - (tag: vChappie) - Version with Robot Framework keywords to use to drive the bot. Improved Python client. Cleaner files tree.
+5. case - Experimental version with a chatbot client based on [Snips](https://snips.ai/ "Snips.ai"). Work in progress.

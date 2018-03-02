@@ -1,0 +1,178 @@
+{
+  "name" : "Tapster2 assistant - en",
+  "intents" : [ {
+    "id" : "pylapp:en_Swipe",
+    "type" : "registry",
+    "version" : "0.0.6",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "startX",
+      "id" : "slot_imported_rJm2QlJDz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the X value for the start point",
+      "required" : true
+    }, {
+      "name" : "startY",
+      "id" : "slot_imported_HygQhmg1vG",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the Y value for the start point",
+      "required" : true
+    }, {
+      "name" : "endX",
+      "id" : "slot_imported_Hkb7nQlkPG",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the X value for the end point",
+      "required" : true
+    }, {
+      "name" : "endY",
+      "id" : "slot_imported_BJM72XxyDf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the Y value for the end point",
+      "required" : true
+    } ],
+    "name" : "en_Swipe"
+  }, {
+    "id" : "pylapp:en_Get_position",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Get_position"
+  }, {
+    "id" : "pylapp:en_Stop_dancing",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Stop_dancing"
+  }, {
+    "id" : "pylapp:en_Set_arms_angles",
+    "type" : "registry",
+    "version" : "0.0.7",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "theta1",
+      "id" : "slot_imported_rJ9yZl1vz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the theta1 angle",
+      "required" : true
+    }, {
+      "name" : "theta2",
+      "id" : "slot_imported_ByoebgJPz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the theta2 angle",
+      "required" : true
+    }, {
+      "name" : "theta3",
+      "id" : "slot_imported_S1VWblJvf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the theta3 angle",
+      "required" : true
+    } ],
+    "name" : "en_Set_arms_angles"
+  }, {
+    "id" : "pylapp:en_Reset",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Reset"
+  }, {
+    "id" : "pylapp:en_Tap",
+    "type" : "registry",
+    "version" : "0.0.4",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "slot_imported_SJOILeyDf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the X value",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "slot_imported_SkedUIgJDG",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the Y value",
+      "required" : true
+    } ],
+    "name" : "en_Tap"
+  }, {
+    "id" : "pylapp:en_Get_status",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Get_status"
+  }, {
+    "id" : "pylapp:en_Get_arms_angles",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Get_arms_angles"
+  }, {
+    "id" : "pylapp:en_Set_position",
+    "type" : "registry",
+    "version" : "0.0.5",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "slot_imported_ByUEfgJwf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the X value",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "slot_imported_H1-Uzx1Dz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the Y value",
+      "required" : true
+    }, {
+      "name" : "z",
+      "id" : "slot_imported_ryYIzxkDf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "I did not understand the Z value",
+      "required" : true
+    } ],
+    "name" : "en_Set_position"
+  }, {
+    "id" : "pylapp:en_Contact_z",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Contact_z"
+  }, {
+    "id" : "pylapp:en_Dance",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Dance"
+  } ],
+  "createdAt" : "2018-02-09T15:25:50.635Z",
+  "language" : "en",
+  "nluEngine" : {
+    "version" : "0.12.0"
+  },
+  "platform" : {
+    "type" : "raspberrypi"
+  },
+  "asr" : {
+    "type" : "snips"
+  },
+  "analyticsEnabled" : false,
+  "hotword" : "hey_snips"
+}

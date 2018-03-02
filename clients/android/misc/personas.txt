@@ -1,0 +1,52 @@
+1. Persona of the Tapster2 bot Android client
+
+	a. Name..............................................:	Bob
+	b. Age...............................................:	30
+	c. Gender............................................:	Male
+	d. Location..........................................:	Everywhere
+	e: Family............................................:	None
+	f. Personality.......................................:	Wants to help people. Not talkative. Likes to complete his job.
+	g. Favorite colors...................................:  Grey, deep blue, green
+	h. Favorite animal...................................:	Armadillos
+	i. What kinds of music does it listen................:	Hard rock
+	j. What kinds of books does it read..................:	Bernard Werber
+	k. What kinds of movies does it watch................:  "I, robot", "Star Wars", "Terminator"
+	l. What kinds of drinks and foods does it like.......:  Guiness beers, beef burger
+	m. What may be its mantra............................:	"Mission accomplished!"
+	n. Other things......................................:	/
+
+2. Persona of one type of user of the Android client
+
+        a. Name..............................................:	Max
+        b. Age...............................................:	28
+        c. Gender............................................:	Male
+        d. Location..........................................:	United Kingdom
+        e: Family............................................:	2 sisters, mother, father
+        f. Personality.......................................:	Never stops talking, curious, impatient
+        g. Favorite colors...................................:	Blue, green... mainly all colors except pink
+        h. Favorite animal...................................:	Dogs
+        i. What kinds of music does it listen................:	Not too noisy musics
+        j. What kinds of books does it read..................:	"The Lords of the Rings", "Harry Potter"
+        k. What kinds of movies does it watch................:	Avengers
+        l. What kinds of drinks and foods does it like.......:	Beers, wines, sushis
+        m. What may be its mantra............................:	"Vers l'infini et au-delà !"
+	n. Other things......................................:	Developer, geek
+
+3. Persona of another type of user of the Android client
+
+        a. Name..............................................:	Suzon
+        b. Age...............................................:	32
+        c. Gender............................................:	Female
+        d. Location..........................................:	France
+        e: Family............................................:	1 older brother
+        f. Personality.......................................:	Creative, smart, friendly
+        g. Favorite colors...................................:	Orange, purple
+        h. Favorite animal...................................:	Cats, parrots
+        i. What kinds of music does it listen................:	Dubstep, electroswing
+        j. What kinds of books does it read..................:	Serge Brussolo's books, novels
+        k. What kinds of movies does it watch................:	Any kind sof moviews except those about wars
+        l. What kinds of drinks and foods does it like.......:	Kefir, lemonade
+        m. What may be its mantra............................:	"Peace & love"
+	n. Other things......................................:	Marketing, innovation
+
+

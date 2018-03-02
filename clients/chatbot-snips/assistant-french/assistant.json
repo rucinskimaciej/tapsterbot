@@ -1,0 +1,178 @@
+{
+  "name" : "Tapster2 assistant - fr",
+  "intents" : [ {
+    "id" : "pylapp:fr_Get_position",
+    "type" : "registry",
+    "version" : "0.0.10",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Get_position"
+  }, {
+    "id" : "pylapp:fr_Set_arms_angles",
+    "type" : "registry",
+    "version" : "0.0.9",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "theta1",
+      "id" : "SJv8dySBf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour l'angle theta 1",
+      "required" : true
+    }, {
+      "name" : "theta2",
+      "id" : "SkYwO1BrM",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour l'angle theta 2",
+      "required" : true
+    }, {
+      "name" : "theta3",
+      "id" : "S1DddkrHM",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour l'angle theta 3",
+      "required" : true
+    } ],
+    "name" : "fr_Set_arms_angles"
+  }, {
+    "id" : "pylapp:fr_Set_position",
+    "type" : "registry",
+    "version" : "0.0.10",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "HJmrtkHrf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour X",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "r1nHK1SSG",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour Y",
+      "required" : true
+    }, {
+      "name" : "z",
+      "id" : "SkHIK1rSf",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour Z",
+      "required" : true
+    } ],
+    "name" : "fr_Set_position"
+  }, {
+    "id" : "pylapp:fr_Swipe",
+    "type" : "registry",
+    "version" : "0.0.9",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "startX",
+      "id" : "S1EsCDnrz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était l'abscisse de départ",
+      "required" : true
+    }, {
+      "name" : "startY",
+      "id" : "B1H6CP3SG",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était l'ordonnée de départ",
+      "required" : true
+    }, {
+      "name" : "endX",
+      "id" : "BJuCAP3Sz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était l'abscisse d'arrivée",
+      "required" : true
+    }, {
+      "name" : "endY",
+      "id" : "Byrg1_hSz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était l'ordonnée d'arrivée",
+      "required" : true
+    } ],
+    "name" : "fr_Swipe"
+  }, {
+    "id" : "pylapp:fr_Dance",
+    "type" : "registry",
+    "version" : "0.0.6",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Dance"
+  }, {
+    "id" : "pylapp:fr_Contact_z",
+    "type" : "registry",
+    "version" : "0.0.6",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Contact_z"
+  }, {
+    "id" : "pylapp:fr_Get_status",
+    "type" : "registry",
+    "version" : "0.0.7",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Get_status"
+  }, {
+    "id" : "pylapp:fr_Get_arms_angles",
+    "type" : "registry",
+    "version" : "0.0.8",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Get_arms_angles"
+  }, {
+    "id" : "pylapp:fr_Stop_dancing",
+    "type" : "registry",
+    "version" : "0.0.6",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Stop_dancing"
+  }, {
+    "id" : "pylapp:fr_Tap",
+    "type" : "registry",
+    "version" : "0.0.11",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "H16HsyHrz",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur sur l'axe des X",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "SyNUoJSHG",
+      "entity" : "",
+      "entityId" : "numbers.number",
+      "missingQuestion" : "Je n'ai pas compris quelle était la valeur sur l'axe des Y",
+      "required" : true
+    } ],
+    "name" : "fr_Tap"
+  }, {
+    "id" : "pylapp:fr_Reset",
+    "type" : "registry",
+    "version" : "0.0.6",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Reset"
+  } ],
+  "createdAt" : "2018-01-23T16:37:41.169Z",
+  "language" : "fr",
+  "nluEngine" : {
+    "version" : "0.12.0"
+  },
+  "platform" : {
+    "type" : "raspberrypi"
+  },
+  "asr" : {
+    "type" : "snips"
+  },
+  "analyticsEnabled" : false,
+  "hotword" : "hey_snips"
+}

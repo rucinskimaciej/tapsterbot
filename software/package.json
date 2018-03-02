@@ -21,14 +21,14 @@
       "node": "*"
    },
    "dependencies": {
-      "prompt": "*",
-      "fs": "*",
-      "os": "*",
-      "argparse": "*",
-      "wd": "*",
-      "hapi": "*",
-      "path": "*",
-      "johnny-five": "*",
-      "sylvester": "*"
+      "prompt": "1.0.0",
+      "fs": "0.0.2",
+      "os": "0.1.1",
+      "argparse": "1.0.9",
+      "wd": "1.5.0",
+      "hapi": "17.2.0",
+      "path": "0.12.7",
+      "johnny-five": "0.13.0",
+      "sylvester": "0.0.21"
    }
 }
