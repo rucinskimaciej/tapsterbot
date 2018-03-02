@@ -47,3 +47,7 @@ Some features can also be disabled or enbled. Feel free to change the true/false
 </td>
 </tr>
 </table>
+
+## About the assistant
+
+This Android app embeds an assistant, based on [Snips.ai](https://snips.ai/ "Web site of Snips"). This assistant provides a new User eXperience with the possibility to make the user talk to the app. Thanks to the assistant, the app catches the user's words, parses them and makes a match with intents. Then the appropriate request is sent to the robot's server. This way to do brings fun and is cool (to my mind). Snips is an off-the-grid solution, and did not use any third-party or cloud solution. All the needed things are downloaded in the APK and also in this repository ([assets](https://github.com/pylapp/tapsterbot/tree/master/clients/chatbot-snips) you should copy into your phone). Thus Snips is respectful, and does not spy your private life, but the final APK is quite heavy (the price for privacy?).
