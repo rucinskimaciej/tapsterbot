@@ -42,10 +42,19 @@ Some features can also be disabled or enbled. Feel free to change the true/false
 <table>
 <tr>
 <td>
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_intro1.png" alt="The introduction screen" title="Hello world ;-D" width="200">
+</td>
+<td>
 <img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_commands_inuse.png" alt="The commands board" title="The commands board" width="200">
 </td>
 <td>
 <img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_assistant.png" alt="The assistant board" title="The assistant board" width="200">
+</td>
+<td>
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_settings.png" alt="The settings screen" title="The settings screen" width="200">
+</td>
+<td>
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_commands_inuse.png" alt="Some licenses" title="The licenses screen" width="200">
 </td>
 </tr>
 </table>
