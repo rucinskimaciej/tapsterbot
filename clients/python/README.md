@@ -10,7 +10,19 @@ Here are elements defining a client written in Python which can drive the bot (i
 - _commands_parser.py_ The file providing methods to parse and check commands
 
 ## Usage
-python client.py [-h] [--url ROBORSERVERURL] [--light COMMAND] []--file COMMANDSFILE] [--version]
+```shell
+python client.py [-h] [--url ROBORSERVERURL] [--light COMMAND] [--file COMMANDSFILE] [--version]
+```
+
+## Samples of commands to give
+- tap 100 100
+- n-tap 42 100 100
+- stress-tap 666 100 100
+- reset
+- swipe 300 300 100 100
+- n-swipe 5 300 300 100 100
+- stress-swipe 666 300 300 100 100
+- set-position 20 20 -155
 
 ## How to use the client
 1. Define the configuration of your Tapster2 robot in _config.py_ if needed
