@@ -66,9 +66,10 @@ They call keywords and configuration variables defined in the other files.
   robot -t "Get status" tapster_demo.robot
 ```
 
-- Dance!
+- Dance or not!
 ```shell
   robot -t "Dance" tapster_demo.robot
+  robot -r "Stop dancing" tapster_demo.robot
 ```
 
 - Makes swipes

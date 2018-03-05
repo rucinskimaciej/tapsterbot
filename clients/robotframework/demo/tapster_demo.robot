@@ -22,7 +22,7 @@
 # File.......: tapster_demo.robot
 # Brief......: File contaning some tests cases and demos of usages
 # Author.....: pylapp
-# Version....: 1.0.0
+# Version....: 1.1.0
 # Since......: 17/01/2018
 
 
@@ -140,6 +140,13 @@ Dance
     ${status} =    Dance    mySession
     Log To Console    ${status}
     Wait    30s
+    ${status} =    Stop dance    mySession
+    Log To Console    ${status}
+    Delete robot session    mySession
+
+Stop dancing
+   [Documentation]    Let's dance baby!
+    Create robot session    mySession
     ${status} =    Stop dance    mySession
     Log To Console    ${status}
     Delete robot session    mySession
