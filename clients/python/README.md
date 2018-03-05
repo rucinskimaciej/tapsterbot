@@ -32,6 +32,10 @@ To run the Python client in interactive / verbose mode, use:
 ```shell
   python client.py --url your-robot-url
 ```
+or using the config.py file
+```shell
+  python client.py
+```
 
 To run the Python client in light mode using only a command, use:
 ```shell
