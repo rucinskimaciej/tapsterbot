@@ -54,7 +54,7 @@ Some features can also be disabled or enbled. Feel free to change the true/false
 <img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_settings.png" alt="The settings screen" title="The settings screen" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_commands_inuse.png" alt="Some licenses" title="The licenses screen" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_licenses.png" alt="Some licenses" title="The licenses screen" width="200">
 </td>
 </tr>
 </table>
