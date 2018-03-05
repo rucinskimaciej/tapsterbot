@@ -25,14 +25,14 @@ SOFTWARE.
 File.......: client.py
 Brief......: The Python client to use soa s to drive the Tapster2 bot
 Author.....: pylapp
-Version....: 2.0.0
+Version....: 2.0.1
 Since......: 10/01/2018
 """
 
 import argparse
 import sys
 
-from glue import *
+import glue
 from config import *
 from commands_parser import *
 
@@ -40,14 +40,14 @@ if __name__ == "__main__":
 
     # Check args if this execution is a "light" execution, i.e. without verbatims
     parser = argparse.ArgumentParser(description='Python client for Tapster2 robot.')
-    parser.add_argument('--url', dest='roborserverurl', help="The URL of the robot's server", required=False)
+    parser.add_argument('--url', dest='robotserverurl', help="The URL of the robot's server", required=False)
     parser.add_argument('--light', dest='command', help='Run in light mode, i.e. without verbatims nor prompts.', required=False)
     parser.add_argument('--file', dest='commandsfile', help='Load a file at this path containing a list of commands to process seperated by a line break.', required=False)
     parser.add_argument('--version', action='version', help='Displays the version of this program.', version='%(prog)s '+CLIENT_VERSION)
     args = parser.parse_args()
 
-    if args.roborserverurl:
-        config.ROBOT_URL = args.roborserverurl
+    if args.robotserverurl:
+        config.ROBOT_URL = args.robotserverurl
     else:
         config.ROBOT_URL = DEFAULT_ROBOT_URL
 
@@ -59,10 +59,10 @@ if __name__ == "__main__":
         command = args.command
         if isRobotCommand(command):
             parseCommand(command)
-        elif isHelpCommand(command):
-            help()
-        elif isConfigCommand(command):
-            config()
+        elif glue.isHelpCommand(command):
+            glue.help()
+        elif glue.isConfigCommand(command):
+            glue.config()
         else:
             print "ERROR: Bad command: '" + command + "'"
         sys.exit()
@@ -73,9 +73,9 @@ if __name__ == "__main__":
         if not checkRobotConnection():
             sys.exit()
         pathOfFile = args.commandsfile
-        if checkFile(pathOfFile):
+        if glue.checkFile(pathOfFile):
             print "Will process file: '" + pathOfFile + "'"
-            processCommandsFile(pathOfFile)
+            glue.processCommandsFile(pathOfFile)
         else:
             print "ERROR: File not found: '" + commandsFile + "'"
         sys.exit()
@@ -84,27 +84,27 @@ if __name__ == "__main__":
 
     # Welcome guys!
     print "Version " + CLIENT_VERSION
-    welcome()
+    glue.welcome()
 
     checkRobotConnection()
 
     # Some help?
-    help()
+    glue.help()
 
     # Deal with commands
     stop = False
     lastCommand = None
     while not stop:
-        command = askForCommand()
-        if isRepeatCommand(command):
+        command = glue.askForCommand()
+        if glue.isRepeatCommand(command):
             command = lastCommand
         if isRobotCommand(command):
             parseCommand( command )
-        elif isHelpCommand(command):
-            help()
-        elif isConfigCommand(command):
-            config()
-        elif isStopCommand(command):
+        elif glue.isHelpCommand(command):
+            glue.help()
+        elif glue.isConfigCommand(command):
+            glue.config()
+        elif glue.isStopCommand(command):
             stop = True
         else:
             print "Nope. Bad command: '" + command + "'"

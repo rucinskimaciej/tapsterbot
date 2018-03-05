@@ -32,7 +32,7 @@ Since......: 10/01/2018
 import re
 
 # Version of this Tapster2 Python client
-CLIENT_VERSION = "v2.1.0"
+CLIENT_VERSION = "v2.2.0"
 
 # ************
 # Robot things
@@ -54,16 +54,16 @@ DEFAULT_ROBOT_URL = DEFAULT_ROBOT_PROTOCOL + "://" + DEFAULT_ROBOT_IP_ADDRESS + 
 ROBOT_URL = DEFAULT_ROBOT_URL
 
 # Delay in seconds between each tap
-WAIT_TIME_BETWEEN_TAP=0.5
+WAIT_TIME_BETWEEN_TAP = 0.5
 
 # Delay in seconds between each swipe
-WAIT_TIME_BETWEEN_SWIPE=0.5
+WAIT_TIME_BETWEEN_SWIPE = 0.5
 
 # Delay in seconds between each swipe during stress swipes process
-WAIT_TIME_STRESS_SWIPE=0.33
+WAIT_TIME_STRESS_SWIPE = 0.33
 
 # Delay in seconds between each tap during stress taps process
-WAIT_TIME_STRESS_TAP=0.25
+WAIT_TIME_STRESS_TAP = 0.25
 
 # Deal in seconds between each operation picked and triggered from a commands file
 WAIT_BETWEEN_CASCADED_OPERATION = 2

@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: glue.py
 Brief......: File including all the Python glue to use for the client, except the API of the bot
 Author.....: pylapp
-Version....: 2.1.0
+Version....: 2.2.0
 Since......: 10/01/2018
 """
 
@@ -43,7 +43,7 @@ import time
 import os.path
 
 # For regular expressions and patterns
-from config import *
+import config as clientConfig
 
 # Commands parsing
 from commands_parser import *
@@ -106,7 +106,7 @@ def config():
     """
     print ""
     print "\tVersion of Python client...............: " + CLIENT_VERSION
-    print "\tRobot's server URL.....................: " + config.ROBOT_URL
+    print "\tRobot's server URL.....................: " + clientConfig.ROBOT_URL
     print "\tWait between tap (s)...................: " + str(WAIT_TIME_BETWEEN_TAP)
     print "\tWait between stress swipe (s)..........: " + str(WAIT_TIME_STRESS_SWIPE)
     print "\tWait between cascaded ops (s)..........: " + str(WAIT_BETWEEN_CASCADED_OPERATION)

@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: robot-api.py
 Brief......: File including the API of the robot, using HTTP requests
 Author.....: pylapp
-Version....: 1.2.0
+Version....: 1.3.0
 Since......: 10/01/2018
 """
 
@@ -36,7 +36,7 @@ Since......: 10/01/2018
 import requests # You must install previously this module
 import json
 import time
-from config import *
+import config
 
 # *********
 # FUNCTIONS
@@ -50,7 +50,7 @@ def checkRobotConnection():
     """
     # FIXME Make a better management
     try:
-        r = requests.head(ROBOT_URL+"/status")
+        r = requests.head(config.ROBOT_URL+"/status")
         print "Connection made. Status code: " + str(r.status_code)
         return r.status_code == 200
     except requests.exceptions.ConnectionError:
@@ -66,7 +66,7 @@ def robot_getAngles():
             Returns the results of the command.
         """
         print "Sending get-angles request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_GET_ANGLES )
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_GET_ANGLES)
         print request.text
         return request.json()
 # End of Function: robot_getAngles()
@@ -81,7 +81,7 @@ def robot_setAngles( theta1, theta2, theta3 ):
         """
         print "Sending set-angles request..."
         payload = {'theta1': theta1, 'theta2': theta2, 'theta3': theta3}
-        request = requests.post(ROBOT_URL + ROBOT_URL_SET_ANGLES, data=payload)
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_SET_ANGLES, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_setAngles( theta1, theta1, theta3 )
@@ -94,7 +94,7 @@ def robot_getPosition():
             Returns the results of the command.
         """
         print "Sending get-position request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_GET_POSITION )
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_GET_POSITION)
         print request.text
         return request.json()
 # End of Function: robot_getPosition()
@@ -109,7 +109,7 @@ def robot_setPosition( x, y, z ):
         """
         print "Sending set-position request..."
         payload = {'x': x, 'y': y, 'z': z}
-        request = requests.post(ROBOT_URL + ROBOT_URL_SET_POSITION, data=payload)
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_SET_POSITION, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_setPosition( x, y, z )
@@ -124,7 +124,7 @@ def robot_tap( x, y ):
         """
         print "Sending tap request..."
         payload = {'x': x, 'y': y}
-        request = requests.post(ROBOT_URL + ROBOT_URL_TAP, data=payload)
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_TAP, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_tap( x, y )
@@ -138,7 +138,7 @@ def robot_reset():
         """
         print "Sending reset request..."
         payload = {}
-        request = requests.post(ROBOT_URL + ROBOT_URL_RESET, data=payload)
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_RESET, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_reset()
@@ -151,7 +151,7 @@ def robot_getCalibration():
             Returns the results of the command.
         """
         print "Sending get-calibration request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_GET_CALIBRATION )
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_GET_CALIBRATION)
         print request.text
         return request.json()
 # End of Function: robot_getCalibration()
@@ -166,7 +166,7 @@ def robot_setCalibration( jsonData ):
         """
         print "Sending set-calibration request..."
         payload = json.loads(jsonData)
-        request = requests.post(ROBOT_URL + ROBOT_URL_SET_CALIBRATION, data=payload)
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_SET_CALIBRATION, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_setCalibration( jsonData )
@@ -179,7 +179,7 @@ def robot_status():
             Returns the results of the command.
         """
         print "Sending get-status request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_STATUS )
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_STATUS)
         print request.text
         return request.json()
 # End of Function: robot_status()
@@ -193,7 +193,7 @@ def robot_dance():
         """
         print "Sending dance request..."
         payload = {}
-        request = requests.post(ROBOT_URL + ROBOT_URL_DANCE )
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DANCE)
         print request.text
         return request.json()
 # End of Function: robot_dance()
@@ -207,7 +207,7 @@ def robot_stopDance():
         """
         print "Sending stop-dance request..."
         payload = {}
-        request = requests.post(ROBOT_URL + ROBOT_URL_STOP_DANCE )
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_STOP_DANCE)
         print request.text
         return request.json()
 # End of Function: robot_stopDance()
@@ -222,7 +222,7 @@ def robot_swipe( startX, startY, endX, endY ):
         """
         print "Sending swipe request..."
         payload = {'startX': startX, 'startY': startY, 'endX': endX, 'endY': endY}
-        request = requests.post(ROBOT_URL + ROBOT_URL_SWIPE, data=payload)
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_SWIPE, data=payload)
         print request.text
         return request.json()
 # End of Function: robot_swipe( x, y, z )
@@ -238,9 +238,9 @@ def robot_ntap( n, x, y ):
         print "Sending "+ n + " tap requests..."
         payload = {'x': x, 'y': y}
         for i in range(0, int(n)):
-            request = requests.post(ROBOT_URL + ROBOT_URL_TAP, data=payload)
+            request = requests.post(config.ROBOT_URL + config.ROBOT_URL_TAP, data=payload)
             print request.text
-            time.sleep(WAIT_TIME_BETWEEN_TAP)
+            time.sleep(config.WAIT_TIME_BETWEEN_TAP)
         return request.json()
 # End of Function: robot_ntap( n, x, y )
 
@@ -253,7 +253,7 @@ def robot_posForScreen( x, y ):
             Returns the results of the command.
         """
         print "Sending posForScreen request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_POSITION_FOR_SCREEN_COORD+"/x/"+x+"/y/"+y)
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_POSITION_FOR_SCREEN_COORD+"/x/"+x+"/y/"+y)
         print request.text
         return request.json()
 # End of Function: robot_posForScreen( x, y )
@@ -267,7 +267,7 @@ def robot_angForPos( x, y, z ):
             Returns the results of the command.
         """
         print "Sending angForPos request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_ANGLES_FOR_POSITION+"/x/"+x+"/y/"+y+"/z/"+z)
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_ANGLES_FOR_POSITION+"/x/"+x+"/y/"+y+"/z/"+z)
         print request.text
         return request.json()
 # End of Function: robot_angForPos( x, y, z )
@@ -283,9 +283,9 @@ def robot_stressSwipe( n, startX, startY, endX, endY ):
         print "Sending "+ n + " stress swipe requests..."
         payload = {'startX': startX, 'startY': startY, 'endX': endX, 'endY': endY}
         for i in range(0, int(n)):
-            request = requests.post(ROBOT_URL + ROBOT_URL_SWIPE, data=payload)
+            request = requests.post(config.ROBOT_URL + config.ROBOT_URL_SWIPE, data=payload)
             print request.text
-            time.sleep(WAIT_TIME_STRESS_SWIPE)
+            time.sleep(config.WAIT_TIME_STRESS_SWIPE)
         return request.json()
 # End of Function: robot_stressSwipe( n, startX, startY, endX, endY )
 
@@ -300,9 +300,9 @@ def robot_stressTap( n, x, y  ):
         print "Sending "+ n + " stress tap requests..."
         payload = {'x': x, 'y': y}
         for i in range(0, int(n)):
-            request = requests.post(ROBOT_URL + ROBOT_URL_TAP, data=payload)
+            request = requests.post(config.ROBOT_URL + config.ROBOT_URL_TAP, data=payload)
             print request.text
-            time.sleep(WAIT_TIME_STRESS_TAP)
+            time.sleep(config.WAIT_TIME_STRESS_TAP)
         return request.json()
 # End of Function: robot_stressTap( n, x, y )
 
@@ -314,7 +314,7 @@ def robot_getContactZ():
             Returns the results of the command.
         """
         print "Sending contact-z request..."
-        request = requests.get(ROBOT_URL + ROBOT_URL_CONTACT_Z )
+        request = requests.get(config.ROBOT_URL + config.ROBOT_URL_CONTACT_Z)
         print request.text
         return request.json()
 # End of Function: robot_getContactZ()
@@ -330,8 +330,8 @@ def robot_nswipe( n, startX, startY, endX, endY ):
         print "Sending "+ n + " swipe requests..."
         payload = {'startX': startX, 'startY': startY, 'endX': endX, 'endY': endY}
         for i in range(0, int(n)):
-            request = requests.post(ROBOT_URL + ROBOT_URL_SWIPE, data=payload)
+            request = requests.post(config.ROBOT_URL + config.ROBOT_URL_SWIPE, data=payload)
             print request.text
-            time.sleep(WAIT_TIME_BETWEEN_SWIPE)
+            time.sleep(config.WAIT_TIME_BETWEEN_SWIPE)
         return request.json()
 # End of Function: robot_nswipe( n, startX, startY, endX, endY )
