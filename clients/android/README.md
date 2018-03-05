@@ -1,10 +1,12 @@
 # android
 
-Here are an Android client to use so as to drive the robot by sending to it HTTP requests.
-Indeed the Android device and the robot's server should be in the same network: **the server must be reachable by the Android device**.
+Here are an Android client to use so as to drive the robot by sending to it HTTP requests.  
+Indeed the Android device and the robot's server should be in the same network: **the server must be reachable by the Android device of course**.
 
-The app embeds also a Snips.ai-based assistant so as to drive the robot in a more elegant way. We can talk to the assistant (which uses ASR and NLU) so as to make the robot move.
-If you want to use this assistant, you must **create at the root of the external storage** area of the device, a _Tapster2client_ folder. In this folder, you should place another one **with the assets of the assistant**. These assets are available in this repository. You can define the path to the assets to use in the settings of the app.
+The app embeds also a [Snips.ai-based assistant](https://snips.ai/ "Snips.ai") so as to drive the robot in a more elegant way.  
+We can talk to the assistant (which uses ASR and NLU) so as to make the robot move.  
+
+If you want to use this assistant, you must **create at the root of the external storage** area of the device, a _Tapster2client_ folder. In this folder, you should place another folder **with the assets of the assistant**. These assets are available [here](https://github.com/pylapp/tapsterbot/tree/master/clients/chatbot-snips "Assets of the assistant"). You can define the path to the assets to use in the settings of the app.
 
 ## Install the APK
 
