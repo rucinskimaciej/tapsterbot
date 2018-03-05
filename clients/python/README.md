@@ -52,6 +52,8 @@ If you want to get the version of the Python client, use:
   python client.py --version
 ```
 
+The URL you may use must match the pattern _protocol://ip:port_, e.g. _http://192.168.1.13:4242_
+
 ## Note
 The default value for _--url_ parameter  is a combination of variables defined in _config.py_ like **http://127.0.0.1:4242**.
 If you want to use this client, you have to have ['requests'](docs.python-requests.org/en/latest/ "Requests module") module installed.
