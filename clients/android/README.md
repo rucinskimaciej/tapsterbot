@@ -36,3 +36,18 @@ You can customize the application for your needs.
 The app embeds the ACRA library which provides mail-sending feature when the app crashes.
 You can define the email to send the crash reports in the _Tapster2CLientApp.kt_ file, in _@AcraMailSender_ tag.
 Some features can also be disabled or enbled. Feel free to change the true/false value in the _features.properties_ in _assets_ folder.
+
+## The look of the app
+
+<table>
+<tr>
+<td>
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_commands_inuse.png" alt="The commands board" title="The commands board" width="200">
+</td>
+<td>
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_assistant.png" alt="The assistant board" title="The assistant board" width="200">
+</td>
+</tr>
+</table>
+
+
