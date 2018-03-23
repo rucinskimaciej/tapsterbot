@@ -39,14 +39,16 @@
 
     /* Logic scripts */
 
-
     /* Pictures assets */
     '/pictures/favicon.png',
     '/pictures/logo-x96.png',
     '/pictures/logo-x144.png',
-    '/pictures/logo-x192.png'
+    '/pictures/logo-x192.png',
 
     /* Style sheets */
+    '/styles/global.css',
+    '/styles/media.css',
+    '/styles/header.css'
 
   ];
 
