@@ -23,22 +23,25 @@ SOFTWARE.
 
 /**
 * @file global.css
-* @brief Style sheet with main styles and configuration for common objects.
+* @brief Style sheet for commands board
 * @author pylapp
 * @version 1.0.0
 * @since 23/03/2018
 */
 
-body {
-  margin: 0px;
-  background-color: #E0E0E0; /*#607d8b;*/
+#boardCommands {
+  height: 86%;
+  width: 52%%;
+  float: left;
+  padding: 10px;
+  background-color: #E0E0E0;
 }
 
-h1 {
-  font-size: 60px;
-  font-weight: normal;
-  color: #ffffff;
-  padding: 0px;
-  margin: 0px;
-  display: inline;
+#commands {
+  background-color: #000000;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0;
 }

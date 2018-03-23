@@ -22,23 +22,26 @@ SOFTWARE.
 */
 
 /**
-* @file global.css
-* @brief Style sheet with main styles and configuration for common objects.
+* @file console.css
+* @brief Style sheet for console board
 * @author pylapp
 * @version 1.0.0
 * @since 23/03/2018
 */
 
-body {
-  margin: 0px;
-  background-color: #E0E0E0; /*#607d8b;*/
+#boardConsole {
+  height: 86%;
+  width: 45%;
+  float: right;
+  padding: 10px;
+  margin: 0;
+  background-color: #F5F5F5;
 }
 
-h1 {
-  font-size: 60px;
-  font-weight: normal;
-  color: #ffffff;
-  padding: 0px;
-  margin: 0px;
-  display: inline;
+#console {
+  /*border: 1px solid #E0E0E0;*/
+  height: 95%;
+  width: 95%;
+  margin: auto;
+  padding: 0;
 }
