@@ -43,9 +43,16 @@ h1 {
   display: inline;
 }
 
-#mainHeader {
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  top: 0px;
+#boardCommands {
+  height: 100%;
+  width: 50%;
+  float: left;
+  background-color: #E0E0E0;
+}
+
+#boardConsole {
+  height: 100%;
+  width: 50%;
+  float: right;
+  background-color: #F5F5F5;
 }
