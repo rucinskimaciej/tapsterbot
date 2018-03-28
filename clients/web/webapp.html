@@ -111,7 +111,127 @@ Since......: 23/03/2018
 
     <div id="boardCommands">
         <div id="commands">
-            <!-- TODO -->
+
+          <!-- Command reset -->
+          <div id="commandReset" class="commandBlock">
+            <p>Reset robot</p>
+            <button type="submit" name="command-process" class="actionButton" title="Reset the position of the robot's arms">
+                <img src="pictures/button-send.svg" alt"Button to reset the position of the robot's arms" />
+            </button>
+          </div>
+
+          <!-- Command status -->
+          <div id="commandStatus" class="commandBlock">
+            <p>Get status</p>
+            <button type="submit" name="command-process" class="actionButton" title="Get the status of the robot's server">
+                <img src="pictures/button-send.svg" alt"Button to get the status of the robot's server" />
+            </button>
+          </div>
+
+          <!-- Command tap -->
+          <div id="commandTap" class="commandBlock">
+            <p><label for="tap-parameters">Tap at coordinates (x,y)</label></p>
+            <input id="tap-parameters" type="text" name="tap-parameters" placeholder="x y" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Tap to point">
+                <img src="pictures/button-send.svg" alt"Button to tap to a point" />
+            </button>
+          </div>
+
+          <!-- Command n-tap -->
+          <div id="commandNTap" class="commandBlock">
+            <p><label for="n-tap-parameters">Tap at coordinates (x,y) N times</label></p>
+            <input id="n-tap-parameters" type="text" name="n-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Tap N times to point">
+                <img src="pictures/button-send.svg" alt"Button to tap N times on a point" />
+            </button>
+          </div>
+
+          <!-- Command stress-tap -->
+          <div id="commandStressTap" class="commandBlock">
+            <p><label for="stress-tap-parameters">Tap very quickly at coordinates (x,y) N times</label></p>
+            <input id="stress-tap-parameters" type="text" name="stress-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Tap very quickly N times to a point">
+                <img src="pictures/button-send.svg" alt"Button to tap very quickly N times to a point" />
+            </button>
+          </div>
+
+          <!-- Command swipe -->
+          <div id="commandSwipe" class="commandBlock">
+            <p><label for="swipe-parameters">Swipe from (a,b) to (c,d)</label></p>
+            <input id="swipe-parameters" type="text" name="swipe-parameters" placeholder="a b c d" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Swipe from a point to another">
+                <img src="pictures/button-send.svg" alt"Button to swipe from a point to another" />
+            </button>
+          </div>
+
+          <!-- Command n-swipe -->
+          <div id="commandNSwipe" class="commandBlock">
+            <p><label for="n-swipe-parameters">Swipe from (a,b) to (c,d) N times</label></p>
+            <input id="n-swipe-parameters" type="text" name="n-swipe-parameters" placeholder="N a b c d" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Swipe N times from a point to another">
+                <img src="pictures/button-send.svg" alt"Button to swipe N times from a point to another" />
+            </button>
+          </div>
+
+          <!-- Command stress-swipe -->
+          <div id="commandStressSwipe" class="commandBlock">
+            <p><label for="stress-swipe-parameters">Swipe very quickly from (a,b) to (c,d) N times</label></p>
+            <input id="stress-swipe-parameters" type="text" name="stress-swipe-parameters" placeholder="N a b c d" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Swipe very quickly N times from a point to another">
+                <img src="pictures/button-send.svg" alt"Button to swipe very quickly N times from a point to another" />
+            </button>
+          </div>
+
+          <!-- Command set-position -->
+          <div id="commandSetPosition" class="commandBlock">
+            <p><label for="set-position-parameters">Set the position of the finger to (x,y,z)</label></p>
+            <input id="set-position-parameters" type="text" name="set-position-parameters" placeholder="x y z" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Set the position of the robot's finger">
+                <img src="pictures/button-send.svg" alt"Button to set the position of the finger" />
+            </button>
+          </div>
+
+          <!-- Command get-position -->
+          <div id="commandGetPosition" class="commandBlock">
+            <p>Get the position of the finger</p>
+            <button type="submit" name="command-process" class="actionButton" title="Get the position of the robot's finger">
+                <img src="pictures/button-send.svg" alt"Button to get the position of the finger" />
+            </button>
+          </div>
+
+          <!-- Command set-angles -->
+          <div id="commandSetAngles" class="commandBlock">
+            <p><label for="set-angles-parameters">Set the angles of the servomotors to (θ1, θ2, θ3)</label></p>
+            <input id="set-angles-parameters" type="text" name="set-angles-parameters" placeholder="θ1 θ2 θ3" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" name="command-process" class="actionButton" title="Set the angles of the robot's servomotors">
+                <img src="pictures/button-send.svg" alt"Button to set the angles of the servomotors" />
+            </button>
+          </div>
+
+          <!-- Command get-angles -->
+          <div id="commandGetAngles" class="commandBlock">
+            <p>Get the angles of the servomotors</p>
+            <button type="submit" name="command-process" class="actionButton" title="Get the angles of the servomotors">
+                <img src="pictures/button-send.svg" alt"Button to get the angles of the robot's servomotors" />
+            </button>
+          </div>
+
+          <!-- Command dance -->
+          <div id="commandDance" class="commandBlock">
+            <p>Dance</p>
+            <button type="submit" name="command-process" class="actionButton" title="Make the robot dance">
+                <img src="pictures/button-send.svg" alt"Button to make the robot dance" />
+            </button>
+          </div>
+
+          <!-- Command stop dancing -->
+          <div id="commandStopDance" class="commandBlock">
+            <p>Stop dancing</p>
+            <button type="submit" name="command-process" class="actionButton" title="Make the robot stop dancing">
+                <img src="pictures/button-send.svg" alt"Button to make the robot stop danciong" />
+            </button>
+          </div>
+
         </div>
     </div> <!-- End of board for commands -->
 

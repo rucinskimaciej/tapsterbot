@@ -34,11 +34,11 @@ body {
   background-color: #E0E0E0; /*#607d8b;*/
 }
 
-h1 {
-  font-size: 60px;
-  font-weight: normal;
-  color: #ffffff;
-  padding: 0px;
+p {
+  font-size: 1.5em;
   margin: 0px;
-  display: inline;
+  padding: 10px 0px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: normal;
+  color: #263238;
 }
