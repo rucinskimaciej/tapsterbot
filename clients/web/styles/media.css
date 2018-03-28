@@ -30,19 +30,45 @@ SOFTWARE.
 */
 
 @media screen and (max-width: 1350px) {
-  header {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #ffffff;
+
+  .commandBlock p, .commandBlock input, .commandBlock button {
+      margin-right: 1em !important;
   }
+
+  p {
+    font-size: 1em !important;
+  }
+
+  .actionButton {
+    height: 2em !important;
+    width: 2em !important;
+    padding: 5px !important;
+  }
+
 }
 
-@media screen and (max-width: 900px) {
-  #mainHeader {
-    display: none;
+@media screen and (max-width: 800px) {
+
+  .commandBlock {
+    min-width: 250px;
   }
-  #padder {
-    visibility: visible;
+
+  .commandBlock p, .commandBlock input, .commandBlock button {
+      margin-right: 1em !important;
   }
+
+  p {
+    font-size: 1em !important;
+  }
+
+  .actionButton {
+    height: 2em !important;
+    width: 2em !important;
+    padding: 5px !important;
+  }
+
+  #boardConsole {
+    width: 40% !important;
+  }
+
 }

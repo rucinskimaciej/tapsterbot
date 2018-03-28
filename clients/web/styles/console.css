@@ -31,7 +31,7 @@ SOFTWARE.
 
 #boardConsole {
   height: calc(100% - 100px);
-  width: 45%;
+  width: 50%;
   float: right;
   padding: 10px;
   margin: 0;
