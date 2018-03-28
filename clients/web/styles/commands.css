@@ -38,7 +38,6 @@ SOFTWARE.
 }
 
 #commands {
-  border: 1px solid #000000;
   background-color: #E0E0E0;
   overflow-y: auto;
   height: 100%;
@@ -48,7 +47,6 @@ SOFTWARE.
 }
 
 .commandBlock {
-  border: 1px solid #000000;
   width: calc(100% - 40px);
   margin: 10px;
   padding: 10px;
@@ -61,7 +59,6 @@ SOFTWARE.
 .commandBlock p, .commandBlock input, .commandBlock button {
   margin-right: 3em;
 }
-
 
 .commandBlock p {
   width: 50%;
@@ -89,4 +86,34 @@ SOFTWARE.
   height: 80%;
   width: 80%;
   margin: auto;
+}
+
+#commandReset, #commandStatus {
+  background-color: #1976D2;
+  color: #FFFFFF;
+}
+
+#commandTap, #commandNTap, #commandStressTap {
+  background-color: #C2185B;
+  color: #FFFFFF;
+}
+
+#commandGetPosition, #commandSetPosition {
+  background-color: #AFB42B;
+  color: #263238;
+}
+
+#commandSetAngles, #commandGetAngles {
+  background-color: #F57C00;
+  color: #263238;
+}
+
+#commandDance, #commandStopDance {
+  background-color: #512DA8;
+  color: #FFFFFF;
+}
+
+#commandSwipe, #commandNSwipe, #commandStressSwipe {
+  background-color: #D32F2F;
+  color: #FFFFFF;
 }
