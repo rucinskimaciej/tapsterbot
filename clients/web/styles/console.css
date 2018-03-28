@@ -39,9 +39,6 @@ SOFTWARE.
 }
 
 #console {
-  /*border: 1px solid #E0E0E0;*/
-  height: 95%;
-  width: 95%;
-  margin: auto;
-  padding: 0;
+  height: 100%;
+  width:100%;
 }
