@@ -29,7 +29,7 @@ SOFTWARE.
 * @since 29/03/2018
 */
 
-"use strict";
+  "use strict";
 
   /**
   * Checks if the browser is suitable or not.
@@ -65,13 +65,13 @@ SOFTWARE.
     console.log("Browser: "+browserName+", version: "+browserVersion);
 
     // Case of Firefox
-   if ( browserName.includes("Firefox") && (browserVersion <= 44) ){
+    if ( browserName.includes("Firefox") && (browserVersion <= 44) ){
       isSuitable = false;
     }
 
     // Case of Chrome
     if ( (browserName.includes("Chromium") || browserName.includes("Chrome"))
-        && (browserVersion <= 37) ){
+    && (browserVersion <= 37) ){
       isSuitable = false;
     }
 
@@ -80,9 +80,9 @@ SOFTWARE.
   }
 
   /**
-   * Adds in the web app's console an error message
-   * @param message - The message to add
-   */
+  * Adds in the web app's console an error message
+  * @param message - The message to add
+  */
   function addErrorMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
@@ -91,12 +91,30 @@ SOFTWARE.
   }
 
   /**
-   * Adds in the web app's console a simple message
-   * @param message - The message to add
-   */
+  * Adds in the web app's console a simple message
+  * @param message - The message to add
+  */
   function addSimpleMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
     node.node.className = "simpleMessage"
     document.getElementById("console").appendChild(node);
+  }
+
+  /**
+  * Adds listeners to widgets in the view
+  */
+  function initWidgets(){
+
+    // The widget to define the server's URL
+    let toggleServerUrlField = function(){
+      let target = document.getElementById("configField");
+      let state = target.style.display;
+      if ( state == "none" ) target.style.display = "block";
+      else if ( state == "block" ) target.style.display = "none";
+      else target.style.display = "block";
+    }
+    document.getElementById("configUrlOfServer").addEventListener("click", toggleServerUrlField);
+
+
   }

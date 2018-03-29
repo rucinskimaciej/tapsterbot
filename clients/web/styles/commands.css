@@ -35,6 +35,12 @@ SOFTWARE.
   float: left;
   padding: 10px;
   background-color: #E0E0E0;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 #boardCommands button:active {
@@ -142,7 +148,6 @@ SOFTWARE.
 #commandSetAngles input[type="text"] {
   background-color: rgb(24,12,0,0.15);;
 }
-
 
 #commandDance, #commandStopDance {
   background-color: #512DA8;

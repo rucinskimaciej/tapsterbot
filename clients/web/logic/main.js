@@ -40,4 +40,6 @@ window.onload = function(event) {
     console.log("Browser may be suitable")
   }
 
+  initWidgets();
+  
 }
