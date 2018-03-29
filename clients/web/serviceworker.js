@@ -49,6 +49,7 @@
     '/styles/global.css',
     '/styles/media.css',
     '/styles/header.css',
+    '/styles/footer.css',
     '/styles/console.css',
     '/styles/commands.css'
 
