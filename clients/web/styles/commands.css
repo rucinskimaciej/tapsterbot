@@ -60,11 +60,11 @@ SOFTWARE.
   align-items: center;
 }
 
-.commandBlock p, .commandBlock input, .commandBlock button {
+.commandBlock h1, .commandBlock input, .commandBlock button {
   margin-right: 3em;
 }
 
-.commandBlock p {
+.commandBlock h1 {
   width: 50%;
   text-align: center;
 }

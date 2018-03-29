@@ -32,11 +32,11 @@ SOFTWARE.
 @media screen and (max-width: 1700px)
 {
 
-  .commandBlock p, .commandBlock input, .commandBlock button {
+  .commandBlock h1, .commandBlock input, .commandBlock button {
       margin-right: 1em !important;
   }
 
-  p {
+  h1 {
     font-size: 1.3em !important;
   }
 
@@ -51,11 +51,11 @@ SOFTWARE.
 @media screen and (max-width: 1350px)
 {
 
-  .commandBlock p, .commandBlock input, .commandBlock button {
+  .commandBlock h1, .commandBlock input, .commandBlock button {
       margin-right: 1em !important;
   }
 
-  p {
+  h1 {
     font-size: 1em !important;
   }
 
@@ -74,11 +74,11 @@ SOFTWARE.
     min-width: 250px;
   }
 
-  .commandBlock p, .commandBlock input, .commandBlock button {
+  .commandBlock h1, .commandBlock input, .commandBlock button {
     margin-right: 1em !important;
   }
 
-  p {
+  h1 {
     font-size: 1em !important;
   }
 
