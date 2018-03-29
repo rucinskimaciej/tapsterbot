@@ -32,6 +32,7 @@ SOFTWARE.
 body {
   margin: 0px;
   background-color: #E0E0E0; /*#607d8b;*/
+  height: 100%;
 }
 
 h1 {

@@ -70,7 +70,7 @@ SOFTWARE.
 }
 
 .commandBlock input[type="text"] {
-  height: 10%;
+  min-height: 50px;
   width: 33%;
   background: transparent;
   border: none;
