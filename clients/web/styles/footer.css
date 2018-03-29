@@ -54,3 +54,7 @@ SOFTWARE.
     width: 80%;
     margin: auto;
 }
+
+#configField button:active {
+  opacity: 0.5;
+}

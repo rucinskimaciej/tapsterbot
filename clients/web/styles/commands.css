@@ -37,6 +37,10 @@ SOFTWARE.
   background-color: #E0E0E0;
 }
 
+#boardCommands button:active {
+  opacity: 0.5;
+}
+
 #commands {
   background-color: #E0E0E0;
   overflow-y: auto;
