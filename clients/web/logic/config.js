@@ -45,7 +45,15 @@ SOFTWARE.
   * MESSAGES *
   * ******** */
 
-/**
- * Is browser not suitable
- */
 let STRING_ERROR_BAD_BROWSER = "The web app may be unstable with this web browser. Please use Chromium 37+, Chrome 37+ or Firefox 44+";
+let STRING_ERROR_SERVER_URL_NOT_SAVED = "The server's URL has not been saved";
+let STRING_SIMPLE_SERVER_URL_SAVED = "The server's URL has been saved";
+
+/* ***** *
+ * MISC. *
+ * ***** */
+
+/**
+ * Wait this amount of time after each key-u⁻event in server's URL field
+ */
+ let TYPING_INTERVAL = 2000;

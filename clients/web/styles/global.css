@@ -74,6 +74,6 @@ p.errorMessage {
 }
 
 p.simpleMessage {
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }

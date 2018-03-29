@@ -62,8 +62,6 @@ SOFTWARE.
     let browserName = magicString.split(" ")[0];
     let browserVersion = magicString.split(" ")[1];
 
-    console.log("Browser: "+browserName+", version: "+browserVersion);
-
     // Case of Firefox
     if ( browserName.includes("Firefox") && (browserVersion <= 44) ){
       isSuitable = false;
@@ -86,7 +84,7 @@ SOFTWARE.
   function addErrorMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
-    node.className = "errorMessage"
+    node.className = "errorMessage";
     document.getElementById("console").appendChild(node);
   }
 
@@ -97,7 +95,7 @@ SOFTWARE.
   function addSimpleMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
-    node.node.className = "simpleMessage"
+    node.className = "simpleMessage";
     document.getElementById("console").appendChild(node);
   }
 
@@ -106,7 +104,8 @@ SOFTWARE.
   */
   function initWidgets(){
 
-    // The widget to define the server's URL
+    // The button to click on to define the server's URL
+
     let toggleServerUrlField = function(){
       let target = document.getElementById("configField");
       let state = target.style.display;
@@ -116,5 +115,24 @@ SOFTWARE.
     }
     document.getElementById("configUrlOfServer").addEventListener("click", toggleServerUrlField);
 
+    // The field with the server's URL
+
+    let registerTimer = null;
+    let interval = TYPING_INTERVAL; // in ms
+    let readyToSave = function(){
+      let valueToSave = document.getElementById("setServerUrl").value;
+      if ( setRobotServerUrl(valueToSave) ){
+        addSimpleMessage(STRING_SIMPLE_SERVER_URL_SAVED +": "+valueToSave);
+      } else {
+        addErrorMessage(STRING_ERROR_SERVER_URL_NOT_SAVED +": "+valueToSave);
+      }
+    }
+    let setUrlOfServerInBase = function(){
+      if (registerTimer != null) clearTimeout(registerTimer);
+      registerTimer = setTimeout(readyToSave, interval)
+    }
+    document.getElementById("setServerUrl").addEventListener("keyup", setUrlOfServerInBase);
+
+    // TODO Buttons for requests
 
   }

@@ -39,6 +39,7 @@ SOFTWARE.
 */
 function setRobotServerUrl(url){
   if (typeof(Storage) !== "undefined") {
+    console.log("Storage - save value of server's URL - "+url);
     localStorage.setItem(KEY_STORAGE_SERVER_URL, url);
     return true;
   } else {
