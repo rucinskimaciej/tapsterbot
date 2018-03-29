@@ -22,41 +22,20 @@ SOFTWARE.
 */
 
 /**
-* @file global.css
-* @brief Style sheet with main styles and configuration for common objects.
+* @file config.js
+* @brief Classic JavaScript file containing configuration to use for the web app
 * @author pylapp
 * @version 1.0.0
-* @since 23/03/2018
+* @since 29/03/2018
 */
 
-body {
-  margin: 0px;
-  background-color: #E0E0E0; /*#607d8b;*/
-}
+/* ******* *
+ * STORAGE *
+ * ****** */
 
-h1 {
-  font-size: 1.5em;
-  margin: 0px;
-  padding: 10px 0px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: normal;
-}
+/**
+ * The key used in with local storage tor ead /w rite the server's URL
+ */
+ let KEY_STORAGE_SERVER_URL = "tapster-storage-robot-server-url";
 
-button {
-  outline: none;
-}
-
-.errorMessage {
-	font-weight: bold;
-	font-size: medium;
-	text-align: center;
-	color: #FFEB3B;
-	background-color: #FF5722;
-}
-
-p.errorMessage {
-    font-size: 22px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    margin: 0px;
-    padding: 10px 0px;
-}
+ 

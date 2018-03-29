@@ -28,3 +28,42 @@ SOFTWARE.
 * @version 1.0.0
 * @since 29/03/2018
 */
+
+"use strict";
+
+  /**
+  * Checks if the browser is suitbale or not
+  * @return boolean- True if suitable, false otherwise
+  */
+  function isWebBrowserSuitable(){
+    let isSuitable = true;
+    if (typeof(Storage) == "undefined") isSuitable = false;
+    return isSuitable;
+  }
+
+  /**
+  * Save in the <b>local storage</b> the URL of the server which will be used
+  * @param url - The URL to save
+  ^ @return boolean - True if added, false otherwise or if local storage not available
+  */
+  function setRobotServerUrl(url){
+    if (typeof(Storage) !== "undefined") {
+      localStorage.setItem(KEY_STORAGE_SERVER_URL, url);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+  * Read in the <b>local storage</b> the URL of the server which will be used
+  ^ @return string - The URL or null if local storage not supported or empty string is never defined
+  */
+  function getRobotServerUrl(){
+    let result = null;
+    if (typeof(Storage) !== "undefined") {
+      result = localStorage.getItem(KEY_STORAGE_SERVER_URL);
+      if (result == null) result = ""
+    }
+    return result
+  }
