@@ -69,8 +69,17 @@ SOFTWARE.
   text-align: center;
 }
 
-.commandBlock input {
+.commandBlock input[type="text"] {
+  height: 10%;
   width: 33%;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1em;
+}
+
+.commandBlock input[type="text"]::placeholder {
+  color: #FFFFFF;
 }
 
 .actionButton {
@@ -108,15 +117,30 @@ SOFTWARE.
   color: #FFFFFF;
 }
 
+#commandTap input[type="text"],
+#commandNTap input[type="text"],
+#commandStressTap input[type="text"] {
+  background-color: rgb(19,24,91,0.15);
+}
+
 #commandGetPosition, #commandSetPosition {
   background-color: #AFB42B;
   color: #FFFFFF;
+}
+
+#commandSetPosition input[type="text"] {
+  background-color: rgb(17,18,43,0.15);
 }
 
 #commandSetAngles, #commandGetAngles {
   background-color: #F57C00;
   color: #FFFFFF;
 }
+
+#commandSetAngles input[type="text"] {
+  background-color: rgb(24,12,0,0.15);;
+}
+
 
 #commandDance, #commandStopDance {
   background-color: #512DA8;
@@ -126,4 +150,10 @@ SOFTWARE.
 #commandSwipe, #commandNSwipe, #commandStressSwipe {
   background-color: #D32F2F;
   color: #FFFFFF;
+}
+
+#commandSwipe input[type="text"],
+#commandNSwipe input[type="text"],
+#commandStressSwipe input[type="text"] {
+  background-color: rgb(21,47,47,0.15);
 }

@@ -55,6 +55,6 @@ SOFTWARE.
     margin: auto;
 }
 
-#configUrlOfServer button:active {
+#configUrlOfServer:active {
   opacity: 0.5;
 }
