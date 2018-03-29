@@ -39,6 +39,18 @@ SOFTWARE.
 }
 
 #console {
+  height: 90%;
+  width: 100%;
+}
+
+#configField {
+  width: 100%;
+  height: 10%;
+}
+
+#setServerUrl {
+  width: 100%;
   height: 100%;
-  width:100%;
+  padding: 10px;
+  border: none;
 }
