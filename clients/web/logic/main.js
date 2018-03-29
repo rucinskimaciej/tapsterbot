@@ -22,58 +22,22 @@ SOFTWARE.
 */
 
 /**
-* @file global.css
-* @brief Style sheet with main styles and configuration for common objects.
+* @file main.js
+* @brief Classic JavaScript file with few things, mainly to start things or initialize others
 * @author pylapp
 * @version 1.0.0
-* @since 23/03/2018
+* @since 29/03/2018
 */
 
-body {
-  margin: 0px;
-  background-color: #E0E0E0; /*#607d8b;*/
-  height: 100%;
-}
+"use strict";
 
-h1 {
-  font-size: 1.5em;
-  margin: 0px;
-  padding: 10px 0px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: normal;
-}
+window.onload = function(event) {
 
-button {
-  outline: none;
-}
+  if (! isWebBrowserSuitable() ){
+    console.error("It seems the web browser may not be suitable");
+    addErrorMessage(STRING_ERROR_BAD_BROWSER);
+  } else {
+    console.log("Browser may be suitable")
+  }
 
-.fatalErrorMessage {
-	font-weight: bold;
-	font-size: medium;
-	text-align: center;
-	color: #FFEB3B;
-	background-color: #FF5722;
-}
-
-p.fatalErrorMessage {
-  font-size: 22px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  margin: 0px;
-  padding: 10px 0px;
-}
-
-p.errorMessage, p.simpleMessage {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  margin: 0px;
-  padding: 10px 0px;
-}
-
-p.errorMessage {
-  color: #F44336;
-  font-weight: bold;
-}
-
-p.simpleMessage {
-  color: #FFFFFF;
-  font-weight: normal;
 }

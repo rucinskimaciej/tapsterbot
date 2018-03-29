@@ -22,58 +22,39 @@ SOFTWARE.
 */
 
 /**
-* @file global.css
-* @brief Style sheet with main styles and configuration for common objects.
+* @file storage.js
+* @brief Classic JavaScript file which handles with storage things
 * @author pylapp
 * @version 1.0.0
-* @since 23/03/2018
+* @since 29/03/2018
 */
 
-body {
-  margin: 0px;
-  background-color: #E0E0E0; /*#607d8b;*/
-  height: 100%;
+"use strict";
+
+
+/**
+* Save in the <b>local storage</b> the URL of the server which will be used
+* @param url - The URL to save
+^ @return boolean - True if added, false otherwise or if local storage not available
+*/
+function setRobotServerUrl(url){
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem(KEY_STORAGE_SERVER_URL, url);
+    return true;
+  } else {
+    return false;
+  }
 }
 
-h1 {
-  font-size: 1.5em;
-  margin: 0px;
-  padding: 10px 0px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: normal;
-}
-
-button {
-  outline: none;
-}
-
-.fatalErrorMessage {
-	font-weight: bold;
-	font-size: medium;
-	text-align: center;
-	color: #FFEB3B;
-	background-color: #FF5722;
-}
-
-p.fatalErrorMessage {
-  font-size: 22px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  margin: 0px;
-  padding: 10px 0px;
-}
-
-p.errorMessage, p.simpleMessage {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  margin: 0px;
-  padding: 10px 0px;
-}
-
-p.errorMessage {
-  color: #F44336;
-  font-weight: bold;
-}
-
-p.simpleMessage {
-  color: #FFFFFF;
-  font-weight: normal;
+/**
+* Read in the <b>local storage</b> the URL of the server which will be used
+^ @return string - The URL or null if local storage not supported or empty string is never defined
+*/
+function getRobotServerUrl(){
+  let result = null;
+  if (typeof(Storage) !== "undefined") {
+    result = localStorage.getItem(KEY_STORAGE_SERVER_URL);
+    if (result == null) result = ""
+  }
+  return result
 }

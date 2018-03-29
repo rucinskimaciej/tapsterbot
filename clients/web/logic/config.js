@@ -29,6 +29,8 @@ SOFTWARE.
 * @since 29/03/2018
 */
 
+"use strict";
+
 /* ******* *
  * STORAGE *
  * ****** */
@@ -38,4 +40,12 @@ SOFTWARE.
  */
  let KEY_STORAGE_SERVER_URL = "tapster-storage-robot-server-url";
 
- 
+
+ /* ******** *
+  * MESSAGES *
+  * ******** */
+
+/**
+ * Is browser not suitable
+ */
+let STRING_ERROR_BAD_BROWSER = "The web app may be unstable with this web browser. Please use Chromium 37+, Chrome 37+ or Firefox 44+";

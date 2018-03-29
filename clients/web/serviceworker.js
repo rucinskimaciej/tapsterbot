@@ -38,6 +38,10 @@
     '/',
 
     /* Logic scripts */
+    '/logic/config.js',
+    '/logic/storage.js',
+    '/logic/glue.js',
+    '/logic/main.js',
 
     /* Pictures assets */
     '/pictures/favicon.png',
