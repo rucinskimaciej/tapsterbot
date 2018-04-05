@@ -31,6 +31,12 @@ SOFTWARE.
 
 "use strict";
 
+/* *********** *
+ * ROBOT'S API *
+ * *********** */
+
+ let URL_ROBOT_API = "/reset";
+ 
 /* ******* *
  * STORAGE *
  * ****** */

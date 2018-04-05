@@ -42,6 +42,7 @@
     '/logic/storage.js',
     '/logic/glue.js',
     '/logic/main.js',
+    '/logic/widgets.js',
 
     /* Pictures assets */
     '/pictures/favicon.png',

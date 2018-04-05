@@ -72,6 +72,7 @@ Since......: 23/03/2018
     <!-- Scripts -->
     <script type="text/javascript" src="logic/config.js"></script>
     <script type="text/javascript" src="logic/storage.js"></script>
+    <script type="text/javascript" src="logic/widgets.js"></script>
     <script type="text/javascript" src="logic/glue.js"></script>
     <script type="text/javascript" src="logic/main.js"></script>
 
@@ -116,7 +117,7 @@ Since......: 23/03/2018
           <!-- Command reset -->
           <div id="commandReset" class="commandBlock">
             <h1>Reset robot</h1>
-            <button type="submit" name="command-process" class="actionButton" title="Reset the position of the robot's arms">
+            <button type="submit" id="buttonRequestReset" name="command-process" class="actionButton" title="Reset the position of the robot's arms">
                 <img src="pictures/button-send.svg" alt"Button to reset the position of the robot's arms" />
             </button>
           </div>
@@ -124,7 +125,7 @@ Since......: 23/03/2018
           <!-- Command status -->
           <div id="commandStatus" class="commandBlock padder">
             <h1>Get status</h1>
-            <button type="submit" name="command-process" class="actionButton" title="Get the status of the robot's server">
+            <button type="submit" id="buttonRequestStatus" name="command-process" class="actionButton" title="Get the status of the robot's server">
                 <img src="pictures/button-send.svg" alt"Button to get the status of the robot's server" />
             </button>
           </div>
@@ -133,7 +134,7 @@ Since......: 23/03/2018
           <div id="commandTap" class="commandBlock">
             <h1><label for="tap-parameters">Tap at coordinates (x,y)</label></h1>
             <input id="tap-parameters" type="text" name="tap-parameters" placeholder="x y" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Tap to point">
+            <button type="submit" id="buttonRequestTap" name="command-process" class="actionButton" title="Tap to point">
                 <img src="pictures/button-send.svg" alt"Button to tap to a point" />
             </button>
           </div>
@@ -142,7 +143,7 @@ Since......: 23/03/2018
           <div id="commandNTap" class="commandBlock">
             <h1><label for="n-tap-parameters">Tap at coordinates (x,y) N times</label></h1>
             <input id="n-tap-parameters" type="text" name="n-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Tap N times to point">
+            <button type="submit" id="buttonRequestNTap" name="command-process" class="actionButton" title="Tap N times to point">
                 <img src="pictures/button-send.svg" alt"Button to tap N times on a point" />
             </button>
           </div>
@@ -151,7 +152,7 @@ Since......: 23/03/2018
           <div id="commandStressTap" class="commandBlock padder">
             <h1><label for="stress-tap-parameters">Tap very quickly at coordinates (x,y) N times</label></h1>
             <input id="stress-tap-parameters" type="text" name="stress-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Tap very quickly N times to a point">
+            <button type="submit" id="buttonRequestStressTap" name="command-process" class="actionButton" title="Tap very quickly N times to a point">
                 <img src="pictures/button-send.svg" alt"Button to tap very quickly N times to a point" />
             </button>
           </div>
@@ -160,7 +161,7 @@ Since......: 23/03/2018
           <div id="commandSwipe" class="commandBlock">
             <h1><label for="swipe-parameters">Swipe from (a,b) to (c,d)</label></h1>
             <input id="swipe-parameters" type="text" name="swipe-parameters" placeholder="a b c d" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Swipe from a point to another">
+            <button type="submit" id="buttonRequestSwipe" name="command-process" class="actionButton" title="Swipe from a point to another">
                 <img src="pictures/button-send.svg" alt"Button to swipe from a point to another" />
             </button>
           </div>
@@ -169,7 +170,7 @@ Since......: 23/03/2018
           <div id="commandNSwipe" class="commandBlock">
             <h1><label for="n-swipe-parameters">Swipe from (a,b) to (c,d) N times</label></h1>
             <input id="n-swipe-parameters" type="text" name="n-swipe-parameters" placeholder="N a b c d" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Swipe N times from a point to another">
+            <button type="submit" id="buttonRequestNSwipe" name="command-process" class="actionButton" title="Swipe N times from a point to another">
                 <img src="pictures/button-send.svg" alt"Button to swipe N times from a point to another" />
             </button>
           </div>
@@ -178,7 +179,7 @@ Since......: 23/03/2018
           <div id="commandStressSwipe" class="commandBlock padder">
             <h1><label for="stress-swipe-parameters">Swipe very quickly from (a,b) to (c,d) N times</label></h1>
             <input id="stress-swipe-parameters" type="text" name="stress-swipe-parameters" placeholder="N a b c d" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Swipe very quickly N times from a point to another">
+            <button type="submit" id="buttonRequestStressSwipe" name="command-process" class="actionButton" title="Swipe very quickly N times from a point to another">
                 <img src="pictures/button-send.svg" alt"Button to swipe very quickly N times from a point to another" />
             </button>
           </div>
@@ -186,7 +187,7 @@ Since......: 23/03/2018
           <!-- Command get-position -->
           <div id="commandGetPosition" class="commandBlock">
             <h1>Get the position of the finger</h1>
-            <button type="submit" name="command-process" class="actionButton" title="Get the position of the robot's finger">
+            <button type="submit" id="buttonRequestGetPosition" name="command-process" class="actionButton" title="Get the position of the robot's finger">
                 <img src="pictures/button-send.svg" alt"Button to get the position of the finger" />
             </button>
           </div>
@@ -195,7 +196,7 @@ Since......: 23/03/2018
           <div id="commandSetPosition" class="commandBlock padder">
             <h1><label for="set-position-parameters">Set the position of the finger to (x,y,z)</label></h1>
             <input id="set-position-parameters" type="text" name="set-position-parameters" placeholder="x y z" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Set the position of the robot's finger">
+            <button type="submit" id="buttonRequestSetPosition" name="command-process" class="actionButton" title="Set the position of the robot's finger">
                 <img src="pictures/button-send.svg" alt"Button to set the position of the finger" />
             </button>
           </div>
@@ -203,7 +204,7 @@ Since......: 23/03/2018
           <!-- Command get-angles -->
           <div id="commandGetAngles" class="commandBlock">
             <h1>Get the angles of the servomotors</h1>
-            <button type="submit" name="command-process" class="actionButton" title="Get the angles of the servomotors">
+            <button type="submit" id="buttonRequestGetAngles" name="command-process" class="actionButton" title="Get the angles of the servomotors">
                 <img src="pictures/button-send.svg" alt"Button to get the angles of the robot's servomotors" />
             </button>
           </div>
@@ -212,7 +213,7 @@ Since......: 23/03/2018
           <div id="commandSetAngles" class="commandBlock padder">
             <h1><label for="set-angles-parameters">Set the angles of the servomotors to (θ1, θ2, θ3)</label></h1>
             <input id="set-angles-parameters" type="text" name="set-angles-parameters" placeholder="θ1 θ2 θ3" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
-            <button type="submit" name="command-process" class="actionButton" title="Set the angles of the robot's servomotors">
+            <button type="submit" id="buttonRequestSetAngles" name="command-process" class="actionButton" title="Set the angles of the robot's servomotors">
                 <img src="pictures/button-send.svg" alt"Button to set the angles of the servomotors" />
             </button>
           </div>
@@ -220,7 +221,7 @@ Since......: 23/03/2018
           <!-- Command dance -->
           <div id="commandDance" class="commandBlock">
             <h1>Dance</h1>
-            <button type="submit" name="command-process" class="actionButton" title="Make the robot dance">
+            <button type="submit" id="buttonRequestDance" name="command-process" class="actionButton" title="Make the robot dance">
                 <img src="pictures/button-send.svg" alt"Button to make the robot dance" />
             </button>
           </div>
@@ -228,7 +229,7 @@ Since......: 23/03/2018
           <!-- Command stop dancing -->
           <div id="commandStopDance" class="commandBlock">
             <h1>Stop dancing</h1>
-            <button type="submit" name="command-process" class="actionButton" title="Make the robot stop dancing">
+            <button type="submit" id="buttonRequestStopDancing" name="command-process" class="actionButton" title="Make the robot stop dancing">
                 <img src="pictures/button-send.svg" alt"Button to make the robot stop danciong" />
             </button>
           </div>
@@ -247,13 +248,11 @@ Since......: 23/03/2018
             <p class="fatalErrorMessage">This web app requires JavaScript. You must have it enabled.</p>
           </div>
         </noscript>
-          <!-- TODO -->
       </div>
       <div id="configField">
         <input id="setServerUrl" type="text" name="set-server-urk" placeholder="Write the URL of the robot's server" />
-        <!-- TODO -->
       </div>
-    </div> <!-- End fo board for console -->
+    </div> <!-- End of board for console -->
 
 
     <!-- ****** -->

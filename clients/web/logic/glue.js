@@ -78,6 +78,22 @@ SOFTWARE.
   }
 
   /**
+   * Check if the URL of the server to reach has been defined.
+   * If not, displays an error message and return false.
+   * If defined,r eturnt rue.
+   * @return boolean -
+   */
+  function checkIfUrlOfServerDefined(){
+      let serverUrl = document.getElementById("setServerUrl").value;
+      if (serverUrl == null || serverUrl.length <= 0){
+        addErrorMessage("The URL of the server cannot be '"+serverUrl+"'");
+        return false;
+      } else {
+        return true;
+      }
+  }
+
+  /**
   * Adds in the web app's console an error message
   * @param message - The message to add
   */
@@ -97,42 +113,4 @@ SOFTWARE.
     node.textContent = message;
     node.className = "simpleMessage";
     document.getElementById("console").appendChild(node);
-  }
-
-  /**
-  * Adds listeners to widgets in the view
-  */
-  function initWidgets(){
-
-    // The button to click on to define the server's URL
-
-    let toggleServerUrlField = function(){
-      let target = document.getElementById("configField");
-      let state = target.style.display;
-      if ( state == "none" ) target.style.display = "block";
-      else if ( state == "block" ) target.style.display = "none";
-      else target.style.display = "block";
-    }
-    document.getElementById("configUrlOfServer").addEventListener("click", toggleServerUrlField);
-
-    // The field with the server's URL
-
-    let registerTimer = null;
-    let interval = TYPING_INTERVAL; // in ms
-    let readyToSave = function(){
-      let valueToSave = document.getElementById("setServerUrl").value;
-      if ( setRobotServerUrl(valueToSave) ){
-        addSimpleMessage(STRING_SIMPLE_SERVER_URL_SAVED +": "+valueToSave);
-      } else {
-        addErrorMessage(STRING_ERROR_SERVER_URL_NOT_SAVED +": "+valueToSave);
-      }
-    }
-    let setUrlOfServerInBase = function(){
-      if (registerTimer != null) clearTimeout(registerTimer);
-      registerTimer = setTimeout(readyToSave, interval)
-    }
-    document.getElementById("setServerUrl").addEventListener("keyup", setUrlOfServerInBase);
-
-    // TODO Buttons for requests
-
   }
