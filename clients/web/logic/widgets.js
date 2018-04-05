@@ -70,17 +70,19 @@ SOFTWARE.
     }
     document.getElementById("setServerUrl").addEventListener("keyup", setUrlOfServerInBase);
 
-    // Buttons for requests
-    initWidgetButtonReset();
-    initWidgetButtonStatus();
-    initWidgetButtonTap();
+    // Widgets for requests
+
+    initWidgetReset();
+    initWidgetStatus();
+    initWidgetsTap();
+    initWidgetsNTap();
 
   }
 
   /**
    * Initializes the logic of the widget which sends a "reset robot" request
    */
-  function initWidgetButtonReset(){
+  function initWidgetReset(){
     let sendRequest = function(){
       let baseUrl = getRobotServerUrl();
       addSimpleMessage("[Request] Sending \"reset\" request...")
@@ -92,7 +94,7 @@ SOFTWARE.
   /**
    * Initializes the logic of the widget which sends a "status" request
    */
-  function initWidgetButtonStatus(){
+  function initWidgetStatus(){
     let sendRequest = function(){
       let baseUrl = getRobotServerUrl();
       addSimpleMessage("[Request] Sending \"status\" request...");
@@ -102,9 +104,9 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widget which sends a "tap" request
+   * Initializes the logic of the widgets which sends a "tap" request
    */
-  function initWidgetButtonTap(){
+  function initWidgetsTap(){
     let sendRequest = function(){
       let body = getRequestTapParameters();
       if ( body == null || body.length <= 0 ){
@@ -116,6 +118,37 @@ SOFTWARE.
       }
     }
     document.getElementById("buttonRequestTap").addEventListener("click", sendRequest);
+    document.getElementById("tap-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
+  /**
+   * Initializes the logic of the widgets which sends n times a "tap" request
+   */
+  function initWidgetsNTap(){
+    let sendRequest = function(){
+      let params = getRequestNTapParameters();
+      if ( params == null || params.length != 3 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-tap-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        let i = 0;
+        let max = params[0];
+        let toTrigger = function(){
+          if ( i >= max ) clearInterval(interval);
+          let body = '{"x": "' + params[1] +'", "y": "'+params[2]+'"}';
+          addSimpleMessage("[Request] Sending \"n-tap\" ("+i+"/"+max+") request with parameters \""+body+"\"");
+          sendPostRequest(baseUrl + URL_ROBOT_API_TAP, body);
+          i++;
+        }
+        let interval = setInterval(function(){toTrigger()}, WAIT_TIME_BETWEEN_TAP);
+      }
+    }
+    document.getElementById("buttonRequestNTap").addEventListener("click", sendRequest);
+    document.getElementById("n-tap-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
   }
 
  /**
@@ -129,4 +162,16 @@ SOFTWARE.
     }
     parameters = parameters.split(" ");
     return '{"x": "' + parameters[0] +'", "y": "'+parameters[1]+'"}';
+  }
+
+  /**
+   * Returns the parameters for n-tap request, or null if the format is not correct
+   * @return array -
+   */
+  function getRequestNTapParameters(){
+    let parameters = document.getElementById("n-tap-parameters").value;
+    if ( ! REGEX_PARAMETER_N_TAP.test(parameters) ){
+      return null;
+    }
+    return parameters.split(" ");
   }

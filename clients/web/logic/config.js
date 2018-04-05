@@ -43,7 +43,8 @@ SOFTWARE.
  * REGEX FOR PARAMETERS *
  * ******************** */
 
- let REGEX_PARAMETER_TAP = /[0-9]+\s[0-9]+/;
+ let REGEX_PARAMETER_TAP = /^[0-9]+\s[0-9]+$/;
+ let REGEX_PARAMETER_N_TAP = /^[0-9]+\s[0-9]+\s[0-9]+$/;
 
 /* ******* *
  * STORAGE *
@@ -71,3 +72,8 @@ let STRING_SIMPLE_SERVER_URL_SAVED = "The server's URL has been saved";
  * Wait this amount of time after each key-u⁻event in server's URL field
  */
  let TYPING_INTERVAL = 2000;
+
+ /**
+  * Delay in seconds between each tap
+  */
+ let WAIT_TIME_BETWEEN_TAP = 500;
