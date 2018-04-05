@@ -101,7 +101,9 @@ SOFTWARE.
     let node = document.createElement("p");
     node.textContent = message;
     node.className = "errorMessage";
-    document.getElementById("console").appendChild(node);
+    let console = document.getElementById("console");
+    console.appendChild(node);
+    console.scrollTop = console.scrollHeight;
   }
 
   /**
@@ -112,7 +114,9 @@ SOFTWARE.
     let node = document.createElement("p");
     node.textContent = message;
     node.className = "simpleMessage";
-    document.getElementById("console").appendChild(node);
+    let console = document.getElementById("console");
+    console.appendChild(node);
+    console.scrollTop = console.scrollHeight;
   }
 
   /**
@@ -123,5 +127,7 @@ SOFTWARE.
     let node = document.createElement("p");
     node.textContent = message;
     node.className = "resultMessage";
-    document.getElementById("console").appendChild(node);
+    let console = document.getElementById("console");
+    console.appendChild(node);
+    console.scrollTop = console.scrollHeight;
   }
