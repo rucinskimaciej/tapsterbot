@@ -86,6 +86,7 @@ SOFTWARE.
     initWidgetStatus();
     initWidgetsTap();
     initWidgetsNTap();
+    initWidgetsStressTap();
 
   }
 
@@ -161,6 +162,34 @@ SOFTWARE.
     }
   }
 
+  /**
+   * Initializes the logic of the widgets which sends n times a "stress tap"
+   */
+  function initWidgetsStressTap(){
+    let sendRequest = function(){
+      let params = getRequestStressTapParameters();
+      if ( params == null || params.length != 3 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("stress-tap-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        let i = 0;
+        let max = params[0];
+        let toTrigger = function(){
+          if ( i >= max ) clearInterval(interval);
+          let body = '{"x": "' + params[1] +'", "y": "'+params[2]+'"}';
+          addSimpleMessage("[Request] Sending \"stress-tap\" ("+i+"/"+max+") request with parameters \""+body+"\"");
+          sendPostRequest(baseUrl + URL_ROBOT_API_TAP, body);
+          i++;
+        }
+        let interval = setInterval(function(){toTrigger()}, WAIT_TIME_STRESS_TAP);
+      }
+    }
+    document.getElementById("buttonRequestStressTap").addEventListener("click", sendRequest);
+    document.getElementById("stress-tap-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
@@ -181,6 +210,18 @@ SOFTWARE.
   function getRequestNTapParameters(){
     let parameters = document.getElementById("n-tap-parameters").value;
     if ( ! REGEX_PARAMETER_N_TAP.test(parameters) ){
+      return null;
+    }
+    return parameters.split(" ");
+  }
+
+  /**
+   * Returns the parameters for stress-tap request, or null if the format is not correct
+   * @return array -
+   */
+  function getRequestStressTapParameters(){
+    let parameters = document.getElementById("stress-tap-parameters").value;
+    if ( ! REGEX_PARAMETER_STRESS_TAP.test(parameters) ){
       return null;
     }
     return parameters.split(" ");

@@ -100,7 +100,7 @@ SOFTWARE.
   function addErrorMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
-    node.className = "errorMessage consoleMessage";
+    node.className = "errorMessage";
     let console = document.getElementById("console");
     console.appendChild(node);
     console.scrollTop = console.scrollHeight;
@@ -113,7 +113,7 @@ SOFTWARE.
   function addSimpleMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
-    node.className = "simpleMessage consoleMessage";
+    node.className = "simpleMessage";
     let console = document.getElementById("console");
     console.appendChild(node);
     console.scrollTop = console.scrollHeight;
@@ -126,7 +126,7 @@ SOFTWARE.
   function addResultMessage(message){
     let node = document.createElement("p");
     node.textContent = message;
-    node.className = "resultMessage consoleMessage";
+    node.className = "resultMessage";
     let console = document.getElementById("console");
     console.appendChild(node);
     console.scrollTop = console.scrollHeight;
