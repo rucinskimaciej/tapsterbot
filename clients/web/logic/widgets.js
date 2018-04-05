@@ -40,7 +40,7 @@ SOFTWARE.
 
     let serverUrl = getRobotServerUrl();
     document.getElementById("setServerUrl").value = serverUrl;
-    
+
     // The button to click on to define the server's URL
 
     let toggleServerUrlField = function(){
@@ -85,17 +85,24 @@ SOFTWARE.
       let baseUrl = getRobotServerUrl();
       addSimpleMessage("[Request] Sending \"reset\" request...")
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", baseUrl+URL_ROBOT_API, true);
+      xhr.open("POST", baseUrl+  URL_ROBOT_API, true);
+      // xhr.setRequestHeader('Content-Type', 'application/json');
+      //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
       xhr.onreadystatechange = function(){
         if (xhr.readyState == XMLHttpRequest.DONE){
           if (xhr.status == 200){
             addSimpleMessage("[Request] Sent.");
-          } else if ( xhr.status == 0 ){
-            addErrorMessage("[Request] The server appears offline");
+          } else {
+            addErrorMessage("[Request] Error with the server: "+xhr.status);
           }
         }
       }
-      xhr.send("{}");
+      try {
+        xhr.send("{}");
+      } catch (error){
+        console.error("Error during request sending: "+error);
+        addErrorMessage("[Request] Error with the server: "+error);
+      }
     }
 
     document.getElementById("buttonRequestReset").addEventListener("click", sendRequest);
