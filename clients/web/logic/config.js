@@ -35,8 +35,10 @@ SOFTWARE.
  * ROBOT'S API *
  * *********** */
 
- let URL_ROBOT_API = "/reset";
- 
+ let URL_ROBOT_API_RESET = "/reset";
+ let URL_ROBOT_API_STATUS = "/status";
+
+
 /* ******* *
  * STORAGE *
  * ****** */
