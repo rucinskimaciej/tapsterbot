@@ -38,6 +38,7 @@ SOFTWARE.
  let URL_ROBOT_API_RESET = "/reset";
  let URL_ROBOT_API_STATUS = "/status";
  let URL_ROBOT_API_TAP = "/tap";
+ let URL_ROBOT_API_SWIPE = "/swipe";
 
 /* ******************** *
  * REGEX FOR PARAMETERS *
@@ -46,6 +47,7 @@ SOFTWARE.
  let REGEX_PARAMETER_TAP = /^[0-9]+\s[0-9]+$/;
  let REGEX_PARAMETER_N_TAP = /^[0-9]+\s[0-9]+\s[0-9]+$/;
  let REGEX_PARAMETER_STRESS_TAP = /^[0-9]+\s[0-9]+\s[0-9]+$/;
+ let REGEX_PARAMETER_SWIPE = /^[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+$/;
 
 /* ******* *
  * STORAGE *

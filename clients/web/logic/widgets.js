@@ -87,6 +87,7 @@ SOFTWARE.
     initWidgetsTap();
     initWidgetsNTap();
     initWidgetsStressTap();
+    initWidgetsSwipe();
 
   }
 
@@ -190,6 +191,26 @@ SOFTWARE.
     }
   }
 
+  /**
+   * Initializes the logic of the widgets which sends a "swipe"
+   */
+  function initWidgetsSwipe(){
+    let sendRequest = function(){
+      let body = getRequestSwipeParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("swipe-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"swipe\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_SWIPE, body);
+      }
+    }
+    document.getElementById("buttonRequestSwipe").addEventListener("click", sendRequest);
+    document.getElementById("swipe-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
@@ -226,3 +247,17 @@ SOFTWARE.
     }
     return parameters.split(" ");
   }
+
+  /**
+   * Returns the parameters for the swipe request, or null if the format is not correct
+   * @return String -
+   */
+   function getRequestSwipeParameters(){
+     let parameters = document.getElementById("swipe-parameters").value;
+     if ( ! REGEX_PARAMETER_SWIPE.test(parameters) ){
+       return null;
+     }
+     parameters = parameters.split(" ");
+     return '{"startX": "' + parameters[0] + '", "startY": "'+parameters[1]+
+            '", "endX": "' + parameters[2] + '", "endY": "' + parameters[3] +'"}';
+   }
