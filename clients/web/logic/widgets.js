@@ -73,6 +73,7 @@ SOFTWARE.
     // Buttons for requests
     initWidgetButtonReset();
     initWidgetButtonStatus();
+    initWidgetButtonTap();
 
   }
 
@@ -80,64 +81,52 @@ SOFTWARE.
    * Initializes the logic of the widget which sends a "reset robot" request
    */
   function initWidgetButtonReset(){
-
     let sendRequest = function(){
-      if ( ! checkIfUrlOfServerDefined() ) return;
       let baseUrl = getRobotServerUrl();
       addSimpleMessage("[Request] Sending \"reset\" request...")
-      let xhr = new XMLHttpRequest();
-      try {
-        xhr.open("POST", baseUrl+  URL_ROBOT_API_RESET, true);
-        xhr.onreadystatechange = function(){
-          if (xhr.readyState == XMLHttpRequest.DONE){
-            if (xhr.status == 200){
-              addSimpleMessage("[Request] Sent.");
-              addResultMessage("[Response] "+xhr.responseText);
-            } else {
-              addErrorMessage("[Request] Error with the server: "+xhr.status);
-            }
-          }
-        }
-        xhr.send("{}");
-      } catch (error){
-        console.error("Error during request sending: "+error);
-        addErrorMessage("[Request] Error with the server: "+error);
-      }
+      sendPostRequest(baseUrl+  URL_ROBOT_API_RESET, "{}");
     }
-
     document.getElementById("buttonRequestReset").addEventListener("click", sendRequest);
-
   }
 
   /**
    * Initializes the logic of the widget which sends a "status" request
    */
   function initWidgetButtonStatus(){
-
     let sendRequest = function(){
-      if ( ! checkIfUrlOfServerDefined() ) return;
       let baseUrl = getRobotServerUrl();
-      addSimpleMessage("[Request] Sending \"status\" request...")
-      let xhr = new XMLHttpRequest();
-      try {
-        xhr.open("GET", baseUrl+  URL_ROBOT_API_STATUS, true);
-        xhr.onreadystatechange = function(){
-          if (xhr.readyState == XMLHttpRequest.DONE){
-            if (xhr.status == 200){
-              addSimpleMessage("[Request] Sent.");
-              addResultMessage("[Response] "+xhr.responseText);
-            } else {
-              addErrorMessage("[Request] Error with the server: "+xhr.status);
-            }
-          }
-        }
-        xhr.send(null);
-      } catch (error){
-        console.error("Error during request sending: "+error);
-        addErrorMessage("[Request] Error with the server: "+error);
+      addSimpleMessage("[Request] Sending \"status\" request...");
+      sendGetRequest(baseUrl + URL_ROBOT_API_STATUS);
+    }
+    document.getElementById("buttonRequestStatus").addEventListener("click", sendRequest);
+  }
+
+  /**
+   * Initializes the logic of the widget which sends a "tap" request
+   */
+  function initWidgetButtonTap(){
+    let sendRequest = function(){
+      let body = getRequestTapParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("tap-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"tap\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_TAP, body);
       }
     }
+    document.getElementById("buttonRequestTap").addEventListener("click", sendRequest);
+  }
 
-    document.getElementById("buttonRequestStatus").addEventListener("click", sendRequest);
-
+ /**
+  * Returns the parameters for the tap request, or null if the format is not correct
+  * @return String -
+  */
+  function getRequestTapParameters(){
+    let parameters = document.getElementById("tap-parameters").value;
+    if ( ! REGEX_PARAMETER_TAP.test(parameters) ){
+      return null;
+    }
+    parameters = parameters.split(" ");
+    return '{"x": "' + parameters[0] +'", "y": "'+parameters[1]+'"}';
   }

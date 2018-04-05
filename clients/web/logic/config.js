@@ -37,7 +37,13 @@ SOFTWARE.
 
  let URL_ROBOT_API_RESET = "/reset";
  let URL_ROBOT_API_STATUS = "/status";
+ let URL_ROBOT_API_TAP = "/tap";
 
+/* ******************** *
+ * REGEX FOR PARAMETERS *
+ * ******************** */
+
+ let REGEX_PARAMETER_TAP = /[0-9]+\s[0-9]+/;
 
 /* ******* *
  * STORAGE *

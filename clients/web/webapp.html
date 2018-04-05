@@ -72,6 +72,7 @@ Since......: 23/03/2018
     <!-- Scripts -->
     <script type="text/javascript" src="logic/config.js"></script>
     <script type="text/javascript" src="logic/storage.js"></script>
+    <script type="text/javascript" src="logic/network.js"></script>
     <script type="text/javascript" src="logic/widgets.js"></script>
     <script type="text/javascript" src="logic/glue.js"></script>
     <script type="text/javascript" src="logic/main.js"></script>
@@ -133,7 +134,7 @@ Since......: 23/03/2018
           <!-- Command tap -->
           <div id="commandTap" class="commandBlock">
             <h1><label for="tap-parameters">Tap at coordinates (x,y)</label></h1>
-            <input id="tap-parameters" type="text" name="tap-parameters" placeholder="x y" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <input id="tap-parameters" type="text" name="tap-parameters" placeholder="x y" pattern="[0-9]+\s[0-9]+"/>
             <button type="submit" id="buttonRequestTap" name="command-process" class="actionButton" title="Tap to point">
                 <img src="pictures/button-send.svg" alt"Button to tap to a point" />
             </button>
