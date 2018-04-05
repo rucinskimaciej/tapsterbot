@@ -29,10 +29,8 @@ SOFTWARE.
 * @since 29/03/2018
 */
 
-#configUrlOfServer {
+#configUrlOfServer, #clearConsole {
   position: fixed;
-  bottom: 1em;
-  right: 1em;
   z-index: 99;
   outline: none;
   background-color: #455a64;
@@ -49,18 +47,28 @@ SOFTWARE.
   animation: fadein 2s;
 }
 
+#configUrlOfServer {
+  bottom: 1em;
+  right: 1em;
+}
+
+#clearConsole {
+  bottom: 7em;
+  right: 1em;
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-#configUrlOfServer > img {
+#configUrlOfServer > img, #clearConsole > img {
     display: block;
     height: 80%;
     width: 80%;
     margin: auto;
 }
 
-#configUrlOfServer:active {
+#configUrlOfServer:active, #clearConsole:active {
   opacity: 0.5;
 }

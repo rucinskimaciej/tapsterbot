@@ -52,6 +52,16 @@ SOFTWARE.
     }
     document.getElementById("configUrlOfServer").addEventListener("click", toggleServerUrlField);
 
+    // The button to click on to clear the console
+
+    let clearConsole = function(){
+      let consoleBoard = document.getElementById("console");
+      while (consoleBoard.childNodes.length > 3) {
+        consoleBoard.removeChild(consoleBoard.lastChild);
+      }
+    }
+    document.getElementById("clearConsole").addEventListener("click", clearConsole);
+
     // The field with the server's URL
 
     let registerTimer = null;
