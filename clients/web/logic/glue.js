@@ -114,3 +114,14 @@ SOFTWARE.
     node.className = "simpleMessage";
     document.getElementById("console").appendChild(node);
   }
+
+  /**
+  * Adds in the web app's console a  message containing the resukts of a request
+  * @param message - The message to add
+  */
+  function addResultMessage(message){
+    let node = document.createElement("p");
+    node.textContent = message;
+    node.className = "resultMessage";
+    document.getElementById("console").appendChild(node);
+  }

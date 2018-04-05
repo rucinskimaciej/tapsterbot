@@ -62,7 +62,7 @@ p.fatalErrorMessage {
   padding: 10px 0px;
 }
 
-p.errorMessage, p.simpleMessage {
+p.errorMessage, p.simpleMessage, p.resultMessage {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   margin: 0px;
   padding: 10px 0px;
@@ -71,9 +71,17 @@ p.errorMessage, p.simpleMessage {
 p.errorMessage {
   color: #F44336;
   font-weight: bold;
+  font-style: normal;
 }
 
 p.simpleMessage {
   color: #000000;
   font-weight: normal;
+  font-style: normal;
+}
+
+p.resultMessage {
+  color: #4CAF50;
+  font-weight: bold;
+  font-style: italic;
 }
