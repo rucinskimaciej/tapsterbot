@@ -94,6 +94,12 @@ board.on("ready", function(){
     handler: function (request, h) {
       console.log("GET " + request.path + ": ");
       return getCommonReponseObject(null, '"OK"');
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -104,6 +110,12 @@ board.on("ready", function(){
       console.log("POST " + request.path + ": ");
       robot.resetPosition();
       return getCommonReponseObject(null, robot.getAngles());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -114,6 +126,12 @@ board.on("ready", function(){
       console.log("POST " + request.path + ": ");
       robot.startDancing();
       return getCommonReponseObject(null, '"Dancing!"');
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -124,6 +142,12 @@ board.on("ready", function(){
       console.log("POST " + request.path + ": ");
       robot.stopDancing();
       return getCommonReponseObject(null, '"No more dancing."');
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -137,6 +161,12 @@ board.on("ready", function(){
       var theta3 = parseFloat(request.payload.theta3);
       robot.setAngles(theta1, theta2, theta3);
       return getCommonReponseObject(null, robot.getAngles());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -150,6 +180,12 @@ board.on("ready", function(){
       var z = parseFloat(request.payload.z);
       robot.setPosition(x, y, z);
       return getCommonReponseObject(null, '"OK"');
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -159,6 +195,12 @@ board.on("ready", function(){
     handler: function (request, h) {
       console.log("GET " + request.path + ": ");
       return getCommonReponseObject(null, robot.getAngles());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -168,6 +210,12 @@ board.on("ready", function(){
     handler: function (request, h) {
       console.log("POST " + request.path + ": ");
       return getCommonReponseObject(null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -180,6 +228,12 @@ board.on("ready", function(){
       var y = parseFloat(request.params.y);
       var z = parseFloat(request.params.z);
       return getCommonReponseObject(null,robot.getAnglesForPosition(x,y,z));
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -191,6 +245,12 @@ board.on("ready", function(){
       var x = parseFloat(request.params.x);
       var y = parseFloat(request.params.y);
       return getCommonReponseObject(null,robot.getPositionForScreenCoordinates(x,y));
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -203,6 +263,12 @@ board.on("ready", function(){
       var y = parseFloat(request.payload.y);
       robot.tap( x, y, function(){return getCommonReponseObject(null, '"OK"')} );
       return getCommonReponseObject( null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -217,6 +283,12 @@ board.on("ready", function(){
       var endY = parseFloat(request.payload.endY);
       robot.swipe( startX, startY, endX, endY, function(){return getCommonReponseObject(null, '"OK"')} );
       return getCommonReponseObject( null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -229,6 +301,12 @@ board.on("ready", function(){
       return robot.sendKeys(keys, function() {
         return getCommonReponseObject(null, '"OK"');
       });
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -238,6 +316,12 @@ board.on("ready", function(){
     handler: function (request, h) {
       console.log("GET " + request.path + ": ");
       return getCommonReponseObject(null, robot.getCalibrationData());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -249,6 +333,12 @@ board.on("ready", function(){
       var newData = JSON.parse(request.payload.newData);
       robot.setCalibrationData(newData);
       return getCommonReponseObject(null, robot.getCalibrationData());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
@@ -258,6 +348,12 @@ board.on("ready", function(){
     handler: function (request, h) {
       console.log("GET " + request.path + ": ");
       return getCommonReponseObject(null, {z: robot.getContactZ()} );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
     }
   });
 
