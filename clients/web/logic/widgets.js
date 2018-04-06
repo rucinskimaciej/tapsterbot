@@ -46,9 +46,15 @@
     let toggleServerUrlField = function(){
       let target = document.getElementById("configField");
       let state = target.style.display;
-      if ( state == "none" ) target.style.display = "block";
-      else if ( state == "block" ) target.style.display = "none";
-      else target.style.display = "block";
+      if ( state == "none" ){
+        target.style.display = "block";
+        document.getElementById("setServerUrl").focus();
+      } else if ( state == "block" ){
+        target.style.display = "none";
+      } else {
+        target.style.display = "block";
+        document.getElementById("setServerUrl").focus();
+      }
     }
     document.getElementById("configUrlOfServer").addEventListener("click", toggleServerUrlField);
 
