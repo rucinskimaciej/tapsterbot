@@ -50,6 +50,9 @@
     '/pictures/logo-x96.png',
     '/pictures/logo-x144.png',
     '/pictures/logo-x192.png',
+    '/pictures/button-clear.svg',
+    '/pictures/button-config.svg',
+    '/pictures/button-send.svg',
 
     /* Style sheets */
     '/styles/global.css',
