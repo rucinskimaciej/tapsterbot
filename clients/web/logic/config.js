@@ -42,6 +42,7 @@ SOFTWARE.
  let URL_ROBOT_API_GET_POSITION = "/position";
  let URL_ROBOT_API_SET_POSITION = "/setPosition";
  let URL_ROBOT_API_GET_ANGLES = "/angles";
+ let URL_ROBOT_API_SET_ANGLES = "/setAngles";
 
 /* ******************** *
  * REGEX FOR PARAMETERS *
@@ -54,6 +55,7 @@ SOFTWARE.
  let REGEX_PARAMETER_N_SWIPE = /^[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+$/;
  let REGEX_PARAMETER_STRESS_SWIPE = /^[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+$/;
  let REGEX_PARAMETER_SET_POSITION = /^[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+$/;
+ let REGEX_PARAMETER_SET_ANGLES = /^[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+$/;
 
 /* ******* *
  * STORAGE *

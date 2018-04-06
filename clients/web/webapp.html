@@ -196,7 +196,7 @@ Since......: 23/03/2018
           <!-- Command set-position -->
           <div id="commandSetPosition" class="commandBlock padder">
             <h1><label for="set-position-parameters">Set the position of the finger to (x,y,z)</label></h1>
-            <input id="set-position-parameters" type="text" name="set-position-parameters" placeholder="x y z" pattern="[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <input id="set-position-parameters" type="text" name="set-position-parameters" placeholder="x y z" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
             <button type="submit" id="buttonRequestSetPosition" name="command-process" class="actionButton" title="Set the position of the robot's finger">
                 <img src="pictures/button-send.svg" alt"Button to set the position of the finger" />
             </button>
@@ -213,7 +213,7 @@ Since......: 23/03/2018
           <!-- Command set-angles -->
           <div id="commandSetAngles" class="commandBlock padder">
             <h1><label for="set-angles-parameters">Set the angles of the servomotors to (θ1, θ2, θ3)</label></h1>
-            <input id="set-angles-parameters" type="text" name="set-angles-parameters" placeholder="θ1 θ2 θ3" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <input id="set-angles-parameters" type="text" name="set-angles-parameters" placeholder="θ1 θ2 θ3" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
             <button type="submit" id="buttonRequestSetAngles" name="command-process" class="actionButton" title="Set the angles of the robot's servomotors">
                 <img src="pictures/button-send.svg" alt"Button to set the angles of the servomotors" />
             </button>

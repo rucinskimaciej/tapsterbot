@@ -93,6 +93,7 @@ SOFTWARE.
     initWidgetGetPosition();
     initWidgetsSetPosition();
     initWidgetGetAngles();
+    initWidgetsSetAngles();
 
   }
 
@@ -316,6 +317,26 @@ SOFTWARE.
     document.getElementById("buttonRequestGetAngles").addEventListener("click", sendRequest);
   }
 
+  /**
+   * Initializes the logic of the widgets which sends a "set angles" request
+   */
+  function initWidgetsSetAngles(){
+    let sendRequest = function(){
+      let body = getRequestSetAnglesParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("set-position-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"set-angles\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_SET_ANGLES, body);
+      }
+    }
+    document.getElementById("buttonRequestSetAngles").addEventListener("click", sendRequest);
+    document.getElementById("set-angles-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
@@ -403,3 +424,16 @@ SOFTWARE.
       parameters = parameters.split(" ");
       return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "z": "' + parameters[2] + '"}';
     }
+
+    /**
+     * Returns the parameters for the set-angles request, or null if the format is not correct
+     * @return String -
+     */
+     function getRequestSetAnglesParameters(){
+       let parameters = document.getElementById("set-angles-parameters").value;
+       if ( ! REGEX_PARAMETER_SET_ANGLES.test(parameters) ){
+         return null;
+       }
+       parameters = parameters.split(" ");
+       return '{"theta1": "' + parameters[0] +'", "theta2": "' + parameters[1] + '", "theta3": "' + parameters[2] + '"}';
+     }
