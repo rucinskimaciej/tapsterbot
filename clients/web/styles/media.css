@@ -44,6 +44,7 @@ SOFTWARE.
 
   .commandBlock h1, .commandBlock input, .commandBlock button {
     margin-right: 0.75em !important;
+    font-size: 0.75em !important;
   }
 
   .actionButton {
@@ -69,12 +70,12 @@ SOFTWARE.
   /* The footer */
 
   #configUrlOfServer, #clearConsole {
-    height: 3rem;
-    width: 3rem;
+    height: 3rem !important;
+    width: 3rem !important;
   }
 
   #clearConsole {
-    bottom: 6em;
+    bottom: 6em !important;
   }
 
 }
@@ -113,28 +114,6 @@ SOFTWARE.
  *
  */
 
-@media screen and (max-width: 1700px){
-
-  .commandBlock h1, .commandBlock input, .commandBlock button {
-      margin-right: 1em !important;
-  }
-
-  h1 {
-    font-size: 1.3em !important;
-  }
-
-  .actionButton {
-    height: 2.5em !important;
-    width: 2.5em !important;
-    padding: 5px !important;
-  }
-
-}
-
-/*
- *
- */
-
 @media screen and (max-width: 1350px){
 
   .commandBlock h1, .commandBlock input, .commandBlock button {
@@ -148,6 +127,29 @@ SOFTWARE.
   .actionButton {
     height: 2em !important;
     width: 2em !important;
+    padding: 5px !important;
+  }
+
+}
+
+
+/*
+ *
+ */
+
+@media screen and (max-width: 1700px){
+
+  .commandBlock h1, .commandBlock input, .commandBlock button {
+      margin-right: 1em !important;
+  }
+
+  h1 {
+    font-size: 1.3em !important;
+  }
+
+  .actionButton {
+    height: 2.5em !important;
+    width: 2.5em !important;
     padding: 5px !important;
   }
 
