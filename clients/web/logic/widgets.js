@@ -89,6 +89,7 @@ SOFTWARE.
     initWidgetsStressTap();
     initWidgetsSwipe();
     initWidgetsNSwipe();
+    initWidgetsStressSwipe();
 
   }
 
@@ -240,6 +241,34 @@ SOFTWARE.
     }
   }
 
+  /**
+   * Initializes the logic of the widgets which sends n times a "swipe" request very quickly
+   */
+  function initWidgetsStressSwipe(){
+    let sendRequest = function(){
+      let params = getRequestStressSwipeParameters();
+      if ( params == null || params.length != 5 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-swipe-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        let i = 0;
+        let max = params[0];
+        let toTrigger = function(){
+          if ( i >= max ) clearInterval(interval);
+          let body = '{"startX": "' + params[1] + '", "startY": "' + params[2] +'", "endX": "'+params[3] +'", "endY": "' + params[4] + '"}';
+          addSimpleMessage("[Request] Sending \"stress-swipe\" ("+i+"/"+max+") request with parameters \""+body+"\"");
+          sendPostRequest(baseUrl + URL_ROBOT_API_SWIPE, body);
+          i++;
+        }
+        let interval = setInterval(function(){toTrigger()}, WAIT_TIME_STRESS_SWIPE);
+      }
+    }
+    document.getElementById("buttonRequestStressSwipe").addEventListener("click", sendRequest);
+    document.getElementById("stress-swipe-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
@@ -298,6 +327,18 @@ SOFTWARE.
    function getRequestNSwipeParameters(){
      let parameters = document.getElementById("n-swipe-parameters").value;
      if ( ! REGEX_PARAMETER_N_SWIPE.test(parameters) ){
+       return null;
+     }
+     return parameters.split(" ");
+   }
+
+   /**
+    * Returns the parameters for stress-swipe command, or null if the format is not correct
+    * @return array -
+    */
+   function getRequestStressSwipeParameters(){
+     let parameters = document.getElementById("stress-swipe-parameters").value;
+     if ( ! REGEX_PARAMETER_STRESS_SWIPE.test(parameters) ){
        return null;
      }
      return parameters.split(" ");
