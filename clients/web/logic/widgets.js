@@ -84,7 +84,17 @@
       if (registerTimer != null) clearTimeout(registerTimer);
       registerTimer = setTimeout(readyToSave, interval)
     }
-    document.getElementById("setServerUrl").addEventListener("keyup", setUrlOfServerInBase);
+    // document.getElementById("setServerUrl").addEventListener("keyup", setUrlOfServerInBase);
+    // document.getElementById("setServerUrl").onkeydown = function(e){
+    //   if ( e.which == 13 /*ENTER key*/ ) readyToSave();
+    // }
+    document.getElementById("setServerUrl").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ){
+        readyToSave();
+      } else {
+        setUrlOfServerInBase();
+      }
+    }
 
     // Widgets for requests
 
