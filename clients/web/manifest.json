@@ -26,7 +26,7 @@
   },
   "start_url": "/webapp.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "landscape",
   "dir": "auto",
   "lang": "en"
 }
