@@ -88,6 +88,7 @@ SOFTWARE.
     initWidgetsNTap();
     initWidgetsStressTap();
     initWidgetsSwipe();
+    initWidgetsNSwipe();
 
   }
 
@@ -177,7 +178,7 @@ SOFTWARE.
         let max = params[0];
         let toTrigger = function(){
           if ( i >= max ) clearInterval(interval);
-          let body = '{"x": "' + params[1] +'", "y": "'+params[2]+'"}';
+          let body = '{"x": "' + params[1] +'", "y": "' + params[2] + '"}';
           addSimpleMessage("[Request] Sending \"stress-tap\" ("+i+"/"+max+") request with parameters \""+body+"\"");
           sendPostRequest(baseUrl + URL_ROBOT_API_TAP, body);
           i++;
@@ -207,6 +208,34 @@ SOFTWARE.
     }
     document.getElementById("buttonRequestSwipe").addEventListener("click", sendRequest);
     document.getElementById("swipe-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
+  /**
+   * Initializes the logic of the widgets which sends n times a "swipe" request
+   */
+  function initWidgetsNSwipe(){
+    let sendRequest = function(){
+      let params = getRequestNSwipeParameters();
+      if ( params == null || params.length != 5 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-swipe-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        let i = 0;
+        let max = params[0];
+        let toTrigger = function(){
+          if ( i >= max ) clearInterval(interval);
+          let body = '{"startX": "' + params[1] + '", "startY": "' + params[2] +'", "endX": "'+params[3] +'", "endY": "' + params[4] + '"}';
+          addSimpleMessage("[Request] Sending \"n-swipe\" ("+i+"/"+max+") request with parameters \""+body+"\"");
+          sendPostRequest(baseUrl + URL_ROBOT_API_SWIPE, body);
+          i++;
+        }
+        let interval = setInterval(function(){toTrigger()}, WAIT_TIME_BETWEEN_SWIPE);
+      }
+    }
+    document.getElementById("buttonRequestNSwipe").addEventListener("click", sendRequest);
+    document.getElementById("n-swipe-parameters").onkeydown = function(e){
       if ( e.which == 13 /*ENTER key*/ ) sendRequest();
     }
   }
@@ -258,6 +287,18 @@ SOFTWARE.
        return null;
      }
      parameters = parameters.split(" ");
-     return '{"startX": "' + parameters[0] + '", "startY": "'+parameters[1]+
-            '", "endX": "' + parameters[2] + '", "endY": "' + parameters[3] +'"}';
+     return '{"startX": "' + parameters[0] + '", "startY": "' + parameters[1] +
+            '", "endX": "' + parameters[2] + '", "endY": "' + parameters[3] + '"}';
+   }
+
+   /**
+    * Returns the parameters for n-swipe command, or null if the format is not correct
+    * @return array -
+    */
+   function getRequestNSwipeParameters(){
+     let parameters = document.getElementById("n-swipe-parameters").value;
+     if ( ! REGEX_PARAMETER_N_SWIPE.test(parameters) ){
+       return null;
+     }
+     return parameters.split(" ");
    }

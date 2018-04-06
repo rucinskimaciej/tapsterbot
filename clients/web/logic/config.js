@@ -48,6 +48,7 @@ SOFTWARE.
  let REGEX_PARAMETER_N_TAP = /^[0-9]+\s[0-9]+\s[0-9]+$/;
  let REGEX_PARAMETER_STRESS_TAP = /^[0-9]+\s[0-9]+\s[0-9]+$/;
  let REGEX_PARAMETER_SWIPE = /^[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+$/;
+ let REGEX_PARAMETER_N_SWIPE = /^[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+$/;
 
 /* ******* *
  * STORAGE *
@@ -84,4 +85,9 @@ let STRING_SIMPLE_SERVER_URL_SAVED = "The server's URL has been saved";
  /**
   * Delay in ms between each tap during stress taps process
   */
- let WAIT_TIME_STRESS_TAP = 250
+ let WAIT_TIME_STRESS_TAP = 250;
+
+ /**
+  * Delay in ms between each swipe
+  */
+ let WAIT_TIME_BETWEEN_SWIPE = 500;
