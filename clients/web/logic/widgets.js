@@ -1,33 +1,33 @@
-/*
-MIT License
-Copyright (c) 2016-2018 Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-/*
-✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
-*/
+  /*
+  MIT License
+  Copyright (c) 2016-2018 Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  */
+  /*
+  ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
+  */
 
-/**
-* @file widgets.js
-* @brief JavaScript file containing the source code of the logic behing the widgets
-* @author pylapp
-* @version 1.0.0
-* @since 05/04/2018
-*/
+  /**
+  * @file widgets.js
+  * @brief JavaScript file containing the source code of the logic behing the widgets
+  * @author pylapp
+  * @version 1.0.0
+  * @since 05/04/2018
+  */
 
   "use strict";
 
@@ -94,12 +94,14 @@ SOFTWARE.
     initWidgetsSetPosition();
     initWidgetGetAngles();
     initWidgetsSetAngles();
+    initWidgetDance();
+    initWidgetStopDance();
 
   }
 
   /**
-   * Initializes the logic of the widget which sends a "reset robot" request
-   */
+  * Initializes the logic of the widget which sends a "reset robot" request
+  */
   function initWidgetReset(){
     let sendRequest = function(){
       let baseUrl = getRobotServerUrl();
@@ -110,8 +112,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widget which sends a "status" request
-   */
+  * Initializes the logic of the widget which sends a "status" request
+  */
   function initWidgetStatus(){
     let sendRequest = function(){
       let baseUrl = getRobotServerUrl();
@@ -122,8 +124,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends a "tap" request
-   */
+  * Initializes the logic of the widgets which sends a "tap" request
+  */
   function initWidgetsTap(){
     let sendRequest = function(){
       let body = getRequestTapParameters();
@@ -142,8 +144,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends n times a "tap" request
-   */
+  * Initializes the logic of the widgets which sends n times a "tap" request
+  */
   function initWidgetsNTap(){
     let sendRequest = function(){
       let params = getRequestNTapParameters();
@@ -170,8 +172,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends n times a "stress tap"
-   */
+  * Initializes the logic of the widgets which sends n times a "stress tap"
+  */
   function initWidgetsStressTap(){
     let sendRequest = function(){
       let params = getRequestStressTapParameters();
@@ -198,8 +200,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends a "swipe"
-   */
+  * Initializes the logic of the widgets which sends a "swipe"
+  */
   function initWidgetsSwipe(){
     let sendRequest = function(){
       let body = getRequestSwipeParameters();
@@ -218,8 +220,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends n times a "swipe" request
-   */
+  * Initializes the logic of the widgets which sends n times a "swipe" request
+  */
   function initWidgetsNSwipe(){
     let sendRequest = function(){
       let params = getRequestNSwipeParameters();
@@ -246,8 +248,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends n times a "swipe" request very quickly
-   */
+  * Initializes the logic of the widgets which sends n times a "swipe" request very quickly
+  */
   function initWidgetsStressSwipe(){
     let sendRequest = function(){
       let params = getRequestStressSwipeParameters();
@@ -274,8 +276,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widget which sends a "get position" request
-   */
+  * Initializes the logic of the widget which sends a "get position" request
+  */
   function initWidgetGetPosition(){
     let sendRequest = function(){
       let baseUrl = getRobotServerUrl();
@@ -286,8 +288,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends a "set position" request
-   */
+  * Initializes the logic of the widgets which sends a "set position" request
+  */
   function initWidgetsSetPosition(){
     let sendRequest = function(){
       let body = getRequestSetPositionParameters();
@@ -306,8 +308,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widget which sends a "get angles" request
-   */
+  * Initializes the logic of the widget which sends a "get angles" request
+  */
   function initWidgetGetAngles(){
     let sendRequest = function(){
       let baseUrl = getRobotServerUrl();
@@ -318,8 +320,8 @@ SOFTWARE.
   }
 
   /**
-   * Initializes the logic of the widgets which sends a "set angles" request
-   */
+  * Initializes the logic of the widgets which sends a "set angles" request
+  */
   function initWidgetsSetAngles(){
     let sendRequest = function(){
       let body = getRequestSetAnglesParameters();
@@ -337,7 +339,31 @@ SOFTWARE.
     }
   }
 
- /**
+  /**
+  * Initializes the logic of the widget which sends a "dance" request
+  */
+  function initWidgetDance(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"dance\" request...")
+      sendPostRequest(baseUrl+  URL_ROBOT_API_DANCE, "{}");
+    }
+    document.getElementById("buttonRequestDance").addEventListener("click", sendRequest);
+  }
+
+  /**
+  * Initializes the logic of the widget which sends a "dance" request
+  */
+  function initWidgetStopDance(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"stop dance\" request...")
+      sendPostRequest(baseUrl+  URL_ROBOT_API_STOP_DANCE, "{}");
+    }
+    document.getElementById("buttonRequestStopDancing").addEventListener("click", sendRequest);
+  }
+
+  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
   */
@@ -351,9 +377,9 @@ SOFTWARE.
   }
 
   /**
-   * Returns the parameters for n-tap request, or null if the format is not correct
-   * @return array -
-   */
+  * Returns the parameters for n-tap request, or null if the format is not correct
+  * @return array -
+  */
   function getRequestNTapParameters(){
     let parameters = document.getElementById("n-tap-parameters").value;
     if ( ! REGEX_PARAMETER_N_TAP.test(parameters) ){
@@ -363,9 +389,9 @@ SOFTWARE.
   }
 
   /**
-   * Returns the parameters for stress-tap request, or null if the format is not correct
-   * @return array -
-   */
+  * Returns the parameters for stress-tap request, or null if the format is not correct
+  * @return array -
+  */
   function getRequestStressTapParameters(){
     let parameters = document.getElementById("stress-tap-parameters").value;
     if ( ! REGEX_PARAMETER_STRESS_TAP.test(parameters) ){
@@ -375,65 +401,65 @@ SOFTWARE.
   }
 
   /**
-   * Returns the parameters for the swipe request, or null if the format is not correct
-   * @return String -
-   */
-   function getRequestSwipeParameters(){
-     let parameters = document.getElementById("swipe-parameters").value;
-     if ( ! REGEX_PARAMETER_SWIPE.test(parameters) ){
-       return null;
-     }
-     parameters = parameters.split(" ");
-     return '{"startX": "' + parameters[0] + '", "startY": "' + parameters[1] +
-            '", "endX": "' + parameters[2] + '", "endY": "' + parameters[3] + '"}';
-   }
-
-   /**
-    * Returns the parameters for n-swipe command, or null if the format is not correct
-    * @return array -
-    */
-   function getRequestNSwipeParameters(){
-     let parameters = document.getElementById("n-swipe-parameters").value;
-     if ( ! REGEX_PARAMETER_N_SWIPE.test(parameters) ){
-       return null;
-     }
-     return parameters.split(" ");
-   }
-
-   /**
-    * Returns the parameters for stress-swipe command, or null if the format is not correct
-    * @return array -
-    */
-   function getRequestStressSwipeParameters(){
-     let parameters = document.getElementById("stress-swipe-parameters").value;
-     if ( ! REGEX_PARAMETER_STRESS_SWIPE.test(parameters) ){
-       return null;
-     }
-     return parameters.split(" ");
-   }
-
-   /**
-    * Returns the parameters for the set-position request, or null if the format is not correct
-    * @return String -
-    */
-    function getRequestSetPositionParameters(){
-      let parameters = document.getElementById("set-position-parameters").value;
-      if ( ! REGEX_PARAMETER_SET_POSITION.test(parameters) ){
-        return null;
-      }
-      parameters = parameters.split(" ");
-      return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "z": "' + parameters[2] + '"}';
+  * Returns the parameters for the swipe request, or null if the format is not correct
+  * @return String -
+  */
+  function getRequestSwipeParameters(){
+    let parameters = document.getElementById("swipe-parameters").value;
+    if ( ! REGEX_PARAMETER_SWIPE.test(parameters) ){
+      return null;
     }
+    parameters = parameters.split(" ");
+    return '{"startX": "' + parameters[0] + '", "startY": "' + parameters[1] +
+    '", "endX": "' + parameters[2] + '", "endY": "' + parameters[3] + '"}';
+  }
 
-    /**
-     * Returns the parameters for the set-angles request, or null if the format is not correct
-     * @return String -
-     */
-     function getRequestSetAnglesParameters(){
-       let parameters = document.getElementById("set-angles-parameters").value;
-       if ( ! REGEX_PARAMETER_SET_ANGLES.test(parameters) ){
-         return null;
-       }
-       parameters = parameters.split(" ");
-       return '{"theta1": "' + parameters[0] +'", "theta2": "' + parameters[1] + '", "theta3": "' + parameters[2] + '"}';
-     }
+  /**
+  * Returns the parameters for n-swipe command, or null if the format is not correct
+  * @return array -
+  */
+  function getRequestNSwipeParameters(){
+    let parameters = document.getElementById("n-swipe-parameters").value;
+    if ( ! REGEX_PARAMETER_N_SWIPE.test(parameters) ){
+      return null;
+    }
+    return parameters.split(" ");
+  }
+
+  /**
+  * Returns the parameters for stress-swipe command, or null if the format is not correct
+  * @return array -
+  */
+  function getRequestStressSwipeParameters(){
+    let parameters = document.getElementById("stress-swipe-parameters").value;
+    if ( ! REGEX_PARAMETER_STRESS_SWIPE.test(parameters) ){
+      return null;
+    }
+    return parameters.split(" ");
+  }
+
+  /**
+  * Returns the parameters for the set-position request, or null if the format is not correct
+  * @return String -
+  */
+  function getRequestSetPositionParameters(){
+    let parameters = document.getElementById("set-position-parameters").value;
+    if ( ! REGEX_PARAMETER_SET_POSITION.test(parameters) ){
+      return null;
+    }
+    parameters = parameters.split(" ");
+    return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "z": "' + parameters[2] + '"}';
+  }
+
+  /**
+  * Returns the parameters for the set-angles request, or null if the format is not correct
+  * @return String -
+  */
+  function getRequestSetAnglesParameters(){
+    let parameters = document.getElementById("set-angles-parameters").value;
+    if ( ! REGEX_PARAMETER_SET_ANGLES.test(parameters) ){
+      return null;
+    }
+    parameters = parameters.split(" ");
+    return '{"theta1": "' + parameters[0] +'", "theta2": "' + parameters[1] + '", "theta3": "' + parameters[2] + '"}';
+  }

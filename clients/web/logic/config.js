@@ -43,6 +43,8 @@ SOFTWARE.
  let URL_ROBOT_API_SET_POSITION = "/setPosition";
  let URL_ROBOT_API_GET_ANGLES = "/angles";
  let URL_ROBOT_API_SET_ANGLES = "/setAngles";
+ let URL_ROBOT_API_DANCE = "/dance";
+ let URL_ROBOT_API_STOP_DANCE = "/stopDancing";
 
 /* ******************** *
  * REGEX FOR PARAMETERS *
