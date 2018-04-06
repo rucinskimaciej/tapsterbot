@@ -254,7 +254,7 @@
     let sendRequest = function(){
       let params = getRequestStressSwipeParameters();
       if ( params == null || params.length != 5 ){
-        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-swipe-parameters").value+"'");
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("stress-swipe-parameters").value+"'");
       } else {
         let baseUrl = getRobotServerUrl();
         let i = 0;
