@@ -91,6 +91,7 @@ SOFTWARE.
     initWidgetsNSwipe();
     initWidgetsStressSwipe();
     initWidgetGetPosition();
+    initWidgetsSetPosition();
 
   }
 
@@ -282,6 +283,26 @@ SOFTWARE.
     document.getElementById("buttonRequestGetPosition").addEventListener("click", sendRequest);
   }
 
+  /**
+   * Initializes the logic of the widgets which sends a "set position" request
+   */
+  function initWidgetsSetPosition(){
+    let sendRequest = function(){
+      let body = getRequestSetPositionParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("set-position-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"set-position\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_SET_POSITION, body);
+      }
+    }
+    document.getElementById("buttonRequestSetPosition").addEventListener("click", sendRequest);
+    document.getElementById("set-position-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
@@ -356,3 +377,16 @@ SOFTWARE.
      }
      return parameters.split(" ");
    }
+
+   /**
+    * Returns the parameters for the set-position request, or null if the format is not correct
+    * @return String -
+    */
+    function getRequestSetPositionParameters(){
+      let parameters = document.getElementById("set-position-parameters").value;
+      if ( ! REGEX_PARAMETER_SET_POSITION.test(parameters) ){
+        return null;
+      }
+      parameters = parameters.split(" ");
+      return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "z": "' + parameters[2] + '"}';
+    }
