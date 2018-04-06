@@ -39,6 +39,7 @@ SOFTWARE.
  let URL_ROBOT_API_STATUS = "/status";
  let URL_ROBOT_API_TAP = "/tap";
  let URL_ROBOT_API_SWIPE = "/swipe";
+ let URL_ROBOT_API_GET_POSITION = "/position";
 
 /* ******************** *
  * REGEX FOR PARAMETERS *

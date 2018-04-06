@@ -90,6 +90,7 @@ SOFTWARE.
     initWidgetsSwipe();
     initWidgetsNSwipe();
     initWidgetsStressSwipe();
+    initWidgetGetPosition();
 
   }
 
@@ -267,6 +268,18 @@ SOFTWARE.
     document.getElementById("stress-swipe-parameters").onkeydown = function(e){
       if ( e.which == 13 /*ENTER key*/ ) sendRequest();
     }
+  }
+
+  /**
+   * Initializes the logic of the widget which sends a "get position" request
+   */
+  function initWidgetGetPosition(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"get position\" request...");
+      sendGetRequest(baseUrl + URL_ROBOT_API_GET_POSITION);
+    }
+    document.getElementById("buttonRequestGetPosition").addEventListener("click", sendRequest);
   }
 
  /**
