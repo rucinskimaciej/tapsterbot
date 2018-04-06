@@ -35,4 +35,4 @@
 3. c3po - (tag: vC3po) - Version with a client (written in Python) to use to drive the bot.
 4. chappie - (tag: vChappie) - Version with Robot Framework keywords to use to drive the bot. Improved Python client. Cleaner files tree.
 5. case - (tag: vCase) - Version with an Android app which embeds an assistant based on [Snips](https://snips.ai/ "Snips.ai").
-6. deckard - Should contain a web client
+6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.

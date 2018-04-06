@@ -1,7 +1,7 @@
 Because we have a robot which make tests and tap on a device, why not using an assistant to talk to it?
 
 That is the reason why an assistant has been defined, and today integrated to the [Android app](https://github.com/pylapp/tapsterbot/wiki/08-%5C--Drive-the-robot:-Android-client). The chosen solution is [Snips](https://snips.ai).
-Snips is a solution which respects the private life, is not intrusive, does not send data to foreign clouds, and has all its logic local. Thus, instead of an _on-the-grid_ solution like _Google Assistant_ and_Dialog Flow_, , Snips is _off-the-grid_ and keep its resources locally.
+Snips is a solution which respects the private life, is not intrusive, does not send data to foreign clouds, and has all its logic local. Thus, instead of an _on-the-grid_ solution like _Google Assistant_ and _Dialog Flow_, Snips is _off-the-grid_ and keep its resources locally.
 The bad side of this kind of tools is the final APK is quite heavy, but it is not a fatality :)
 In fact, if you worry about your life, why not keeping it near you? 
 
