@@ -56,7 +56,10 @@
 
     /* Style sheets */
     '/styles/global.css',
-    '/styles/media.css',
+    '/styles/media-extrasmallscreens.css',
+    '/styles/media-smallscreens.css',
+    '/styles/media-mediumscreens.css',
+    '/styles/media-extralargescreens.css',
     '/styles/header.css',
     '/styles/footer.css',
     '/styles/console.css',
