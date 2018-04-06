@@ -41,6 +41,7 @@ SOFTWARE.
  let URL_ROBOT_API_SWIPE = "/swipe";
  let URL_ROBOT_API_GET_POSITION = "/position";
  let URL_ROBOT_API_SET_POSITION = "/setPosition";
+ let URL_ROBOT_API_GET_ANGLES = "/angles";
 
 /* ******************** *
  * REGEX FOR PARAMETERS *

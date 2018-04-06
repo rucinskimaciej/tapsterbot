@@ -92,6 +92,7 @@ SOFTWARE.
     initWidgetsStressSwipe();
     initWidgetGetPosition();
     initWidgetsSetPosition();
+    initWidgetGetAngles();
 
   }
 
@@ -301,6 +302,18 @@ SOFTWARE.
     document.getElementById("set-position-parameters").onkeydown = function(e){
       if ( e.which == 13 /*ENTER key*/ ) sendRequest();
     }
+  }
+
+  /**
+   * Initializes the logic of the widget which sends a "get angles" request
+   */
+  function initWidgetGetAngles(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"get angles\" request...");
+      sendGetRequest(baseUrl + URL_ROBOT_API_GET_ANGLES);
+    }
+    document.getElementById("buttonRequestGetAngles").addEventListener("click", sendRequest);
   }
 
  /**
