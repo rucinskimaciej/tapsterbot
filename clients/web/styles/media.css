@@ -29,34 +29,21 @@ SOFTWARE.
 * @since 23/03/2018
 */
 
-@media screen and (max-width: 1700px)
-{
+@media screen and (max-width: 400px){
 
-  .commandBlock h1, .commandBlock input, .commandBlock button {
-      margin-right: 1em !important;
-  }
-
-  h1 {
-    font-size: 1.3em !important;
-  }
-
-  .actionButton {
-    height: 2.5em !important;
-    width: 2.5em !important;
-    padding: 5px !important;
-  }
-
-}
-
-@media screen and (max-width: 1350px)
-{
-
-  .commandBlock h1, .commandBlock input, .commandBlock button {
-      margin-right: 1em !important;
-  }
+  /* The commands board  */
 
   h1 {
     font-size: 1em !important;
+  }
+
+  .commandBlock {
+    min-width: 250px;
+    padding: 0;
+  }
+
+  .commandBlock h1, .commandBlock input, .commandBlock button {
+    margin-right: 0.75em !important;
   }
 
   .actionButton {
@@ -65,10 +52,38 @@ SOFTWARE.
     padding: 5px !important;
   }
 
+  .padder {
+      margin-bottom: auto;
+  }
+
+  /* The console board  */
+
+  #boardConsole {
+    width: 40% !important;
+  }
+
+  p.errorMessage, p.simpleMessage, p.resultMessage {
+    font-size: 0.75em;
+  }
+
+  /* The footer */
+
+  #configUrlOfServer, #clearConsole {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  #clearConsole {
+    bottom: 6em;
+  }
+
 }
 
-@media screen and (max-width: 900px)
-{
+/*
+ *
+ */
+
+@media screen and (max-width: 900px){
 
   .commandBlock {
     min-width: 250px;
@@ -90,6 +105,50 @@ SOFTWARE.
 
   #boardConsole {
     width: 40% !important;
+  }
+
+}
+
+/*
+ *
+ */
+
+@media screen and (max-width: 1700px){
+
+  .commandBlock h1, .commandBlock input, .commandBlock button {
+      margin-right: 1em !important;
+  }
+
+  h1 {
+    font-size: 1.3em !important;
+  }
+
+  .actionButton {
+    height: 2.5em !important;
+    width: 2.5em !important;
+    padding: 5px !important;
+  }
+
+}
+
+/*
+ *
+ */
+
+@media screen and (max-width: 1350px){
+
+  .commandBlock h1, .commandBlock input, .commandBlock button {
+      margin-right: 1em !important;
+  }
+
+  h1 {
+    font-size: 1em !important;
+  }
+
+  .actionButton {
+    height: 2em !important;
+    width: 2em !important;
+    padding: 5px !important;
   }
 
 }
