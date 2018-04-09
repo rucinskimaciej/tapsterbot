@@ -1,6 +1,6 @@
 {
   "short_name": "Tapster2 Web Client",
-  "name": "Tapster2 Web Client (v1.0.0)",
+  "name": "Tapster2 Web Client (v1.1.0)",
   "description": "Drive your Tapster robot",
   "icons": [
     {
@@ -20,11 +20,11 @@
     }
   ],
   "serviceworker": {
-    "src": "serviceworker.js",
+    "src": "./serviceworker.js",
     "scope": "/",
     "update_via_cache": "none"
   },
-  "start_url": "/webapp.html",
+  "start_url": "./webapp.html",
   "display": "standalone",
   "orientation": "any",
   "dir": "auto",

@@ -26,44 +26,44 @@
   * @brief A service worker to use as a cache system in case of missing Internet / data / network connection.
   *       Please note that you must serve this web app through HTTPS or localhost so as to use Service Workers.
   * @author pylapp
-  * @version 1.0.0
+  * @version 1.0.1
   * @since 23/03/2018
   */
 
   "use strict";
 
-  let CACHE_NAME = 'tapser2webclient-cache-v1';
+  let CACHE_NAME = 'tapster2webclient-cache-v2';
   let urlsToCache = [
 
-    '/',
+    './',
 
     /* Logic scripts */
-    '/logic/config.js',
-    '/logic/storage.js',
-    '/logic/glue.js',
-    '/logic/main.js',
-    '/logic/widgets.js',
-    '/logic/network.js',
+    './logic/config.js',
+    './logic/storage.js',
+    './logic/glue.js',
+    './logic/main.js',
+    './logic/widgets.js',
+    './logic/network.js',
 
     /* Pictures assets */
-    '/pictures/favicon.png',
-    '/pictures/logo-x96.png',
-    '/pictures/logo-x144.png',
-    '/pictures/logo-x192.png',
-    '/pictures/button-clear.svg',
-    '/pictures/button-config.svg',
-    '/pictures/button-send.svg',
+    './pictures/favicon.png',
+    './pictures/logo-x96.png',
+    './pictures/logo-x144.png',
+    './pictures/logo-x192.png',
+    './pictures/button-clear.svg',
+    './pictures/button-config.svg',
+    './pictures/button-send.svg',
 
     /* Style sheets */
-    '/styles/global.css',
-    '/styles/media-extrasmallscreens.css',
-    '/styles/media-smallscreens.css',
-    '/styles/media-mediumscreens.css',
-    '/styles/media-extralargescreens.css',
-    '/styles/header.css',
-    '/styles/footer.css',
-    '/styles/console.css',
-    '/styles/commands.css'
+    './styles/global.css',
+    './styles/media-extrasmallscreens.css',
+    './styles/media-smallscreens.css',
+    './styles/media-mediumscreens.css',
+    './styles/media-extralargescreens.css',
+    './styles/header.css',
+    './styles/footer.css',
+    './styles/console.css',
+    './styles/commands.css'
 
   ];
 
@@ -103,7 +103,7 @@
             // Clone it to consume the reponse 2 times (by cache and by browser)
             var responseToCache = response.clone();
             caches.open(CACHE_NAME).then(function(cache) {
-              console.log('Service Worker: reposne to cache - '+responseToCache);
+              console.log('Service Worker: response to cache - '+responseToCache);
               cache.put(event.request, responseToCache);
             });
             return response;
