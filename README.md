@@ -6,6 +6,7 @@
 - Bring fun in your office
 - Bring automation for your tests
 - Extend your software-based instrumented tests (using UI Automator, Espresso, Kakao, Appium or whatever) with hardware-based tests
+- Improve quality of your products
 - Deal with secured elements on which no software can click
 - Be as close as possible of the ideal use case (users use their fingers to click :3)
 - Get a new tool for software development and mobile app tests: robots!
@@ -37,3 +38,4 @@
 5. case - (tag: vCase) - Version with an Android app which embeds an assistant based on [Snips](https://snips.ai/ "Snips.ai").
 6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.
 7. deckard-fix-1 - (tag: vDeckard-1) - Fix defects in cache and manifest so as to make web app installable.
+8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium)
