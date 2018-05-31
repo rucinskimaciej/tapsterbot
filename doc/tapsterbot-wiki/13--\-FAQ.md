@@ -53,4 +53,4 @@
   ```
 
 * And if my Tapster robot screams "Exterminate!"?
-  * Call The Doctor and run you clever boy!
+  * Call The Doctor and Run You Clever Boy!
