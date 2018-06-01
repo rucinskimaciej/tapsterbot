@@ -4,9 +4,14 @@ The Tapster robot is agnostic: it cannot know which device is inside it. Thus th
 
 ## Run the following commands
 
+0 - Install Node.js dependencies
+```shell
+   npm install
+```
+
 1 - Start the server for the bot
 ```shell
-	node server.js
+   node server.js
 ```
 
 2 - Then start Appium with the calibration app and the desired capabilities.
@@ -44,7 +49,7 @@ Be sure you have adb in your PATH
 
 3 - Run the calibration process
 ```shell
-	node calibrate.js -o calibration.json
+   node calibrate.js -o calibration.json
 ```
 
 Be sure you have previously filled the JSON capabilities file available in the _capabilities_ folder.

@@ -1,10 +1,17 @@
 # How to calibrate the bot
 
+The Tapster robot is agnostic: it cannot know which device is inside it. Thus the robot cannot be notified it taps outside the screen or in a bad point on the device. So you must calibrate the robot for a particular type of device. The calibration workflow will produce a calibration JSON file you can use later for the server script. This calibration file will be suitable for all of devices with the same model you have used.
+
 ## Run the following commands
+
+0 - Install Node.js dependencies
+```shell
+   npm install
+```
 
 1 - Start the server for the bot
 ```shell
-	node server.js
+   node server.js
 ```
 
 2 - Then start Appium with the calibration app and the desired capabilities.
@@ -42,11 +49,10 @@ Be sure you have adb in your PATH
 
 3 - Run the calibration process
 ```shell
-	node calibrate.js -o calibration.json
+   node calibrate.js -o calibration.json
 ```
 
-Be sure you have previously filled the JSON capabilities file available in the _calibration/capabilities_ folder.
-Indeed the _calibrate.js_ script loads the suitable file so as to reach the good device.
+Be sure you have previously filled the JSON capabilities file available in the _capabilities_ folder.
 
 
 ## I didn't all understand
