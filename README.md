@@ -24,11 +24,14 @@
 - https://speakerdeck.com/pylapp/why-not-tapster
 
 ## Documentation
-- [Getting started](https://github.com/pylapp/tapsterbot/blob/master/doc/getting-started.md)
-- [Calibration of the bot](https://github.com/pylapp/tapsterbot/blob/master/doc/calibration-workflow.md)
-- [Robot HTTP API](https://github.com/pylapp/tapsterbot/blob/master/doc/robot-api.md)
-- [Technical details](https://github.com/pylapp/tapsterbot/blob/master/doc/technical-details.md)
-- [FAQ](https://github.com/pylapp/tapsterbot/blob/master/doc/FAQ.md)
+- [Getting started](https://github.com/pylapp/tapsterbot/wiki/01-%5C--Getting-started-with-Tapster-2)
+- [Calibration of the robot](https://github.com/pylapp/tapsterbot/wiki/02-%5C--The-calibration-workflow)
+- [Robot HTTP API](https://github.com/pylapp/tapsterbot/wiki/04-%5C--The-Tapster-2-API)
+- [Python client](https://github.com/pylapp/tapsterbot/wiki/06-%5C--Drive-the-robot:-Python-API)
+- [Robot Framework keywords](https://github.com/pylapp/tapsterbot/wiki/11--%5C-Automation-of-tests)
+- [Technical details](https://github.com/pylapp/tapsterbot/wiki/12--%5C-More-technical-details)
+- [FAQ](https://github.com/pylapp/tapsterbot/wiki/13--%5C-FAQ)
+- [Wiki](https://github.com/pylapp/tapsterbot/wiki)
 
 ## Versions
 1. astro - (tag: vAstro) - The base version of the project, with calibrations workflows and assets.
@@ -38,4 +41,4 @@
 5. case - (tag: vCase) - Version with an Android app which embeds an assistant based on [Snips](https://snips.ai/ "Snips.ai").
 6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.
 7. deckard-fix-1 - (tag: vDeckard-1) - Fix defects in cache and manifest so as to make web app installable.
-8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium)
+8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
