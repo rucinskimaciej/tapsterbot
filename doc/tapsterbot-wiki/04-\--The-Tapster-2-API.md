@@ -28,6 +28,7 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Angles for position (a, b, c)		    | GET           | /anglesForPosition/x/a/y/b/z/c		| _not defined_       							| Gets the angles of the arms of the bot for the 3D coordinates (a, b, c) where a in X axis, b in Y axis and c in Z axis		|
 | Position for screen coordinates (x, y)    | GET           | /positionForScreenCoordinates/x/a/y/b	| _not defined_       							| Gets the positions of the robot according to (x, y) coordinates in the 2D device landmark						|
 | Tap to a point at (x,y)    		    | POST          | /tap                 			| {'x': x, 'y': y}      						| Makes the robot tap on (x, y)														|
+| Long tap to a point at (x,y) during duration ms    		    | POST          | /longTap                 			| {'x': x, 'y': y, 'duration': duration}      						| Makes the robot tap on (x, y)	with finger kept pressed during duration ms													|
 | Swipe from (a,b) to (c,d)    		    | POST          | /swipe                 			| {'startX': a, 'startY': b, 'endX': c, 'endY', d} 			| Makes the robot swipe from (a, b) to (c, d)												|
 | Send keys		    		    | POST          | /sendKeys               			| 						 			| _Not implemented yet_ 														|
 | Get calibration data   		    | GET           | /calibrationData      			| _not defined_       							| Gets the claibration data used by the bot												|

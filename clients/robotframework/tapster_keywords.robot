@@ -1,5 +1,6 @@
 # MIT License
 # Copyright (c) 2016-2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+# Copyright (c) 2018  Orange
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -22,7 +23,7 @@
 # File.......: tapster_keywords.robot
 # Brief......: File contaning Robot Framework keywords to use to as to deal with the Tapster2 bot
 # Author.....: pylapp
-# Version....: 1.0.0
+# Version....: 2.0.0
 # Since......: 17/01/2018
 
 
@@ -111,6 +112,16 @@ Tap to point
     ${tap} =    json.dumps    ${tap_raw}
     ${response} =    Post Request    ${session}    ${ROBOT_URL_TAP}    data=${tap}
     Wait
+    [Return]    ${response.text}
+
+Long tap to point
+    [Documentation]    Makes the robot with the given session tap to the point at (x, y) during duration in ms
+    [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_LONG_TAP}
+    &{long_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
+    ${long_tap} =    json.dumps    ${long_tap_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_LONG_TAP}    data=${long_tap}
+    ${duration_in_seconds} =    Evaluate    ${duration}/1000
+    Wait    ${duration_in_seconds}
     [Return]    ${response.text}
 
 Reset
@@ -215,20 +226,20 @@ Get contact Z
 
 Stress taps
     [Documentation]    Stresses the app under the robot with n quick tap on (x,y) using a session
-        [Arguments]    ${session}    ${n}    ${x}    ${y}
-        &{tap_raw} =    Create Dictionary    x=${x}    y=${y}
-        ${tap} =    json.dumps    ${tap_raw}
-        : FOR    ${INDEX}    IN RANGE    0    ${n}
-        \        ${response} =    Post Request    ${session}    ${ROBOT_URL_TAP}    data=${tap}
-        \        Wait    ${WAIT_TIME_STRESS_TAP}
-        [Return]    ${response.text}
+    [Arguments]    ${session}    ${n}    ${x}    ${y}
+    &{tap_raw} =    Create Dictionary    x=${x}    y=${y}
+    ${tap} =    json.dumps    ${tap_raw}
+    : FOR    ${INDEX}    IN RANGE    0    ${n}
+    \        ${response} =    Post Request    ${session}    ${ROBOT_URL_TAP}    data=${tap}
+    \        Wait    ${WAIT_TIME_STRESS_TAP}
+    [Return]    ${response.text}
 
 Stress swipes
-        [Documentation]    Stresses the app under the robot with n quick swipes from (a,b) to (c,d)v using a session
-        [Arguments]    ${session}    ${n}    ${a}    ${b}    ${c}    ${d}
-        &{swipe_raw} =    Create Dictionary    startX=${a}    startY=${b}    endX=${c}    endY=${d}
-        ${swipe} =    json.dumps    ${swipe_raw}
-        : FOR    ${INDEX}    IN RANGE    0    ${n}
-        \        ${response} =    Post Request    ${session}    ${ROBOT_URL_SWIPE}    data=${swipe}
-        \        Wait    ${WAIT_TIME_STRESS_SWIPE}
-        [Return]    ${response.text}
+    [Documentation]    Stresses the app under the robot with n quick swipes from (a,b) to (c,d)v using a session
+    [Arguments]    ${session}    ${n}    ${a}    ${b}    ${c}    ${d}
+    &{swipe_raw} =    Create Dictionary    startX=${a}    startY=${b}    endX=${c}    endY=${d}
+    ${swipe} =    json.dumps    ${swipe_raw}
+    : FOR    ${INDEX}    IN RANGE    0    ${n}
+    \        ${response} =    Post Request    ${session}    ${ROBOT_URL_SWIPE}    data=${swipe}
+    \        Wait    ${WAIT_TIME_STRESS_SWIPE}
+    [Return]    ${response.text}

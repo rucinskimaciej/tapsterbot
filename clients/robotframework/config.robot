@@ -1,5 +1,6 @@
 # MIT License
 # Copyright (c) 2016-2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+# Copyright (c) 2018  Orange
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -22,7 +23,7 @@
 # File.......: config.robot
 # Brief......: File contaning configuration to apply to kewyrods
 # Author.....: pylapp
-# Version....: 1.0.0
+# Version....: 2.0.0
 # Since......: 17/01/2018
 
 *** Settings ***
@@ -34,7 +35,7 @@ Documentation
 *** Variables ***
 
 # Version of the Robot Framework "client"
-${CLIENT_VERSION}    v1.0.0
+${CLIENT_VERSION}    v2.0.0
 
 # ************
 # Robot things
@@ -64,6 +65,9 @@ ${WAIT_TIME_STRESS_SWIPE}    0.33s
 # Delay in seconds between each tap during stress taps process
 ${WAIT_TIME_STRESS_TAP}    0.25s
 
+# The default duration for a long tap
+${DEFAULT_DURATION_LONG_TAP}    1.5s
+
 # Deal in seconds between each operation picked and triggered from a commands file
 ${WAIT_BETWEEN_CASCADED_OPERATION}    0.5s
 
@@ -79,6 +83,7 @@ ${ROBOT_URL_SET_ANGLES}    /setAngles
 ${ROBOT_URL_GET_POSITION}    /position
 ${ROBOT_URL_SET_POSITION}    /setPosition
 ${ROBOT_URL_TAP}    /tap
+${ROBOT_URL_LONG_TAP}    /longTap
 ${ROBOT_URL_RESET}    /reset
 ${ROBOT_URL_GET_CALIBRATION}    /calibrationData
 ${ROBOT_URL_SET_CALIBRATION}    /setCalibrationData

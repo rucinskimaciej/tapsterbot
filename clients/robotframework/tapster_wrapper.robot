@@ -25,7 +25,7 @@
 # File: tapster_wrapper.robot
 # Brief: Robot Framework file providing feature to use so as to click on items with Tapster bot
 # Author: Pierre-Yves Lapersonne
-# Version: 1.0.0
+# Version: 1.1.0
 # Since: 29/05/2018
 
 *** Settings ***
@@ -42,6 +42,34 @@ Resource    ./tapster_keywords.robot
 # ###############
 # Useful keywords
 # ###############
+
+Long Tap To Element With Id
+    [Documentation]    Make a long tap to an element, in portrait mode, which has this id.
+    # The contact point will be computed according to location and dimension of the widget.
+    # If there are several widgets with this id, will keep the 1st.
+    # The duration is by default ${DEFAULT_DURATION_LONG_TAP} (in ms)
+    [Arguments]    ${id}    ${duration}=${DEFAULT_DURATION_LONG_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Long tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Long Tap To Element With Text
+    [Documentation]    Make a long tap to an element, in portrait mode, which has this text.
+    # The contact point will be computed according to location and dimension of the widget.
+    # If there are several widgets with this text, will keep the 1st.
+    # The duration is by default ${DEFAULT_DURATION_LONG_TAP} (in ms)
+    [Arguments]    ${text}    ${duration}=${DEFAULT_DURATION_LONG_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Long tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
 
 Tap To Element With Id
     [Documentation]    Tap to an element, in portrait mode, which has this id.

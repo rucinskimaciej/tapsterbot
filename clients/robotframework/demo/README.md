@@ -56,6 +56,11 @@ They call keywords and configuration variables defined in the other files.
   robot -t "Tap to point" tapster_demo.robot
 ```
 
+- Make the robot tap to a point with a bigger duration than a normal tap
+```shell
+  robot -t "Long tap to point" tapster_demo.robot
+```
+
 - Get the calibration data
 ```shell
   robot -t "Get calibration" tapster_demo.robot
