@@ -291,7 +291,27 @@ board.on("ready", function(){
       var x = parseFloat(request.payload.x);
       var y = parseFloat(request.payload.y);
       robot.tap( x, y, function(){return getCommonReponseObject(null, '"OK"')} );
-      return getCommonReponseObject( null, robot.getPosition());
+      return getCommonReponseObject(null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
+  // Make a long tap to a 2D point using the device landmark with a dedicated duration in ms
+  server.route({
+    method: 'POST',
+    path:'/longTap',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var x = parseFloat(request.payload.x);
+      var y = parseFloat(request.payload.y);
+      var duration = parseFloat(request.payload.duration);
+      robot.longTap(x, y, duration, function(){return getCommonReponseObject(null, '"OK"')} );
+      return getCommonReponseObject(null, robot.getPosition());
     },
     config: {
       cors: {

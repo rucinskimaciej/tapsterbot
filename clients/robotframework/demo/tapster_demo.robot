@@ -1,5 +1,6 @@
 # MIT License
 # Copyright (c) 2016-2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+# Copyright (c) 2018  Orange
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -22,7 +23,7 @@
 # File.......: tapster_demo.robot
 # Brief......: File contaning some tests cases and demos of usages
 # Author.....: pylapp
-# Version....: 1.1.0
+# Version....: 1.2.0
 # Since......: 17/01/2018
 
 
@@ -117,6 +118,17 @@ Tap to point
     ${response} =    Tap to point    mySession    100    100
     Log To Console    ${response}
     ${response} =    Tap to point    mySession    300    450
+    Log To Console    ${response}
+    Delete robot session    mySession
+
+Long tap to point
+    [Documentation]    Long tap to points
+    Create robot session    mySession
+    ${response} =    Reset    mySession
+    Log To Console    ${response}
+    ${response} =    Long tap to point    mySession    100    100    10000
+    Log To Console    ${response}
+    ${response} =    Long tap to point    mySession    300    450
     Log To Console    ${response}
     Delete robot session    mySession
 

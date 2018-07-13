@@ -1,5 +1,7 @@
 /*
 Copyright (c) 2011-2016, Tapster Committers
+Copyright © 2018 Orange
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -163,6 +165,20 @@ method.tap = function(screenX, screenY, cb){
       this.setPosition(position.x, position.y, touchZ * 0.9);
       return setTimeout(cb, 400);
     }.bind(this), 400);
+  }.bind(this), 400);
+};
+
+method.longTap = function(screenX, screenY, duration, cb){
+  duration = (duration < 1000 ? 1000 : duration); // Duration in ms
+  var position = this.getPositionForScreenCoordinates(screenX, screenY);
+  var touchZ = this.getContactZ();
+  this.setPosition(position.x, position.y, touchZ * 0.9); // Be ready to tap
+  return setTimeout(function() {
+    this.setPosition(position.x, position.y, touchZ); // Tap
+    return setTimeout(function() {
+      this.setPosition(position.x, position.y, touchZ * 0.9); // Go to initial state
+      return setTimeout(cb, 400);
+    }.bind(this), duration);
   }.bind(this), 400);
 };
 

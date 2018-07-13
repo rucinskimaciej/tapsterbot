@@ -113,6 +113,14 @@ You should be able to see the yellow LED on the motherboard blinking on and off 
 
 Optional step: Modify the time interval, re-upload the sketch, and check to see that the board is now blinking at a different rate. 
 
+You may have some issues on Linux with a denied permission for _/dev/ttyACMx_ for consequence to not be able to load an Arduino program into the Arduino board. In this case, you should run the following commands to define the good rights:
+```shell
+	sudo usermod -a -G dialout <your-username>
+	sudo chmod a+rw /dev/ttyACMx 	# For example /dev/ttyACM0
+```
+Then log off your account and log in to apply the changes.
+
+
 ### Step 4: Upload Firmata
 
 Open up the StandardFirmata sketch (File > Examples > Firmata) and upload it to the board. 
