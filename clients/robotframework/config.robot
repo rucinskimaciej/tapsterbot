@@ -68,6 +68,9 @@ ${WAIT_TIME_STRESS_TAP}    0.25s
 # The default duration for a long tap
 ${DEFAULT_DURATION_LONG_TAP}    1.5s
 
+# The default duration for a double or triple tap, duration between each tap
+${DEFAULT_DURATION_MULTI_TAP}    0.25s
+
 # Deal in seconds between each operation picked and triggered from a commands file
 ${WAIT_BETWEEN_CASCADED_OPERATION}    0.5s
 
@@ -83,6 +86,7 @@ ${ROBOT_URL_SET_ANGLES}    /setAngles
 ${ROBOT_URL_GET_POSITION}    /position
 ${ROBOT_URL_SET_POSITION}    /setPosition
 ${ROBOT_URL_TAP}    /tap
+${ROBOT_URL_DOUBLE_TAP}    /doubleTap
 ${ROBOT_URL_LONG_TAP}    /longTap
 ${ROBOT_URL_RESET}    /reset
 ${ROBOT_URL_GET_CALIBRATION}    /calibrationData
