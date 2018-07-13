@@ -124,6 +124,16 @@ Long tap to point
     Wait    ${duration_in_seconds}
     [Return]    ${response.text}
 
+Double tap to point
+    [Documentation]    Makes the robot with the given session tap twice to the point at (x, y) during duration in ms
+    [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_DOUBLE_TAP}
+    &{double_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
+    ${double_tap} =    json.dumps    ${double_tap_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DOUBLE_TAP}    data=${double_tap}
+    ${duration_in_seconds} =    Evaluate    ${duration}/1000
+    Wait    ${duration_in_seconds}
+    [Return]    ${response.text}
+
 Reset
     [Documentation]    Resets the position / arms of the robot to their default values with the given session.  Returns the response of the robot's server.
     [Arguments]    ${session}

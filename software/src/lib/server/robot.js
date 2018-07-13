@@ -168,18 +168,52 @@ method.tap = function(screenX, screenY, cb){
   }.bind(this), 400);
 };
 
-method.longTap = function(screenX, screenY, duration, cb){
-  duration = (duration < 1000 ? 1000 : duration); // Duration in ms
+method.doubleTap = function(screenX, screenY, duration, cb){
+  // Duration and temporization in ms
+  var minimalDuration = 200;
+  var tempo = 400;
+  duration = (duration < minimalDuration ? minimalDuration : duration);
   var position = this.getPositionForScreenCoordinates(screenX, screenY);
   var touchZ = this.getContactZ();
-  this.setPosition(position.x, position.y, touchZ * 0.9); // Be ready to tap
+  // Be ready to tap
+  this.setPosition(position.x, position.y, touchZ * 0.9);
   return setTimeout(function() {
-    this.setPosition(position.x, position.y, touchZ); // Tap
+     // Tap
+    this.setPosition(position.x, position.y, touchZ);
     return setTimeout(function() {
-      this.setPosition(position.x, position.y, touchZ * 0.9); // Go to initial state
-      return setTimeout(cb, 400);
+      // Go to initial state
+      this.setPosition(position.x, position.y, touchZ * 0.9);
+      return setTimeout(function() {
+        // Tap again
+        this.setPosition(position.x, position.y, touchZ);
+        return setTimeout(function() {
+          // Go to initial state
+          this.setPosition(position.x, position.y, touchZ * 0.9);
+          return setTimeout(cb, tempo);
+        }.bind(this, tempo);    
+      }.bind(this, duration);
+    }.bind(this), tempo);
+  }.bind(this), tempo);
+};
+
+method.longTap = function(screenX, screenY, duration, cb){
+  // Duration and temporization in ms
+  var minimalDuration = 1000;
+  var tempo = 400;
+  duration = (duration < minimalDuration ? minimalDuration : duration);
+  var position = this.getPositionForScreenCoordinates(screenX, screenY);
+  var touchZ = this.getContactZ();
+  // Be ready to tap
+  this.setPosition(position.x, position.y, touchZ * 0.9);
+  return setTimeout(function() {
+     // Tap
+    this.setPosition(position.x, position.y, touchZ);
+    return setTimeout(function() {
+      // Go to initial state
+      this.setPosition(position.x, position.y, touchZ * 0.9);
+      return setTimeout(cb, tempo);
     }.bind(this), duration);
-  }.bind(this), 400);
+  }.bind(this), tempo);
 };
 
 method.swipe = function(startX, startY, endX, endY, cb){
