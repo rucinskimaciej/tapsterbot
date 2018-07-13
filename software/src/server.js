@@ -27,6 +27,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [This is the BSD 2-Clause License, http://opensource.org/licenses/BSD-2-Clause]
 */
 
+/* ***************************
+ * Load third-party librairies
+* ****************************/
+
 var parser = require("./lib/server/parser"),
   Hapi = require("hapi"),
   path = require("path"),
@@ -40,6 +44,10 @@ var robot, servo1, servo2, servo3;
 var board = new five.Board({ debug: false});
 
 board.on("ready", function(){
+
+  /* **************************************************
+   * Step 1: Get the servomotors from the Arduino board
+   * **************************************************/
 
   servo1 = five.Servo({
     pin: 9,
@@ -59,17 +67,23 @@ board.on("ready", function(){
   servo1.on("error", function() {
     console.log(arguments);
   });
+
   servo2.on("error", function() {
     console.log(arguments);
   });
+
   servo3.on("error", function() {
     console.log(arguments);
   });
 
+ /* ***********************
+  * Strep 2: Prepare config
+  * ***********************/
+
   // Initialize objects
   var calibrationData = calibration.getDataFromFilePath(args.calibration);
   calibrationData = calibrationData == null ? calibration.defaultData : calibrationData;
-  robot = new Robot(servo1,servo2,servo3,calibrationData);
+  robot = new Robot(servo1, servo2, servo3, calibrationData);
 
   // Move to starting point
   robot.resetPosition();
@@ -88,6 +102,11 @@ board.on("ready", function(){
     }
   };
 
+  /* *********************
+   * Step 3: Define routes
+   * *********************/
+
+  // Status of the robot's server
   server.route({
     method: 'GET',
     path:'/status',
@@ -103,6 +122,7 @@ board.on("ready", function(){
     }
   });
 
+  // Reset the position of the robot's arms
   server.route({
     method: 'POST',
     path:'/reset',
@@ -119,6 +139,7 @@ board.on("ready", function(){
     }
   });
 
+  // Make the robot dance
   server.route({
     method: 'POST',
     path:'/dance',
@@ -135,6 +156,7 @@ board.on("ready", function(){
     }
   });
 
+  // Make the robot stop dancing
   server.route({
     method: 'POST',
     path:'/stopDancing',
@@ -151,6 +173,7 @@ board.on("ready", function(){
     }
   });
 
+  // Define the gnales the robot's arms must have (angles of servomotors)
   server.route({
     method: 'POST',
     path:'/setAngles',
@@ -170,6 +193,7 @@ board.on("ready", function(){
     }
   });
 
+  // Define the position in 3D for the robot's finger
   server.route({
     method: 'POST',
     path:'/setPosition',
@@ -189,6 +213,7 @@ board.on("ready", function(){
     }
   });
 
+  // Get the angles the robot's arms have
   server.route({
     method: 'GET',
     path:'/angles',
@@ -204,6 +229,7 @@ board.on("ready", function(){
     }
   });
 
+  // Get the position in 3D of the robot's finger
   server.route({
     method: 'GET',
     path:'/position',
@@ -219,6 +245,7 @@ board.on("ready", function(){
     }
   });
 
+  // Return the angles of the servomotors for a dedicated 3D point
   server.route({
     method: 'GET',
     path:'/anglesForPosition/x/{x}/y/{y}/z/{z}',
@@ -237,6 +264,7 @@ board.on("ready", function(){
     }
   });
 
+  // Return the 3D position of the finger for a dedicated 2D point using the device landmark
   server.route({
     method: 'GET',
     path:'/positionForScreenCoordinates/x/{x}/y/{y}',
@@ -254,6 +282,7 @@ board.on("ready", function(){
     }
   });
 
+  // Tap to a 2D point using the device landmark
   server.route({
     method: 'POST',
     path:'/tap',
@@ -272,6 +301,7 @@ board.on("ready", function(){
     }
   });
 
+  // Swipe from a point to another point, these points are 2D device-landmark-based
   server.route({
     method: 'POST',
     path:'/swipe',
@@ -292,6 +322,8 @@ board.on("ready", function(){
     }
   });
 
+  // Tape to a keyboard using already defined kies values, for old iPhone (legacy feature)
+  // WARNING: Deprecated
   server.route({
     method: 'POST',
     path:'/sendKeys',
@@ -310,6 +342,7 @@ board.on("ready", function(){
     }
   });
 
+  // Get the calibration data used to calibrate the nrobot for a dedicated device
   server.route({
     method: 'GET',
     path:'/calibrationData',
@@ -325,6 +358,7 @@ board.on("ready", function(){
     }
   });
 
+  // Set the calibration data used to calibrate the nrobot for a dedicated device
   server.route({
     method: 'POST',
     path:'/setCalibrationData',
@@ -342,6 +376,7 @@ board.on("ready", function(){
     }
   });
 
+  // Return the Z value of the 3D point (robot landmark) where the robot's finger hits the device's screen
   server.route({
     method: 'GET',
     path:'/contactZ',
