@@ -68,8 +68,8 @@ ${WAIT_TIME_STRESS_TAP}    0.25s
 # The default duration for a long tap
 ${DEFAULT_DURATION_LONG_TAP}    1.5s
 
-# The default duration for a double or triple tap, duration between each tap
-${DEFAULT_DURATION_MULTI_TAP}    0.25s
+# The default duration for a double or triple tap, duration between each tap, in milliseconds
+${DEFAULT_DURATION_MULTI_TAP}    50
 
 # Deal in seconds between each operation picked and triggered from a commands file
 ${WAIT_BETWEEN_CASCADED_OPERATION}    0.5s

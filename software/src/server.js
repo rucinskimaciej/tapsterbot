@@ -106,6 +106,9 @@ board.on("ready", function(){
    * Step 3: Define routes
    * *********************/
 
+  // TODO Set up a cache of requests so as to trigger them when the previous are done
+  // It may prevent following newer requests to cancel the on-going aor previously-received ones.
+
   // Status of the robot's server
   server.route({
     method: 'GET',

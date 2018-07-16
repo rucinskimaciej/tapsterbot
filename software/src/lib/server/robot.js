@@ -170,28 +170,28 @@ method.tap = function(screenX, screenY, cb){
 
 method.doubleTap = function(screenX, screenY, duration, cb){
   // Duration and temporization in ms
-  var minimalDuration = 200;
-  var tempo = 400;
+  var minimalDuration = 50;
+  var tempo = 10;
   duration = (duration < minimalDuration ? minimalDuration : duration);
   var position = this.getPositionForScreenCoordinates(screenX, screenY);
   var touchZ = this.getContactZ();
   // Be ready to tap
-  this.setPosition(position.x, position.y, touchZ * 0.9);
+  this.setPosition(position.x, position.y, touchZ * 0.95);
   return setTimeout(function() {
      // Tap
     this.setPosition(position.x, position.y, touchZ);
     return setTimeout(function() {
       // Go to initial state
-      this.setPosition(position.x, position.y, touchZ * 0.9);
+      this.setPosition(position.x, position.y, touchZ * 0.95);
       return setTimeout(function() {
         // Tap again
         this.setPosition(position.x, position.y, touchZ);
         return setTimeout(function() {
           // Go to initial state
-          this.setPosition(position.x, position.y, touchZ * 0.9);
+          this.setPosition(position.x, position.y, touchZ * 0.95);
           return setTimeout(cb, tempo);
-        }.bind(this, tempo);    
-      }.bind(this, duration);
+        }.bind(this), tempo);    
+      }.bind(this), duration);
     }.bind(this), tempo);
   }.bind(this), tempo);
 };

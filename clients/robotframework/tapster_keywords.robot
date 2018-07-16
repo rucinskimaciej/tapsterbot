@@ -31,9 +31,10 @@
 
 Documentation
 ...    Here are keywords you can use in your Robot Framework tests cases.
-...    If you are un a TDD/BDD/ATDD method, you may need to test your mobile application with this Tapster bot.
+...    If you are in a TDD/BDD/ATDD method, you may need to test your mobile applications with a Tapster 2 robot.
 ...    You can find here kewyrods to integrate so as to deal with the robot's API.
-...    The things you cna do with another client can be done with these keywords.
+...    The things you can do with another client can be done with these keywords.
+...    Be aware that keywords send HTTP requests to robot's server, so cascaded operations might be a mess, feel free to add wait operation between them.
 
 Library    RequestsLibrary
 Library    json
@@ -126,12 +127,12 @@ Long tap to point
 
 Double tap to point
     [Documentation]    Makes the robot with the given session tap twice to the point at (x, y) during duration in ms
-    [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_DOUBLE_TAP}
+    [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}
     &{double_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
     ${double_tap} =    json.dumps    ${double_tap_raw}
     ${response} =    Post Request    ${session}    ${ROBOT_URL_DOUBLE_TAP}    data=${double_tap}
     ${duration_in_seconds} =    Evaluate    ${duration}/1000
-    Wait    ${duration_in_seconds}
+    Wait
     [Return]    ${response.text}
 
 Reset
