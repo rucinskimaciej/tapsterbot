@@ -134,6 +134,15 @@ Double tap to point
     Wait
     [Return]    ${response.text}
 
+Triple tap to point
+    [Documentation]    Makes the robot with the given session tap three times to the point at (x, y) during duration in ms
+    [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}
+    &{triple_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
+    ${triple_tap} =    json.dumps    ${triple_tap_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_TRIPLE_TAP}    data=${triple_tap}
+    Wait
+    [Return]    ${response.text}
+
 Reset
     [Documentation]    Resets the position / arms of the robot to their default values with the given session.  Returns the response of the robot's server.
     [Arguments]    ${session}

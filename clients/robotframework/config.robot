@@ -87,6 +87,7 @@ ${ROBOT_URL_GET_POSITION}    /position
 ${ROBOT_URL_SET_POSITION}    /setPosition
 ${ROBOT_URL_TAP}    /tap
 ${ROBOT_URL_DOUBLE_TAP}    /doubleTap
+${ROBOT_URL_TRIPLE_TAP}    /tripleTap
 ${ROBOT_URL_LONG_TAP}    /longTap
 ${ROBOT_URL_RESET}    /reset
 ${ROBOT_URL_GET_CALIBRATION}    /calibrationData

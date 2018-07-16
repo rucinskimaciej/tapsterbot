@@ -144,6 +144,18 @@ Double tap to point
     Log To Console    ${response}
     Delete robot session    mySession
 
+Triple tap to point
+    [Documentation]    Triple tap to points
+    Create robot session    mySession
+    ${response} =    Reset    mySession
+    Log To Console    ${response}
+    ${response} =    Triple tap to point    mySession    100    100    1000
+    Sleep    4s    # We need to wait a bit because requests are sent too quickly to robot's server, and operations may be aborted
+    Log To Console    ${response}
+    ${response} =    Triple tap to point    mySession    300    450
+    Log To Console    ${response}
+    Delete robot session    mySession
+
 Get calibration
     [Documentation]    Returns the calibration data in use
     Create robot session    mySession
