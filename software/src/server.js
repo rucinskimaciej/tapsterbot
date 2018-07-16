@@ -344,6 +344,26 @@ board.on("ready", function(){
     }
   });
 
+  // Make a double tap to a 2D point using the device landmark with a dedicated duration in ms
+  server.route({
+    method: 'POST',
+    path:'/tripleTap',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var x = parseFloat(request.payload.x);
+      var y = parseFloat(request.payload.y);
+      var duration = parseFloat(request.payload.duration);
+      robot.tripleTap(x, y, duration, function(){return getCommonReponseObject(null, '"OK"')} );
+      return getCommonReponseObject(null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   // Swipe from a point to another point, these points are 2D device-landmark-based
   server.route({
     method: 'POST',

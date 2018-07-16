@@ -27,6 +27,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [This is the BSD 2-Clause License, http://opensource.org/licenses/BSD-2-Clause]
 */
 
+// TODO Make a massive refactoring to make sources compliant to ES6 and strict mode
+
 var kinematics = require("./../kinematics");
 require("sylvester");
 var keyboards = require("./keyboards");
@@ -190,6 +192,42 @@ method.doubleTap = function(screenX, screenY, duration, cb){
           // Go to initial state
           this.setPosition(position.x, position.y, touchZ * 0.9);
           return setTimeout(cb, tempo);
+        }.bind(this), tempo);    
+      }.bind(this), duration);
+    }.bind(this), tempo);
+  }.bind(this), tempo);
+};
+
+method.tripleTap = function(screenX, screenY, duration, cb){
+  // Duration and temporization in ms
+  var minimalDuration = 100;
+  var tempo = 100;
+  duration = (duration < minimalDuration ? minimalDuration : duration);
+  var position = this.getPositionForScreenCoordinates(screenX, screenY);
+  var touchZ = this.getContactZ();
+  // Be ready to tap
+  this.setPosition(position.x, position.y, touchZ * 0.9);
+  return setTimeout(function() {
+     // Tap
+    this.setPosition(position.x, position.y, touchZ);
+    return setTimeout(function() {
+      // Go to initial state
+      this.setPosition(position.x, position.y, touchZ * 0.9);
+      return setTimeout(function() {
+        // Tap again
+        this.setPosition(position.x, position.y, touchZ);
+        return setTimeout(function() {
+          // Go to initial state
+          this.setPosition(position.x, position.y, touchZ * 0.9);
+          return setTimeout(function() {
+            // Tap again
+            this.setPosition(position.x, position.y, touchZ);
+            return setTimeout(function() {
+              // Go to initial state
+              this.setPosition(position.x, position.y, touchZ * 0.9);
+              return setTimeout(cb, tempo);
+            }.bind(this), tempo);    
+          }.bind(this), duration);
         }.bind(this), tempo);    
       }.bind(this), duration);
     }.bind(this), tempo);
