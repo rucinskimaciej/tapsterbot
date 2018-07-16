@@ -11,6 +11,10 @@
       {
          "name": "Pierre-Yves Lapersonne",
          "email": "pylapp.pylapp+tapster@gmail.com"
+      },
+      {
+         "name": "Pierre-Yves Lapersonne (Orange)",
+         "email": "pierreyves.lapersonne@orange.com"
       }
    ],
    "repository": {
@@ -29,6 +33,8 @@
       "hapi": "17.2.0",
       "path": "0.12.7",
       "johnny-five": "0.13.0",
-      "sylvester": "0.0.21"
+      "sylvester": "0.0.21",
+      "xml2js": "0.4.19",
+      "svg-path-parser": "1.1.0"
    }
 }

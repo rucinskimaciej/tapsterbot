@@ -3,6 +3,7 @@
 /*
 Copyright (c) 2011-2016, Tapster Committers
 Copyright (c) 2016-2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+Copyright (c) 2018  Orange
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -36,7 +37,8 @@ var parser = require("./lib/server/parser"),
   path = require("path"),
   five = require("johnny-five"),
   calibration = require("./lib/server/calibration"),
-  Robot = require("./lib/server/robot").Robot;
+  Robot = require("./lib/server/robot").Robot,
+  draw = require("./lib/draw");
 
 var args = parser.parseArgs();
 var robot, servo1, servo2, servo3;
@@ -446,6 +448,26 @@ board.on("ready", function(){
     handler: function (request, h) {
       console.log("GET " + request.path + ": ");
       return getCommonReponseObject(null, {z: robot.getContactZ()} );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
+  // Draws a square
+  server.route({
+    method: 'POST',
+    path:'/drawSquare',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var n = JSON.parse(request.payload.n);
+      var length = JSON.parse(request.payload.length);
+      var params = {"n": n, "sideLength": length};
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawSquare(params) );
     },
     config: {
       cors: {
