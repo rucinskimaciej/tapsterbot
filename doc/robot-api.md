@@ -33,6 +33,6 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Send keys		    		    | POST          | /sendKeys               			| 						 			| _Not implemented yet_ 														|
 | Get calibration data   		    | GET           | /calibrationData      			| _not defined_       							| Gets the claibration data used by the bot												|
 | Set calibration data    		    | POST          | /setCalibrationData   			| _JSON format of calibration data_					| Defines the claibration data the robot should use											|
-| Get the Z-axis value contact 		    | GET           | /contactZ		   			| _not define_								| Gets the Z-axis value of the robot where the device's screen should be touched							|
+| Get the Z-axis value contact 		    | GET           | /contactZ		   			| _not defined_								| Gets the Z-axis value of the robot where the device's screen should be touched							|
 | Draw square					| POST           | /drawSquare		   			| {'n': n, 'length': l}								| Draws a square with a side length valued to l, where n is a divider of l to define the number of points to draw (l/n)|
-
+| Draw star					| POST           | /drawStar		   			| _not defined_									| Draws a raw star|

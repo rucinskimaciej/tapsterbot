@@ -9,10 +9,10 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
+ list of conditions and the following disclaimer.
 2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
+ this list of conditions and the following disclaimer in the documentation
+ and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -29,16 +29,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /* ***************************
- * Load third-party librairies
+* Load third-party librairies
 * ****************************/
 
 var parser = require("./lib/server/parser"),
-  Hapi = require("hapi"),
-  path = require("path"),
-  five = require("johnny-five"),
-  calibration = require("./lib/server/calibration"),
-  Robot = require("./lib/server/robot").Robot,
-  draw = require("./lib/draw");
+Hapi = require("hapi"),
+path = require("path"),
+five = require("johnny-five"),
+calibration = require("./lib/server/calibration"),
+Robot = require("./lib/server/robot").Robot,
+draw = require("./lib/draw");
 
 var args = parser.parseArgs();
 var robot, servo1, servo2, servo3;
@@ -78,7 +78,7 @@ board.on("ready", function(){
     console.log(arguments);
   });
 
- /* ***********************
+  /* ***********************
   * Strep 2: Prepare config
   * ***********************/
 
@@ -476,6 +476,24 @@ board.on("ready", function(){
       }
     }
   });
+
+  // Draws a star
+  server.route({
+    method: 'POST',
+    path:'/drawStar',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawStar() );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
 
   server.start();
   console.log("Robot listening on port " + args.port);

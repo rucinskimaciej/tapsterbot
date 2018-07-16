@@ -153,7 +153,7 @@ Draw.prototype.drawStar = function(){
   doSetTimeout(-30, 10, penHeight, 1000);
   doSetTimeout(30, 10, penHeight, 1000);
   doSetTimeout(-20, -20, penHeight, 1000);
-
+  doSetTimeout(0, 0, -140, timer + 100);
   //-20, -20, 0, 30, 20, -20
 };
 
@@ -277,7 +277,7 @@ Draw.prototype.drawSpiral = function(args){
 var defaultEaseType = "linear";
 var timer = 0;
 var current = [0, 0, DRAW_HEIGHT];
-var steps = 10;
+var steps = 5;
 var delay = 200 / steps;
 
 

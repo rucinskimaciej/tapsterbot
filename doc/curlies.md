@@ -64,6 +64,13 @@ _Command:_ curl --data "n=2&length=30" http://127.0.0.1:4242/drawSquare
 _Results:_ {"status":0}  
 _Note:_ Draws a square, where n is a divider of the length of the square to define the number of points to draw
 
+
+**Draw a star**  
+_Command:_ curl --data "" http://127.0.0.1:4242/drawStar  
+_Results:_ {"status":0}  
+_Note:_ Draws a raw star
+
+
 **Draw a circle**  
 _Command:_ curl http://127.0.0.1:4242/circle  
 _Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
