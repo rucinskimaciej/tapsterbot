@@ -42,4 +42,4 @@
 6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.
 7. deckard-fix-1 - (tag: vDeckard-1) - Fix defects in cache and manifest so as to make web app installable.
 8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
-8. eve - On going: more features for Robot Framework wrapper and robot API
+8. eve - On going: more features for Robot Framework keywords and robot API
