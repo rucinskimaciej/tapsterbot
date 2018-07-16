@@ -145,6 +145,8 @@ Draw.prototype.drawSquare = function(args){
 };
 
 //Draws a star to test that the Tapster bot is working properly
+// Points are not in the 2D landmark of the device, but in the robot's landmark
+// (= (0,0) at the center of the plate)
 Draw.prototype.drawStar = function(){
   resetTimer();
   doSetTimeout(-20, -20, penHeight, 1000);
@@ -157,12 +159,16 @@ Draw.prototype.drawStar = function(){
   //-20, -20, 0, 30, 20, -20
 };
 
+// Draws a triangle
+// Points are not in the 2D landmark of the device, but in the robot's landmark
+// (= (0,0) at the center of the plate)
 Draw.prototype.drawTriangle = function(x, y, x1, y1, x2, y2){
   resetTimer();
   doSetTimeout(x, y, penHeight, 1000);
   doSetTimeout(x1, y1, penHeight, 1000);
   doSetTimeout(x2, y2, penHeight, 1000);
   doSetTimeout(x, y, penHeight, 1000);
+  doSetTimeout(0, 0, -140, timer + 100);
 }
 
 //Draws a circle

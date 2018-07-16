@@ -494,6 +494,28 @@ board.on("ready", function(){
     }
   });
 
+  // Draws a triangle
+  server.route({
+    method: 'POST',
+    path:'/drawTriangle',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var x1 = JSON.parse(request.payload.x1);
+      var y1 = JSON.parse(request.payload.y1);
+      var x2 = JSON.parse(request.payload.x2);
+      var y2 = JSON.parse(request.payload.y2);
+      var x3 = JSON.parse(request.payload.x3);
+      var y3 = JSON.parse(request.payload.y3);
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawTriangle(x1, y1, x2, y2, x3, y3) );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
 
   server.start();
   console.log("Robot listening on port " + args.port);

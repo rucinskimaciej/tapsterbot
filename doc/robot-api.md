@@ -34,5 +34,6 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Get calibration data   		    | GET           | /calibrationData      			| _not defined_       							| Gets the claibration data used by the bot												|
 | Set calibration data    		    | POST          | /setCalibrationData   			| _JSON format of calibration data_					| Defines the claibration data the robot should use											|
 | Get the Z-axis value contact 		    | GET           | /contactZ		   			| _not defined_								| Gets the Z-axis value of the robot where the device's screen should be touched							|
-| Draw square					| POST           | /drawSquare		   			| {'n': n, 'length': l}								| Draws a square with a side length valued to l, where n is a divider of l to define the number of points to draw (l/n)|
+| Draw square					| POST           | /drawSquare		   			| {'n': n, 'length': l}								| Draws a square with a side length valued to l, where n is a divider of l to define the number of points to draw (l/n),  using points based on the robot's landmark|
 | Draw star					| POST           | /drawStar		   			| _not defined_									| Draws a raw star|
+| Draw triangle					| POST           | /drawTriangle		   			| {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3}| Draws a triangle using points based on the robot's landmark|

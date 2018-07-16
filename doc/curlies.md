@@ -62,13 +62,19 @@ _Note:_ Command available with bot.js and not server.js (and its HTTP client)
 **Draw a square**  
 _Command:_ curl --data "n=2&length=30" http://127.0.0.1:4242/drawSquare  
 _Results:_ {"status":0}  
-_Note:_ Draws a square, where n is a divider of the length of the square to define the number of points to draw
+_Note:_ Draws a square, where n is a divider of the length of the square to define the number of points to draw, using points in the robot's landmark
 
 
 **Draw a star**  
 _Command:_ curl --data "" http://127.0.0.1:4242/drawStar  
 _Results:_ {"status":0}  
 _Note:_ Draws a raw star
+
+
+**Draw a star**  
+_Command:_ curl --data "x1=0&y1=0&x2=-10&y2=20&x3=20&y3=-10" http://127.0.0.1:4242/drawTriangle
+_Results:_ {"status":0}  
+_Note:_ Draws a triangle using points in the robot's landmark
 
 
 **Draw a circle**  
