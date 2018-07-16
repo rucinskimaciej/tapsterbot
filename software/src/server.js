@@ -517,7 +517,7 @@ board.on("ready", function(){
     }
   });
 
-    // Draws a circle
+  // Draws a circle
   server.route({
     method: 'POST',
     path:'/drawCircle',
@@ -529,6 +529,31 @@ board.on("ready", function(){
       var params = {"centerX": x, "centerY": y, "radius": r};
       var drawer = new draw.Draw(null, robot);
       return getCommonReponseObject(null, drawer.drawCircle(params) );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
+  // Draws a cross
+  server.route({
+    method: 'POST',
+    path:'/drawCross',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var x1 = JSON.parse(request.payload.x1);
+      var y1 = JSON.parse(request.payload.y1);
+      var x2 = JSON.parse(request.payload.x2);
+      var y2 = JSON.parse(request.payload.y2);
+      var x3 = JSON.parse(request.payload.x3);
+      var y3 = JSON.parse(request.payload.y3);
+      var x4 = JSON.parse(request.payload.x4);
+      var y4 = JSON.parse(request.payload.y4);
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawCross(x1, y1, x2, y2, x3, y3, x4, y4) );
     },
     config: {
       cors: {

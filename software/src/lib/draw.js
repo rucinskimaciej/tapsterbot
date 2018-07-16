@@ -171,6 +171,19 @@ Draw.prototype.drawTriangle = function(x, y, x1, y1, x2, y2){
   doSetTimeout(0, 0, -140, timer + 100);
 }
 
+// Draws a cross with two strokes : (x1, y1) -> (x3, y3) and (x2, y2) -> (x4, y4)
+// Points are not in the 2D landmark of the device, but in the robot's landmark
+// (= (0,0) at the center of the plate)
+Draw.prototype.drawCross = function(x1, y1, x2, y2, x3, y3, x4, y4){
+  resetTimer();
+  doSetTimeout(x1, y1, penHeight, 1000);
+  doSetTimeout(x3, y3, penHeight, 1000);
+  doSetTimeout(0, 0, -140, timer + 100);
+  doSetTimeout(x2, y2, penHeight, 1000);
+  doSetTimeout(x4, y4, penHeight, 1000);
+  doSetTimeout(0, 0, -140, timer + 100);
+}
+
 //Draws a circle
 //Optional args:
 //centerX: the x coordinate of the center (default: 0)

@@ -83,7 +83,7 @@ _Results:_ {"status":0}
 _Note:_ Draws a circle using points in the robot's landmark
 
 
-**Draw an arc**  
-_Command:_ curl http://127.0.0.1:4242/arc  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)
+**Draw a cross**  
+_Command:_  curl --data "x1=-10&y1=10&x2=10&y2=10&x3=10&y3=-10&x4=-10&y4=-10" http://127.0.0.1:4242/drawCross
+_Results:_ {"status":0}  
+_Note:_ Draws a cross, using points in the robot's landmark, with two strokes: (x1,y1) -> (x3, y3) and (x2,y2) -> (x4, y4)
