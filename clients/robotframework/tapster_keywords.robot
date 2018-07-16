@@ -131,7 +131,6 @@ Double tap to point
     &{double_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
     ${double_tap} =    json.dumps    ${double_tap_raw}
     ${response} =    Post Request    ${session}    ${ROBOT_URL_DOUBLE_TAP}    data=${double_tap}
-    ${duration_in_seconds} =    Evaluate    ${duration}/1000
     Wait
     [Return]    ${response.text}
 
