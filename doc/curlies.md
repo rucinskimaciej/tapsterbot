@@ -87,3 +87,9 @@ _Note:_ Draws a circle using points in the robot's landmark
 _Command:_  curl --data "x1=-10&y1=10&x2=10&y2=10&x3=10&y3=-10&x4=-10&y4=-10" http://127.0.0.1:4242/drawCross
 _Results:_ {"status":0}  
 _Note:_ Draws a cross, using points in the robot's landmark, with two strokes: (x1,y1) -> (x3, y3) and (x2,y2) -> (x4, y4)
+
+
+**Draw a spiral**  
+_Command:_  curl --data "x=0&y=0&r=20&n=6" http://127.0.0.1:4242/drawSpiral
+_Results:_ {"status":0}  
+_Note:_ Draws a spiral, using points in the robot's landmark, center on (x,y) with the r radius and n levels

@@ -286,7 +286,7 @@ Draw.prototype.drawSpiral = function(args){
   }
 
   spiral();
-  return points;
+  doSetTimeout(0, 0, -140, timer + 100);
 
 };
 

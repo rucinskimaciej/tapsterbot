@@ -9,6 +9,7 @@
 	* draw a triangle
 	* draw a circle
 	* draw a cross
+	* draw a spiral
 * In Robot Framework side
 	* long tap on coordinates
 	* double tap on coordinates

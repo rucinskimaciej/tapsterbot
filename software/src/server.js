@@ -563,6 +563,28 @@ board.on("ready", function(){
     }
   });
 
+  // Draws a spiral
+  server.route({
+    method: 'POST',
+    path:'/drawSpiral',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var x = JSON.parse(request.payload.x);
+      var y = JSON.parse(request.payload.y);
+      var n = JSON.parse(request.payload.n);
+      var r = JSON.parse(request.payload.r);
+      var params = {"startX": x, "startY": y, "spirals": n, "radius": r};
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawSpiral(params) );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   server.start();
   console.log("Robot listening on port " + args.port);
 
