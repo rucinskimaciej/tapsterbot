@@ -37,3 +37,4 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Draw square					| POST           | /drawSquare		   			| {'n': n, 'length': l}								| Draws a square with a side length valued to l, where n is a divider of l to define the number of points to draw (l/n),  using points based on the robot's landmark|
 | Draw star					| POST           | /drawStar		   			| _not defined_									| Draws a raw star|
 | Draw triangle					| POST           | /drawTriangle		   			| {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3}| Draws a triangle using points based on the robot's landmark|
+| Draw circle					| POST           | /drawCircle		   			| {'x': x, 'y': y, 'r': r}| Draws circle with center on 'x,y) and the r radius, using points based on the robot's landmark|

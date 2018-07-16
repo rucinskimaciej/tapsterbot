@@ -7,6 +7,7 @@
 	* draw a square with a dedicated length
 	* draw a star
 	* draw a triangle
+	* draw a circle
 * In Robot Framework side
 	* long tap on coordinates
 	* double tap on coordinates

@@ -78,9 +78,9 @@ _Note:_ Draws a triangle using points in the robot's landmark
 
 
 **Draw a circle**  
-_Command:_ curl http://127.0.0.1:4242/circle  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)
+_Command:_ curl --data "x=0&y=0&r=15" http://127.0.0.1:4242/drawCircle
+_Results:_ {"status":0}  
+_Note:_ Draws a circle using points in the robot's landmark
 
 
 **Draw an arc**  

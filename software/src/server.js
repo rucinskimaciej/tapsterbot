@@ -517,6 +517,27 @@ board.on("ready", function(){
     }
   });
 
+    // Draws a circle
+  server.route({
+    method: 'POST',
+    path:'/drawCircle',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var x = JSON.parse(request.payload.x);
+      var y = JSON.parse(request.payload.y);
+      var r = JSON.parse(request.payload.r);
+      var params = {"centerX": x, "centerY": y, "radius": r};
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawCircle(params) );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   server.start();
   console.log("Robot listening on port " + args.port);
 
