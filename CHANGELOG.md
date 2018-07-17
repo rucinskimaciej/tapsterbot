@@ -14,8 +14,6 @@
 	* draw a random pattern (swipe-based)
 	* swipe n times
 	* tap n times
-	* stress taps (TODO)
-	* stress swipes (TODO)
 
 * In Robot Framework side
 	* long tap on coordinates
