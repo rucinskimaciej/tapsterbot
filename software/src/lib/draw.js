@@ -227,7 +227,7 @@ Draw.prototype.drawCircle = function(args){
   }
 
   circle();
-  doSetTimeout(0, 0, -140, timer + 100);
+  doSetTimeout(0, 0, -140, timer + 100, "none");
 
 };
 

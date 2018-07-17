@@ -93,3 +93,9 @@ _Note:_ Draws a cross, using points in the robot's landmark, with two strokes: (
 _Command:_  curl --data "x=0&y=0&r=20&n=6" http://127.0.0.1:4242/drawSpiral
 _Results:_ {"status":0}  
 _Note:_ Draws a spiral, using points in the robot's landmark, center on (x,y) with the r radius and n levels
+
+
+**Draw an SVG picture**  
+_Command:_  curl --data "rawContent=..." http://127.0.0.1:4242/drawSpiral
+_Results:_ {"status":0}  
+_Note:_ Draws an SVG picture, where '...' is the XML content of the SVG file

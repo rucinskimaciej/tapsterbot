@@ -38,7 +38,8 @@ path = require("path"),
 five = require("johnny-five"),
 calibration = require("./lib/server/calibration"),
 Robot = require("./lib/server/robot").Robot,
-draw = require("./lib/draw");
+draw = require("./lib/draw"),
+svgDraw = require("./lib/SVGDraw");
 
 var args = parser.parseArgs();
 var robot, servo1, servo2, servo3;
@@ -576,6 +577,24 @@ board.on("ready", function(){
       var params = {"startX": x, "startY": y, "spirals": n, "radius": r};
       var drawer = new draw.Draw(null, robot);
       return getCommonReponseObject(null, drawer.drawSpiral(params) );
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
+  // Draws an SVG picture
+  server.route({
+    method: 'POST',
+    path:'/drawSvg',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var content = request.payload.rawContent;
+      var svgDrawer = new svgDraw.SVGDraw(null, robot);
+      return getCommonReponseObject(null, svgDrawer.drawSVG(content, false) );
     },
     config: {
       cors: {
