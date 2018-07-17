@@ -17,3 +17,6 @@
 	* long tap on coordinates
 	* double tap on coordinates
 	* triple tap on coordinates
+
+* In Robot Framework wrapper side	
+	* swipe from an element to another using ids, texts or xpath (wrapper)

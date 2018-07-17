@@ -180,6 +180,48 @@ Swipe N Times
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Swipe using elements id
+    [Documentation]    Swipe from an element to another using their id
+    [Arguments]    ${source_id}    ${destination_id}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Id    ${source_id}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Id    ${destination_id}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Swipe    my_session    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Swipe using elements text
+    [Documentation]    Swipe from an element to another using their texts
+    [Arguments]    ${source_text}    ${destination_text}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Text    ${source_text}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Text    ${destination_text}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Swipe    my_session    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Swipe using elements xpath
+    [Documentation]    Swipe from an element to another using XPath locators
+    [Arguments]    ${source_xpath}    ${destination_xpath}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Xpath    ${source_xpath}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Xpath    ${destination_xpath}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Swipe    my_session    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Stress swipes
     [Documentation]    Swipe N times from (a,b) to (c,d) points very quickly
     [Arguments]    ${N}    ${a}    ${b}    ${c}    ${d}    ${offset_x}=0    ${offset_y}=0
