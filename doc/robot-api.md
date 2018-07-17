@@ -26,7 +26,7 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Get angles    			    | GET           | /angles               				| _not defined_       																| Gets the arms angles of the bot																										|
 | Get position    			    | GET           | /position             				| _not defined_       																| Gets the 3D position of the robot																										|
 | Angles for position (a, b, c)	| GET           | /anglesForPosition/x/a/y/b/z/c		| _not defined_       																| Gets the angles of the arms of the bot for the 3D coordinates (a, b, c) where a in X axis, b in Y axis and c in Z axis				|
-| Position for screen coordinates (x, y)| GET   | /positionForScreenCoordinates/x/a/y/b	| _not defined_       																| Gets the positions of the robot according to (x, y) coordinates in the 2D device landmark												|
+| Position for screen coordinates (x, y)| GET   | /positionForScreenCoordinates/x/a/y/b	| _not defined_       																| Converts the 2D device-landmark point coordinates to the 3D robot-landmark point coordinates 											|
 | Tap to a point at (x,y)    	| POST          | /tap                 					| {'x': x, 'y': y}      															| Makes the robot tap on (x, y)																											|
 | Long tap to a point at (x,y) during duration ms | POST  | /longTap                 	| {'x': x, 'y': y, 'duration': duration}      										| Makes the robot tap on (x, y)	with finger kept pressed during duration ms																|
 | Swipe from (a,b) to (c,d)    	| POST          | /swipe                 				| {'startX': a, 'startY': b, 'endX': c, 'endY', d} 									| Makes the robot swipe from (a, b) to (c, d)																							|
