@@ -3,7 +3,7 @@
 
 ## Version "eve"
 
-* In the Node.js backend (HTTP REST API), new features can be used:
+* In the Node.js backend (HTTP REST API), new features are provided:
 	* draw a square with a dedicated length
 	* draw a star
 	* draw a triangle
@@ -11,6 +11,8 @@
 	* draw a cross
 	* draw a spiral
 	* draw an SVG picture based on its XML definition
+	* draw a random pattern (swipe-based)
+	
 * In Robot Framework side
 	* long tap on coordinates
 	* double tap on coordinates

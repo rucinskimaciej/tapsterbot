@@ -604,6 +604,28 @@ board.on("ready", function(){
     }
   });
 
+  // Draws a random pattern
+  server.route({
+    method: 'POST',
+    path:'/drawRandomPattern',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      var n = parseFloat(request.payload.n);
+      var minW = parseFloat(request.payload.minWidth);
+      var minH = parseFloat(request.payload.minHeight);
+      var maxW = parseFloat(request.payload.maxWidth);
+      var maxH = parseFloat(request.payload.maxHeight);
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.drawRandom(n, minW, minH, maxW, maxH));
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   server.start();
   console.log("Robot listening on port " + args.port);
 

@@ -87,3 +87,9 @@ _Note:_ Draws a spiral, using points in the robot's landmark, center on (x,y) wi
 _Command:_  curl --data "rawContent=..." http://127.0.0.1:4242/drawSVG
 _Results:_ {"status":0}  
 _Note:_ Draws an SVG picture, where '...' is the XML content of the SVG file
+
+
+**Draw a random pattern( swipe-based**  
+_Command:_   curl --data "n=10&minWidth=-35&minHeight=-35&maxWidth=30&maxHeight=30" http://127.0.0.1:4242/drawRandomPattern
+_Results:_ {"status":0}  
+_Note:_ Draws a random pattern using continuous strokes with n points in a defined area (based on robot's 3D landmark)
