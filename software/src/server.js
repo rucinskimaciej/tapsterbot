@@ -554,14 +554,20 @@ board.on("ready", function(){
     path:'/drawTriangle',
     handler: function (request, h) {
       console.log("POST " + request.path + ": ");
+      // Get parameters, supposed to be in 2D device landmark
       var x1 = JSON.parse(request.payload.x1);
       var y1 = JSON.parse(request.payload.y1);
       var x2 = JSON.parse(request.payload.x2);
       var y2 = JSON.parse(request.payload.y2);
       var x3 = JSON.parse(request.payload.x3);
       var y3 = JSON.parse(request.payload.y3);
+      // Compute to points in 3D robot landmark
+      var p1 = robot.getPositionForScreenCoordinates(x1, y1);
+      var p2 = robot.getPositionForScreenCoordinates(x2, y2);
+      var p3 = robot.getPositionForScreenCoordinates(x3, y3);
+      // Draw!
       var drawer = new draw.Draw(null, robot);
-      return getCommonReponseObject(null, drawer.drawTriangle(x1, y1, x2, y2, x3, y3) );
+      return getCommonReponseObject(null, drawer.drawTriangle(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y) );
     },
     config: {
       cors: {
@@ -577,10 +583,14 @@ board.on("ready", function(){
     path:'/drawCircle',
     handler: function (request, h) {
       console.log("POST " + request.path + ": ");
+      // Get parameters, supposed to be in 2D device landmark
       var x = JSON.parse(request.payload.x);
       var y = JSON.parse(request.payload.y);
       var r = JSON.parse(request.payload.r);
-      var params = {"centerX": x, "centerY": y, "radius": r};
+      // Compute to points in 3D robot landmark
+      var p = robot.getPositionForScreenCoordinates(x, y);
+      // Draw!
+      var params = {"centerX": parseInt(p.x), "centerY": parseInt(p.y), "radius": r};
       var drawer = new draw.Draw(null, robot);
       return getCommonReponseObject(null, drawer.drawCircle(params) );
     },
@@ -598,6 +608,7 @@ board.on("ready", function(){
     path:'/drawCross',
     handler: function (request, h) {
       console.log("POST " + request.path + ": ");
+      // Get parameters, supposed to be in 2D device landmark
       var x1 = JSON.parse(request.payload.x1);
       var y1 = JSON.parse(request.payload.y1);
       var x2 = JSON.parse(request.payload.x2);
@@ -606,8 +617,14 @@ board.on("ready", function(){
       var y3 = JSON.parse(request.payload.y3);
       var x4 = JSON.parse(request.payload.x4);
       var y4 = JSON.parse(request.payload.y4);
+      // Compute to points in 3D robot landmark
+      var p1 = robot.getPositionForScreenCoordinates(x1, y1);
+      var p2 = robot.getPositionForScreenCoordinates(x2, y2);
+      var p3 = robot.getPositionForScreenCoordinates(x3, y3);
+      var p4 = robot.getPositionForScreenCoordinates(x4, y4);
+      // Draw!
       var drawer = new draw.Draw(null, robot);
-      return getCommonReponseObject(null, drawer.drawCross(x1, y1, x2, y2, x3, y3, x4, y4) );
+      return getCommonReponseObject(null, drawer.drawCross(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, p4.x, p4.y));
     },
     config: {
       cors: {
@@ -623,11 +640,15 @@ board.on("ready", function(){
     path:'/drawSpiral',
     handler: function (request, h) {
       console.log("POST " + request.path + ": ");
+      // Get parameters, supposed to be in 2D device landmark
       var x = JSON.parse(request.payload.x);
       var y = JSON.parse(request.payload.y);
       var n = JSON.parse(request.payload.n);
       var r = JSON.parse(request.payload.r);
-      var params = {"startX": x, "startY": y, "spirals": n, "radius": r};
+      // Compute to point in 3D robot landmark
+      var p = robot.getPositionForScreenCoordinates(x, y);
+      // Draw!
+      var params = {"startX": parseInt(p.x), "startY": parseInt(p.y), "spirals": n, "radius": r};
       var drawer = new draw.Draw(null, robot);
       return getCommonReponseObject(null, drawer.drawSpiral(params) );
     },
@@ -663,13 +684,18 @@ board.on("ready", function(){
     path:'/drawRandomPattern',
     handler: function (request, h) {
       console.log("POST " + request.path + ": ");
+      // Get parameters, supposed to be in 2D device landmark
       var n = parseFloat(request.payload.n);
       var minW = parseFloat(request.payload.minWidth);
       var minH = parseFloat(request.payload.minHeight);
       var maxW = parseFloat(request.payload.maxWidth);
       var maxH = parseFloat(request.payload.maxHeight);
+      // Compute to points in 3D robot landmark
+      var miniPoint = robot.getPositionForScreenCoordinates(minW, minH);
+      var maxiPoint = robot.getPositionForScreenCoordinates(maxW, maxH);
+      // Draw !
       var drawer = new draw.Draw(null, robot);
-      return getCommonReponseObject(null, drawer.drawRandom(n, minW, minH, maxW, maxH));
+      return getCommonReponseObject(null, drawer.drawRandom(n, miniPoint.x, miniPoint.y, maxiPoint.x, maxiPoint.y));
     },
     config: {
       cors: {

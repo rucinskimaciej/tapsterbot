@@ -4,10 +4,10 @@
 
 HTTP methods in use: GET, POST
 
-| Method        	| Parameters    								| Encoding for results  | Format for results  |
-| ----------------|:-----------------------------:|:---------------------:|:-------------------:|
-| GET           	| host, port, path 							| UTF-8              		| JSON                |
-| POST           	| host, port, path, method=POST | UTF-8              		| JSON                |
+| Method        | Parameters    				| Encoding for results  | Format for results  |
+| --------------|:-----------------------------:|:---------------------:|:-------------------:|
+| GET          	| host, port, path 				| UTF-8              	| JSON                |
+| POST         	| host, port, path, method=POST | UTF-8              	| JSON                |
 
 
 ### List of features
@@ -38,9 +38,9 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Get the Z-axis value contact 	| GET           | /contactZ		   						| _not defined_																		| Gets the Z-axis value of the robot where the device's screen should be touched														|
 | Draw square					| POST          | /drawSquare		   					| {'n': n, 'length': l}																| Draws a square with a side length valued to l, where n is a divider of l to define the number of points to draw (l/n),  using points based on the robot's landmark|
 | Draw star						| POST          | /drawStar		   						| _not defined_																		| Draws a raw star 																														|
-| Draw triangle					| POST          | /drawTriangle		   					| {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3}						| Draws a triangle using points based on the robot's landmark																			|
-| Draw circle					| POST          | /drawCircle		   					| {'x': x, 'y': y, 'r': r}															| Draws circle with center on (x,y) and the r radius, using points based on the robot's landmark										|
+| Draw triangle					| POST          | /drawTriangle		   					| {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3}						| Draws a triangle using points based on the 2D device landmark																			|
+| Draw circle					| POST          | /drawCircle		   					| {'x': x, 'y': y, 'r': r}															| Draws circle with center on (x,y) and the r radius, using points based on 2D device landmark											|
 | Draw cross					| POST          | /drawCross		   					| {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3, 'x4': x4, 'y4': y4}	| Draws a cross, using points in the robot's landmark, with two strokes: (x1,y1) -> (x3, y3) and (x2,y2) -> (x4, y4)					|
-| Draw spiral					| POST          | /drawSpiral		   					| {'x': x, 'y': y, 'r': r, 'n': n}													| Draws a spiral with center on (x,y) and the r radius, using points based on the robot's landmark, and n levels						|
+| Draw spiral					| POST          | /drawSpiral		   					| {'x': x, 'y': y, 'r': r, 'n': n}													| Draws a spiral with center on (x,y) and the r radius, using points based on the 2D device landmark, and n levels						|
 | Draw SVG						| POST          | /drawSVG		   						| {'rawContent': xml-content}														| Draws an SVG picture based from its content (xml-content). Device should be in landscape mode ;-)										|
-| Draw random pattern			| POST          | /drawRandomPattern					| {'n': n, 'minWidth': miw, 'minHeight': mih, 'maxWidth': maw, 'maxheight': mah}	| Draws a random pattern based on continuous storke sbased on n points within a defined aread based on robot's 3D landmark				|
+| Draw random pattern			| POST          | /drawRandomPattern					| {'n': n, 'minWidth': miw, 'minHeight': mih, 'maxWidth': maw, 'maxheight': mah}	| Draws a random pattern based on continuous strokes based on n points within a defined aread based on 2D device landmark 				|

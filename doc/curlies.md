@@ -100,27 +100,27 @@ _Note:_ Draws a raw star
 
 
 **Draw a triangle**  
-_Command:_ curl --data "x1=0&y1=0&x2=-10&y2=20&x3=20&y3=-10" http://127.0.0.1:4242/drawTriangle
+_Command:_ curl --data "x1=100&y1=100&x2=100&y2=500&x3=300&y3=250" http://127.0.0.1:4242/drawTriangle
 _Exemple of result:_ {"status":0}  
-_Note:_ Draws a triangle using points in the robot's landmark
+_Note:_ Draws a triangle using points in 2D device landmark
 
 
 **Draw a circle**  
-_Command:_ curl --data "x=0&y=0&r=15" http://127.0.0.1:4242/drawCircle
+_Command:_ curl --data "x=200&y=200&r=15" http://127.0.0.1:4242/drawCircle
 _Exemple of result:_ {"status":0}  
-_Note:_ Draws a circle using points in the robot's landmark
+_Note:_ Draws a circle using points in 2D device landmark
 
 
 **Draw a cross**  
-_Command:_  curl --data "x1=-10&y1=10&x2=10&y2=10&x3=10&y3=-10&x4=-10&y4=-10" http://127.0.0.1:4242/drawCross
+_Command:_  curl --data "x1=100&y1=100&x2=300&y2=100&x3=300&y3=300&x4=100&y4=300" http://127.0.0.1:4242/drawCross
 _Exemple of result:_ {"status":0}  
-_Note:_ Draws a cross, using points in the robot's landmark, with two strokes: (x1,y1) -> (x3, y3) and (x2,y2) -> (x4, y4)
+_Note:_ Draws a cross, using points in 2D device landmark, with two strokes: (x1,y1) -> (x3, y3) and (x2,y2) -> (x4, y4)
 
 
 **Draw a spiral**  
-_Command:_  curl --data "x=0&y=0&r=20&n=6" http://127.0.0.1:4242/drawSpiral
+_Command:_  curl --data "x=300&y=300&r=20&n=10" http://127.0.0.1:4242/drawSpiral
 _Exemple of result:_ {"status":0}  
-_Note:_ Draws a spiral, using points in the robot's landmark, center on (x,y) with the r radius and n levels
+_Note:_ Draws a spiral, using points in 2D device landmark, center on (x,y) with the r radius and n levels
 
 
 **Draw an SVG picture**  
@@ -130,6 +130,6 @@ _Note:_ Draws an SVG picture, where '...' is the XML content of the SVG file
 
 
 **Draw a random pattern (swipe-based)**  
-_Command:_   curl --data "n=10&minWidth=-35&minHeight=-35&maxWidth=30&maxHeight=30" http://127.0.0.1:4242/drawRandomPattern
+_Command:_   curl --data "n=10&minWidth=100&minHeight=100&maxWidth=350&maxHeight=500" http://127.0.0.1:4242/drawRandomPattern
 _Exemple of result:_ {"status":0}  
-_Note:_ Draws a random pattern using continuous strokes with n points in a defined area (based on robot's 3D landmark)
+_Note:_ Draws a random pattern using continuous strokes with n points in a defined area (based on device's 2D landmark)
