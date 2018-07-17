@@ -12,7 +12,11 @@
 	* draw a spiral
 	* draw an SVG picture based on its XML definition
 	* draw a random pattern (swipe-based)
-	
+	* swipe n times
+	* tap n times (TODO)
+	* stress taps (TODO)
+	* stress swipes (TODO)
+
 * In Robot Framework side
 	* long tap on coordinates
 	* double tap on coordinates

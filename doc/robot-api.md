@@ -30,6 +30,7 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Tap to a point at (x,y)    	| POST          | /tap                 					| {'x': x, 'y': y}      															| Makes the robot tap on (x, y)																											|
 | Long tap to a point at (x,y) during duration ms | POST  | /longTap                 	| {'x': x, 'y': y, 'duration': duration}      										| Makes the robot tap on (x, y)	with finger kept pressed during duration ms																|
 | Swipe from (a,b) to (c,d)    	| POST          | /swipe                 				| {'startX': a, 'startY': b, 'endX': c, 'endY', d} 									| Makes the robot swipe from (a, b) to (c, d)																							|
+| Swipe from (a,b) to (c,d) n times | POST      | /nSwipe                 				| {'n': n, startX': a, 'startY': b, 'endX': c, 'endY', d} 							| Makes the robot swipe n times from (a, b) to (c, d)																					|
 | Send keys		    		    | POST          | /sendKeys               				| 						 															| _Not implemented yet_ 																												|
 | Get calibration data   		| GET           | /calibrationData      				| _not defined_       																| Gets the claibration data used by the bot																								|
 | Set calibration data    		| POST          | /setCalibrationData   				| _JSON format of calibration data_													| Defines the calibration data the robot should use																						|

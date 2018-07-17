@@ -388,6 +388,34 @@ board.on("ready", function(){
     }
   });
 
+    // Swipe from a point to another point, n times, these points are 2D device-landmark-based
+  server.route({
+    method: 'POST',
+    path:'/nSwipe',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      // Get parameters
+      var n = parseFloat(request.payload.n);
+      var startX = parseFloat(request.payload.startX);
+      var startY = parseFloat(request.payload.startY);
+      var endX = parseFloat(request.payload.endX);
+      var endY = parseFloat(request.payload.endY);
+      // Convert to coordinates for the robot
+      var startPoint = robot.getPositionForScreenCoordinates(startX, startY);
+      var endPoint = robot.getPositionForScreenCoordinates(endX, endY);
+      // Draw
+      var drawer = new draw.Draw(null, robot);
+      drawer.drawStrokes(n, startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+      return getCommonReponseObject(null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   // Tape to a keyboard using already defined kies values, for old iPhone (legacy feature)
   // WARNING: Deprecated
   server.route({

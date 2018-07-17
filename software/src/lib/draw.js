@@ -325,6 +325,16 @@ Draw.prototype.drawRandom = function(n=5, minWidth=-35, minHeight=-30, maxWidth=
 
 }
 
+//Draws n strokes from a (startX, startY) point to (endX, endY) point
+Draw.prototype.drawStrokes = function(n, startX, startY, endX, endY){
+  objRef.resetTimer();
+  for (var i = 1; i <= n; i++){
+    objRef.doSetTimeout(startX, startY, penHeight, 250);
+    objRef.doSetTimeout(endX, endY, penHeight, 250);
+    objRef.doSetTimeout(startX, startY, -140, 250);
+  }
+  objRef.doSetTimeout(0, 0, -140, 500);
+}
 
 //A separate setTimeout method so that delays work properly
 Draw.prototype.doSetTimeout = function(x, y, z, timeDelay, easing){
