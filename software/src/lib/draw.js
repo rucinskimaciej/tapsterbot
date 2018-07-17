@@ -336,6 +336,16 @@ Draw.prototype.drawStrokes = function(n, startX, startY, endX, endY){
   objRef.doSetTimeout(0, 0, -140, 500);
 }
 
+//Draws n points on (x, y)
+Draw.prototype.drawPoints = function(n, x, y){
+  objRef.resetTimer();
+  for (var i = 1; i <= n; i++){
+    objRef.doSetTimeout(x, y, -140, 250);
+    objRef.doSetTimeout(x, y, penHeight, 300);
+  }
+  objRef.doSetTimeout(0, 0, -140, 500);
+}
+
 //A separate setTimeout method so that delays work properly
 Draw.prototype.doSetTimeout = function(x, y, z, timeDelay, easing){
   if (!easing) easing = defaultEaseType;

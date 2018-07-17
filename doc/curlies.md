@@ -25,22 +25,28 @@ _Command:_ curl --data "" http://127.0.0.1:4242/reset
 _Results:_ {"status":0,"data":[16.447287034628303,16.447287034628303,16.447287034628303]}
 
 
-**Tap on (0,0)**  
-_Command:_ curl --data "x=0&y=0" http://127.0.0.1:4242/tap  
-_Results:_ {"status":0,"data":"\"OK\""}  
-_Note:_ You can use this request only if you have started your server with the calibration data you got during the calibration workflow. otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
+**Tap on (100,100)**  
+_Command:_ curl --data "x=100&y=100" http://127.0.0.1:4242/tap  
+_Results:_ {"status":0,"data":[0,-23.52644491452315,8.617498307198526,-146.5704748734171]}
+_Note:_ You can use this request only if you have started your server with the calibration data you got during the calibration workflow. Otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
+
+
+**Tap on (100,100) n times**  
+_Command:_ curl --data "n=10&x=100&y=100" http://127.0.0.1:4242/nTap  
+_Results:_ {"status":0,"data":[0,-23.52644491452315,8.617498307198526,-146.5704748734171]}
+_Note:_ You can use this request only if you have started your server with the calibration data you got during the calibration workflow. Otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
 
 
 **Swipe from (100, 100) to (300, 450)**
 _Command:_ curl --data "startX=100&startY=100&endX=300&endY=450" http://127.0.0.1:4242/swipe  
 _Results:_ {"status":0,"data":[0,-23.52644491452315,8.617498307198526,-146.5704748734171]}  
-_Note:_ You can use this request if you have started your server with the calibration data you got during the calibration workflow. otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
+_Note:_ You can use this request if you have started your server with the calibration data you got during the calibration workflow. Otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
 
 
 **Swipe from (100, 100) to (300, 450) 10 times**
 _Command:_ curl --data "n=10&startX=100&startY=100&endX=300&endY=450" http://127.0.0.1:4242/nSwipe  
 _Results:_ {"status":0,"data":[0,20.099039333895835,9.35021825602261,-144.863474995738]}  
-_Note:_ You can use this request if you have started your server with the calibration data you got during the calibration workflow. otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
+_Note:_ You can use this request if you have started your server with the calibration data you got during the calibration workflow. Otherwise you may have an error like the one displayed in file 'captures/screen-capture_interla-error-with-tap-curl.png'
 
 
 **Get calibration data**  

@@ -13,7 +13,7 @@
 	* draw an SVG picture based on its XML definition
 	* draw a random pattern (swipe-based)
 	* swipe n times
-	* tap n times (TODO)
+	* tap n times
 	* stress taps (TODO)
 	* stress swipes (TODO)
 

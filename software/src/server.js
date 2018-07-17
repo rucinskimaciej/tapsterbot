@@ -307,6 +307,31 @@ board.on("ready", function(){
     }
   });
 
+    // Tap to a 2D point using the device landmark, n times
+  server.route({
+    method: 'POST',
+    path:'/nTap',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      // Get parameters
+      var n = parseFloat(request.payload.n);
+      var x = parseFloat(request.payload.x);
+      var y = parseFloat(request.payload.y);
+      // Convert to coordinates for the robot
+      var point = robot.getPositionForScreenCoordinates(x, y);
+      // Draw
+      var drawer = new draw.Draw(null, robot);
+      drawer.drawPoints(n, point.x, point.y);
+      return getCommonReponseObject(null, robot.getPosition());
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   // Make a long tap to a 2D point using the device landmark with a dedicated duration in ms
   server.route({
     method: 'POST',
