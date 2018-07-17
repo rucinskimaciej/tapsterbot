@@ -11,7 +11,7 @@
 	* draw a cross
 	* draw a spiral
 	* draw an SVG picture based on its XML definition
-	* draw a random pattern (swipe-based)
+	* draw a random pattern (strokes-based)
 	* swipe n times
 	* tap n times
 
@@ -22,3 +22,22 @@
 
 * In Robot Framework wrapper side	
 	* swipe from an element to another using ids, texts or xpath (wrapper)
+
+* Documentation
+	* more details in CURL samples
+	* more details in Markdown file about robot API
+
+* Other things
+	* Clean up project by removing useless things
+
+## TODO ;-)
+
+* Add new keywords in Robot Frameworks's wrapper (long/double/triple tap using element's id/text/xpath)
+* Add new keywords in Robot Framework (draw random pattern, start, circle, square, triangle, spiral)
+* Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
+* Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
+* Bring new features to Pyhon program (draw square, star, triangle, circle, cross, spiral, random pattern)
+* Add new capabilities to Snips client
+* Make a separate Android client without Snips
+* Update the wiki with more details
+* And maybe cool keynotes and articles in automn ;-)
