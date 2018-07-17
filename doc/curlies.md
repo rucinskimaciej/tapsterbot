@@ -47,20 +47,8 @@ _Results:_
 {"status":0,"data":{"z":-151.5}}
 
 
-**Welcome**  
-_Command:_ curl http://127.0.0.1:4242/  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)
-
-
-**Go to (20,25,10)**  
-_Command:_ curl --data "{\"x\":20,\"y\":25,\"z\":10}"  http://127.0.0.1:4242/go  
-_Results:_ {"statusCode":404,"error":"Not Found","message":"Not Found"}  
-_Note:_ Command available with bot.js and not server.js (and its HTTP client)
-
-
 **Draw a square**  
-_Command:_ curl --data "n=2&length=30" http://127.0.0.1:4242/drawSquare  
+_Command:_ curl --data "n=1&length=30" http://127.0.0.1:4242/drawSquare  
 _Results:_ {"status":0}  
 _Note:_ Draws a square, where n is a divider of the length of the square to define the number of points to draw, using points in the robot's landmark
 
@@ -96,6 +84,6 @@ _Note:_ Draws a spiral, using points in the robot's landmark, center on (x,y) wi
 
 
 **Draw an SVG picture**  
-_Command:_  curl --data "rawContent=..." http://127.0.0.1:4242/drawSpiral
+_Command:_  curl --data "rawContent=..." http://127.0.0.1:4242/drawSVG
 _Results:_ {"status":0}  
 _Note:_ Draws an SVG picture, where '...' is the XML content of the SVG file

@@ -59,7 +59,7 @@ var delay, loaded, fontFile;
 var transformX, transformY, objRef, connected, startTime, endTime, difference, clockTimer, firstMove, lastNum1, lastNum2, connect, baseWidth, baseHeight;
 
 var robotReference;
-
+var drawer;
 
 /* **************************
  * Definition of super object
@@ -83,6 +83,7 @@ var robotReference;
  	objRef = this;
  	defaultEaseType = this.defaultEaseType;
 	robotReference = robot;
+	drawer = new draw.Draw(null, robotReference);
 
  }
 
@@ -95,7 +96,7 @@ var robotReference;
 //It is really only used for drawing in cursive and does not need to be specified otherwise
 SVGDraw.prototype.drawSVG = function(content, connect) {
 
-	resetTimer();
+	drawer.resetTimer();
 	var parsed;
 
 	if (connect) connected = connect;
@@ -154,7 +155,7 @@ SVGDraw.prototype.drawSVG = function(content, connect) {
 		drawImage(pathArray);
 	}
 
-	doSetTimeout(0, 0, -130, delay);
+	drawer.doSetTimeout(0, 0, -130, delay);
 
 }
 
@@ -169,7 +170,7 @@ drawImage = function(pathArray) {
 		var commands = parse(d);
 		objRef.interpretCommands(commands); 
 	}
-	doSetTimeout(mapX(currentPoint.x), mapY(currentPoint.y), penHeight + 10, delay);
+	drawer.doSetTimeout(mapX(currentPoint.x), mapY(currentPoint.y), penHeight + 10, delay);
 }
 
 //Move from one point to (x, y)
@@ -177,18 +178,18 @@ move = function(x, y) {
 	var ptArray = [];
 	//If the paths should not be connected, lift up the pen and move over so that a line is not drawn
 	if (!connected) { 
-		doSetTimeout(mapX(currentPoint.x), mapY(currentPoint.y), penHeight + 10, delay, "none");
-		doSetTimeout(mapX(x), mapY(y), penHeight + 10, delay, "none");
-		doSetTimeout(mapX(x), mapY(y), penHeight, delay, "none");
+		drawer.doSetTimeout(mapX(currentPoint.x), mapY(currentPoint.y), penHeight + 10, delay, "none");
+		drawer.doSetTimeout(mapX(x), mapY(y), penHeight + 10, delay, "none");
+		drawer.doSetTimeout(mapX(x), mapY(y), penHeight, delay, "none");
 	}
 	//If the paths should be connected and a move has not been made, lift up the pen and move to the first point
 	else if (connected && !firstMove) {
-		doSetTimeout(mapX(currentPoint.x), mapY(currentPoint.y), penHeight + 10, delay, "none");
-		doSetTimeout(mapX(x), mapY(y), penHeight + 10, delay, "none");
-		doSetTimeout(mapX(x), mapY(y), penHeight, delay, "none");
+		drawer.doSetTimeout(mapX(currentPoint.x), mapY(currentPoint.y), penHeight + 10, delay, "none");
+		drawer.doSetTimeout(mapX(x), mapY(y), penHeight + 10, delay, "none");
+		drawer.doSetTimeout(mapX(x), mapY(y), penHeight, delay, "none");
 	}
 	else //If the paths should be connected and a move has been made, just draw a line between the two paths
-		doSetTimeout(mapX(x), mapY(y), penHeight, delay);
+		drawer.doSetTimeout(mapX(x), mapY(y), penHeight, delay);
 
 	currentPoint = {x:x, y:y}; //Update the current point (done every time an SVG command is called)
 
@@ -210,7 +211,7 @@ relMove = function(x, y) {
 //Draw a line from one point to (x, y)
 line = function(x, y) {
 	var ptArray = [];
-	doSetTimeout(mapX(x), mapY(y), penHeight, delay, "linear");
+	drawer.doSetTimeout(mapX(x), mapY(y), penHeight, delay, "linear");
 	currentPoint = {x:x, y:y};
 }
 
@@ -247,7 +248,7 @@ cubicCurve = function(x1, y1, x2, y2, x, y) {
 	var curvePts = new Array();
 	curvePts = b(x1, y1, x2, y2, x, y, 5); //Arbitrarily-chosen value. It creates a smooth-looking curve without calculating too many points
 	for (var i = 0;i < curvePts.length; i++) 
-		doSetTimeout(mapX(curvePts[i].x), mapY(curvePts[i].y), penHeight, delay*2 / curvePts.length, "none"); //The cubic curve command takes 2*delay ms to complete so that an accurate curve is created
+		drawer.doSetTimeout(mapX(curvePts[i].x), mapY(curvePts[i].y), penHeight, delay*2 / curvePts.length, "none"); //The cubic curve command takes 2*delay ms to complete so that an accurate curve is created
 }
 
 //Draws a relative cubic Bezier curve
@@ -279,7 +280,7 @@ quadraticCurve = function(x1, y1, x, y) {
 	var curvePts = new Array();
 	curvePts = q(x1, y1, x, y, 5);
 	for (var i = 0; i < curvePts.length; i++) 
-		doSetTimeout(mapX(curvePts[i].x), mapY(curvePts[i].y), penHeight, delay*2 / curvePts.length, "none");
+		drawer.doSetTimeout(mapX(curvePts[i].x), mapY(curvePts[i].y), penHeight, delay*2 / curvePts.length, "none");
 
 }
 
@@ -384,7 +385,7 @@ arc = function(rx, ry, rotation, largeArc, sweep, x, y) {
 	var ptArray = a(rx, ry, largeArc, sweep, x, y, 5);
 
 	for (var i = 0; i < ptArray.length; i++) {
-		doSetTimeout(mapX(ptArray[i].x), mapY(ptArray[i].y), penHeight, delay*2 / ptArray.length, "none");
+		drawer.doSetTimeout(mapX(ptArray[i].x), mapY(ptArray[i].y), penHeight, delay*2 / ptArray.length, "none");
 	}
 
 }

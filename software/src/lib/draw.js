@@ -48,6 +48,12 @@ var DRAW_HEIGHT = -150;
 var currentPoint = {x: 0, y: 0, z: -140};
 var penHeight = DRAW_HEIGHT;
 
+var defaultEaseType = "linear";
+var timer = 0;
+var current = [0, 0, DRAW_HEIGHT];
+var steps = 5;
+var delay = 200 / steps;
+
 var robotReference;
 
 /* **************************
@@ -116,31 +122,31 @@ Draw.prototype.drawSquare = function(args){
     }, this)
   }
 
-  resetTimer(); //Reset the timer so that there isn't unnecessary delay when calling the function multiple times
+  objRef.resetTimer(); //Reset the timer so that there isn't unnecessary delay when calling the function multiple times
 
   var halfSide = this.sideLength / 2;
   var points = this.sideLength / this.n;
 
-  doSetTimeout(-halfSide, halfSide, penHeight + 10, 0)
-  doSetTimeout(-halfSide, halfSide, penHeight, 500); //Top left corner
+  objRef.doSetTimeout(-halfSide, halfSide, penHeight + 10, 0)
+  objRef.doSetTimeout(-halfSide, halfSide, penHeight, 500); //Top left corner
 
   for (var i = 0; i < points; i++) { //To bottom left
-    doSetTimeout(-halfSide, halfSide - (this.n * i), penHeight, i * 5);
+    objRef.doSetTimeout(-halfSide, halfSide - (this.n * i), penHeight, i * 5);
   }
 
   for (var i = 0; i < points; i++) { //To bottom right
-    doSetTimeout(-halfSide + (this.n * i), -halfSide, penHeight, i * 5);
+    objRef.doSetTimeout(-halfSide + (this.n * i), -halfSide, penHeight, i * 5);
   }
 
   for (var i = 0; i < points; i++) { //To top right
-    doSetTimeout(halfSide, -halfSide + (this.n * i), penHeight, i * 5);
+    objRef.doSetTimeout(halfSide, -halfSide + (this.n * i), penHeight, i * 5);
   }
 
   for (var i = 0; i < points; i++) { //To top left
-    doSetTimeout(halfSide - (this.n * i), halfSide, penHeight, i * 5);
+    objRef.doSetTimeout(halfSide - (this.n * i), halfSide, penHeight, i * 5);
   }
 
-  doSetTimeout(0, 0, -140, timer + 100);
+  objRef.doSetTimeout(0, 0, -140, timer + 100);
 
 };
 
@@ -148,14 +154,14 @@ Draw.prototype.drawSquare = function(args){
 // Points are not in the 2D landmark of the device, but in the robot's landmark
 // (= (0,0) at the center of the plate)
 Draw.prototype.drawStar = function(){
-  resetTimer();
-  doSetTimeout(-20, -20, penHeight, 1000);
-  doSetTimeout(0, 30, penHeight, 1000);
-  doSetTimeout(20, -20, penHeight, 1000);
-  doSetTimeout(-30, 10, penHeight, 1000);
-  doSetTimeout(30, 10, penHeight, 1000);
-  doSetTimeout(-20, -20, penHeight, 1000);
-  doSetTimeout(0, 0, -140, timer + 100);
+  objRef.resetTimer();
+  objRef.doSetTimeout(-20, -20, penHeight, 1000);
+  objRef.doSetTimeout(0, 30, penHeight, 1000);
+  objRef.doSetTimeout(20, -20, penHeight, 1000);
+  objRef.doSetTimeout(-30, 10, penHeight, 1000);
+  objRef.doSetTimeout(30, 10, penHeight, 1000);
+  objRef.doSetTimeout(-20, -20, penHeight, 1000);
+  objRef.doSetTimeout(0, 0, -140, timer + 100);
   //-20, -20, 0, 30, 20, -20
 };
 
@@ -163,25 +169,25 @@ Draw.prototype.drawStar = function(){
 // Points are not in the 2D landmark of the device, but in the robot's landmark
 // (= (0,0) at the center of the plate)
 Draw.prototype.drawTriangle = function(x, y, x1, y1, x2, y2){
-  resetTimer();
-  doSetTimeout(x, y, penHeight, 1000);
-  doSetTimeout(x1, y1, penHeight, 1000);
-  doSetTimeout(x2, y2, penHeight, 1000);
-  doSetTimeout(x, y, penHeight, 1000);
-  doSetTimeout(0, 0, -140, timer + 100);
+  objRef.resetTimer();
+  objRef.doSetTimeout(x, y, penHeight, 1000);
+  objRef.doSetTimeout(x1, y1, penHeight, 1000);
+  objRef.doSetTimeout(x2, y2, penHeight, 1000);
+  objRef.doSetTimeout(x, y, penHeight, 1000);
+  objRef.doSetTimeout(0, 0, -140, timer + 100);
 }
 
 // Draws a cross with two strokes : (x1, y1) -> (x3, y3) and (x2, y2) -> (x4, y4)
 // Points are not in the 2D landmark of the device, but in the robot's landmark
 // (= (0,0) at the center of the plate)
 Draw.prototype.drawCross = function(x1, y1, x2, y2, x3, y3, x4, y4){
-  resetTimer();
-  doSetTimeout(x1, y1, penHeight, 1000);
-  doSetTimeout(x3, y3, penHeight, 1000);
-  doSetTimeout(0, 0, -140, timer + 100);
-  doSetTimeout(x2, y2, penHeight, 1000);
-  doSetTimeout(x4, y4, penHeight, 1000);
-  doSetTimeout(0, 0, -140, timer + 100);
+  objRef.resetTimer();
+  objRef.doSetTimeout(x1, y1, penHeight, 1000);
+  objRef.doSetTimeout(x3, y3, penHeight, 1000);
+  objRef.doSetTimeout(0, 0, -140, 500);
+  objRef.doSetTimeout(x2, y2, penHeight, 1000);
+  objRef.doSetTimeout(x4, y4, penHeight, 1000);
+  objRef.doSetTimeout(0, 0, -140, 500);
 }
 
 //Draws a circle
@@ -191,7 +197,7 @@ Draw.prototype.drawCross = function(x1, y1, x2, y2, x3, y3, x4, y4){
 //radius: the radius of the center (default: 20)
 Draw.prototype.drawCircle = function(args){
 
-  resetTimer();
+  objRef.resetTimer();
 
   this.centerX = 0;
   this.centerY = 0;
@@ -217,17 +223,17 @@ Draw.prototype.drawCircle = function(args){
   }
 
   circle = function() {
-    doSetTimeout(0, 0, -120, 50, "none");
-    doSetTimeout(points[0].x, points[0].y, penHeight + 10, 150, "none");
-    doSetTimeout(points[0].x, points[0].y, penHeight, 150, "none");
+    objRef.doSetTimeout(0, 0, -120, 50, "none");
+    objRef.doSetTimeout(points[0].x, points[0].y, penHeight + 10, 150, "none");
+    objRef.doSetTimeout(points[0].x, points[0].y, penHeight, 150, "none");
     for (var i=0; i<points.length; i+=1) {
       point = points[i];
-      doSetTimeout(point.x, point.y, penHeight, 2, "none");
+      objRef.doSetTimeout(point.x, point.y, penHeight, 2, "none");
     }
   }
 
   circle();
-  doSetTimeout(0, 0, -140, timer + 100, "none");
+  objRef.doSetTimeout(0, 0, -140, timer + 100, "none");
 
 };
 
@@ -255,7 +261,7 @@ Draw.prototype.drawSpiral = function(args){
     }, this)
   }
 
-  resetTimer();
+  objRef.resetTimer();
 
   var x1 = 0;
   var y1 = 0;
@@ -281,35 +287,24 @@ Draw.prototype.drawSpiral = function(args){
   spiral = function() {
     for (var z = 0; z < points.length; z++) {
       point = points[z];
-      doSetTimeout(point.x, point.y, objRef.zLevel, 5, "none");
+      objRef.doSetTimeout(point.x, point.y, objRef.zLevel, 5, "none");
     }
   }
 
   spiral();
-  doSetTimeout(0, 0, -140, timer + 100);
+  objRef.doSetTimeout(0, 0, -140, timer + 100);
 
 };
 
-/* ****************************************************
- * Inner functions and variables picked from demo files
- * ****************************************************/
-
-var defaultEaseType = "linear";
-var timer = 0;
-var current = [0, 0, DRAW_HEIGHT];
-var steps = 5;
-var delay = 200 / steps;
-
-
- //A separate setTimeout method so that delays work properly
-doSetTimeout = function(x, y, z, timeDelay, easing){
+//A separate setTimeout method so that delays work properly
+Draw.prototype.doSetTimeout = function(x, y, z, timeDelay, easing){
   if (!easing) easing = defaultEaseType;
-  setTimeout(function() { go(x, y, z, easing) }, timer);
+  setTimeout(function() { objRef.go(x, y, z, easing) }, timer);
   timer = timer + timeDelay;
 };
 
 // Makes a moves with an ease to this point
-go = function(x, y, z, easeType){
+Draw.prototype.go = function(x, y, z, easeType){
 
   var pointB = [x, y, z];
 
@@ -337,7 +332,7 @@ go = function(x, y, z, easeType){
 
 }
 
-resetTimer = function(){
+Draw.prototype.resetTimer = function(){
   timer = 0;
 }
 
