@@ -44,3 +44,9 @@
 7. deckard-fix-1 - (tag: vDeckard-1) - Fix defects in cache and manifest so as to make web app installable.
 8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
 8. eve - On going: more features for Robot Framework keywords and robot API
+
+## Wanna help?
+ - Make an iOS app to drive the robot
+ - Add controls in server-side and clients-side to prevent the use of bad parameters (i.e. tap on with x=-42 and y=0.666)
+ - Plug a camera to the robot to stream the tests
+ - ... feel free to make pull requests and forks!
