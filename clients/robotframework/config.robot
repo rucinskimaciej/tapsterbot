@@ -65,8 +65,8 @@ ${WAIT_TIME_STRESS_SWIPE}    0.33s
 # Delay in seconds between each tap during stress taps process
 ${WAIT_TIME_STRESS_TAP}    0.25s
 
-# The default duration for a long tap
-${DEFAULT_DURATION_LONG_TAP}    1.5s
+# The default duration for a long tap, in milliseconds
+${DEFAULT_DURATION_LONG_TAP}    1500
 
 # The default duration for a double or triple tap, duration between each tap, in milliseconds
 ${DEFAULT_DURATION_MULTI_TAP}    100

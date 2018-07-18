@@ -22,6 +22,9 @@
 
 * In Robot Framework wrapper side	
 	* swipe from an element to another using ids, texts or xpath (wrapper)
+	* long tap to element using XPath
+	* double tap to elements using XPath, ID or Text
+	* triple tap to elements using XPath, ID or Text
 
 * Documentation
 	* more details in CURL samples
@@ -32,7 +35,6 @@
 
 ## TODO ;-)
 
-* Add new keywords in Robot Frameworks's wrapper (long/double/triple tap using element's id/text/xpath)
 * Add new keywords in Robot Framework (draw random pattern, start, circle, square, triangle, spiral)
 * Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)

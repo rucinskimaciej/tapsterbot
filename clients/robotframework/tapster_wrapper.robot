@@ -71,6 +71,97 @@ Long Tap To Element With Text
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Long Tap To Element With Xpath
+    [Documentation]    Make a long tap to an element, in portrait mode, using this XPath locator.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_LONG_TAP} (in ms)
+    [Arguments]    ${xpath_locator}    ${duration}=${DEFAULT_DURATION_LONG_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Long tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Double Tap To Element With Id
+    [Documentation]    Make a double tap to an element, in portrait mode, which has this id.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    [Arguments]    ${id}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Double tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Double Tap To Element With Text
+    [Documentation]    Make a double tap to an element, in portrait mode, which has this text.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    [Arguments]    ${text}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Double tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Double Tap To Element With Xpath
+    [Documentation]    Make a double tap to an element, in portrait mode, using this XPath locator.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    [Arguments]    ${xpath_locator}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Double tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Triple Tap To Element With Id
+    [Documentation]    Make a triple tap to an element, in portrait mode, which has this id.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    [Arguments]    ${id}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Triple tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Triple Tap To Element With Text
+    [Documentation]    Make a triple tap to an element, in portrait mode, which has this text.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    [Arguments]    ${text}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Triple tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Triple Tap To Element With Xpath
+    [Documentation]    Make a triple tap to an element, in portrait mode, using this XPath locator.
+    # The contact point will be computed according to location and dimension of the widget.
+    # The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    [Arguments]    ${xpath_locator}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Triple tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Tap To Element With Id
     [Documentation]    Tap to an element, in portrait mode, which has this id.
     # The contact point will be computed according to location and dimension of the widget.
