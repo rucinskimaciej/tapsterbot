@@ -397,6 +397,14 @@ Draw Star
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Draw Circle
+    [Documentation]    Draws a circle with a defined center point and a radius
+    [Arguments]    ${x}    ${y}    ${r}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw circle    my_session    ${x}    ${y}    ${r}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 # #########
 # Some glue
 # #########

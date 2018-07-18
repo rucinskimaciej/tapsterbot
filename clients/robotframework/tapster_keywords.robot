@@ -280,3 +280,12 @@ Draw star
     ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_STAR}    data=${draw}
     Wait    ${WAIT_TIME_BETWEEN_TAP}
     [Return]    ${response.text}
+
+Draw circle
+    [Documentation]    Draws a circle
+    [Arguments]    ${session}    ${x}    ${y}    ${r}
+    &{draw_raw} =    Create Dictionary    x=${x}    y=${y}    r=${r}
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_CIRCLE}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}

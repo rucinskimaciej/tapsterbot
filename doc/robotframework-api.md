@@ -27,3 +27,4 @@
 | Stress swipes                         | session ; n ; a ; b ; c ; d          					 	| Server's session ; number of swipes ; x1 ; y1 ; x2 ; y2| The server's response                        | Makes the robot make n quick swipes from (a,b) to (c,d) points                          |
 | Draw random pattern					| session ; n ; minWidth ; minHeight ; maxWidth ; maxHeight | Server's session ; number of points (n-1 strokes), values defining the draw area 						| Draws a random pattern using continuous strokes on a defined area 					  |
 | Draw star 							| session 													| Server's session 										 | The server's response                        | Draws a lovely star																	  |
+| Draw circle 							| session ; x ; y ; r										| Server's session ; centered on (x,y) ; radius			 | The server's response                        | Draws a circle centered on (x,y) with the r radius									  |

@@ -21,6 +21,7 @@
 	* triple tap on coordinates
 	* draw a random pattern
 	* draw a star
+	* draw a circle
 
 * In Robot Framework wrapper side	
 	* swipe from an element to another using ids, texts or xpath (wrapper)
@@ -29,6 +30,7 @@
 	* triple tap to elements using XPath, ID or Text
 	* draw a random pattern
 	* draw a star
+	* draw a circle
 
 * Documentation
 	* more details in CURL samples
@@ -39,7 +41,7 @@
 
 ## TODO ;-)
 
-* Add new keywords in Robot Framework (star, circle, square, triangle, spiral)
+* Add new keywords in Robot Framework (cross, square, triangle, spiral)
 * Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
 * Bring new features to Pyhon program (draw square, star, triangle, circle, cross, spiral, random pattern)

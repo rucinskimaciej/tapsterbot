@@ -65,6 +65,7 @@ You will be able to use the keywords of the _tapster_wrapper.robot_ file. You ju
 | Swipe using elements xpath				| source_xpath    destination_xpath    offset_x (opt,=0)    offset_y (opt,=0)	| Swipe from an element to another using XPath locators													|
 | Draw Random Pattern						| n    minWidth    minHeight    maxWidth    maxHeight							| Draws a random pattern with n points, thus n-1 strokes, in a defined area 							|
 | Draw Star 								|																				| Draws a lovely star 																					|
+| Draw Circle 								| x    y    r																	| Draws a circle centered on (x,y) with r radius														|
 
 ### Notes
 
