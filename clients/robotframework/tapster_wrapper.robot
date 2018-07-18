@@ -405,6 +405,14 @@ Draw Circle
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Draw Cross
+    [Documentation]    Draws a cross using 4 points: two strokes will be made (points 1 to 4, and 2 to 3)
+    [Arguments]    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}    ${x4}    ${y4}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw cross    my_session    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}    ${x4}    ${y4}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 # #########
 # Some glue
 # #########

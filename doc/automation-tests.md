@@ -66,6 +66,7 @@ You will be able to use the keywords of the _tapster_wrapper.robot_ file. You ju
 | Draw Random Pattern						| n    minWidth    minHeight    maxWidth    maxHeight							| Draws a random pattern with n points, thus n-1 strokes, in a defined area 							|
 | Draw Star 								|																				| Draws a lovely star 																					|
 | Draw Circle 								| x    y    r																	| Draws a circle centered on (x,y) with r radius														|
+| Draw Cross 								| x1    y1    x2    y2    x3    y3    x4    y4									| Draws a cross with two strokes: one from 1 to 4, the other from 2 to 3								|
 
 ### Notes
 

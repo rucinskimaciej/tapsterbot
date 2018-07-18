@@ -289,3 +289,12 @@ Draw circle
     ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_CIRCLE}    data=${draw}
     Wait    ${WAIT_TIME_BETWEEN_TAP}
     [Return]    ${response.text}
+
+Draw cross
+    [Documentation]    Draws a cross
+    [Arguments]    ${session}    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}    ${x4}    ${y4}
+    &{draw_raw} =    Create Dictionary    x1=${x1}    y1=${y1}    x2=${x2}    y2=${y2}    x3=${x3}    y3=${y3}    x4=${x4}    y4=${y4}
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_CROSS}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}

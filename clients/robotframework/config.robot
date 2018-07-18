@@ -102,3 +102,4 @@ ${ROBOT_URL_CONTACT_Z}    /contactZ
 ${ROBOT_URL_DRAW_RANDOM}    /drawRandomPattern
 ${ROBOT_URL_DRAW_STAR}    /drawStar
 ${ROBOT_URL_DRAW_CIRCLE}    /drawCircle
+${ROBOT_URL_DRAW_CROSS}    /drawCross

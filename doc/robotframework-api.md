@@ -31,3 +31,4 @@
 | Draw random pattern					| session ; n ; minWidth ; minHeight ; maxWidth ; maxHeight | Server's session ; number of points (n-1 strokes), values defining the draw area| The server's reponse| Draws a random pattern using continuous strokes on a defined area 					  |
 | Draw star 							| session 													| Server's session 										 | The server's response                        | Draws a lovely star																	  |
 | Draw circle 							| session ; x ; y ; r										| Server's session ; centered on (x,y) ; radius			 | The server's response                        | Draws a circle centered on (x,y) with the r radius									  |
+| Draw cross 							| session ; x1 ; y1 ; x2 ; y2 ; x3 ; y3 ; x4 ; y4			[ Server's session ; points used for strokes			 | The server's response						| Draws a cross with two strokes: one from 1 to 4, the other from 2 to 3				  |
