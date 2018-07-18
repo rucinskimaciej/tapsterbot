@@ -23,6 +23,7 @@
 	* draw a star
 	* draw a circle
 	* draw a cross
+	* draw a square
 
 * In Robot Framework wrapper side	
 	* swipe from an element to another using ids, texts or xpath (wrapper)
@@ -33,6 +34,7 @@
 	* draw a star
 	* draw a circle
 	* draw a cross
+	* draw a square
 
 * Documentation
 	* more details in CURL samples

@@ -298,3 +298,14 @@ Draw cross
     ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_CROSS}    data=${draw}
     Wait    ${WAIT_TIME_BETWEEN_TAP}
     [Return]    ${response.text}
+
+Draw square
+    [Documentation]    Draws a square
+    [Arguments]    ${session}    ${n}    ${length}
+    &{draw_raw} =    Create Dictionary    n=${n}    length=${length}
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_SQUARE}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}
+
+

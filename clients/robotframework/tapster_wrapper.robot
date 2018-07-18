@@ -413,6 +413,15 @@ Draw Cross
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Draw Square
+    [Documentation]    Draws a square with a defined length
+    # The draw will be made each nth point (e.g. n=2), the smaller n is, the more precise the square will be.
+    [Arguments]    ${n}=2    ${length}=30
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw square    my_session    ${n}    ${length}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 # #########
 # Some glue
 # #########

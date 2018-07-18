@@ -103,3 +103,4 @@ ${ROBOT_URL_DRAW_RANDOM}    /drawRandomPattern
 ${ROBOT_URL_DRAW_STAR}    /drawStar
 ${ROBOT_URL_DRAW_CIRCLE}    /drawCircle
 ${ROBOT_URL_DRAW_CROSS}    /drawCross
+${ROBOT_URL_DRAW_SQUARE}    /drawSquare
