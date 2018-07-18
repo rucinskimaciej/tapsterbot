@@ -43,10 +43,18 @@
 6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.
 7. deckard-fix-1 - (tag: vDeckard-1) - Fix defects in cache and manifest so as to make web app installable.
 8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
-8. eve - On going: more features for Robot Framework keywords and robot API
+8. eve - On going: more features for Robot Framework keywords and robot API, more doc, and updated clients
 
 ## Wanna help?
  - Make an iOS app to drive the robot
  - Add controls in server-side and clients-side to prevent the use of bad parameters (i.e. tap on with x=-42 and y=0.666)
  - Plug a camera to the robot to stream the tests
  - ... feel free to make pull requests and forks!
+
+## Notice
+This fork has been made so as to build a community around Tapster and bring new usages.
+If you read AUTHORS file, you may notice my name appeares twice. Indeed contributions to this project are professional and personal.
+If you want to contact me, please use the appropriate email in the AUTHORS file.
+If you want to blame me or send me cookies for the made work, please refer to the Copyright owner, make the difference between professional and personal contributions (not hard, read the commit message), and contact me ;-)
+
+Feel free to contribute!

@@ -39,17 +39,18 @@
 * Documentation
 	* more details in CURL samples
 	* more details in Markdown file about robot API
+	* more details in Robot Framework keywords and wrapper
 
 * Other things
 	* Clean up project by removing useless things
 
 ## TODO ;-)
 
-* Add new keywords in Robot Framework (square, triangle, spiral)
+* Add new keywords in Robot Framework (triangle, spiral)
 * Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
 * Bring new features to Pyhon program (draw square, star, triangle, circle, cross, spiral, random pattern)
 * Add new capabilities to Snips client
-* Make a separate Android client without Snips
+* Make a separate Android client without Snips and columns/tabs for gorups of features
 * Update the wiki with more details
 * And maybe cool keynotes and articles in automn ;-)
