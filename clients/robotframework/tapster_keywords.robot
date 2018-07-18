@@ -45,29 +45,51 @@ Resource    config.robot
 
 *** Keywords ***
 
+# #########
 # Some glue
+# #########
 
 Create robot session
-    [Documentation]    Creates a network session (using RequestsLirbary) with the robot with a dedicated alias and matbe a robot's server URL. You must create a session before using the robot. Returns the created session.
+    [Documentation]    Creates a network session (using RequestsLibrary) with the robot with a dedicated alias and maybe a robot's server URL.
+    ...    You must create a session before using the robot.
+    ...    Parameters:
+    ...        session_alias - the alias of the session
+    ...        roboturl - optional, the URL of the server running the robot
+    ...    Returns:
+    ...        the created session.
     [Arguments]    ${session_alias}    ${roboturl}=${DEFAULT_ROBOT_URL}
     ${session} =    Create Session    ${session_alias}    ${roboturl}
     [Return]    ${session}
 
 Delete robot session
-    [Documentation]    Deletes an existing session which have thealais defined in parameter.
+    [Documentation]    Deletes an existing session which have this alias
+    ...    Parameters:
+    ...        session_alias - the alias of the session
+    ...        roboturl - optional, the URL of the server running the robot
+    ...    Returns:
+    ...        the result of the deletion request
     [Arguments]    ${session_alias}    ${roboturl}=${DEFAULT_ROBOT_URL}
     ${results} =    Delete Request    ${session_alias}    ${roboturl}
     [Return]    ${results}
 
 Wait
-    [Documentation]    Waits during a time so as to let the robot's server process its last received request. Indeed this server cannot temporise/cache request itself yet, here is a trick to temporise in the client side.
+    [Documentation]    Waits during a time so as to let the robot's server process its last received request.
+    ...    Indeed this server cannot temporise/cache request itself yet, here is a trick to temporise in the client side.
+    ...    Parameters:
+    ...         duration - the duration to wait, by default WAIT_BETWEEN_CASCADED_OPERATION
     [Arguments]    ${duration}=${WAIT_BETWEEN_CASCADED_OPERATION}
     Sleep    ${duration}
 
+# ###########
 # Robot's API
+# ###########
 
 Check connection of robot
-    [Documentation]    Checks if the connection of the robot with the given session has been established. Returns the status code sent by the robot's server.
+    [Documentation]    Checks if the connection of the robot with the given session has been established.
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        the status code sent by the robot's server.
     [Arguments]    ${session}
     ${response} =    Head Request    ${session}    ${ROBOT_URL_STATUS}
     Should Be Equal As Strings    ${response.status_code}    200
@@ -76,13 +98,21 @@ Check connection of robot
 
 Get angles of arms
     [Documentation]    Returns the angles the arms of the robot have using the given session.
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        the angles
     [Arguments]    ${session}
     ${response} =    Get Request    ${session}    ${ROBOT_URL_GET_ANGLES}
     Wait
     [Return]    ${response.text}
 
 Set angles of arms
-    [Documentation]    Defines the (theta1, theta2, theta3) angles of the arms the robot should have with the given session. Returns the response of the robot's server.
+    [Documentation]    Defines the (theta1, theta2, theta3) angles of the arms the robot should have with the given session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        the response of the robot's server
     [Arguments]    ${session}    ${theta1}    ${theta2}    ${theta3}
     &{angles_raw} =    Create Dictionary    theta1=${theta1}    theta2=${theta2}    theta3=${theta3}
     ${angles} =    json.dumps    ${angles_raw}
@@ -92,13 +122,24 @@ Set angles of arms
 
 Get 3D position
     [Documentation]    Returns the position in 3D landmark of the robot with the given session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        the 3D position in robot's landmark
     [Arguments]    ${session}
     ${response} =    Get Request    ${session}    ${ROBOT_URL_GET_POSITION}
     Wait
     [Return]    ${response.text}
 
 Set 3D position
-    [Documentation]    Defines the (x, y, z) position the robot must have with the given session. Returns the response of the robot's server.
+    [Documentation]    Defines the (x, y, z) position the robot must have with the given session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - The x value
+    ...        y - The y value
+    ...        z - The z value, where around -155 is the value where the baseplate is reached
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}    ${z}
     &{position_raw} =    Create Dictionary    x=${x}    y=${y}    z=${z}
     ${position} =    json.dumps    ${position_raw}
@@ -107,7 +148,13 @@ Set 3D position
     [Return]    ${response.text}
 
 Tap to point
-    [Documentation]    Makes the robot with the given session to tap to the point at (x, y)
+    [Documentation]    Makes the robot with the given session tap to the point at (x, y)
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - The x value of the point to tap
+    ...        y - The y value of the point to tap
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}
     &{tap_raw} =    Create Dictionary    x=${x}    y=${y}
     ${tap} =    json.dumps    ${tap_raw}
@@ -117,6 +164,13 @@ Tap to point
 
 Long tap to point
     [Documentation]    Makes the robot with the given session tap to the point at (x, y) during duration in ms
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - The x value of the point to tap
+    ...        y - The y value of the point to tap
+    ...        duration - The duration for the contact (optional, default valued to DEFAULT_DURATION_LONG_TAP)
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_LONG_TAP}
     &{long_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
     ${long_tap} =    json.dumps    ${long_tap_raw}
@@ -127,6 +181,13 @@ Long tap to point
 
 Double tap to point
     [Documentation]    Makes the robot with the given session tap twice to the point at (x, y) during duration in ms
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - The x value of the point to tap
+    ...        y - The y value of the point to tap
+    ...        duration - The duration to wait between two contact (optional, default valued to DEFAULT_DURATION_MULTI_TAP)
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}
     &{double_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
     ${double_tap} =    json.dumps    ${double_tap_raw}
@@ -136,6 +197,13 @@ Double tap to point
 
 Triple tap to point
     [Documentation]    Makes the robot with the given session tap three times to the point at (x, y) during duration in ms
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - The x value of the point to tap
+    ...        y - The y value of the point to tap
+    ...        duration - The duration to wait between each contact (optional, default valued to DEFAULT_DURATION_MULTI_TAP)
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}
     &{triple_tap_raw} =    Create Dictionary    x=${x}    y=${y}    duration=${duration}
     ${triple_tap} =    json.dumps    ${triple_tap_raw}
@@ -144,7 +212,11 @@ Triple tap to point
     [Return]    ${response.text}
 
 Reset
-    [Documentation]    Resets the position / arms of the robot to their default values with the given session.  Returns the response of the robot's server.
+    [Documentation]    Resets the position / arms of the robot to their default values with the given session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     &{empty_payload_raw} =    Create Dictionary
     ${empty_payload} =    json.dumps    ${empty_payload_raw}
@@ -154,13 +226,22 @@ Reset
 
 Get calibration data
     [Documentation]    Returns the calibration data of the robot with the given session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     ${response} =    Get Request    ${session}    ${ROBOT_URL_GET_CALIBRATION}
     Wait
     [Return]    ${response.text}
 
 Set calibration data
-    [Documentation]    Defines the calibation data in JSON format to apply to the robot with the given session. Returns the response of the robot's server.
+    [Documentation]    Defines the calibation data in JSON format to apply to the robot with the given session.
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        calibraiton_data - The JSON object, stringigied, contaniing calibration elements
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${calibration_data}
     ${response} =    Post Request    ${session}    ${ROBOT_URL_SET_CALIBRATION}    data=${calibration_data}
     Wait
@@ -168,13 +249,21 @@ Set calibration data
 
 Get status
     [Documentation]    Returns the status of the robot's server with the given session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     ${response} =    Get Request    ${session}    ${ROBOT_URL_STATUS}
     Wait
     [Return]    ${response.text}
 
 Dance
-    [Documentation]    Make the robot dance with the given session!.  Returns the response of the robot's server.
+    [Documentation]    Make the robot dance with the given session!
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     &{empty_payload_raw} =    Create Dictionary
     ${empty_payload} =    json.dumps    ${empty_payload_raw}
@@ -183,7 +272,11 @@ Dance
     [Return]    ${response.text}
 
 Stop dance
-    [Documentation]    Make the robot stop dancing with the given session :-(  Returns the response of the robot's server.
+    [Documentation]    Make the robot stop dancing with the given session :-(
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     &{empty_payload_raw} =    Create Dictionary
     ${empty_payload} =    json.dumps    ${empty_payload_raw}
@@ -193,6 +286,14 @@ Stop dance
 
 Swipe
     [Documentation]    Makes the robot with the given session swipe from (a,b) to (c,d)
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        a - the x value of the start point
+    ...        b - the y value of the start point
+    ...        c - the x value of the end point
+    ...        d - the y value of the end point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${a}    ${b}    ${c}    ${d}
     &{swipe_raw} =    Create Dictionary    startX=${a}    startY=${b}    endX=${c}    endY=${d}
     ${swipe} =    json.dumps    ${swipe_raw}
@@ -201,7 +302,14 @@ Swipe
     [Return]    ${response.text}
 
 Tap n times
-    [Documentation]    Makes the robot with the given session tap n times on (x,y). Returns the last received response.
+    [Documentation]    Makes the robot with the given session tap n times on (x,y)
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        n - the number of taps to process
+    ...        x - the x value of the point to tap on
+    ...        y - the y value of the point to tap on
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${n}    ${x}    ${y}
     &{tap_raw} =    Create Dictionary    x=${x}    y=${y}
     ${tap} =    json.dumps    ${tap_raw}
@@ -211,7 +319,16 @@ Tap n times
     [Return]    ${response.text}
 
 Swipe n times
-    [Documentation]    Makes the robot with the given session swipes n times from (a,b) to (c,d). Returns the last received response.
+    [Documentation]     Makes the robot with the given session swipes n times from (a,b) to (c,d)
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        n - the number of swipes to do
+    ...        a - the x value of the start point
+    ...        b - the y value of the start point
+    ...        c - the x value of the end point
+    ...        d - the y value of the end point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${n}    ${a}    ${b}    ${c}    ${d}
     &{swipe_raw} =    Create Dictionary    startX=${a}    startY=${b}    endX=${c}    endY=${d}
     ${swipe} =    json.dumps    ${swipe_raw}
@@ -221,7 +338,13 @@ Swipe n times
     [Return]    ${response.text}
 
 Position for screen
-    [Documentation]    Gets the position of the robot (using the given session) according to an (x,y) 2D landmark point
+    [Documentation]    Gets the position of the robot (using the given session) according to an (x,y) 2D device landmark point
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - the x value of the point
+    ...        y - the y value of the point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}
     ${url} =    Catenate    SEPARATOR=  ${ROBOT_URL_POSITION_FOR_SCREEN_COORD}    /x/    ${x}    /y/    ${y}
     ${response} =    Get Request    ${session}    ${url}
@@ -229,7 +352,14 @@ Position for screen
     [Return]    ${response.text}
 
 Angles for position
-    [Documentation]    Gets the angles of the arms for the (x, y, z) 3D point
+    [Documentation]    Gets the angles of the robot's arms for the (x, y, z) 3D point
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - the x value of the point
+    ...        y - the y value of the point
+    ...        z - the z value of the point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}    ${z}
     ${url} =    Catenate    SEPARATOR=  ${ROBOT_URL_ANGLES_FOR_POSITION}    /x/    ${x}    /y/    ${y}    /z/    ${z}
     ${response} =    Get Request    ${session}    ${url}
@@ -238,13 +368,24 @@ Angles for position
 
 Get contact Z
     [Documentation]    Gets the Z-axis value of the contact point the robot has (using the given session)
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     ${response} =    Get Request    ${session}    ${ROBOT_URL_CONTACT_Z}
     Wait
     [Return]    ${response.text}
 
 Stress taps
-    [Documentation]    Stresses the app under the robot with n quick tap on (x,y) using a session
+    [Documentation]    Stresses the app under the robot with n quick taps on (x,y) 2D point using a session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        n - the number of very quick taps to process
+    ...        x - the x value of the impact point
+    ...        y - the y value of the impact point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${n}    ${x}    ${y}
     &{tap_raw} =    Create Dictionary    x=${x}    y=${y}
     ${tap} =    json.dumps    ${tap_raw}
@@ -254,7 +395,16 @@ Stress taps
     [Return]    ${response.text}
 
 Stress swipes
-    [Documentation]    Stresses the app under the robot with n quick swipes from (a,b) to (c,d)v using a session
+    [Documentation]    Stresses the app under the robot with n quick swipes from (a,b) to (c,d) using a session
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        n - the number of very quick swipes to process
+    ...        a - the x value of the start point
+    ...        b - the y value of the start point
+    ...        c - the x value of the end point
+    ...        d - the y value of the end point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${n}    ${a}    ${b}    ${c}    ${d}
     &{swipe_raw} =    Create Dictionary    startX=${a}    startY=${b}    endX=${c}    endY=${d}
     ${swipe} =    json.dumps    ${swipe_raw}
@@ -265,6 +415,15 @@ Stress swipes
 
 Draw random pattern
     [Documentation]    Draws a random pattern with strokes usgin n points in a defined area
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        n - the number points where their x and y are picked from [minWidth, maxWidth] for and [minHeight, maxHeight] for y
+    ...        minWidth - the x value of the start point
+    ...        minHeight - the y value of the start point
+    ...        maxWidth - the x value of the end point
+    ...        maxHeight - the y value of the end point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${n}    ${minWidth}    ${minHeight}    ${maxWidth}    ${maxHeight}
     &{draw_raw} =    Create Dictionary    n=${n}    minWidth=${minWidth}    minHeight=${minHeight}    maxWidth=${maxWidth}    maxHeight=${maxHeight}
     ${draw} =    json.dumps    ${draw_raw}
@@ -274,6 +433,10 @@ Draw random pattern
 
 Draw star
     [Documentation]    Draws a simple star
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}
     &{draw_raw} =    Create Dictionary
     ${draw} =    json.dumps    ${draw_raw}
@@ -282,7 +445,14 @@ Draw star
     [Return]    ${response.text}
 
 Draw circle
-    [Documentation]    Draws a circle
+    [Documentation]    Draws a circle centered on (x,y) with r radius
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - the x value of the center point
+    ...        y - the y value of the center point
+    ...        r - the radius of the circle
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x}    ${y}    ${r}
     &{draw_raw} =    Create Dictionary    x=${x}    y=${y}    r=${r}
     ${draw} =    json.dumps    ${draw_raw}
@@ -291,7 +461,19 @@ Draw circle
     [Return]    ${response.text}
 
 Draw cross
-    [Documentation]    Draws a cross
+    [Documentation]    Draws a cross using 4 corner points (1, 2, 3, 4) and two storkes (1 -> 3 and 2 -> 4)
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x1 - the x value of the corner point 1
+    ...        y1 - the y value of the corner point 1
+    ...        x2 - the x value of the corner point 2
+    ...        y2 - the y value of the corner point 2
+    ...        x3 - the x value of the corner point 3
+    ...        y3 - the y value of the corner point 3
+    ...        x4 - the x value of the corner point 4
+    ...        y4 - the y value of the corner point 4
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}    ${x4}    ${y4}
     &{draw_raw} =    Create Dictionary    x1=${x1}    y1=${y1}    x2=${x2}    y2=${y2}    x3=${x3}    y3=${y3}    x4=${x4}    y4=${y4}
     ${draw} =    json.dumps    ${draw_raw}
@@ -301,6 +483,12 @@ Draw cross
 
 Draw square
     [Documentation]    Draws a square
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        n - draw ech nth point
+    ...        length - the length of the square
+    ...    Returns:
+    ...        Returns the response of the robot's server.
     [Arguments]    ${session}    ${n}    ${length}
     &{draw_raw} =    Create Dictionary    n=${n}    length=${length}
     ${draw} =    json.dumps    ${draw_raw}
