@@ -271,3 +271,12 @@ Draw random pattern
     ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_RANDOM}    data=${draw}
     Wait    ${WAIT_TIME_BETWEEN_TAP}
     [Return]    ${response.text}
+
+Draw star
+    [Documentation]    Draws a simple star
+    [Arguments]    ${session}
+    &{draw_raw} =    Create Dictionary
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_STAR}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}

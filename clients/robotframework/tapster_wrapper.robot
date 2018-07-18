@@ -390,6 +390,12 @@ Draw Random Pattern
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Draw Star
+    [Documentation]    Draws a simple and lovely star
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw star    my_session
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
 
 # #########
 # Some glue

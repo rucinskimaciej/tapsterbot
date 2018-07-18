@@ -1,6 +1,6 @@
 # Robot Framework keywords API
 
-| Keywords       			            | Parameters                  			    			 	| Description of parameters                  			      | Returned values           							     | Comment             										                                         				 |
+| Keywords       			            | Parameters                  			    			 	| Description of parameters                  			 | Returned values           					| Comment   						                                         			  |
 | --------------------------------------|:---------------------------------------------------------:|:------------------------------------------------------:|:--------------------------------------------:|:---------------------------------------------------------------------------------------:|
 | Create robot session                  | session_alias ; robotUrl (opt)      					 	| Alias of the session ; URL of the server (optional)    | The created session                          | Creates a new session with the server.                                                  |
 | Delete robot session                  | session_alias ; robotUrl (opt)      					 	| Alias of the session ; URL of the server (optional)    | The created session                          | Deletes the session which has this alias.                                               |
@@ -26,3 +26,4 @@
 | Stress taps                           | session ; n ; x ; y                 						| Server's session ; number of taps ; coordinates (x,y)  | The server's response                        | Makes the robot make n quick tap on (x,y) point                                         |
 | Stress swipes                         | session ; n ; a ; b ; c ; d          					 	| Server's session ; number of swipes ; x1 ; y1 ; x2 ; y2| The server's response                        | Makes the robot make n quick swipes from (a,b) to (c,d) points                          |
 | Draw random pattern					| session ; n ; minWidth ; minHeight ; maxWidth ; maxHeight | Server's session ; number of points (n-1 strokes), values defining the draw area 						| Draws a random pattern using continuous strokes on a defined area 					  |
+| Draw star 							| session 													| Server's session 										 | The server's response                        | Draws a lovely star																	  |
