@@ -29,6 +29,7 @@
 - [Robot HTTP API](https://github.com/pylapp/tapsterbot/wiki/04-%5C--The-Tapster-2-API)
 - [Python client](https://github.com/pylapp/tapsterbot/wiki/06-%5C--Drive-the-robot:-Python-API)
 - [Robot Framework keywords](https://github.com/pylapp/tapsterbot/wiki/11--%5C-Automation-of-tests)
+- [Robot Framework wrapper](https://github.com/pylapp/tapsterbot/wiki/11--%5C-Automation-of-tests)
 - [Technical details](https://github.com/pylapp/tapsterbot/wiki/12--%5C-More-technical-details)
 - [FAQ](https://github.com/pylapp/tapsterbot/wiki/13--%5C-FAQ)
 - [Wiki](https://github.com/pylapp/tapsterbot/wiki)
