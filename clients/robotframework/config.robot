@@ -99,3 +99,4 @@ ${ROBOT_URL_SWIPE}    /swipe
 ${ROBOT_URL_POSITION_FOR_SCREEN_COORD}    /positionForScreenCoordinates
 ${ROBOT_URL_ANGLES_FOR_POSITION}    /anglesForPosition
 ${ROBOT_URL_CONTACT_Z}    /contactZ
+${ROBOT_URL_DRAW_RANDOM}    /drawRandomPattern

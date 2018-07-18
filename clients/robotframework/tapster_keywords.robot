@@ -262,3 +262,12 @@ Stress swipes
     \        ${response} =    Post Request    ${session}    ${ROBOT_URL_SWIPE}    data=${swipe}
     \        Wait    ${WAIT_TIME_STRESS_SWIPE}
     [Return]    ${response.text}
+
+Draw random pattern
+    [Documentation]    Draws a random pattern with strokes usgin n points in a defined area
+    [Arguments]    ${session}    ${n}    ${minWidth}    ${minHeight}    ${maxWidth}    ${maxHeight}
+    &{draw_raw} =    Create Dictionary    n=${n}    minWidth=${minWidth}    minHeight=${minHeight}    maxWidth=${maxWidth}    maxHeight=${maxHeight}
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_RANDOM}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}

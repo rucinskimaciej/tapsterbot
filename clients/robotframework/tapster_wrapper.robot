@@ -381,6 +381,16 @@ Tap To Landscape Element With Id
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Draw Random Pattern
+    [Documentation]    Draws a random pattern on the screen, suing strokes
+    # Will choose in the defined area n points wich wil be used to draw the lines.
+    [Arguments]    ${n}    ${startX}    ${startY}    ${endX}    ${endY}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw random pattern    my_session    ${n}    ${startX}    ${startY}    ${endX}    ${endY}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+
 # #########
 # Some glue
 # #########

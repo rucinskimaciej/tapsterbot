@@ -19,12 +19,14 @@
 	* long tap on coordinates
 	* double tap on coordinates
 	* triple tap on coordinates
+	* draw a random pattern
 
 * In Robot Framework wrapper side	
 	* swipe from an element to another using ids, texts or xpath (wrapper)
 	* long tap to element using XPath
 	* double tap to elements using XPath, ID or Text
 	* triple tap to elements using XPath, ID or Text
+	* draw a random pattern
 
 * Documentation
 	* more details in CURL samples

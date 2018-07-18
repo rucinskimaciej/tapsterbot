@@ -63,6 +63,7 @@ You will be able to use the keywords of the _tapster_wrapper.robot_ file. You ju
 | Swipe using elements id 					| source_id    destination_id    offset_x (opt,=0)    offset_y (opt,=0)			| Swipe from an element to another using their ids 														|
 | Swipe using elements text					| source_text    destination_text    offset_x (opt,=0)    offset_y (opt,=0)		| Swipe from an element to another using their text contents											|
 | Swipe using elements xpath				| source_xpath    destination_xpath    offset_x (opt,=0)    offset_y (opt,=0)	| Swipe from an element to another using XPath locators													|
+| Draw Random Pattern						| n    minWidth    minHeight    maxWidth    maxHeight							| Draws a random pattern with n points, thus n-1 strokes, in a defined area 							|
 
 ### Notes
 
