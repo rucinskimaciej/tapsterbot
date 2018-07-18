@@ -133,3 +133,9 @@ _Note:_ Draws an SVG picture, where '...' is the XML content of the SVG file
 _Command:_   curl --data "n=10&minWidth=100&minHeight=100&maxWidth=350&maxHeight=500" http://127.0.0.1:4242/drawRandomPattern
 _Exemple of result:_ {"status":0}  
 _Note:_ Draws a random pattern using continuous strokes with n points in a defined area (based on device's 2D landmark)
+
+
+**Tap on random points**  
+_Command:_   curl --data "n=10&minWidth=100&minHeight=100&maxWidth=400&maxHeight=500" http://127.0.0.1:4242/tapRandomPoints
+_Exemple of result:_ {"status":0}  
+_Note:_ Tap on n random points in a defined area (based on device's 2D landmark)

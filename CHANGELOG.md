@@ -14,6 +14,7 @@
 	* draw a random pattern (strokes-based)
 	* swipe n times
 	* tap n times
+	* tpa on n random points
 
 * In Robot Framework side
 	* long tap on coordinates

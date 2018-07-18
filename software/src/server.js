@@ -705,6 +705,33 @@ board.on("ready", function(){
     }
   });
 
+  // Tap on several random points
+  server.route({
+    method: 'POST',
+    path:'/tapRandomPoints',
+    handler: function (request, h) {
+      console.log("POST " + request.path + ": ");
+      // Get parameters, supposed to be in 2D device landmark
+      var n = parseFloat(request.payload.n);
+      var minW = parseFloat(request.payload.minWidth);
+      var minH = parseFloat(request.payload.minHeight);
+      var maxW = parseFloat(request.payload.maxWidth);
+      var maxH = parseFloat(request.payload.maxHeight);
+      // Compute to points in 3D robot landmark
+      var miniPoint = robot.getPositionForScreenCoordinates(minW, minH);
+      var maxiPoint = robot.getPositionForScreenCoordinates(maxW, maxH);
+      // Draw !
+      var drawer = new draw.Draw(null, robot);
+      return getCommonReponseObject(null, drawer.tapRandom(n, miniPoint.x, miniPoint.y, maxiPoint.x, maxiPoint.y));
+    },
+    config: {
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with']
+      }
+    }
+  });
+
   server.start();
   console.log("Robot listening on port " + args.port);
 

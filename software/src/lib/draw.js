@@ -44,7 +44,7 @@ var calculated, spiralPts;
 
 var baseHeight, baseWidth, canvasHeight, canvasWidth, heightRatio, widthRatio, halfway;
 
-var DRAW_HEIGHT = -150;
+var DRAW_HEIGHT = -155;
 var currentPoint = {x: 0, y: 0, z: -140};
 var penHeight = DRAW_HEIGHT;
 
@@ -320,6 +320,39 @@ Draw.prototype.drawRandom = function(n=5, minWidth=-35, minHeight=-30, maxWidth=
   objRef.resetTimer();
   for (var p = 0; p < points.length; p+=2){
     objRef.doSetTimeout(points[p], points[p+1], penHeight, 1000);
+  }
+  objRef.doSetTimeout(0, 0, -140, 500);
+
+}
+
+// Tap on n random points withing an area defined by the minimum and maximum
+// width and height. The values for minimum and maximum width must match the robot's
+// 3D landmark, i.e. around with height in [-30, +30] and width in [-40, +40]
+Draw.prototype.tapRandom = function(n, minWidth, minHeight, maxWidth, maxHeight){
+
+  // Will contain the points: [x1, y1, x2, y2, ..., xN, yN]
+  var points = [];
+
+  // Step 1: Get the n points
+  for (var i = 0; i < n; i++){
+    var firstValueForWidth = Math.ceil(minWidth);
+    var lastValueForWidth = Math.floor(maxWidth);
+    var randomWidth = Math.floor(Math.random() * (lastValueForWidth - firstValueForWidth + 1)) + firstValueForWidth;
+    points.push(randomWidth);
+    var firstValueForHeight = Math.ceil(minHeight);
+    var lastValueForHeight = Math.floor(maxHeight);
+    var randomHeight =  Math.floor(Math.random() * (lastValueForHeight - firstValueForHeight + 1)) + firstValueForHeight;
+    points.push(randomHeight);
+  }
+
+  // Step 2: Draw!
+  objRef.resetTimer();
+  var cleanDelay = 250;
+  objRef.doSetTimeout(points[0], points[1], -140, 500); // Prevent from noisy strokes
+  for (var p = 0; p < points.length; p+=2){
+    objRef.doSetTimeout(points[p], points[p+1], -140, 500);
+    objRef.doSetTimeout(points[p], points[p+1], penHeight, 500 + cleanDelay);
+    objRef.doSetTimeout(points[p], points[p+1], -140, 500 + cleanDelay*2);
   }
   objRef.doSetTimeout(0, 0, -140, 500);
 
