@@ -33,3 +33,5 @@
 | Draw circle 							| session ; x ; y ; r										| Server's session ; centered on (x,y) ; radius			 | The server's response                        | Draws a circle centered on (x,y) with the r radius									  |
 | Draw cross 							| session ; x1 ; y1 ; x2 ; y2 ; x3 ; y3 ; x4 ; y4			| Server's session ; points used for strokes			 | The server's response						| Draws a cross with two strokes: one from 1 to 4, the other from 2 to 3				  |
 | Draw square 							| session ; n ; length 										| Server's session ; ratio of points to draw ; length	 | The server's response						| Draws a square using a ratio of points to draw and a length							  |
+| Draw triangle							| session ; x1 ; y1 ; x2 ; y2 ; x3 ; y3						| Server's session ; 3 points to use for the triangle	 | The server's response						| Draws a triangle using three points (x1,y1), (x2,y2), (x3,y3)							  |
+| Draw spiral							| session ; x ; y ; n ; r 									| Server's session ; center (x,y) ; number of loops ; radius| The server's response						| Draws a spiral with n loops, an r radius centered on the (x,y) point 					  |

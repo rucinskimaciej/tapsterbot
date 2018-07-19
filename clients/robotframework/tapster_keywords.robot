@@ -496,4 +496,38 @@ Draw square
     Wait    ${WAIT_TIME_BETWEEN_TAP}
     [Return]    ${response.text}
 
+Draw triangle
+    [Documentation]    Draws a triangle using three points
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x1 - the X axis value of the 1st point
+    ...        y1 - the Y axis value of the 1st point
+    ...        x2 - the X axis value of the 2nd point
+    ...        y2 - the Y axis value of the 2nd point
+    ...        x3 - the X axis value of the 3rd point
+    ...        y3 - the Y axis value of the 3rd point
+    ...    Returns:
+    ...        Returns the response of the robot's server.
+    [Arguments]    ${session}    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}
+    &{draw_raw} =    Create Dictionary    x1=${x1}    y1=${y1}    x2=${x2}    y2=${y2}    x3=${x3}    y3=${y3}
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_TRIANGLE}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}
 
+Draw spiral
+    [Documentation]    Draws a spiral using a center point (x,y), n loops and an r radius
+    ...    Parameters:
+    ...        session - the session for this robot
+    ...        x - the X axis value of the center point
+    ...        y - the Y axis value of the center point
+    ...        n - the number of loops to draw
+    ...        r - the radius of the spiral
+    ...    Returns:
+    ...        Returns the response of the robot's server.
+    [Arguments]    ${session}    ${x}    ${y}    ${n}    ${r}
+    &{draw_raw} =    Create Dictionary    x=${x}    y=${y}    n=${n}    r=${r}
+    ${draw} =    json.dumps    ${draw_raw}
+    ${response} =    Post Request    ${session}    ${ROBOT_URL_DRAW_SPIRAL}    data=${draw}
+    Wait    ${WAIT_TIME_BETWEEN_TAP}
+    [Return]    ${response.text}

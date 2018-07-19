@@ -623,6 +623,38 @@ Draw Square
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Draw Triangle
+    [Documentation]    Draws a triangle using 3 points
+    ...    Parameters:
+    ...        x1 - the X axis value of the 1st point
+    ...        y1 - the Y axis value of the 1st point
+    ...        x2 - the X axis value of the 2nd point
+    ...        y2 - the Y axis value of the 2nd point
+    ...        x3 - the X axis value of the 3rd point
+    ...        y3 - the Y axis value of the 3rd point
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw triangle    my_session    ${x1}    ${y1}    ${x2}    ${y2}    ${x3}    ${y3}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Draw Spiral
+    [Documentation]    Draws a spiral using a center point (x,y), n loops and an r radius
+    ...    Parameters:
+    ...        x - the X axis value of the center point
+    ...        y - the Y axis value of the center point
+    ...        n - the number of loops to draw
+    ...        r - the radius of the spiral
+    ...    Returns:
+    ...        Returns the response of the robot's server.
+    [Arguments]    ${x}    ${y}    ${n}    ${r}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Draw spiral    my_session    ${x}    ${y}    ${n}    ${r}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 # #########
 # Some glue
 # #########
