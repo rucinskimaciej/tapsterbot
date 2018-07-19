@@ -1,4 +1,5 @@
 {
+  "id" : "proj_aadroGGMnDO",
   "name" : "Tapster2 assistant - fr",
   "intents" : [ {
     "id" : "pylapp:fr_Get_position",
@@ -15,22 +16,19 @@
     "slots" : [ {
       "name" : "theta1",
       "id" : "SJv8dySBf",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour l'angle theta 1",
       "required" : true
     }, {
       "name" : "theta2",
       "id" : "SkYwO1BrM",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour l'angle theta 2",
       "required" : true
     }, {
       "name" : "theta3",
       "id" : "S1DddkrHM",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour l'angle theta 3",
       "required" : true
     } ],
@@ -43,22 +41,19 @@
     "slots" : [ {
       "name" : "x",
       "id" : "HJmrtkHrf",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour X",
       "required" : true
     }, {
       "name" : "y",
       "id" : "r1nHK1SSG",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour Y",
       "required" : true
     }, {
       "name" : "z",
       "id" : "SkHIK1rSf",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur pour Z",
       "required" : true
     } ],
@@ -71,33 +66,54 @@
     "slots" : [ {
       "name" : "startX",
       "id" : "S1EsCDnrz",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était l'abscisse de départ",
       "required" : true
     }, {
       "name" : "startY",
       "id" : "B1H6CP3SG",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était l'ordonnée de départ",
       "required" : true
     }, {
       "name" : "endX",
       "id" : "BJuCAP3Sz",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était l'abscisse d'arrivée",
       "required" : true
     }, {
       "name" : "endY",
       "id" : "Byrg1_hSz",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était l'ordonnée d'arrivée",
       "required" : true
     } ],
     "name" : "fr_Swipe"
+  }, {
+    "id" : "pylapp:fr_Tap_n_times",
+    "type" : "registry",
+    "version" : "0.0.4",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "n",
+      "id" : "rJST-CpXm",
+      "entityId" : "snips/ordinal",
+      "missingQuestion" : "Combien de fois dois-je taper ?",
+      "required" : true
+    }, {
+      "name" : "x",
+      "id" : "HJVA-CpQQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est la valeur sur l'axe des abscisses du point à taper ?",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "B1Uyz0TXm",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est la valeur sur l'axe des ordonnées du point à taper ?",
+      "required" : true
+    } ],
+    "name" : "fr_Tap_n_times"
   }, {
     "id" : "pylapp:fr_Dance",
     "type" : "registry",
@@ -127,6 +143,13 @@
     "slots" : [ ],
     "name" : "fr_Get_arms_angles"
   }, {
+    "id" : "pylapp:fr_Draw_star",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "fr",
+    "slots" : [ ],
+    "name" : "fr_Draw_star"
+  }, {
     "id" : "pylapp:fr_Stop_dancing",
     "type" : "registry",
     "version" : "0.0.6",
@@ -134,26 +157,113 @@
     "slots" : [ ],
     "name" : "fr_Stop_dancing"
   }, {
+    "id" : "pylapp:fr_Draw_triangle",
+    "type" : "registry",
+    "version" : "0.0.1",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "x1",
+      "id" : "B16wRaaQ7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est l'abscisse du premier point ?",
+      "required" : true
+    }, {
+      "name" : "y1",
+      "id" : "SJPtATaX7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est l'ordonnée du premier point ?",
+      "required" : true
+    }, {
+      "name" : "x2",
+      "id" : "S1iq0aa7m",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est l’abscisse du deuxième point ?",
+      "required" : true
+    }, {
+      "name" : "y2",
+      "id" : "H1fnAp6XX",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est l'ordonnée du deuxième point ?",
+      "required" : true
+    }, {
+      "name" : "x3",
+      "id" : "SJxT0Ta77",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est l'abscisse du troisième point ?",
+      "required" : true
+    }, {
+      "name" : "y3",
+      "id" : "r1E00aTXX",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est l'ordonnée du troisième point ?",
+      "required" : true
+    } ],
+    "name" : "fr_Draw_triangle"
+  }, {
     "id" : "pylapp:fr_Tap",
     "type" : "registry",
-    "version" : "0.0.11",
+    "version" : "0.0.12",
     "language" : "fr",
     "slots" : [ {
       "name" : "x",
       "id" : "H16HsyHrz",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur sur l'axe des X",
       "required" : true
     }, {
       "name" : "y",
       "id" : "SyNUoJSHG",
-      "entity" : "",
-      "entityId" : "numbers.number",
+      "entityId" : "snips/number",
       "missingQuestion" : "Je n'ai pas compris quelle était la valeur sur l'axe des Y",
       "required" : true
     } ],
     "name" : "fr_Tap"
+  }, {
+    "id" : "pylapp:fr_Draw_square",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "length",
+      "id" : "S1z82paX7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est la longueur du côté du carré à dessiner ?",
+      "required" : true,
+      "description" : "The length of the square to draw"
+    } ],
+    "name" : "fr_Draw_square"
+  }, {
+    "id" : "pylapp:fr_Long_tap",
+    "type" : "registry",
+    "version" : "0.0.1",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "r1gvmRamm",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est la valeur pour l'axe des abscisses ?",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "SJeOXR6m7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Quelle est la valeur pour l'axe des ordonnées ?",
+      "required" : true
+    } ],
+    "name" : "fr_Long_tap"
+  }, {
+    "id" : "pylapp:fr_Draw_random",
+    "type" : "registry",
+    "version" : "0.0.1",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "n",
+      "id" : "Hkzix0TQX",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Combien de points doivent être pris ?",
+      "required" : true
+    } ],
+    "name" : "fr_Draw_random"
   }, {
     "id" : "pylapp:fr_Reset",
     "type" : "registry",
@@ -164,8 +274,8 @@
   } ],
   "createdAt" : "2018-01-23T16:37:41.169Z",
   "language" : "fr",
-  "nluEngine" : {
-    "version" : "0.12.0"
+  "version" : {
+    "nluModel" : "0.15.0"
   },
   "platform" : {
     "type" : "raspberrypi"
@@ -174,5 +284,6 @@
     "type" : "snips"
   },
   "analyticsEnabled" : false,
+  "heartbeatEnabled" : true,
   "hotword" : "hey_snips"
 }

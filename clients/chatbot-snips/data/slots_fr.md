@@ -31,3 +31,24 @@ y, snips/number, true, Je n'ai pas compris quelle était la valeur sur l'axe des
 **fr_Get_status**  	
 
 **fr_Reset**  	
+
+**fr_Draw_square**
+length, snips/number, true, Quelle est la longueur du côté du carré à dessiner ?
+
+**fr_Draw_star**
+
+**fr_Draw_triangle**
+x1, snips/number, true, Quelle est l'abscisse du premier point ?
+y1, snips/number, true, Quelle est l'ordonnée du premier point ?
+x2, snips/number, true, Quelle est l'abscisse du deuxième point ?
+y2, snips/number, true, Quelle est l'ordonnée du deuxième point ?
+x3, snips/number, true, Quelle est l'abscisse du troisième point ?
+y3, snips/number, true, Quelle est l'ordonnée du troisième point ?
+
+**fr_Draw_random**
+n, snips/number, true, Combien de points doivent être pris ?
+
+**fr_Tap_n_times**
+n, snips/ordinal, true, Combien de fois dois-je taper ?
+x, snips/number, true, Quelle est la valeur sur l'axe des abscisses du point à taper ?
+y, snips/number, true, Quelle est la valeur sur l'axe des ordonnées du point à taper ?

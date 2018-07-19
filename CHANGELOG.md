@@ -14,7 +14,7 @@
 	* draw a random pattern (strokes-based)
 	* swipe n times
 	* tap n times
-	* tpa on n random points
+	* tap on n random points
 
 * In Robot Framework side
 	* long tap on coordinates
@@ -40,6 +40,9 @@
 	* draw a square
 	* draw a triangle
 	* draw a spiral
+
+* Snips assistant
+	* french - add intents to draw square, star, triangle, random pattern, tap n times, long tap
 
 * Documentation
 	* more details in CURL samples

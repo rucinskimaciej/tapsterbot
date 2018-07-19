@@ -134,3 +134,65 @@ Je veux un reset de la position du robot
 Je veux un reset des bras du robot  
 Reset la position du robot  
 Je veux un reset du robot  
+
+**fr_Draw_square**
+Je veux un carré de dimension [x](length)
+Je veux un carré de côté [x](length)
+Je veux un carré de taille [x](length)
+Dessine moi un carré de dimension [x](length)
+Dessine moi un carré de côté [x](length)
+Dessine moi un carré de taille [x](length)
+Dessine un carré de dimension [x](length)
+Dessine un carré de côté [x](length)
+Dessine un carré de taille [x](length)
+
+**fr_Draw_star**
+Dessine moi une étoile
+Fais une étoile
+Dessine une étoile
+Fais moi une étoile
+Je veux que tu fasses une étoile
+Je veux une étoile
+Je veux que tu me dessines une étoile
+
+**fr_Draw_triangle**
+Je veux un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
+Fais un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
+Fais moi un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
+Dessine un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
+Dessine moi un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
+Je veux un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
+Fais un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
+Fais moi un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
+Dessine un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
+Dessine moi un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
+
+**fr_Draw_random**
+Dessine quelque chose en utilisant [n](n) points
+Fais quelque chose en utilisant [n](n) points
+Fais quelque chose avec [n](n) points
+Dessine moi quelque chose avec [n](n) points
+Dessine quelque chose avec [n](n) points
+Je veux quelque chose avec [n](n) points
+Je veux un dessin au hasard avec [n](n) points
+Fais moi un truc aléatoire avec [n](n) points
+Fais un truc aléatoire avec [n](n) points
+Fais moi un truc avec [n](n) points
+Fais un truc avec [n](n) points
+Dessine moi un truc aléatoire avec [n](n) points
+Dessine un truc aléatoire avec [n](n) points
+Dessine moi un truc avec [n](n) points
+Dessine un truc avec [n](n) points
+
+**fr_Tap_n_times**
+Click n fois aux coordonnées [x](x) [y](y)
+Appuie [n](n) fois sur le point en [x](x) [y](y)
+Appuie [n](n) fois en [x](x) [y](y)
+Bouge [n](n) fois sur le point en [x](x) [y](y)
+Bouge [n](n) fois en [x](x) [y](y)
+Frappe [n](n) fois sur le point en [x](x) [y](y)
+Frappe [n](n) fois en [x](x) [y](y)
+Va [combien](n) fois en [x](x) [y](y)
+Va [combien](n) fois sur le point en [x](x) [y](y)
+Je veux que tu tapes [n](n) fois en [x](x) [y](y)
+Tape [n](n) fois en [x](x) [y](y)
