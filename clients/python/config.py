@@ -92,6 +92,7 @@ ROBOT_URL_ANGLES_FOR_POSITION = "/anglesForPosition"
 ROBOT_URL_CONTACT_Z = "/contactZ"
 ROBOT_URL_DRAW_SQUARE = "/drawSquare"
 ROBOT_URL_DRAW_STAR = "/drawStar"
+ROBOT_URL_DRAW_TRIANGLE = "/drawTriangle"
 
 # ********************************
 # Regular expressions for commands
@@ -123,3 +124,4 @@ ROBOT_PATTERN_CONTACT_Z = re.compile("^contact-z$")
 ROBOT_PATTERN_N_SWIPE = re.compile("^n-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_DRAW_SQUARE = re.compile("square (\d+) (\d+)$")
 ROBOT_PATTERN_DRAW_STAR = re.compile("^star$")
+ROBOT_PATTERN_DRAW_TRIANGLE = re.compile("^triangle (\d+) (\d+) (\d+) (\d+) (\d+) (\d+)$")

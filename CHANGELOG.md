@@ -47,6 +47,7 @@
 * Python client
 	* draw a square
 	* draw a star
+	* draw a triangle
 
 * Documentation
 	* more details in CURL samples

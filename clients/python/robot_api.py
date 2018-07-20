@@ -336,7 +336,7 @@ def robot_nswipe( n, startX, startY, endX, endY ):
         return request.json()
 # End of Function: robot_nswipe( n, startX, startY, endX, endY )
 
-# Function: robot_draw_square( n, length )
+# Function: robot_drawSquare( n, length )
 def robot_drawSquare( n, length ):
         """
             Sends to the robot's server n HTTP requests so as to draw a square with a dedicated length, and draw each n points
@@ -349,7 +349,7 @@ def robot_drawSquare( n, length ):
         request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_SQUARE, data=payload)
         print request.text
         return request.json()
-# End of Function: robot_draw_square( n, length )
+# End of Function: robot_drawSquare( n, length )
 
 
 # Function: robot_drawStar()
@@ -365,3 +365,18 @@ def robot_drawStar():
         print request.text
         return request.json()
 # End of Function: robot_getContactZ()
+
+# Function: robot_drawTriangle(x1, y1, x2, y2, x3, y3)
+def robot_drawTriangle(x1, y1, x2, y2, x3, y3):
+        """
+            Sends to the robot's server n HTTP requests so as to draw a triangle using poitns (x1,y1) (x2,y2) (x3,y3)
+            Parameters:  x1? Y1, x2, y2, x3, y3 as integer numbers., based ond evice 2D landmark
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending draw triangle request..."
+        payload = {'x1': x1, 'y1': y1, 'x2': x2,'y2': y2, 'x3': x3,'y3': y3}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_TRIANGLE, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_drawTriangle(x1, y1, x2, y2, x3, y3)

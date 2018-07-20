@@ -95,6 +95,7 @@ def help():
         print "\tangForPos x y z...........: Get the angles of the arms for the (x,y,z) 3D coordinates"
         print "\tsquare n length...........: Draw a square with a dedicated length, and draw each nth point"
         print "\tstar......................: Draw a star"
+        print "\ttriangle x1 y1 x2 y2 x3 y3: Draw a triangle using 3 points (x1, y1) (x2, y2) (x3, y3)"
         print "\thelp......................: Display this help"
         print "\tbye.......................: Good bye!"
         print ""
