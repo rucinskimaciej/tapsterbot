@@ -410,3 +410,18 @@ def robot_drawCross(x1, y1, x2, y2, x3, y3, x4, y4):
         print request.text
         return request.json()
 # End of Function: robot_drawCross(x1, y1, x2, y2, x3, y3, x4, y4)
+
+# Function: robot_drawSpiral(x, y, n, r)
+def robot_drawSpiral(x, y, n, r):
+        """
+            Sends to the robot's server an HTTP requests so as to draw a spiral starting from a points, with n rings and a radius r
+            Parameters:  x, y, n ,r as integer numbers, based on device 2D landmark
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending draw spiral request..."
+        payload = {'x': x, 'y': y, 'n': n, 'r': r}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_SPIRAL, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_drawSpiral(x, y, n, r)

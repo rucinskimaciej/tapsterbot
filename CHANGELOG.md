@@ -49,7 +49,8 @@
 	* draw a star
 	* draw a triangle
 	* draw a circle
-	* deaw a cross
+	* draw a cross
+	* draw a spiral
 
 * Documentation
 	* more details in CURL samples
