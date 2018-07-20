@@ -94,6 +94,7 @@ def help():
         print "\tposForScreen x y..........: Get the position of the bot for these (x,y) screen-based coordinates"
         print "\tangForPos x y z...........: Get the angles of the arms for the (x,y,z) 3D coordinates"
         print "\tsquare n length...........: Draw a square with a dedicated length, and draw each nth point"
+        print "\tstar......................: Draw a star"
         print "\thelp......................: Display this help"
         print "\tbye.......................: Good bye!"
         print ""

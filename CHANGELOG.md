@@ -46,6 +46,7 @@
 
 * Python client
 	* draw a square
+	* draw a star
 
 * Documentation
 	* more details in CURL samples

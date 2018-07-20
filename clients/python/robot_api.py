@@ -337,7 +337,7 @@ def robot_nswipe( n, startX, startY, endX, endY ):
 # End of Function: robot_nswipe( n, startX, startY, endX, endY )
 
 # Function: robot_draw_square( n, length )
-def robot_draw_square( n, length ):
+def robot_drawSquare( n, length ):
         """
             Sends to the robot's server n HTTP requests so as to draw a square with a dedicated length, and draw each n points
             Parameters:  n, length integer numbers.
@@ -350,3 +350,18 @@ def robot_draw_square( n, length ):
         print request.text
         return request.json()
 # End of Function: robot_draw_square( n, length )
+
+
+# Function: robot_drawStar()
+def robot_drawStar():
+        """
+            Sends to the robot's server an HTTP request so as to draw a star
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending draw star request..."
+        payload = {}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_STAR, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_getContactZ()

@@ -154,6 +154,11 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # draw star
+    result = bool(ROBOT_PATTERN_DRAW_STAR.match(command))
+    if result:
+        return True
+
     return False
 
 # End of Function: isRobotCommand( command )
@@ -348,10 +353,17 @@ def parseCommand( command ):
     if result:
         splits = command.split( )
         if len(splits) == 3:
-            robot_draw_square(n=splits[1], length=splits[2])
+            robot_drawSquare(n=splits[1], length=splits[2])
             return True
         else:
             print "Bad parameters"
             return False
+
+    # draw star
+    result = bool(ROBOT_PATTERN_DRAW_STAR.match(command))
+    if result:
+        robot_drawStar()
+        return True
+
 
 # End of Function: parseCommand( command )
