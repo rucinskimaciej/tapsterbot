@@ -57,6 +57,7 @@
 	* draw a circle
 	* draw a cross
 	* draw a spiral
+	* draw a random pattern
 
 * Documentation
 	* more details in CURL samples

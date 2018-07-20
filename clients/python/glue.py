@@ -102,6 +102,7 @@ def help():
         print "\tcircle x y r....................: Draw a circle centered on point (x,y) with r radius"
         print "\tcross x1, y1 x2 y2 x3 y3 x4 y4..: Draw a cross using 4 points, drawing two strokes, with strokes (x1, y1) -> (x4, y4) and (x2, y2) -> (x3, y3)"
         print "\tspiral x y n r..................: Draw a spiral centered on (x,y) using n rings with an r radius"
+        print "\trandom n minW minH maxW mawH....: Draw a random pattern with (n-1) strokes in a defined area (points picked with [minW ; maxW] and [minH; maxH])"
         print "\thelp............................: Display this help"
         print "\tbye.............................: Good bye!"
         print ""

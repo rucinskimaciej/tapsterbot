@@ -194,6 +194,11 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # draw random
+    result = bool(ROBOT_PATTERN_DRAW_RANDOM.match(command))
+    if result:
+        return True
+
     return False
 
 # End of Function: isRobotCommand( command )
@@ -472,6 +477,17 @@ def parseCommand( command ):
         splits = command.split( )
         if len(splits) == 5:
             robot_drawSpiral(x=splits[1], y=splits[2], n=splits[3], r=splits[4])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
+    # draw random
+    result = bool(ROBOT_PATTERN_DRAW_RANDOM.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 6:
+            robot_drawRandom(n=splits[1], minWidth=splits[2], minHeight=splits[3], maxWidth=splits[4], maxHeight=splits[5])
             return True
         else:
             print "Bad parameters"

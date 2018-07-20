@@ -470,3 +470,19 @@ def robot_drawSpiral(x, y, n, r):
         print request.text
         return request.json()
 # End of Function: robot_drawSpiral(x, y, n, r)
+
+# Function: robot_drawRandom(n, minWidth, minHeight, maxWidth, maxHeight)
+def robot_drawRandom(n, minWidth, minHeight, maxWidth, maxHeight):
+        """
+            Sends to the robot's server an HTTP requests so as to draw a random pattern
+            with (n-1) strokes in a defined area (points picked with [minWidth ; minHeight] and [maxWidth; maxHeight])
+            Parameters:  n, minWidth, minHeight, maxWidth, maxHeight as integer numbers, based on device 2D landmark
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending draw random request..."
+        payload = {'n': n, 'minWidth': minWidth, 'minHeight': minHeight, 'maxWidth': maxWidth, 'maxHeight': maxHeight}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_RANDOM, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_drawRandom(n, minWidth, minHeight, maxWidth, maxHeight)
