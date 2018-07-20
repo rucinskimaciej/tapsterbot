@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+/*
     MIT License
     Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,26 +16,11 @@
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
--->
-<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+ */
+// ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-<resources>
+package pylapp.tapster.client.android.tools
 
-    <!-- *********** -->
-    <!-- Tap targets -->
-    <!-- *********** -->
-
-    <string name="taptarget_commandtab_title">Panneau de commandes</string>
-    <string name="taptarget_commandtab_description">Vous pouvez trouver ici les commandes à envoyer au robot</string>
-
-    <string name="taptarget_tap_title">Exemple de commande</string>
-    <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>
-
-    <string name="taptarget_swipe_button_title">Exécuter la commande</string>
-    <string name="taptarget_swipe_button_description">En cliquant sur ce bouton la commande sera exécutée</string>
-
-    <string name="taptarget_swipe_params_title">Paramètres additionnels</string>
-    <string name="taptarget_swipe_params_description">Certaines commandes ont besoin de données que vous devez saisir</string>
-
-</resources>
-
+/**
+ * Package containing all Kotlin and Java sources for utility things
+ */

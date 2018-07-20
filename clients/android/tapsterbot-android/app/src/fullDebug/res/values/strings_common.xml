@@ -26,7 +26,7 @@
     <!-- Global values -->
     <!-- ************* -->
 
-    <string name="app_name">Tapster2 client (light)</string>
+    <string name="app_name">Tapster2 client</string>
     <string name="app_settings">Settings</string>
 
     <!-- **************** -->

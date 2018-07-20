@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     MIT License
-    Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016-2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -23,20 +23,35 @@
 <resources>
 
     <!-- *********** -->
-    <!-- Tap targets -->
+    <!-- Main colors -->
     <!-- *********** -->
 
-    <string name="taptarget_commandtab_title">Panneau de commandes</string>
-    <string name="taptarget_commandtab_description">Vous pouvez trouver ici les commandes à envoyer au robot</string>
+    <color name="colorPrimary">#607D8B</color>
+    <color name="colorPrimaryDark">#455A64</color>
+    <color name="colorAccent">#69F0AE</color>
 
-    <string name="taptarget_tap_title">Exemple de commande</string>
-    <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>
+    <!-- ******************* -->
+    <!-- Colors of first tab -->
+    <!-- ******************* -->
 
-    <string name="taptarget_swipe_button_title">Exécuter la commande</string>
-    <string name="taptarget_swipe_button_description">En cliquant sur ce bouton la commande sera exécutée</string>
+    <color name="screenAssistantBackgroundColor">#B0BEC5</color>
+    <color name="tabIndicatorColor">@color/colorAccent</color>
 
-    <string name="taptarget_swipe_params_title">Paramètres additionnels</string>
-    <string name="taptarget_swipe_params_description">Certaines commandes ont besoin de données que vous devez saisir</string>
+    <!-- ******************** -->
+    <!-- Colors of app intros -->
+    <!-- ******************** -->
+
+    <color name="appIntroScreenBackground">#607D8B</color>
+    <color name="appIntroScreenTitle">#FFFFFF</color>
+    <color name="appIntroScreenDescription">#EEEEEE</color>
+
+    <!-- ********************* -->
+    <!-- Colors of tap targets -->
+    <!-- ********************* -->
+
+    <color name="tapTargetOuterCircleColor">@color/colorAccent</color>
+    <color name="tapTargetTargetCircleColor">#EEEEEE</color>
+    <color name="tapTargetTextColor">@color/colorPrimary</color>
+    <color name="tapTargetDescriptionColor">@color/colorPrimaryDark</color>
 
 </resources>
-

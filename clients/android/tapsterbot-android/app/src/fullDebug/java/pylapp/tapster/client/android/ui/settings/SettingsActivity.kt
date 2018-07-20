@@ -37,7 +37,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  *
  * @author pylapp
  * @since 06/02/2018
- * @version 2.0.0
+ * @version 1.0.0
  */
 class SettingsActivity : AppCompatActivity() {
 
@@ -125,6 +125,14 @@ class SettingsActivity : AppCompatActivity() {
                 hideRelatedLicensesFields()
             }
 
+            // Deal with assistant
+            if (!isAssistantEnabled()) {
+                hideRelatedAssistantFields()
+                // Only TTS disabled?
+            } else {
+                if (!isTtsEnabled()) hideRelatedTtsFields()
+            }
+
         } // End of public void onCreate( Bundle savedInstanceState )
 
         /**
@@ -154,6 +162,46 @@ class SettingsActivity : AppCompatActivity() {
             val preferenceToRemove = findPreference(Config.PREFERENCES_APP_LICENSES)
             category.removePreference(preferenceToRemove)
         }
+
+        /**
+         * Returns if the feature about TTS is enabled or not
+         *
+         * @return [Boolean] - False if disabled, true if enabled
+         */
+        private fun isTtsEnabled(): Boolean {
+            val properties = FeaturesFactory().buildPropertiesReader()
+            properties.loadProperties(activity)
+            return properties.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT_TTS)!!.toBoolean()
+        } // End of private fun isTtsEnabled(context: Context): Boolean
+
+        /**
+         * Hides in the GUI the fields related to TTS
+         */
+        private fun hideRelatedTtsFields() {
+            val category = findPreference(Config.PREFERENCES_CATEGORY_ASSISTANT) as PreferenceCategory
+            val preferenceToRemove = findPreference(Config.PREFERENCES_ASSISTANT_VOCALIZATION)
+            category.removePreference(preferenceToRemove)
+        } // End of private fun hideRelatedTtsFields()
+
+        /**
+         * Returns if the feature about Assistant is enabled or not
+         *
+         * @return [Boolean] - False if disabled, true if enabled
+         */
+        private fun isAssistantEnabled(): Boolean {
+            val properties = FeaturesFactory().buildPropertiesReader()
+            properties.loadProperties(activity)
+            return properties.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()
+        } // End of private fun isAssistantEnabled(context: Context): Boolean
+
+        /**
+         * Hides in the GUI the fields related to the assistant
+         */
+        private fun hideRelatedAssistantFields() {
+            val category = findPreference(Config.PREFERENCES_SCREEN) as PreferenceScreen
+            val preferenceToRemove = findPreference(Config.PREFERENCES_CATEGORY_ASSISTANT)
+            category.removePreference(preferenceToRemove)
+        } // End of private fun hideRelatedAssistantFields()
 
     } // End of  class SettingsFragment : PreferenceFragment()
 

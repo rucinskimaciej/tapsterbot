@@ -29,6 +29,9 @@
     <string name="taptarget_commandtab_title">Panneau de commandes</string>
     <string name="taptarget_commandtab_description">Vous pouvez trouver ici les commandes à envoyer au robot</string>
 
+    <string name="taptarget_assistanttab_title">Assistant</string>
+    <string name="taptarget_assistanttab_description">Vous pouvez parler avec l\'assistant pour envoyer des commandes par la voix</string>
+
     <string name="taptarget_tap_title">Exemple de commande</string>
     <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>
 

@@ -32,7 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pylapp.tapster.client.android.R;
-import pylapp.tapster.client.android.assistants.AssistantMessage;
 
 /**
  * An adapter for the fragment containing a list of messages

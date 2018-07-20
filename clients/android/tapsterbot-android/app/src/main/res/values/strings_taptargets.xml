@@ -29,9 +29,6 @@
     <string name="taptarget_commandtab_title">Commands panel</string>
     <string name="taptarget_commandtab_description">You can find here all the commands you can send to the robot</string>
 
-    <string name="taptarget_assistanttab_title">Assistant panel</string>
-    <string name="taptarget_assistanttab_description">You can talk to the assistant which can send the requests for you</string>
-
     <string name="taptarget_tap_title">Example of command</string>
     <string name="taptarget_tap_description">You can choose a command by clicking on it</string>
 

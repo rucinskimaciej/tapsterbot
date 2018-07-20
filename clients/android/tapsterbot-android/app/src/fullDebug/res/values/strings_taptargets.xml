@@ -1,4 +1,5 @@
-/*
+<?xml version="1.0" encoding="utf-8"?>
+<!--
     MIT License
     Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -16,11 +17,29 @@
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
- */
-// ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-package pylapp.tapster.client.android.assistants
+<resources>
 
-/**
- * Package containing all Kotlin and Java sources related to assistants / chatbots
- */
+    <!-- *********** -->
+    <!-- Tap targets -->
+    <!-- *********** -->
+
+    <string name="taptarget_commandtab_title">Commands panel</string>
+    <string name="taptarget_commandtab_description">You can find here all the commands you can send to the robot</string>
+
+    <string name="taptarget_assistanttab_title">Assistant panel</string>
+    <string name="taptarget_assistanttab_description">You can talk to the assistant which can send the requests for you</string>
+
+    <string name="taptarget_tap_title">Example of command</string>
+    <string name="taptarget_tap_description">You can choose a command by clicking on it</string>
+
+    <string name="taptarget_swipe_button_title">Process the command</string>
+    <string name="taptarget_swipe_button_description">By clicking on this button you send to the robot the command</string>
+
+    <string name="taptarget_swipe_params_title">Parameters</string>
+    <string name="taptarget_swipe_params_description">Some commands may require additional parameters</string>
+
+</resources>
+

@@ -28,6 +28,15 @@
     <!-- Permissions -->
     <!-- *********** -->
 
+    <!-- To record the audio stream of the user, for the Snips assistant-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <!-- To load and use the Snips assistant's data (models, json configuration files, etc) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- To make vibrations so as to notify something to the user -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <!-- For ACRA -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 

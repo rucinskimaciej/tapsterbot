@@ -36,7 +36,6 @@ import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
 import pylapp.tapster.client.android.R
-import pylapp.tapster.client.android.assistants.AssistantStub
 import pylapp.tapster.client.android.tools.Config
 import pylapp.tapster.client.android.tools.FeaturesFactory
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub

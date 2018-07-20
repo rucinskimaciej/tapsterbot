@@ -19,7 +19,7 @@ import pylapp.tapster.client.android.R
  *
  * @version 1.0.0
  */
-class LicensesDisplayerSkeleton : LicensesDisplayerStub {
+class LicensesDisplayerSkeleton: LicensesDisplayerStub {
 
     /**
      * Displays the license sin use
@@ -41,7 +41,7 @@ class LicensesDisplayerSkeleton : LicensesDisplayerStub {
 
         // Assuming the developer of this feature is not a jackass and has written the same
         // amount of entries in each array
-        for (i in 0..6) {
+        for (i in 0..5) {
             val licence: License = when (licenses[i]) {
                 "Apache 2.0" -> ApacheSoftwareLicense20()
                 "MIT" -> MITLicense()

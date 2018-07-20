@@ -28,15 +28,15 @@
 
     <!-- The authors -->
     <string-array name="credits_names">
-        <item>Bibliothèque ACRA</item>
-        <item>Bibliothèque Ahoy! Onboarding</item>
-        <item>Widget Card views</item>
-        <item>Bibliothèque Dexter</item>
-        <item>Bibliothèque Folding Cell Android</item>
-        <item>Langage Kotlin</item>
-        <item>Bibliothèque LicensesDialog</item>
-        <item>Bibliothèque OkHttp</item>
-        <item>Bibliothèque TapTargetView</item>
+        <item>ACRA library</item>
+        <item>Ahoy! Onboarding library</item>
+        <item>Card views widget</item>
+        <item>Dexter library</item>
+        <item>Folding Cell Android library</item>
+        <item>Kotlin language</item>
+        <item>LicensesDialog library</item>
+        <item>OkHttp library</item>
+        <item>TapTargetView library</item>
     </string-array>
 
     <!-- The copyrights -->

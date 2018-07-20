@@ -41,6 +41,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.jetbrains.dokka-android'
+apply plugin: 'com.akaita.android.easylauncher'
 
 /* *****************
  * App configuration
@@ -113,6 +114,25 @@ android {
     } // End of sourceSets
 
 } // End of android
+
+// To customize the icons
+easylauncher {
+
+    iconNames "@mipmap/ic_launcher_foreground"
+    foregroundIconNames "@mipmap/ic_launcher_foreground"
+
+    defaultFlavorNaming = true
+
+    productFlavors {
+        light {
+            filters = redRibbonFilter()
+        }
+        full {
+            filters = blueRibbonFilter()
+        }
+    }
+
+} // End of easylauncher
 
 /* *******************
  * Dependencies to get

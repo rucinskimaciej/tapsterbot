@@ -23,12 +23,12 @@
 package pylapp.tapster.client.android.tools
 
 /**
- * Just a configuration file to prevent the use of raw or hard-coded values in the code
+ * Just a configuration file to prevent the use of rax or hard-coded values in the code
  *
  * @author pylapp
  * @since 08/02/2018
  *
- * @version 2.0.0
+ * @version 1.0.0
  */
 class Config {
 
@@ -60,6 +60,31 @@ class Config {
          * The key in the preferences screen for robot's server's port
          */
         const val PREFERENCES_ROBOT_PORT = "pref_key_settings_robot_port"
+
+        /**
+         * The key in the preferences screen for the "assistant" category
+         */
+        const val PREFERENCES_CATEGORY_ASSISTANT = "pref_key_settings_assistant"
+
+        /**
+         * The key in the preferences screen for the assistant's assets
+         */
+        const val PREFERENCES_ASSISTANT_ASSETS = "pref_key_settings_assistant_assets"
+
+        /**
+         * The key in the preferences screen for activation of the vocalization
+         */
+        const val PREFERENCES_ASSISTANT_VOCALIZATION = "pref_key_settings_assistant_enable"
+
+        /**
+         * The key in the preferences screen for locale of the vocalization
+         */
+        const val PREFERENCES_ASSISTANT_VOCALIZATION_LOCALE = "pref_key_settings_assistant_language_locale"
+
+        /**
+         * The key in the preferences screen for the vibrations
+         */
+        const val PREFERENCES_ASSISTANT_VIBRATIONS= "pref_key_settings_assistant_vibrations"
 
         /**
          * The key in the preferences screen for the "about" category
@@ -159,6 +184,16 @@ class Config {
          * The separator to use to separate parameters
          */
         const val REGEX_PARAMETERS_SEPARATOR = " "
+
+        /**
+         * The duration of the vibration to notify the session wht the assistant starts
+         */
+        const val DURATION_ASSISTANT_SESSION_START = 50L
+
+        /**
+         * The duration of the vibration to notify the session wht the assistant ends
+         */
+        const val DURATION_ASSISTANT_SESSION_END = 100L
 
     } // End of companion object
 

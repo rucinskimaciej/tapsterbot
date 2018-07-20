@@ -56,6 +56,48 @@
 
     </PreferenceCategory>
 
+    <!-- ********************* -->
+    <!-- The assistant section -->
+    <!-- ********************* -->
+
+    <PreferenceCategory
+        android:title="@string/preferences_assistant_section"
+        android:key="pref_key_settings_assistant">
+
+        <!-- The path to the assets of the assistant -->
+        <EditTextPreference
+            android:key="pref_key_settings_assistant_assets"
+            android:title="@string/preferences_assistant_assets_title"
+            android:summary="@string/preferences_assistant_assets_summary"
+            android:defaultValue="@string/default_value_assistant_assets"/>
+
+        <!-- If we activate the vocalization or not -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_assistant_enable"
+            android:title="@string/preferences_assistant_vocalization_enable_title"
+            android:summary="@string/preferences_assistant_vocalization_enable_summary"
+            android:defaultValue="false"
+            android:checked="false"/>
+
+        <!-- The language in use for the vocalization -->
+        <ListPreference
+            android:key="pref_key_settings_assistant_language_locale"
+            android:title="@string/preferences_assistant_localization_enable_title"
+            android:summary="@string/preferences_assistant_localization_enable_summary"
+            android:entries="@array/assistant_locale_entries"
+            android:entryValues="@array/assistant_locale_values"
+            android:defaultValue="@string/default_value_assistant_language"/>
+
+        <!-- If we activate the vibrations or not -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_assistant_vibrations"
+            android:title="@string/preferences_assistant_vibrations_enable_title"
+            android:summary="@string/preferences_assistant_vibrations_enable_summary"
+            android:defaultValue="true"
+            android:checked="true"/>
+
+    </PreferenceCategory>
+
     <!-- **** -->
     <!-- Misc -->
     <!-- **** -->

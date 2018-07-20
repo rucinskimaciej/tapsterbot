@@ -32,7 +32,6 @@ import android.widget.ListView
 import android.widget.Toast
 
 import pylapp.tapster.client.android.R
-import pylapp.tapster.client.android.assistants.AssistantMessage
 import pylapp.tapster.client.android.assistants.UiNotifierStub
 import pylapp.tapster.client.android.tools.Config
 import pylapp.tapster.client.android.tools.FeaturesFactory

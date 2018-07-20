@@ -33,6 +33,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+
 import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.FeaturesFactory
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
@@ -43,13 +44,13 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder
 
 /**
  * Main activity of the application.
- * For now possesses only the Snips widgets.
+ * This version possesses only widgets related to Tapster, and not Snips.
  *
  * @constructor Creates a FragmentActivity
  * @author pylapp
  * @since 01/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class MainActivity : AppCompatActivity() {
 
@@ -173,12 +174,7 @@ class MainActivity : AppCompatActivity() {
         val permissionsGranter = FeaturesFactory().buildPermissionsManager()
 
         val listPermissions = ArrayList<String>()
-        if (!permissionsGranter.isPermissionGranted(this, Manifest.permission.RECORD_AUDIO)) {
-            listPermissions.add(Manifest.permission.RECORD_AUDIO)
-        }
-        if (!permissionsGranter.isPermissionGranted(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            listPermissions.add(Manifest.permission.READ_EXTERNAL_STORAGE)
-        }
+
         if (!permissionsGranter.isPermissionGranted(this, Manifest.permission.INTERNET)) {
             listPermissions.add(Manifest.permission.INTERNET)
         }
@@ -233,8 +229,7 @@ class MainActivity : AppCompatActivity() {
         // FIXME Fu***ng dirty, must use instead one flag per sequence
         // The commandTap targets are in a feature which can be disabled
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_DISPLAY_TAPTARGETS)!!.toBoolean()
-                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_TAB_POINTED, false)
-                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_ASSISTANT_TAB_POINTED, false)) {
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_TAB_POINTED, false)) {
 
             val builder = TapTargetViewBuilder()
             val pointers = ArrayList<TapTargetViewBuilder.Targets>()
@@ -243,12 +238,6 @@ class MainActivity : AppCompatActivity() {
             if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
                 pointers.add(TapTargetViewBuilder.Targets.COMMANDS_TAB)
                 preferences.edit().putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_TAB_POINTED, true).apply()
-            }
-
-            // The assistant is in a feature which can be disabled
-            if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()) {
-                pointers.add(TapTargetViewBuilder.Targets.ASSISTANT_TAB)
-                preferences.edit().putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_ASSISTANT_TAB_POINTED, true).apply()
             }
 
             if (pointers.size > 0) {

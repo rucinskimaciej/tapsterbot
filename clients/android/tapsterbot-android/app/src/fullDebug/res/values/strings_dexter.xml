@@ -22,21 +22,16 @@
 
 <resources>
 
-    <!-- *********** -->
-    <!-- Tap targets -->
-    <!-- *********** -->
+    <!-- ****************** -->
+    <!-- For Dexter library -->
+    <!-- ****************** -->
 
-    <string name="taptarget_commandtab_title">Panneau de commandes</string>
-    <string name="taptarget_commandtab_description">Vous pouvez trouver ici les commandes à envoyer au robot</string>
+    <string name="permission_internet_title">Internet permission</string>
+    <string name="permission_internet_message">Internet permission is needed to send HTTP requests to the robot\'s server</string>
+    <string name="permission_title">Permission</string>
+    <string name="permission_message">You should grant this permission</string>
 
-    <string name="taptarget_tap_title">Exemple de commande</string>
-    <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>
-
-    <string name="taptarget_swipe_button_title">Exécuter la commande</string>
-    <string name="taptarget_swipe_button_description">En cliquant sur ce bouton la commande sera exécutée</string>
-
-    <string name="taptarget_swipe_params_title">Paramètres additionnels</string>
-    <string name="taptarget_swipe_params_description">Certaines commandes ont besoin de données que vous devez saisir</string>
+    <string name="error_permission_not_granted_internet">You must accord the INTERNET permission to do this action</string>
 
 </resources>
 

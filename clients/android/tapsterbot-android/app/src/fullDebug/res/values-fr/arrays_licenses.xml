@@ -36,6 +36,7 @@
         <item>Langage Kotlin</item>
         <item>Bibliothèque LicensesDialog</item>
         <item>Bibliothèque OkHttp</item>
+        <item>Assistant Snips</item>
         <item>Bibliothèque TapTargetView</item>
     </string-array>
 
@@ -49,6 +50,7 @@
         <item>Copyright &#169; 2010&#8211;2018 JetBrains s.r.o.</item>
         <item>Copyright &#169; 2013 Philip Schiffer</item>
         <item>Copyright &#169; 2013 Square, Inc.</item>
+        <item>Copyright &#169; Snips.ai</item>
         <item>Copyright &#169; 2016 Keepsafe Software Inc.</item>
     </string-array>
 
@@ -62,6 +64,7 @@
         <item>http://kotlinlang.org/</item>
         <item>https://github.com/PSDev/LicensesDialog</item>
         <item>https://github.com/square/okhttp</item>
+        <item>https://snips.ai/</item>
         <item>https://github.com/KeepSafe/TapTargetView</item>
     </string-array>
 
@@ -72,6 +75,7 @@
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>MIT</item>
+        <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>

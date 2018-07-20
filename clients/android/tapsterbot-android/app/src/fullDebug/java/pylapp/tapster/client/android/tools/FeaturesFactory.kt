@@ -23,18 +23,21 @@
 package pylapp.tapster.client.android.tools
 
 import android.content.Context
-
+import pylapp.tapster.client.android.assistants.UiNotifierStub
+import pylapp.tapster.client.android.assistants.snips.SnipsAssistantSkeleton
 import pylapp.tapster.client.android.networks.HttpClientStub
 import pylapp.tapster.client.android.networks.OkHttpHttpClientSkeleton
 import pylapp.tapster.client.android.tools.properties.AssetsPropertiesReaderSkeleton
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
+import pylapp.tapster.client.android.ui.UiNotifierSkeleton
 import pylapp.tapster.client.android.ui.permissions.DexterPermissionsManagerSkeleton
 import pylapp.tapster.client.android.ui.permissions.PermissionsManagerStub
 import pylapp.tapster.client.android.ui.settings.LicensesDisplayerSkeleton
 import pylapp.tapster.client.android.ui.settings.LicensesDisplayerStub
 import pylapp.tapster.client.android.ui.taptargets.HelpersDisplayerStub
 import pylapp.tapster.client.android.ui.taptargets.TapTargetHelpersDisplayerSkeleton
-
+import pylapp.tapster.client.android.vox.AndroidTextToSpeechSkeleton
+import pylapp.tapster.client.android.vox.TextToSpeechStub
 
 /**
  * Class which provides methods to get feature objects.
@@ -47,9 +50,32 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetHelpersDisplayerSkel
  * @author pylapp
  * @since 07/02/2018
  *
- * @version 2.0.0
+ * @version 1.0.0
  */
 class FeaturesFactory {
+
+    /**
+     * Builds a [UiNotifierStub] to use to as to make notifications to the user interface.
+     * Provides here a new instance of [UiNotifierSkeleton] which cna make toasts and update
+     * recycler views from UI thread.
+     *
+     * @param context - The context to use, here must not be null with the [UiNotifierSkeleton]
+     * @return [UiNotifierStub] -
+     */
+    fun buildUiNotifier(context: Context?): UiNotifierStub {
+        return UiNotifierSkeleton(context!!)
+    }
+
+    /**
+     * Builds an [AssistantStub] to use to as to have a chatbot assistant.
+     * Provides here a new instance of [SnipsAssistantSkeleton] so as to have conversational
+     * agent using Automatic Speech Recognition and Natural Language Understanding.
+     *
+     * @return [AssistantStub] -
+     */
+    fun buildAssistant(): AssistantStub {
+        return SnipsAssistantSkeleton()
+    }
 
     /**
      * Builds an [PropertiesReaderStub] to use to as to provide properties and in the end
@@ -83,6 +109,16 @@ class FeaturesFactory {
      */
     fun buildTapTargetsDisplayer(): HelpersDisplayerStub {
         return TapTargetHelpersDisplayerSkeleton()
+    }
+
+    /**
+     * Builds an [TextToSpeechStub] to use to as to vocalize texts.
+     * Provides here a new instance of [AndroidTextToSpeechSkeleton].
+     *
+     * @return [TextToSpeechStub] -
+     */
+    fun buildTextToSpeechVocalizer(): TextToSpeechStub {
+        return AndroidTextToSpeechSkeleton()
     }
 
     /**

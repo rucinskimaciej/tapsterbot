@@ -75,6 +75,20 @@ class TapTargetViewBuilder {
                 targetTitleText = context.resources.getString(R.string.taptarget_commandtab_title)
                 targetDescriptionText = context.resources.getString(R.string.taptarget_commandtab_description)
             }
+        // The second tabs, with the assistant
+            Targets.ASSISTANT_TAB -> {
+                val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
+                // The commands tab, in 1st position, at index 0 can be disabled, so keep an eye on it
+                val propertiesReader = FeaturesFactory().buildPropertiesReader()
+                propertiesReader.loadProperties(context)
+                targetView = when (propertiesReader
+                        .readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
+                    true -> (tabLayout.getChildAt(0) as ViewGroup).getChildAt(1)
+                    false -> (tabLayout.getChildAt(0) as ViewGroup).getChildAt(0)
+                }
+                targetTitleText = context.resources.getString(R.string.taptarget_assistanttab_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_assistanttab_description)
+            }
         // A command
             Targets.TAP_CELL -> {
                 targetView = context.findViewById(R.id.tv_folded_swipe)
@@ -153,6 +167,10 @@ class TapTargetViewBuilder {
          * The key to use to check if the help has been displayed for a command's parameter field
          */
         const val PREFERENCES_KEY_SWIPE_PARAMETERS_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_SWIPE_PARAMETERS_POINTED"
+        /**
+         * The key to use to check if the help has been displayed for the 2nd tab
+         */
+        const val PREFERENCES_KEY_ASSISTANT_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_ASSISTANT_TAB_POINTED"
     }
 
 
@@ -180,6 +198,10 @@ class TapTargetViewBuilder {
          * The parameter field of the command
          */
         SWIPE_CELL_PARAMETER_FIELD,
+        /**
+         * The second tab with the assistant
+         */
+        ASSISTANT_TAB
     } // End of enum Targets
 
 }
