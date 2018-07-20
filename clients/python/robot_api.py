@@ -339,7 +339,7 @@ def robot_nswipe( n, startX, startY, endX, endY ):
 # Function: robot_drawSquare( n, length )
 def robot_drawSquare( n, length ):
         """
-            Sends to the robot's server n HTTP requests so as to draw a square with a dedicated length, and draw each n points
+            Sends to the robot's serverHTTP requests so as to draw a square with a dedicated length, and draw each n points
             Parameters:  n, length integer numbers.
             Displays a text and readable results of the command.
             Returns the results of the last executed command.
@@ -369,8 +369,8 @@ def robot_drawStar():
 # Function: robot_drawTriangle(x1, y1, x2, y2, x3, y3)
 def robot_drawTriangle(x1, y1, x2, y2, x3, y3):
         """
-            Sends to the robot's server n HTTP requests so as to draw a triangle using poitns (x1,y1) (x2,y2) (x3,y3)
-            Parameters:  x1? Y1, x2, y2, x3, y3 as integer numbers., based ond evice 2D landmark
+            Sends to the robot's server HTTP requests so as to draw a triangle using poitns (x1,y1) (x2,y2) (x3,y3)
+            Parameters:  x1, y1, x2, y2, x3, y3 as integer numbers, based on device 2D landmark
             Displays a text and readable results of the command.
             Returns the results of the last executed command.
         """
@@ -380,3 +380,18 @@ def robot_drawTriangle(x1, y1, x2, y2, x3, y3):
         print request.text
         return request.json()
 # End of Function: robot_drawTriangle(x1, y1, x2, y2, x3, y3)
+
+# Function: robot_drawCircle(x, y, r)
+def robot_drawCircle(x, y, r):
+        """
+            Sends to the robot's server n HTTP requests so as to draw a circle centered on(x,y) with r radius
+            Parameters:  x, y, r as integer numbers, based on device 2D landmark
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending draw circle request..."
+        payload = {'x': x, 'y': y, 'r': r}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_CIRCLE, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_drawCircle(x, y, r)

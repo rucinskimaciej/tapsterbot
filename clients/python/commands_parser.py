@@ -164,6 +164,11 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # draw circle
+    result = bool(ROBOT_PATTERN_DRAW_CIRCLE.match(command))
+    if result:
+        return True
+
     return False
 
 # End of Function: isRobotCommand( command )
@@ -376,6 +381,17 @@ def parseCommand( command ):
         splits = command.split( )
         if len(splits) == 7:
             robot_drawTriangle(x1=splits[1], y1=splits[2], x2=splits[3], y2=splits[4], x3=splits[5], y3=splits[6])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
+    # draw circle
+    result = bool(ROBOT_PATTERN_DRAW_CIRCLE.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_drawCircle(x=splits[1], y=splits[2], r=splits[3])
             return True
         else:
             print "Bad parameters"

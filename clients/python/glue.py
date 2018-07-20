@@ -96,6 +96,7 @@ def help():
         print "\tsquare n length...........: Draw a square with a dedicated length, and draw each nth point"
         print "\tstar......................: Draw a star"
         print "\ttriangle x1 y1 x2 y2 x3 y3: Draw a triangle using 3 points (x1, y1) (x2, y2) (x3, y3)"
+        print "\tcircle x y r..............: Draw a circle centered on point (x,y) with r radius"
         print "\thelp......................: Display this help"
         print "\tbye.......................: Good bye!"
         print ""

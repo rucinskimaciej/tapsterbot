@@ -48,6 +48,7 @@
 	* draw a square
 	* draw a star
 	* draw a triangle
+	* draw a circle
 
 * Documentation
 	* more details in CURL samples
