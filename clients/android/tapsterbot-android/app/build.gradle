@@ -59,11 +59,19 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     } // End of defaultConfig
 
+    // Build types to define group of settings
     buildTypes {
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
     } // End of buildTypes
 
     packagingOptions {
@@ -80,20 +88,23 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     } // End of compileOptions
 
-    flavorDimensions "default"
+    // Groups of flavors
+    flavorDimensions "version"
 
     productFlavors {
-        classic {
-            versionName android.defaultConfig.versionName + " - classic"
+        light {
+            dimension "version"
+            applicationIdSuffix ".light"
+            versionNameSuffix "-light"
         }
-        withAssistant {
-            versionName android.defaultConfig.versionName + " - with assistant"
+        full /* with assistant */ {
+            dimension "version"
+            applicationIdSuffix ".full"
+            versionNameSuffix "-full"
         }
     } // End of productFlavors
 
 } // End of android
-
-// TODO Define several source sets and flavors to build light and heavy APK, without and with assistant (Snips)
 
 /* *******************
  * Dependencies to get
