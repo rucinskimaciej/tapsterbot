@@ -5,6 +5,21 @@
   tap x y
 ```
 
+**Long tap on (x, y) during duration d**  
+```shell
+  long-tap x y d
+```
+
+**Double tap on (x, y) with duration d between each tap**  
+```shell
+  double-tap x y d
+```
+
+**Triple tap on (x, y) with duration d between each tap**  
+```shell
+  triple-tap x y d
+```
+
 **Tap n times on (x, y)**  
 ```shell
   n-tap n x y
@@ -108,6 +123,36 @@
 **Get the Z-axis valiue where the contact between the bot's finger and the device's screen is amde**  
 ```python
   contactZ
+```
+
+**Draw a square with a length l, and draw each n point**
+```python
+  square n l
+```
+
+**Draw a triangle using 3 points (x1, y1) (x2, y2) (x3, y3)**
+```python
+  triangle x1 y1 x2 y2 x3 y3
+```
+
+**Draw a circle centered on (x,y) with a radius r**
+```python
+  circle x y r
+```
+
+**Draw a cross using 4 points, drawing two strokes, with strokes (x1, y1) -> (x4, y4) and (x2, y2) -> (x3, y3)**
+```python
+  cross x1, y1 x2 y2 x3 y3 x4 y4.
+```
+
+** Draw a spiral centered on (x,y) using n rings with an r radius**
+```python
+  spiral x y n r
+```
+
+**Draw a random pattern with (n-1) strokes in a defined area (points picked with [minW ; maxW] and [minH; maxH])**
+```python
+  random n minW minH maxW mawH
 ```
 
 **I wanna help please!**  
