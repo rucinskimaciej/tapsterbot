@@ -69,9 +69,9 @@
 
 ## TODO ;-)
 
+* Make a separate Android client without Snips and columns/tabs for gorups of features
+* Add new capabilities to Snips client (in english)
 * Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
-* Add new capabilities to Snips client (in english)
-* Make a separate Android client without Snips and columns/tabs for gorups of features
 * Update the wiki with more details
-* And maybe cool keynotes and articles in automn ;-)
+* And maybe cool keynotes (SpeakerDeck) and articles (Medium) in automn ;-)
