@@ -4,6 +4,9 @@
 ## Version "eve"
 
 * In the Node.js backend (HTTP REST API), new features are provided:
+	* long tap on coordinates
+	* double tap on coordinates
+	* triple tap on coordinates
 	* draw a square with a dedicated length
 	* draw a star
 	* draw a triangle

@@ -74,6 +74,11 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # long tap x y
+    result = bool(ROBOT_PATTERN_LONG_TAP.match(command))
+    if result:
+        return True
+
     # reset
     result = bool(ROBOT_PATTERN_RESET.match(command))
     if result:
@@ -226,6 +231,18 @@ def parseCommand( command ):
         else:
             print "Bad parameters"
             return False
+
+    # long tap x y
+    result = bool(ROBOT_PATTERN_LONG_TAP.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_longTap(x=splits[1], y=splits[2], duration=splits[3])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
 
     # tap x y
     result = bool(ROBOT_PATTERN_TAP.match(command))
