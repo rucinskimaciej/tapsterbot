@@ -48,6 +48,8 @@
 	* french - add intents to draw square, star, triangle, random pattern, tap n times, long tap
 
 * Python client
+	* long tap
+	* double tap
 	* draw a square
 	* draw a star
 	* draw a triangle

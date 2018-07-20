@@ -81,6 +81,7 @@ ROBOT_URL_GET_POSITION = "/position"
 ROBOT_URL_SET_POSITION = "/setPosition"
 ROBOT_URL_TAP = "/tap"
 ROBOT_URL_LONG_TAP = "/longTap"
+ROBOT_URL_DOUBLE_TAP = "/doubleTap"
 ROBOT_URL_RESET = "/reset"
 ROBOT_URL_GET_CALIBRATION = "/calibrationData"
 ROBOT_URL_SET_CALIBRATION = "/setCalibrationData"
@@ -98,6 +99,7 @@ ROBOT_URL_DRAW_CIRCLE = "/drawCircle"
 ROBOT_URL_DRAW_CROSS = "/drawCross"
 ROBOT_URL_DRAW_SPIRAL = "/drawSpiral"
 
+
 # ********************************
 # Regular expressions for commands
 # ********************************
@@ -108,6 +110,7 @@ ROBOT_PATTERN_GET_POSITION = re.compile("^get-position$")
 ROBOT_PATTERN_SET_POSITION = re.compile("^set-position (-*\d+(\.\d+)?) (-*\d+(\.\d+)?) (-*\d+(\.\d+)?)$")
 ROBOT_PATTERN_TAP = re.compile("^tap (\d+) (\d+)$")
 ROBOT_PATTERN_LONG_TAP = re.compile("^long-tap (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_DOUBLE_TAP = re.compile("^double-tap (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_RESET = re.compile("^reset$")
 ROBOT_PATTERN_GET_CALIBRATION = re.compile("^get-calibration$")
 ROBOT_PATTERN_SET_CALIBRATION = re.compile("^set-calibration .+$") #FIXME Improve the regex to make it match to JSON calibration data string
@@ -132,4 +135,4 @@ ROBOT_PATTERN_DRAW_STAR = re.compile("^star$")
 ROBOT_PATTERN_DRAW_TRIANGLE = re.compile("^triangle (\d+) (\d+) (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_DRAW_CIRCLE = re.compile("^circle (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_DRAW_CROSS = re.compile("^cross (\d+) (\d+) (\d+) (\d+) (\d+) (\d+) (\d+) (\d+)$")
-ROBOT_PATTERN_DRAW_SPIRAL = re.compile("^spiral (\d+) (\d+) (\d+) ((\d+)(\.\d+)?)$")
+ROBOT_PATTERN_DRAW_SPIRAL = re.compile("^spiral (\d+) (\d+) (\d+) (\d+)$")

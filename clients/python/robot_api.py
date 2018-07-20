@@ -132,8 +132,8 @@ def robot_tap( x, y ):
 # Function: robot_longTap( x, y, duration )
 def robot_longTap( x, y, duration ):
         """
-            Sends to the robot's server an HTTP request so as to make it tp at (x, y) using the device's 2D landmark.
-            Parameters: x, y as integer numbers, duration as float number
+            Sends to the robot's server an HTTP request so as to make a long tap at (x, y) using the device's 2D landmark.
+            Parameters: x, y, duration as integer numbers, (x,) in 2D device landmark
             Displays a text and readable results of the command.
             Returns the results of the command.
         """
@@ -142,7 +142,22 @@ def robot_longTap( x, y, duration ):
         request = requests.post(config.ROBOT_URL + config.ROBOT_URL_LONG_TAP, data=payload)
         print request.text
         return request.json()
-# End of Function: robot_longTap( x, y )
+# End of Function: robot_longTap( x, y, duration )
+
+# Function: robot_doubleTap( x, y, duration )
+def robot_doubleTap( x, y, duration ):
+        """
+            Sends to the robot's server an HTTP request so as to make a double tap at (x, y) using the device's 2D landmark.
+            Parameters: x, y, duration as integer numbers, (x,) in 2D device landmark
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending long tap request..."
+        payload = {'x': x, 'y': y, 'duration': duration}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DOUBLE_TAP, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_doubleTap( x, y, duration )
 
 # Function: robot_reset()
 def robot_reset():
