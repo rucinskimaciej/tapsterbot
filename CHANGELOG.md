@@ -50,6 +50,7 @@
 * Python client
 	* long tap
 	* double tap
+	* triple tap
 	* draw a square
 	* draw a star
 	* draw a triangle

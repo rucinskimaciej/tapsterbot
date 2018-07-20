@@ -74,6 +74,7 @@ def help():
         print "\ttap x y.........................: Tap on (x,y) using the 2D landmark of the device"
         print "\tlong-tap x y d..................: Make a long tap on (x,y) with a duration of d (in ms) using the 2D landmark of the device"
         print "\tdouble-tap x y d................: Make a double tap on (x,y) with a duration of d (in ms) using the 2D landmark of the device"
+        print "\ttriple-tap x y d................: Make a triple tap on (x,y) with a duration of d (in ms) using the 2D landmark of the device"        
         print "\tn-tap n x y.....................: Tap n times on (x,y) using the 2D landmark of the device"
         print "\tstress-tap n x y................: Make n taps on (x, y) with a dedicated duration between each swipe which can be short enough to stress the app"
         print "\tswipe x1 y1 x2 y2...............: Swipe from (x1, y1) to (x2, y2) using the 2D landmark of the device"

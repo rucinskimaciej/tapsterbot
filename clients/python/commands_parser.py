@@ -84,6 +84,11 @@ def isRobotCommand( command ):
     if result:
         return True
 
+    # Triple tap x y
+    result = bool(ROBOT_PATTERN_TRIPLE_TAP.match(command))
+    if result:
+        return True
+
     # reset
     result = bool(ROBOT_PATTERN_RESET.match(command))
     if result:
@@ -265,6 +270,17 @@ def parseCommand( command ):
         splits = command.split( )
         if len(splits) == 4:
             robot_doubleTap(x=splits[1], y=splits[2], duration=splits[3])
+            return True
+        else:
+            print "Bad parameters"
+            return False            
+
+    # triple tap x y
+    result = bool(ROBOT_PATTERN_TRIPLE_TAP.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 4:
+            robot_tripleTap(x=splits[1], y=splits[2], duration=splits[3])
             return True
         else:
             print "Bad parameters"

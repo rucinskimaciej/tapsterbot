@@ -159,6 +159,21 @@ def robot_doubleTap( x, y, duration ):
         return request.json()
 # End of Function: robot_doubleTap( x, y, duration )
 
+# Function: robot_tripleTap( x, y, duration )
+def robot_tripleTap( x, y, duration ):
+        """
+            Sends to the robot's server an HTTP request so as to make a triple tap at (x, y) using the device's 2D landmark.
+            Parameters: x, y, duration as integer numbers, (x,) in 2D device landmark
+            Displays a text and readable results of the command.
+            Returns the results of the command.
+        """
+        print "Sending long tap request..."
+        payload = {'x': x, 'y': y, 'duration': duration}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_TRIPLE_TAP, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_tripleTap( x, y, duration )
+
 # Function: robot_reset()
 def robot_reset():
         """
