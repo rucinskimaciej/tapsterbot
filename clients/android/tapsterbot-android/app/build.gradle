@@ -49,23 +49,20 @@ apply plugin: 'org.jetbrains.dokka-android'
 android {
 
     compileSdkVersion 27
+    buildToolsVersion '28.0.0'
 
+    // Default configuration of the app
     defaultConfig {
-        applicationId "pylapp.tapster.client.android"
+        applicationId "pylapp.tapster.client.android" + applicationIdSuffix
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.0" + versionNameSuffix
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     } // End of defaultConfig
 
     // Build types to define group of settings
     buildTypes {
-
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
 
         debug {
             applicationIdSuffix ".debug"
@@ -80,8 +77,6 @@ android {
         exclude 'lib/mips64/*'
         exclude 'lib/x86_64/*'
     } // End of packagingOptions
-
-    buildToolsVersion '28.0.0'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -103,6 +98,19 @@ android {
             versionNameSuffix "-full"
         }
     } // End of productFlavors
+
+    // Define the set of sources for variants of the app
+    sourceSets {
+
+        fullDebug {
+            setRoot 'src/fullDebug'
+        }
+
+        lightDebug {
+            setRoot 'src/lightDebug'
+        }
+
+    } // End of sourceSets
 
 } // End of android
 
