@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: glue.py
 Brief......: File including all the Python glue to use for the client, except the API of the bot
 Author.....: pylapp
-Version....: 2.2.0
+Version....: 2.3.0
 Since......: 10/01/2018
 """
 
@@ -93,6 +93,7 @@ def help():
         print "\tcontact-z.................: Get the Z-axis value of the contact point, i.e. the point where the device's screen should be touched"
         print "\tposForScreen x y..........: Get the position of the bot for these (x,y) screen-based coordinates"
         print "\tangForPos x y z...........: Get the angles of the arms for the (x,y,z) 3D coordinates"
+        print "\tsquare n length...........: Draw a square with a dedicated length, and draw each nth point"
         print "\thelp......................: Display this help"
         print "\tbye.......................: Good bye!"
         print ""

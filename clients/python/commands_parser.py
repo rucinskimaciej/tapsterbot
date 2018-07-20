@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: commands_parser.py
 Brief......: File including features to use to as to parse commands
 Author.....: pylapp
-Version....: 1.2.0
+Version....: 1.3.0
 Since......: 11/01/2018
 """
 
@@ -146,6 +146,11 @@ def isRobotCommand( command ):
 
     # n-swipe
     result = bool(ROBOT_PATTERN_N_SWIPE.match(command))
+    if result:
+        return True
+
+    # draw square
+    result = bool(ROBOT_PATTERN_DRAW_SQUARE.match(command))
     if result:
         return True
 
@@ -333,6 +338,17 @@ def parseCommand( command ):
         splits = command.split( )
         if len(splits) == 6:
             robot_nswipe(n=splits[1], startX=splits[2], startY=splits[3], endX=splits[4], endY=splits[5])
+            return True
+        else:
+            print "Bad parameters"
+            return False
+
+    # draw square
+    result = bool(ROBOT_PATTERN_DRAW_SQUARE.match(command))
+    if result:
+        splits = command.split( )
+        if len(splits) == 3:
+            robot_draw_square(n=splits[1], length=splits[2])
             return True
         else:
             print "Bad parameters"

@@ -25,14 +25,14 @@ SOFTWARE.
 File.......: config.py
 Brief......: File including configuration to use and to apply on the client
 Author.....: pylapp
-Version....: 1.2.0
+Version....: 1.3.0
 Since......: 10/01/2018
 """
 
 import re
 
 # Version of this Tapster2 Python client
-CLIENT_VERSION = "v2.2.0"
+CLIENT_VERSION = "v3.0.0"
 
 # ************
 # Robot things
@@ -90,6 +90,7 @@ ROBOT_URL_SWIPE = "/swipe"
 ROBOT_URL_POSITION_FOR_SCREEN_COORD = "/positionForScreenCoordinates"
 ROBOT_URL_ANGLES_FOR_POSITION = "/anglesForPosition"
 ROBOT_URL_CONTACT_Z = "/contactZ"
+ROBOT_URL_DRAW_SQUARE = "/drawSquare"
 
 # ********************************
 # Regular expressions for commands
@@ -119,3 +120,4 @@ ROBOT_PATTERN_STRESS_TAP = re.compile("^stress-tap (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_REPEAT = re.compile("^repeat$")
 ROBOT_PATTERN_CONTACT_Z = re.compile("^contact-z$")
 ROBOT_PATTERN_N_SWIPE = re.compile("^n-swipe (\d+) (\d+) (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_DRAW_SQUARE = re.compile("square (\d+) (\d+)")

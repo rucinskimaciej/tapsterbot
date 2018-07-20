@@ -44,6 +44,9 @@
 * Snips assistant
 	* french - add intents to draw square, star, triangle, random pattern, tap n times, long tap
 
+* Python client
+	* draw a square
+
 * Documentation
 	* more details in CURL samples
 	* more details in Markdown file about robot API
@@ -57,7 +60,7 @@
 * Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
 * Bring new features to Pyhon program (draw square, star, triangle, circle, cross, spiral, random pattern)
-* Add new capabilities to Snips client
+* Add new capabilities to Snips client (in english)
 * Make a separate Android client without Snips and columns/tabs for gorups of features
 * Update the wiki with more details
 * And maybe cool keynotes and articles in automn ;-)

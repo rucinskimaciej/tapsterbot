@@ -25,7 +25,7 @@ SOFTWARE.
 File.......: robot-api.py
 Brief......: File including the API of the robot, using HTTP requests
 Author.....: pylapp
-Version....: 1.3.0
+Version....: 1.4.0
 Since......: 10/01/2018
 """
 
@@ -335,3 +335,18 @@ def robot_nswipe( n, startX, startY, endX, endY ):
             time.sleep(config.WAIT_TIME_BETWEEN_SWIPE)
         return request.json()
 # End of Function: robot_nswipe( n, startX, startY, endX, endY )
+
+# Function: robot_draw_square( n, length )
+def robot_draw_square( n, length ):
+        """
+            Sends to the robot's server n HTTP requests so as to draw a square with a dedicated length, and draw each n points
+            Parameters:  n, length integer numbers.
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending draw square request..."
+        payload = {'n': n, 'length': length}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_SQUARE, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_draw_square( n, length )
