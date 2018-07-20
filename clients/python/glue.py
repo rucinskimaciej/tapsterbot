@@ -97,6 +97,7 @@ def help():
         print "\tstar......................: Draw a star"
         print "\ttriangle x1 y1 x2 y2 x3 y3: Draw a triangle using 3 points (x1, y1) (x2, y2) (x3, y3)"
         print "\tcircle x y r..............: Draw a circle centered on point (x,y) with r radius"
+        print "\tcross x1, y1 x2 y2 x3 y3 x4 y4: Draw a cross using 4 points, drawing two strokes, with strokes (x1, y1) -> (x4, y4) and (x2, y2) -> (x3, y3)"
         print "\thelp......................: Display this help"
         print "\tbye.......................: Good bye!"
         print ""

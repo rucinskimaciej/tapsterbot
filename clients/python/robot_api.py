@@ -384,7 +384,7 @@ def robot_drawTriangle(x1, y1, x2, y2, x3, y3):
 # Function: robot_drawCircle(x, y, r)
 def robot_drawCircle(x, y, r):
         """
-            Sends to the robot's server n HTTP requests so as to draw a circle centered on(x,y) with r radius
+            Sends to the robot's server an HTTP requests so as to draw a circle centered on(x,y) with r radius
             Parameters:  x, y, r as integer numbers, based on device 2D landmark
             Displays a text and readable results of the command.
             Returns the results of the last executed command.
@@ -395,3 +395,18 @@ def robot_drawCircle(x, y, r):
         print request.text
         return request.json()
 # End of Function: robot_drawCircle(x, y, r)
+
+# Function: robot_drawCross(x1, y1, x2, y2, x3, y3, x4, y4)
+def robot_drawCross(x1, y1, x2, y2, x3, y3, x4, y4):
+        """
+            Sends to the robot's server an HTTP requests so as to draw a cross using 4 points
+            Parameters:  x1, y1, x2, y2, x3, y3, x4, y4 as integer numbers, based on device 2D landmark
+            Displays a text and readable results of the command.
+            Returns the results of the last executed command.
+        """
+        print "Sending draw cross request..."
+        payload = {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3, 'x4': x4, 'y4': y4}
+        request = requests.post(config.ROBOT_URL + config.ROBOT_URL_DRAW_CROSS, data=payload)
+        print request.text
+        return request.json()
+# End of Function: robot_drawCross(x1, y1, x2, y2, x3, y3, x4, y4)

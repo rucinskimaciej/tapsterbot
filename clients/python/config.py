@@ -94,6 +94,7 @@ ROBOT_URL_DRAW_SQUARE = "/drawSquare"
 ROBOT_URL_DRAW_STAR = "/drawStar"
 ROBOT_URL_DRAW_TRIANGLE = "/drawTriangle"
 ROBOT_URL_DRAW_CIRCLE = "/drawCircle"
+ROBOT_URL_DRAW_CROSS = "/drawCross"
 
 # ********************************
 # Regular expressions for commands
@@ -127,3 +128,4 @@ ROBOT_PATTERN_DRAW_SQUARE = re.compile("square (\d+) (\d+)$")
 ROBOT_PATTERN_DRAW_STAR = re.compile("^star$")
 ROBOT_PATTERN_DRAW_TRIANGLE = re.compile("^triangle (\d+) (\d+) (\d+) (\d+) (\d+) (\d+)$")
 ROBOT_PATTERN_DRAW_CIRCLE = re.compile("^circle (\d+) (\d+) (\d+)$")
+ROBOT_PATTERN_DRAW_CROSS = re.compile("^cross (\d+) (\d+) (\d+) (\d+) (\d+) (\d+) (\d+) (\d+)$")
