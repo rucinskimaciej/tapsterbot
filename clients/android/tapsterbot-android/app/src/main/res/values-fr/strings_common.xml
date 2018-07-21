@@ -42,7 +42,8 @@
     <!-- **** -->
 
     <string name="tab_title_assistant">Assistant</string>
-    <string name="tab_title_commands">Commandes</string>
+    <string name="tab_title_commands_moves">Mouvements</string>
+    <string name="tab_title_commands_configuration">Configuration</string>
 
     <!-- **** -->
     <!-- Menu -->

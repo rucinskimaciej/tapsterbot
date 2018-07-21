@@ -87,9 +87,14 @@ class MainActivity : AppCompatActivity() {
     private var mViewPager: ViewPager? = null
 
     /**
-     * The [Fragment] for the commands panel
+     * The [Fragment] for the commands panel with widgets for moves
      */
-    private var mCommandsFragment: Fragment? = null
+    private var mMovesCommandsFragment: Fragment? = null
+
+    /**
+     * The [Fragment] for the commands panel with widgets for configuration
+     */
+    private var mConfigurationCommandsFragment: Fragment? = null
 
 
     /* ******* *
@@ -254,7 +259,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewPager() {
 
         mViewPager = findViewById<View>(R.id.vp_assistant_main_screen) as ViewPager
-        mViewPager!!.offscreenPageLimit = 1
+        mViewPager!!.offscreenPageLimit = 2
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
 
@@ -262,8 +267,10 @@ class MainActivity : AppCompatActivity() {
         propertiesReader.loadProperties(MainActivity@ this)
 
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
-            mCommandsFragment = CommandsFragment()
-            adapter.addFragment(mCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands))
+            mMovesCommandsFragment = MovesCommandsFragment()
+            adapter.addFragment(mMovesCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_moves))
+            mConfigurationCommandsFragment = ConfigurationCommandsFragment()
+            adapter.addFragment(mConfigurationCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_configuration))
         }
 
         mViewPager!!.adapter = adapter

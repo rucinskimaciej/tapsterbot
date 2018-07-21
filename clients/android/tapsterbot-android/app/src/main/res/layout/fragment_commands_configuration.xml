@@ -37,11 +37,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- The tap command -->
-            <include layout="@layout/card_command_tap"/>
+            <!-- The reset command -->
+            <include layout="@layout/card_command_reset"
+                tools:ignore="DuplicateIncludedIds" />
 
-            <!-- The swipe command -->
-            <include layout="@layout/card_command_swipe"
+            <!-- The get-status command -->
+            <include layout="@layout/card_command_getstatus"
+                tools:ignore="DuplicateIncludedIds" />
+
+            <!-- The get-contactZ command -->
+            <include layout="@layout/card_command_getcontactz"
                 tools:ignore="DuplicateIncludedIds" />
 
             <!-- The get-position command -->
@@ -52,32 +57,12 @@
             <include layout="@layout/card_command_setposition"
                 tools:ignore="DuplicateIncludedIds" />
 
-            <!-- The reset command -->
-            <include layout="@layout/card_command_reset"
-                tools:ignore="DuplicateIncludedIds" />
-
-            <!-- The dance command -->
-            <include layout="@layout/card_command_dance"
-                tools:ignore="DuplicateIncludedIds" />
-
-            <!-- The stop dance command -->
-            <include layout="@layout/card_command_stopdance"
-                tools:ignore="DuplicateIncludedIds" />
-
             <!-- The get-angles command -->
             <include layout="@layout/card_command_getangles"
                 tools:ignore="DuplicateIncludedIds" />
 
             <!-- The set-angles command -->
             <include layout="@layout/card_command_setangles"
-                tools:ignore="DuplicateIncludedIds" />
-
-            <!-- The get-status command -->
-            <include layout="@layout/card_command_getstatus"
-                tools:ignore="DuplicateIncludedIds" />
-
-            <!-- The get-contactZ command -->
-            <include layout="@layout/card_command_getcontactz"
                 tools:ignore="DuplicateIncludedIds" />
 
         </LinearLayout>
