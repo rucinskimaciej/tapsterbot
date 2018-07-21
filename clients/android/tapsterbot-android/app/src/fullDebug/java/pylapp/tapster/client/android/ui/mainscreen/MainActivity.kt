@@ -49,7 +49,7 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder
  * @author pylapp
  * @since 01/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class MainActivity : AppCompatActivity() {
 
@@ -91,9 +91,14 @@ class MainActivity : AppCompatActivity() {
     private var mAssistantFragment: Fragment? = null
 
     /**
-     * The [Fragment] for the commands panel
+     * The [Fragment] for the commands panel containing widgets for robot moves
      */
-    private var mCommandsFragment: Fragment? = null
+    private var mMovesCommandsFragment: Fragment? = null
+
+    /**
+     * The [Fragment] for the commands panel containing widgets for robot configuration
+     */
+    private var mConfigurationCommandsFragment: Fragment? = null
 
 
     /* ******* *
@@ -278,8 +283,10 @@ class MainActivity : AppCompatActivity() {
         propertiesReader.loadProperties(MainActivity@ this)
 
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
-            mCommandsFragment = CommandsFragment()
-            adapter.addFragment(mCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands))
+            mMovesCommandsFragment = MovesCommandsFragment()
+            adapter.addFragment(mMovesCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_moves))
+            mConfigurationCommandsFragment = ConfigurationCommandsFragment()
+            adapter.addFragment(mConfigurationCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_configuration))
         }
 
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()) {
