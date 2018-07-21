@@ -20,43 +20,37 @@
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
 
-package pylapp.tapster.client.android.assistants;
+package pylapp.tapster.client.android.assistants
 
 /**
  * A simple class which embeds a message and a status.
  * It can be seen as a bean or a Plain Old Java Object used between the GUI and the assistants
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 2.0.0
  * @since 02/02/2018
  */
-public class AssistantMessage {
-
-    /**
-     * The type of the message
-     */
-    public final Type type;
-
-    /**
-     * The content of the message
-     */
-    public final String message;
-
+class AssistantMessage
     /**
      * Simple constructor
      *
      * @param type    - The type of the message
      * @param message - The content of the message
      */
-    public AssistantMessage(Type type, String message) {
-        this.type = type;
-        this.message = message;
-    }
+    (
+        /**
+         * The type of the message
+         */
+        val type: Type,
+        /**
+         * The content of the message
+         */
+        val message: String) {
 
     /**
      * The types of messages
      */
-    public enum Type {
+    enum class Type {
         /**
          * A debug message
          */
