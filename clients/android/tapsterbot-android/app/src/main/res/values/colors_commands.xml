@@ -26,26 +26,26 @@
     <!-- Colors of the second tab -->
     <!-- ************************ -->
 
-    <color name="screenCommandsGetPosition">#AFB42B</color>
-    <color name="screenCommandsSetPosition">#AFB42B</color>
-    <color name="screenCommandsBackSideColorPosition">#C0CA33</color>
+    <color name="screenCommandsGetPosition">#4caf50</color>
+    <color name="screenCommandsSetPosition">#4caf50</color>
+    <color name="screenCommandsBackSideColorPosition">#80e27e</color>
 
-    <color name="screenCommandsGetAngles">#F57C00</color>
-    <color name="screenCommandsSetAngles">#F57C00</color>
-    <color name="screenCommandsBackSideColorAngles">#FB8C00</color>
+    <color name="screenCommandsGetAngles">#ff9800</color>
+    <color name="screenCommandsSetAngles">#ff9800</color>
+    <color name="screenCommandsBackSideColorAngles">#ffc947</color>
 
-    <color name="screenCommandsStatus">#1976D2</color>
-    <color name="screenCommandsContactZ">#1976D2</color>
-    <color name="screenCommandsReset">#1976D2</color>
-    <color name="screenCommandsBackSideColorTools">#1E88E5</color>
+    <color name="screenCommandsStatus">#3f51b5</color>
+    <color name="screenCommandsContactZ">#3f51b5</color>
+    <color name="screenCommandsReset">#3f51b5</color>
+    <color name="screenCommandsBackSideColorTools">#757de8</color>
 
-    <color name="screenCommandsDance">#512DA8</color>
-    <color name="screenCommandsStopDance">#512DA8</color>
-    <color name="screenCommandsBackSideColorDance">#5E35B1</color>
+    <color name="screenCommandsDance">#00bcd4</color>
+    <color name="screenCommandsStopDance">#00bcd4</color>
+    <color name="screenCommandsBackSideColorDance">#62efff</color>
 
-    <color name="screenCommandsSwipe">#C2185B</color>
-    <color name="screenCommandsTap">#C2185B</color>
-    <color name="screenCommandsBackSideColorMoves">#D81B60</color>
+    <color name="screenCommandsSwipe">#f44336</color>
+    <color name="screenCommandsTap">#f44336</color>
+    <color name="screenCommandsBackSideColorMoves">#ff7961</color>
 
     <color name="screenCommandsTextColor">#FFFFFF</color>
 
