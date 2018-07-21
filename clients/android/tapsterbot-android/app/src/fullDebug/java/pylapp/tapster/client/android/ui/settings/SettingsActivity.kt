@@ -23,9 +23,7 @@ package pylapp.tapster.client.android.ui.settings
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.preference.PreferenceCategory
-import android.preference.PreferenceFragment
-import android.preference.PreferenceScreen
+import android.preference.*
 import android.support.v7.app.AppCompatActivity
 import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.Config
