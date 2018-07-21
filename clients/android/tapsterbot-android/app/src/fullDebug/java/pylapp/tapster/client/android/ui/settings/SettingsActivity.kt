@@ -205,14 +205,14 @@ class SettingsActivity : AppCompatActivity() {
         } // End of private fun hideRelatedAssistantFields()
 
         /**
-         * Fills the fields in the screen about the robot so as to display, if defined, the values
+         * Fills the fields in the screen about the robot so as to display, if defined, the valuestrue
          */
         private fun updateFieldsAboutRobotConfig(){
 
             // Get stored values
             val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
-            // Update summaries
+            // Update summaries when values have been changed
             val prefProtocol = findPreference(Config.PREFERENCES_ROBOT_PROTOCOL)
             prefProtocol.onPreferenceChangeListener = Preference.OnPreferenceChangeListener{
                 _, _ ->
@@ -237,6 +237,14 @@ class SettingsActivity : AppCompatActivity() {
                 prefPort.summary = serverPort
                 true
             }
+
+            // Update values now, prevent to display values only when they have been changed
+            prefProtocol.summary = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
+                    activity!!.getString(R.string.default_value_server_protocol))
+            prefIp.summary = preferences.getString(Config.PREFERENCES_ROBOT_IP,
+                    activity!!.getString(R.string.default_value_server_ip_address))
+            prefPort.summary = preferences.getString(Config.PREFERENCES_ROBOT_PORT,
+                    activity!!.getString(R.string.default_value_server_port))
 
         }
 

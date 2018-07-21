@@ -171,7 +171,7 @@ class SettingsActivity : AppCompatActivity() {
             // Get stored values
             val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
-            // Update summaries
+            // Update summaries when values have been changed
             val prefProtocol = findPreference(Config.PREFERENCES_ROBOT_PROTOCOL)
             prefProtocol.onPreferenceChangeListener = Preference.OnPreferenceChangeListener{
                 _, _ ->
@@ -197,6 +197,13 @@ class SettingsActivity : AppCompatActivity() {
                 true
             }
 
+            // Update values now, prevent to display values only when they have been changed
+            prefProtocol.summary = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
+                    activity!!.getString(R.string.default_value_server_protocol))
+            prefIp.summary = preferences.getString(Config.PREFERENCES_ROBOT_IP,
+                    activity!!.getString(R.string.default_value_server_ip_address))
+            prefPort.summary = preferences.getString(Config.PREFERENCES_ROBOT_PORT,
+                    activity!!.getString(R.string.default_value_server_port))
         }
 
     } // End of  class SettingsFragment : PreferenceFragment()
