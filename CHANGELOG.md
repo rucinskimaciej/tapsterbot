@@ -59,6 +59,9 @@
 	* draw a spiral
 	* draw a random pattern
 
+* Android
+	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
+
 * Documentation
 	* more details in CURL samples
 	* more details in Markdown file about robot API
@@ -69,9 +72,8 @@
 
 ## TODO ;-)
 
-* Make a separate Android client without Snips and columns/tabs for gorups of features
 * Add new capabilities to Snips client (in english)
 * Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
-* Update the wiki with more details
+* Update the wiki with more details, screen shots, command lines, ...
 * And maybe cool keynotes (SpeakerDeck) and articles (Medium) in automn ;-)
