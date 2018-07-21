@@ -37,7 +37,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  *
  * @author pylapp
  * @since 06/02/2018
- * @version 1.0.0
+ * @version 2.0.0
  */
 class SettingsActivity : AppCompatActivity() {
 
@@ -114,6 +114,9 @@ class SettingsActivity : AppCompatActivity() {
             // Update the version details
             val versionPreference = findPreference(Config.PREFERENCES_APP_VERSION)
             versionPreference.summary = mVersionRelease
+
+            // Update the settings about the robot
+            fillFieldsOfRobot()
 
             // Deal with licences
             if (isDisplayLicensesEnabled()) {
@@ -202,6 +205,30 @@ class SettingsActivity : AppCompatActivity() {
             val preferenceToRemove = findPreference(Config.PREFERENCES_CATEGORY_ASSISTANT)
             category.removePreference(preferenceToRemove)
         } // End of private fun hideRelatedAssistantFields()
+
+        /**
+         * Fills the fields in the screen about the robot so as to display, if defined, the values
+         */
+        private fun fillFieldsOfRobot(){
+
+            // Get stored values
+            val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
+            val serverProtocol = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
+                    activity!!.getString(R.string.default_value_server_protocol))
+            val serverIp = preferences.getString(Config.PREFERENCES_ROBOT_IP,
+                    activity!!.getString(R.string.default_value_server_ip_address))
+            val serverPort = preferences.getString(Config.PREFERENCES_ROBOT_PORT,
+                    activity!!.getString(R.string.default_value_server_port))
+
+            // Update summaries
+            var pref = findPreference(Config.PREFERENCES_ROBOT_PROTOCOL)
+            pref.summary = serverProtocol
+            pref = findPreference(Config.PREFERENCES_ROBOT_IP)
+            pref.summary = serverIp
+            pref = findPreference(Config.PREFERENCES_ROBOT_PORT)
+            pref.summary = serverPort
+
+        }
 
     } // End of  class SettingsFragment : PreferenceFragment()
 

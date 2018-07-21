@@ -83,14 +83,14 @@ android {
             applicationIdSuffix ".light"
             versionNameSuffix "-light"
             versionCode 1000
-            versionName "2.0.0" + versionNameSuffix
+            versionName "2.0.0"
         }
         full /* with assistant */ {
             dimension "version"
             applicationIdSuffix ".full"
             versionNameSuffix "-full"
             versionCode 2000
-            versionName "2.0.0" + versionNameSuffix
+            versionName "2.0.0"
         }
     } // End of productFlavors
 

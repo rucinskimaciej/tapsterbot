@@ -25,6 +25,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceCategory
 import android.preference.PreferenceFragment
+import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.Config
@@ -114,6 +115,9 @@ class SettingsActivity : AppCompatActivity() {
             val versionPreference = findPreference(Config.PREFERENCES_APP_VERSION)
             versionPreference.summary = mVersionRelease
 
+            // Update the settings about the robot
+            fillFieldsOfRobot()
+
             // Deal with licences
             if (isDisplayLicensesEnabled()) {
                 val licensesPreferences = findPreference(Config.PREFERENCES_APP_LICENSES)
@@ -152,6 +156,30 @@ class SettingsActivity : AppCompatActivity() {
             val category = findPreference(Config.PREFERENCES_CATEGORY_ABOUT) as PreferenceCategory
             val preferenceToRemove = findPreference(Config.PREFERENCES_APP_LICENSES)
             category.removePreference(preferenceToRemove)
+        }
+
+        /**
+         * Fills the fields in the screen about the robot so as to display, if defined, the values
+         */
+        private fun fillFieldsOfRobot(){
+
+            // Get stored values
+            val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
+            val serverProtocol = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
+                    activity!!.getString(R.string.default_value_server_protocol))
+            val serverIp = preferences.getString(Config.PREFERENCES_ROBOT_IP,
+                    activity!!.getString(R.string.default_value_server_ip_address))
+            val serverPort = preferences.getString(Config.PREFERENCES_ROBOT_PORT,
+                    activity!!.getString(R.string.default_value_server_port))
+
+            // Update summaries
+            var pref = findPreference(Config.PREFERENCES_ROBOT_PROTOCOL)
+            pref.summary = serverProtocol
+            pref = findPreference(Config.PREFERENCES_ROBOT_IP)
+            pref.summary = serverIp
+            pref = findPreference(Config.PREFERENCES_ROBOT_PORT)
+            pref.summary = serverPort
+
         }
 
     } // End of  class SettingsFragment : PreferenceFragment()
