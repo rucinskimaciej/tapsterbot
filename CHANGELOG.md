@@ -61,6 +61,7 @@
 
 * Android
 	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
+	* refactor elements (settings, ...)
 
 * Documentation
 	* more details in CURL samples
@@ -73,7 +74,7 @@
 ## TODO ;-)
 
 * Add new capabilities to Snips client (in english)
-* Bring Material Theming and new features to Android app (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
+* Bring Material Theming and new features to Android apps (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
 * Update the wiki with more details, screen shots, command lines, ...
-* And maybe cool keynotes (SpeakerDeck) and articles (Medium) in automn ;-)
+* And maybe cool keynotes (SpeakerDeck) and articles (Medium), an Android app on the store ;-)
