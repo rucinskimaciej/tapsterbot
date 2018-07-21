@@ -35,7 +35,7 @@
     card_view:cardUseCompatPadding="true"
     card_view:cardBackgroundColor="@color/screenCommandsGetPosition"
     card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="8dp">
+    card_view:cardElevation="2dp">
 
 
     <!-- The folding cell with interesting animation -->
