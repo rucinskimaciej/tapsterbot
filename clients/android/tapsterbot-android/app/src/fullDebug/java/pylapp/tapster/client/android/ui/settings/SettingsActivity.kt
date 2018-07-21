@@ -115,8 +115,8 @@ class SettingsActivity : AppCompatActivity() {
             val versionPreference = findPreference(Config.PREFERENCES_APP_VERSION)
             versionPreference.summary = mVersionRelease
 
-            // Update the settings about the robot
-            fillFieldsOfRobot()
+            // Update on the fly fields
+            updateFieldsAboutRobotConfig()
 
             // Deal with licences
             if (isDisplayLicensesEnabled()) {
@@ -209,24 +209,36 @@ class SettingsActivity : AppCompatActivity() {
         /**
          * Fills the fields in the screen about the robot so as to display, if defined, the values
          */
-        private fun fillFieldsOfRobot(){
+        private fun updateFieldsAboutRobotConfig(){
 
             // Get stored values
             val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
-            val serverProtocol = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
-                    activity!!.getString(R.string.default_value_server_protocol))
-            val serverIp = preferences.getString(Config.PREFERENCES_ROBOT_IP,
-                    activity!!.getString(R.string.default_value_server_ip_address))
-            val serverPort = preferences.getString(Config.PREFERENCES_ROBOT_PORT,
-                    activity!!.getString(R.string.default_value_server_port))
 
             // Update summaries
-            var pref = findPreference(Config.PREFERENCES_ROBOT_PROTOCOL)
-            pref.summary = serverProtocol
-            pref = findPreference(Config.PREFERENCES_ROBOT_IP)
-            pref.summary = serverIp
-            pref = findPreference(Config.PREFERENCES_ROBOT_PORT)
-            pref.summary = serverPort
+            val prefProtocol = findPreference(Config.PREFERENCES_ROBOT_PROTOCOL)
+            prefProtocol.onPreferenceChangeListener = Preference.OnPreferenceChangeListener{
+                _, _ ->
+                val serverProtocol = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
+                        activity!!.getString(R.string.default_value_server_protocol))
+                prefProtocol.summary = serverProtocol
+                true
+            }
+            val prefIp = findPreference(Config.PREFERENCES_ROBOT_IP)
+            prefIp.onPreferenceChangeListener = Preference.OnPreferenceChangeListener{
+                _, _ ->
+                val serverIp = preferences.getString(Config.PREFERENCES_ROBOT_IP,
+                        activity!!.getString(R.string.default_value_server_ip_address))
+                prefIp.summary = serverIp
+                true
+            }
+            val prefPort = findPreference(Config.PREFERENCES_ROBOT_PORT)
+            prefPort.onPreferenceChangeListener = Preference.OnPreferenceChangeListener{
+                _, _ ->
+                val serverPort = preferences.getString(Config.PREFERENCES_ROBOT_PORT,
+                        activity!!.getString(R.string.default_value_server_port))
+                prefPort.summary = serverPort
+                true
+            }
 
         }
 
