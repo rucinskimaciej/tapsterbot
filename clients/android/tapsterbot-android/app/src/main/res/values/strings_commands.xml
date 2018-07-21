@@ -86,6 +86,11 @@
     <string name="command_button_title_reset">Process</string>
     <string name="content_description_command_button_reset">Send a command to the robot to reset it</string>
 
+    <string name="command_title_drawstar_short">Star</string>
+    <string name="command_title_drawstar_long">Draws a star.</string>
+    <string name="command_button_title_drawstar">Draw</string>
+    <string name="content_description_command_button_drawstar">Send a command to the robot to make it draw a star</string>
+
     <string name="command_bad_parameters">Bad parameters</string>
 
 </resources>

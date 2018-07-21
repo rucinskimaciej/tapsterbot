@@ -47,6 +47,15 @@
     <color name="screenCommandsTap">#f44336</color>
     <color name="screenCommandsBackSideColorMoves">#ff7961</color>
 
+    <color name="screenCommandsDrawStar">#e91e63</color>
+    <color name="screenCommandsDrawSquare">#e91e63</color>
+    <color name="screenCommandsDrawCircle">#e91e63</color>
+    <color name="screenCommandsDrawTriangle">#e91e63</color>
+    <color name="screenCommandsDrawSpiral">#e91e63</color>
+    <color name="screenCommandsDrawCross">#e91e63</color>
+    <color name="screenCommandsDrawRandom">#e91e63</color>
+    <color name="screenCommandsBackSideColorDraw">#ff6090</color>
+
     <color name="screenCommandsTextColor">#FFFFFF</color>
 
 </resources>

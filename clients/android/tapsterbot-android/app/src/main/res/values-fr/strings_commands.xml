@@ -84,7 +84,12 @@
     <string name="command_title_reset_short">Reset</string>
     <string name="command_title_reset_long">Réinitialise la position du robot pour le remettre dans son état initial.</string>
     <string name="command_button_title_reset">Exécuter</string>
-    <string name="content_description_command_button_reset">Envoie une requête au robot pour pour le faire remettre dans son état initial.</string>
+    <string name="content_description_command_button_reset">Envoie une requête au robot pour le faire remettre dans son état initial.</string>
+
+    <string name="command_title_drawstar_short">Etoile</string>
+    <string name="command_title_drawstar_long">Dessine une étoile.</string>
+    <string name="command_button_title_drawstar">Exécuter</string>
+    <string name="content_description_command_button_drawstar">Envoie une requête au robot pour lui faire dessiner une étoile.</string>
 
     <string name="command_bad_parameters">Paramètres incorrects</string>
 

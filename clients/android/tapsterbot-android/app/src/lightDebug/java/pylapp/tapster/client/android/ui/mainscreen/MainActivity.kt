@@ -96,6 +96,11 @@ class MainActivity : AppCompatActivity() {
      */
     private var mConfigurationCommandsFragment: Fragment? = null
 
+    /**
+     * The [Fragment] for the commands panel containing widgets to draw things through the robot
+     */
+    private var mDrawsCommandsFragment: Fragment? = null
+
 
     /* ******* *
      * METHODS *
@@ -271,6 +276,8 @@ class MainActivity : AppCompatActivity() {
             adapter.addFragment(mMovesCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_moves))
             mConfigurationCommandsFragment = ConfigurationCommandsFragment()
             adapter.addFragment(mConfigurationCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_configuration))
+            mDrawsCommandsFragment = DrawCommandsFragment()
+            adapter.addFragment(mDrawsCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_drawings))
         }
 
         mViewPager!!.adapter = adapter
