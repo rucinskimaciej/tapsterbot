@@ -23,6 +23,7 @@
 package pylapp.tapster.client.android.tools
 
 import android.content.Context
+import pylapp.tapster.client.android.assistants.AssistantStub
 import pylapp.tapster.client.android.assistants.UiNotifierStub
 import pylapp.tapster.client.android.assistants.snips.SnipsAssistantSkeleton
 import pylapp.tapster.client.android.networks.HttpClientStub

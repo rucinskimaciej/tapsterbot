@@ -22,7 +22,6 @@
 package pylapp.tapster.client.android.networks
 
 import okhttp3.*
-
 import pylapp.tapster.client.android.tools.Config
 
 import java.io.IOException

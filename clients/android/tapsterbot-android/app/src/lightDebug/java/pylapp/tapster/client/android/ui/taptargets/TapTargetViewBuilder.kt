@@ -31,7 +31,6 @@ import com.getkeepsafe.taptargetview.TapTarget
 
 import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.FeaturesFactory
-import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
 
 
 /**

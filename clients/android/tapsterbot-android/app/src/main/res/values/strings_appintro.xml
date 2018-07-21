@@ -26,8 +26,8 @@
     <!-- App intro -->
     <!-- ********* -->
 
-    <string name="appintro_screen1_title">Tapster2 client</string>
-    <string name="appintro_screen1_description">Welcome to the Tapster2 client for Android</string>
+    <string name="appintro_screen1_title">Tapster2 app</string>
+    <string name="appintro_screen1_description">Welcome to the Tapster2 application for Android</string>
 
     <string name="appintro_screen2_title">Tapster robot</string>
     <string name="appintro_screen2_description">You should have a Tapster robot to use all of the features of this app</string>

@@ -43,8 +43,6 @@ import java.util.List;
 
 import pylapp.tapster.client.android.R;
 import pylapp.tapster.client.android.networks.HttpClientStub;
-import pylapp.tapster.client.android.tools.Config;
-import pylapp.tapster.client.android.tools.FeaturesFactory;
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub;
 import pylapp.tapster.client.android.ui.permissions.PermissionsManagerStub;
 import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder;
