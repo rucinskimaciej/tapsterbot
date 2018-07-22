@@ -49,6 +49,9 @@
             <!-- The draw square command -->
             <include layout="@layout/card_command_drawsquare"/>
 
+            <!-- The draw cross command -->
+            <include layout="@layout/card_command_drawcross"/>
+
         </LinearLayout>
 
     </ScrollView>

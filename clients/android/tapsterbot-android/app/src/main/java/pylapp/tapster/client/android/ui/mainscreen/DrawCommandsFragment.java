@@ -157,6 +157,20 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         });
 
+        // The cell for the draw cross feature
+        final FoldingCell fcCommandDrawCross = getActivity().findViewById(R.id.fc_command_drawcross);
+        fcCommandDrawCross.setOnClickListener(v -> {
+
+            fcCommandDrawCross.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawCross.findViewById(R.id.bt_command_action_drawcross);
+            processButton.setOnClickListener(v2 -> {
+                // TODO
+            });
+
+        });
+
     }
 
 }
