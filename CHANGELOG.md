@@ -65,6 +65,7 @@
 	* [ON GOING] add new features (draw star / circle / spiral / square / cross / triangle / random pattern, n taps, n swipes)
 	* [ON GOING] clean up sources
 	* [ON GOING] display of licenses in full flavor
+	* [ON GOING] update of Snips assistant
 
 * Documentation
 	* more details in CURL samples
