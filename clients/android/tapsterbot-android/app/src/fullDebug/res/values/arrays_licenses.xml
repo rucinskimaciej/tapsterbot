@@ -20,7 +20,7 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- ************************ -->
     <!-- For licenses and credits -->
@@ -53,7 +53,7 @@
     </string-array>
 
     <!-- The URL -->
-    <string-array name="credits_url">
+    <string-array name="credits_url" tools:ignore="InconsistentArrays">
         <item>https://github.com/ACRA/acra</item>
         <item>https://github.com/codemybrainsout/ahoy-onboarding</item>
         <item>https://github.com/aosp-mirror/platform_frameworks_support</item>

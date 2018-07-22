@@ -38,10 +38,12 @@
             android:orientation="vertical">
 
             <!-- The tap command -->
-            <include layout="@layout/card_command_tap"/>
+            <include layout="@layout/card_command_tap"
+                tools:ignore="DuplicateIncludedIds"/>
 
             <!-- The n-tap command -->
-            <include layout="@layout/card_command_ntap"/>
+            <include layout="@layout/card_command_ntap"
+                tools:ignore="DuplicateIncludedIds"/>
 
             <!-- The swipe command -->
             <include layout="@layout/card_command_swipe"
