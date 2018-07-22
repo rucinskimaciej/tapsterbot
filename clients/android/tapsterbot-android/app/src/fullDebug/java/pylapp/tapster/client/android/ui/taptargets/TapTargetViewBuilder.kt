@@ -154,7 +154,7 @@ class TapTargetViewBuilder {
         /**
          * The key to use to check if the help has been displayed for the 1st tab
          */
-        const val PREFERENCES_KEY_COMMANDS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_TAB_POINTED"
+        const val PREFERENCES_KEY_COMMANDS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED"
         /**
          * The key to use to check if the help has been displayed for a command
          */

@@ -42,7 +42,7 @@ import pylapp.tapster.client.android.tools.FeaturesFactory
  * @author pylapp
  * @since 07/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class TapTargetViewBuilder {
 
@@ -67,12 +67,26 @@ class TapTargetViewBuilder {
         // Get the configuration (view and texts)
 
         when (element) {
-        // The first tab, with the commands
-            Targets.COMMANDS_TAB -> {
+        // The first tab, with the moves commands
+            Targets.MOVES_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
                 targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(0)
-                targetTitleText = context.resources.getString(R.string.taptarget_commandtab_title)
-                targetDescriptionText = context.resources.getString(R.string.taptarget_commandtab_description)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_moves_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_moves_description)
+            }
+        // The second tab, with the drawings commands
+            Targets.DRAWINGS_TAB -> {
+                val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(1)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_drawings_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_drawings_description)
+            }
+        // The third tab, with the settings commands
+            Targets.SETTINGS_TAB -> {
+                val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(2)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_settings_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_settings_description)
             }
         // A command
             Targets.TAP_CELL -> {
@@ -137,9 +151,17 @@ class TapTargetViewBuilder {
      */
     companion object {
         /**
-         * The key to use to check if the help has been displayed for the 1st tab
+         * The key to use to check if the help has been displayed for the 1st tab (moves)
          */
-        const val PREFERENCES_KEY_COMMANDS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_TAB_POINTED"
+        const val PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED"
+        /**
+         * The key to use to check if the help has been displayed for the 2nd tab (drawingss)
+         */
+        const val PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED"
+        /**
+         * The key to use to check if the help has been displayed for the 3rd tab (settings)
+         */
+        const val PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED"
         /**
          * The key to use to check if the help has been displayed for a command
          */
@@ -164,9 +186,17 @@ class TapTargetViewBuilder {
      */
     enum class Targets {
         /**
-         * The first tab with the widgets
+         * The first tab with the widgets dedicated to moves
          */
-        COMMANDS_TAB,
+        MOVES_TAB,
+        /**
+         * The second tab with the widgets dedicated to drawings
+         */
+        DRAWINGS_TAB,
+        /**
+         * The third tab with the widgets dedicated to the settings of the robot
+         */
+        SETTINGS_TAB,
         /**
          * A command
          */
