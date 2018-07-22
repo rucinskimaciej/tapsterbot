@@ -26,11 +26,17 @@
     <!-- Tap targets -->
     <!-- *********** -->
 
-    <string name="taptarget_commandtab_title">Panneau de commandes</string>
-    <string name="taptarget_commandtab_description">Vous pouvez trouver ici les commandes à envoyer au robot</string>
+    <string name="taptarget_tab_moves_title">Faire des gestes</string>
+    <string name="taptarget_tab_moves_description">Vous pouvez trouver ici les commandes du robot pour exécuter des gestes particuliers</string>
 
-    <string name="taptarget_assistanttab_title">Assistant</string>
-    <string name="taptarget_assistanttab_description">Vous pouvez parler avec l\'assistant pour envoyer des commandes par la voix</string>
+    <string name="taptarget_tab_drawings_title">Dessiner des motifs</string>
+    <string name="taptarget_tab_drawings_description">Cet onglet permet de faire dessiner des motifs au robot</string>
+
+    <string name="taptarget_tab_settings_title">Configuration</string>
+    <string name="taptarget_tab_settings_description">Besoin de régler le robot ? Vous pouvez trouver des choses ici.</string>
+
+    <string name="taptarget_tab_assistant_title">Assistant</string>
+    <string name="taptarget_tab_assistant_description">Un assistant vocal basé sur Snips.ai permet aussi de controler le robot à la voix.</string>
 
     <string name="taptarget_tap_title">Exemple de commande</string>
     <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>

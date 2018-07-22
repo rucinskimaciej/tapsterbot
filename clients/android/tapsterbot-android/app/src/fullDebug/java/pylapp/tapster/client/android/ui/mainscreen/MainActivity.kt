@@ -256,7 +256,9 @@ class MainActivity : AppCompatActivity() {
         // FIXME Fu***ng dirty, must use instead one flag per sequence
         // The commandTap targets are in a feature which can be disabled
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_DISPLAY_TAPTARGETS)!!.toBoolean()
-                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_TAB_POINTED, false)
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED, false)
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED, false)
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED, false)
                 && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_ASSISTANT_TAB_POINTED, false)) {
 
             val builder = TapTargetViewBuilder()
@@ -264,8 +266,14 @@ class MainActivity : AppCompatActivity() {
 
             // The command panel is in a feature which can be disabled
             if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
-                pointers.add(TapTargetViewBuilder.Targets.COMMANDS_TAB)
-                preferences.edit().putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_TAB_POINTED, true).apply()
+                pointers.add(TapTargetViewBuilder.Targets.MOVES_TAB)
+                pointers.add(TapTargetViewBuilder.Targets.DRAWINGS_TAB)
+                pointers.add(TapTargetViewBuilder.Targets.SETTINGS_TAB)
+                preferences.edit()
+                        .putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED, true)
+                        .putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED, true)
+                        .putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED, true)
+                        .apply()
             }
 
             // The assistant is in a feature which can be disabled

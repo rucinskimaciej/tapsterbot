@@ -35,9 +35,6 @@
     <string name="taptarget_tab_settings_title">Settings</string>
     <string name="taptarget_tab_settings_description">Need to set up the robot? You can find here useful commands</string>
 
-    <string name="taptarget_tab_assistant_title">Assistant</string>
-    <string name="taptarget_tab_assistant_description">A vocal assistant based on Snips.ai is available here to permit you to drive the robot by talking to it</string>
-
     <string name="taptarget_tap_title">Example of command</string>
     <string name="taptarget_tap_description">You can choose a command by clicking on it</string>
 

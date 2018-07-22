@@ -31,7 +31,6 @@ import com.getkeepsafe.taptargetview.TapTarget
 
 import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.FeaturesFactory
-import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
 
 
 /**
@@ -43,7 +42,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  * @author pylapp
  * @since 07/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class TapTargetViewBuilder {
 
@@ -68,26 +67,33 @@ class TapTargetViewBuilder {
         // Get the configuration (view and texts)
 
         when (element) {
-        // The first tab, with the commands
-            Targets.COMMANDS_TAB -> {
+        // The first tab, with the moves commands
+            Targets.MOVES_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
                 targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(0)
-                targetTitleText = context.resources.getString(R.string.taptarget_commandtab_title)
-                targetDescriptionText = context.resources.getString(R.string.taptarget_commandtab_description)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_moves_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_moves_description)
             }
-        // The second tabs, with the assistant
+        // The second tab, with the drawings commands
+            Targets.DRAWINGS_TAB -> {
+                val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(1)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_drawings_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_drawings_description)
+            }
+        // The third tab, with the settings commands
+            Targets.SETTINGS_TAB -> {
+                val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(2)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_settings_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_settings_description)
+            }
+        // The fourth tab, with the panel for the assistant
             Targets.ASSISTANT_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
-                // The commands tab, in 1st position, at index 0 can be disabled, so keep an eye on it
-                val propertiesReader = FeaturesFactory().buildPropertiesReader()
-                propertiesReader.loadProperties(context)
-                targetView = when (propertiesReader
-                        .readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
-                    true -> (tabLayout.getChildAt(0) as ViewGroup).getChildAt(1)
-                    false -> (tabLayout.getChildAt(0) as ViewGroup).getChildAt(0)
-                }
-                targetTitleText = context.resources.getString(R.string.taptarget_assistanttab_title)
-                targetDescriptionText = context.resources.getString(R.string.taptarget_assistanttab_description)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(3)
+                targetTitleText = context.resources.getString(R.string.taptarget_tab_assistant_title)
+                targetDescriptionText = context.resources.getString(R.string.taptarget_tab_assistant_description)
             }
         // A command
             Targets.TAP_CELL -> {
@@ -152,9 +158,21 @@ class TapTargetViewBuilder {
      */
     companion object {
         /**
-         * The key to use to check if the help has been displayed for the 1st tab
+         * The key to use to check if the help has been displayed for the 1st tab (moves)
          */
-        const val PREFERENCES_KEY_COMMANDS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED"
+        const val PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED"
+        /**
+         * The key to use to check if the help has been displayed for the 2nd tab (drawingss)
+         */
+        const val PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED"
+        /**
+         * The key to use to check if the help has been displayed for the 3rd tab (settings)
+         */
+        const val PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED"
+        /**
+         * The key to use to check if the help has been displayed for the 4th tab (assistant)
+         */
+        const val PREFERENCES_KEY_COMMANDS_ASSISTANT_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_ASSISTANT_TAB_POINTED"
         /**
          * The key to use to check if the help has been displayed for a command
          */
@@ -183,9 +201,21 @@ class TapTargetViewBuilder {
      */
     enum class Targets {
         /**
-         * The first tab with the widgets
+         * The first tab with the widgets dedicated to moves
          */
-        COMMANDS_TAB,
+        MOVES_TAB,
+        /**
+         * The second tab with the widgets dedicated to drawings
+         */
+        DRAWINGS_TAB,
+        /**
+         * The third tab with the widgets dedicated to the settings of the robot
+         */
+        SETTINGS_TAB,
+        /**
+         * The fourth tab with the panel for the assistant
+         */
+        ASSISTANT_TAB,
         /**
          * A command
          */
@@ -197,11 +227,7 @@ class TapTargetViewBuilder {
         /**
          * The parameter field of the command
          */
-        SWIPE_CELL_PARAMETER_FIELD,
-        /**
-         * The second tab with the assistant
-         */
-        ASSISTANT_TAB
+        SWIPE_CELL_PARAMETER_FIELD
     } // End of enum Targets
 
 }

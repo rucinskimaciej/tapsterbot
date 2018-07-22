@@ -246,7 +246,9 @@ class MainActivity : AppCompatActivity() {
         // FIXME Fu***ng dirty, must use instead one flag per sequence
         // The commandTap targets are in a feature which can be disabled
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_DISPLAY_TAPTARGETS)!!.toBoolean()
-                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED, false)) {
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED, false)
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED, false)
+                && !preferences.getBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED, false)) {
 
             val builder = TapTargetViewBuilder()
             val pointers = ArrayList<TapTargetViewBuilder.Targets>()
