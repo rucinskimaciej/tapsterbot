@@ -111,7 +111,7 @@ android {
     defaultConfig {
         applicationId "pylapp.tapster.client.android" + applicationIdSuffix
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 27
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     } // End of defaultConfig
 
