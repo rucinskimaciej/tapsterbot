@@ -87,6 +87,9 @@
                 android:id="@+id/bt_command_action_drawtriangle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/command_button"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="14sp"
                 android:text="@string/command_button_title_drawtriangle"
                 android:contentDescription="@string/content_description_command_button_drawtriangle"
                 tools:ignore="DuplicateIncludedIds" />

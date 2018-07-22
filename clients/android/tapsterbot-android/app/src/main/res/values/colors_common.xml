@@ -57,4 +57,12 @@
     <color name="tapTargetTextColor">@color/colorPrimary</color>
     <color name="tapTargetDescriptionColor">@color/colorPrimaryDark</color>
 
+    <!-- ************ -->
+    <!-- Other colors -->
+    <!-- ************ -->
+
+    <color name="buttonBackgroundColor">#000000</color>
+    <color name="buttonBackgroundTintColor">#111111</color>
+    <color name="buttonTextColor">#ffffff</color>
+
 </resources>
