@@ -115,6 +115,12 @@
     <string name="content_description_command_button_drawcross">Send a command to the robot to make it draw a cross</string>
     <string name="hint_drawcross">x1 y1 x2 y2 x3 y3 x4 y4</string>
 
+    <string name="command_title_drawtriangle_short">Triangle</string>
+    <string name="command_title_drawtriangle_long">Draw a triangle using 3 points</string>
+    <string name="command_button_title_drawtriangle">Draw</string>
+    <string name="content_description_command_button_drawtriangle">Send a command to the robot to make it draw a triangle</string>
+    <string name="hint_drawtriangle">x1 y1 x2 y2 x3 y3</string>
+
     <string name="command_bad_parameters">Bad parameters</string>
 
 </resources>

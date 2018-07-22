@@ -52,6 +52,9 @@
             <!-- The draw cross command -->
             <include layout="@layout/card_command_drawcross"/>
 
+            <!-- The draw triangle command -->
+            <include layout="@layout/card_command_drawtriangle"/>
+
         </LinearLayout>
 
     </ScrollView>

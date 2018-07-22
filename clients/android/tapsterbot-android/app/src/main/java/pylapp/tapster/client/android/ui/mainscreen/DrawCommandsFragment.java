@@ -171,6 +171,20 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         });
 
+        // The cell for the draw triangle feature
+        final FoldingCell fcCommandDrawTriangle = getActivity().findViewById(R.id.fc_command_drawtriangle);
+        fcCommandDrawTriangle.setOnClickListener(v -> {
+
+            fcCommandDrawTriangle.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawTriangle.findViewById(R.id.bt_command_action_drawtriangle);
+            processButton.setOnClickListener(v2 -> {
+                // TODO
+            });
+
+        });
+
     }
 
 }
