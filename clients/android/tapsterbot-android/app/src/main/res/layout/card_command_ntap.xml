@@ -25,7 +25,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cv_command_tap"
+    android:id="@+id/cv_command_tapmany"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginRight="16dp"
@@ -42,7 +42,7 @@
     <com.ramotion.foldingcell.FoldingCell
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/fc_command_tap"
+        android:id="@+id/fc_command_tapmany"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/screenCommandsTap"
@@ -63,32 +63,32 @@
             tools:ignore="DuplicateIncludedIds">
 
             <TextView
-                android:id="@+id/tv_tap"
+                android:id="@+id/tv_tapmany"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/command_title_tap_long"
+                android:text="@string/command_title_ntap_long"
                 android:textColor="@color/screenCommandsTextColor"/>
 
             <EditText
-                android:id="@+id/et_params_tap"
+                android:id="@+id/et_params_tapmany"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:inputType="number"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/hint_tap"/>
+                android:hint="@string/hint_ntap"/>
 
             <Button
-                android:id="@+id/bt_command_action_tap"
+                android:id="@+id/bt_command_action_tapmany"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/command_button_title_tap"
-                android:contentDescription="@string/content_description_command_button_tap"
+                android:text="@string/command_button_title_ntap"
+                android:contentDescription="@string/content_description_command_button_ntap"
                 tools:ignore="DuplicateIncludedIds" />
 
         </LinearLayout> <!-- End of the unfolded cell -->
@@ -102,7 +102,7 @@
             tools:ignore="DuplicateIncludedIds">
 
             <TextView
-                android:id="@+id/tv_folded_tap"
+                android:id="@+id/tv_folded_tapmany"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textSize="16sp"
@@ -110,7 +110,7 @@
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/command_title_tap_short"
+                android:text="@string/command_title_ntap_short"
                 android:textColor="@color/screenCommandsTextColor"/>
 
         </LinearLayout>

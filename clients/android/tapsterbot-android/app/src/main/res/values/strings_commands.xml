@@ -81,6 +81,12 @@
     <string name="content_description_command_button_tap">Send a command to the robot to make it tap to a point</string>
     <string name="hint_tap">x y </string>
 
+    <string name="command_title_ntap_short">Tap many times</string>
+    <string name="command_title_ntap_long">Tap several times to a point using device\'s 2D coordinates.</string>
+    <string name="command_button_title_ntap">Process</string>
+    <string name="content_description_command_button_ntap">Send a command to the robot to make it tap to a point several times</string>
+    <string name="hint_ntap">n x y </string>
+
     <string name="command_title_reset_short">Reset</string>
     <string name="command_title_reset_long">Resets the arms of the robot to make it go to its initial state.</string>
     <string name="command_button_title_reset">Process</string>

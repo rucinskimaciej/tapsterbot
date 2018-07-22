@@ -40,6 +40,9 @@
             <!-- The tap command -->
             <include layout="@layout/card_command_tap"/>
 
+            <!-- The n-tap command -->
+            <include layout="@layout/card_command_ntap"/>
+
             <!-- The swipe command -->
             <include layout="@layout/card_command_swipe"
                 tools:ignore="DuplicateIncludedIds" />

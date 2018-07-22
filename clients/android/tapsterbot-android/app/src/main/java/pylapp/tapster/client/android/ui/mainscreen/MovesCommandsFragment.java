@@ -103,6 +103,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
         // The cell for the tap feature
         initTapListener();
 
+        // The cell for the n-tap feature
+        initManyTapListener();
+
     }
 
     /**
@@ -343,6 +346,31 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
                         Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
+
+            }); // End of processButton.setOnClickListener
+
+        });
+
+    }
+
+    /**
+     * Initializes the listeners for widgets in the folding cell dedicated to many tap command
+     */
+    private void initManyTapListener() {
+
+        // Get the folding cell
+        final FoldingCell fcCommandManyTap = getActivity().findViewById(R.id.fc_command_tapmany);
+
+        // Listener to open / close the cell
+        fcCommandManyTap.setOnClickListener(v -> {
+
+            fcCommandManyTap.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandManyTap.findViewById(R.id.bt_command_action_tapmany);
+            processButton.setOnClickListener(v2 -> {
+
+                // TODO
 
             }); // End of processButton.setOnClickListener
 
