@@ -170,9 +170,9 @@ class TapTargetViewBuilder {
          */
         const val PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED"
         /**
-         * The key to use to check if the help has been displayed for the 4th tab (assistant)
+         * The key to use to check if the help has been displayed for the assistant tab
          */
-        const val PREFERENCES_KEY_COMMANDS_ASSISTANT_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_ASSISTANT_TAB_POINTED"
+        const val PREFERENCES_KEY_ASSISTANT_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_ASSISTANT_TAB_POINTED"
         /**
          * The key to use to check if the help has been displayed for a command
          */
@@ -185,10 +185,6 @@ class TapTargetViewBuilder {
          * The key to use to check if the help has been displayed for a command's parameter field
          */
         const val PREFERENCES_KEY_SWIPE_PARAMETERS_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_SWIPE_PARAMETERS_POINTED"
-        /**
-         * The key to use to check if the help has been displayed for the 2nd tab
-         */
-        const val PREFERENCES_KEY_ASSISTANT_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_ASSISTANT_TAB_POINTED"
     }
 
 

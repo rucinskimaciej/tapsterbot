@@ -49,7 +49,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
 )
 
 @AcraMailSender(
-        mailTo = "pylapp.pylapp+test@gmail.com" // TODO Fill this value
+        mailTo = "" // TODO Fill this value
 )
 
 @AcraNotification(
