@@ -213,9 +213,16 @@ class MainActivity : AppCompatActivity() {
         // Content view, action bar, tabs
         setContentView(R.layout.activity_main_with_tabs)
         supportActionBar?.elevation = 0f
+
+        // View pager with fragments
         setupViewPager()
         mTabLayout = findViewById(R.id.tl_client_screens)
         mTabLayout!!.setupWithViewPager(mViewPager)
+
+        // Tabs icons
+        mTabLayout!!.getTabAt(0)?.setIcon(R.mipmap.ic_commands_move)
+        mTabLayout!!.getTabAt(1)?.setIcon(R.mipmap.ic_commands_drawings)
+        mTabLayout!!.getTabAt(2)?.setIcon(R.mipmap.ic_commands_configuration)
 
     }
 
@@ -274,10 +281,10 @@ class MainActivity : AppCompatActivity() {
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
             mMovesCommandsFragment = MovesCommandsFragment()
             adapter.addFragment(mMovesCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_moves))
-            mConfigurationCommandsFragment = ConfigurationCommandsFragment()
-            adapter.addFragment(mConfigurationCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_configuration))
             mDrawsCommandsFragment = DrawCommandsFragment()
             adapter.addFragment(mDrawsCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_drawings))
+            mConfigurationCommandsFragment = ConfigurationCommandsFragment()
+            adapter.addFragment(mConfigurationCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_configuration))
         }
 
         mViewPager!!.adapter = adapter
