@@ -3,7 +3,9 @@ package pylapp.tapster.client.android.ui.settings
 import android.app.Activity
 import de.psdev.licensesdialog.LicensesDialog
 import de.psdev.licensesdialog.licenses.ApacheSoftwareLicense20
+import de.psdev.licensesdialog.licenses.CreativeCommonsAttribution30Unported
 import de.psdev.licensesdialog.licenses.License
+import de.psdev.licensesdialog.licenses.CreativeCommonsAttributionNoDerivs30Unported
 import de.psdev.licensesdialog.licenses.MITLicense
 import de.psdev.licensesdialog.model.Notice
 import de.psdev.licensesdialog.model.Notices
@@ -17,7 +19,7 @@ import pylapp.tapster.client.android.R
  * @author pylapp
  * @since 08/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class LicensesDisplayerSkeleton: LicensesDisplayerStub {
 
@@ -45,6 +47,8 @@ class LicensesDisplayerSkeleton: LicensesDisplayerStub {
             val licence: License = when (licenses[i]) {
                 "Apache 2.0" -> ApacheSoftwareLicense20()
                 "MIT" -> MITLicense()
+                "CC BY 3.0" -> CreativeCommonsAttribution30Unported() // FIXME
+                "Flaticon Basic License" -> CreativeCommonsAttributionNoDerivs30Unported() // FIXME
                 else -> ApacheSoftwareLicense20() // FIXME Duh
             }
             notices.addNotice(Notice(names[i], urls[i], copyrights[i], licence))

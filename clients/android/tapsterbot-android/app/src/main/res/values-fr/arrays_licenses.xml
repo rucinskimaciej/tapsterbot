@@ -37,6 +37,10 @@
         <item>Bibliothèque LicensesDialog</item>
         <item>Bibliothèque OkHttp</item>
         <item>Bibliothèque TapTargetView</item>
+        <item>Image "Move option free icon"</item>
+        <item>Image "Settings free icon"</item>
+        <item>Image "Create new pencil button free icon"</item>
+        <item>Image "Chat speech bubbles free icon"</item>
     </string-array>
 
     <!-- The copyrights -->
@@ -50,6 +54,10 @@
         <item>Copyright &#169; 2013 Philip Schiffer</item>
         <item>Copyright &#169; 2013 Square, Inc.</item>
         <item>Copyright &#169; 2016 Keepsafe Software Inc.</item>
+        <item>Copyright Dave Gandy</item>
+        <item>Copyright Gregor Cresnar</item>
+        <item>Copyright Google</item>
+        <item>Copyright Yannick</item>
     </string-array>
 
     <!-- The URL -->
@@ -63,6 +71,10 @@
         <item>https://github.com/PSDev/LicensesDialog</item>
         <item>https://github.com/square/okhttp</item>
         <item>https://github.com/KeepSafe/TapTargetView</item>
+        <item>https://www.flaticon.com/free-icon/move-option_25476</item>
+        <item>https://www.flaticon.com/free-icon/settings_126391</item>
+        <item>https://www.flaticon.com/free-icon/create-new-pencil-button_60785</item>
+        <item>https://www.flaticon.com/free-icon/chat-speech-bubbles_12425</item>
     </string-array>
 
     <!-- The licenses -->
@@ -76,6 +88,10 @@
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
+        <item>CC 3.0 BY</item>
+        <item>Flaticon Basic License</item>
+        <item>CC 3.0 BY</item>
+        <item>CC 3.0 BY</item>
     </string-array>
 
 </resources>
