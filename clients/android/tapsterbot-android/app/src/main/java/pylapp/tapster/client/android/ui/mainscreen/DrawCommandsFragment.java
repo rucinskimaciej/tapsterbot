@@ -103,7 +103,6 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         // The cell for the draw star feature
         final FoldingCell fcCommandDrawStar = getActivity().findViewById(R.id.fc_command_drawstar);
-
         fcCommandDrawStar.setOnClickListener(v -> {
 
             fcCommandDrawStar.toggle(false);
@@ -111,14 +110,13 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
             // The action button
             Button processButton = fcCommandDrawStar.findViewById(R.id.bt_command_action_drawstar);
             processButton.setOnClickListener(v2 -> {
-                // TODO Draw star
+                // TODO
             });
 
         });
 
         // The cell for the draw circle feature
         final FoldingCell fcCommandDrawCircle = getActivity().findViewById(R.id.fc_command_drawcircle);
-
         fcCommandDrawCircle.setOnClickListener(v -> {
 
             fcCommandDrawCircle.toggle(false);
@@ -126,7 +124,21 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
             // The action button
             Button processButton = fcCommandDrawCircle.findViewById(R.id.bt_command_action_drawcircle);
             processButton.setOnClickListener(v2 -> {
-                // TODO Draw star
+                // TODO
+            });
+
+        });
+
+        // The cell for the draw spiral feature
+        final FoldingCell fcCommandDrawSpiral = getActivity().findViewById(R.id.fc_command_drawspiral);
+        fcCommandDrawSpiral.setOnClickListener(v -> {
+
+            fcCommandDrawSpiral.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawSpiral.findViewById(R.id.bt_command_action_drawspiral);
+            processButton.setOnClickListener(v2 -> {
+                // TODO
             });
 
         });

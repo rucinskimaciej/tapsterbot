@@ -43,6 +43,9 @@
             <!-- The draw circle command -->
             <include layout="@layout/card_command_drawcircle"/>
 
+            <!-- The draw spiral command -->
+            <include layout="@layout/card_command_drawspiral"/>
+
         </LinearLayout>
 
     </ScrollView>

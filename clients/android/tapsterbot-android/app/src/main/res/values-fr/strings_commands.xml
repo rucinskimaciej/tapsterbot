@@ -97,6 +97,12 @@
     <string name="content_description_command_button_drawcircle">Envoie une requête au robot pour lui faire dessiner un cercle.</string>
     <string name="hint_drawcircle">precision rayon</string>
 
+    <string name="command_title_drawspiral_short">Spirale</string>
+    <string name="command_title_drawspiral_long">Dessine une spirale centrée sur un point, avec un nombre d\'anneaux et un rayon.</string>
+    <string name="command_button_title_drawspiral">Dessiner</string>
+    <string name="content_description_command_button_drawspiral">Envoie une requête au robot pour lui faire dessiner une spirale.</string>
+    <string name="hint_drawspiral">x y anneaux rayon</string>
+
     <string name="command_bad_parameters">Paramètres incorrects</string>
 
 </resources>

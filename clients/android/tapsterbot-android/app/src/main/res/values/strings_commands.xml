@@ -94,8 +94,15 @@
     <string name="command_title_drawcircle_short">Circle</string>
     <string name="command_title_drawcircle_long">Draws a circle with a precision and a radius</string>
     <string name="command_button_title_drawcircle">Draw</string>
-    <string name="content_description_command_button_drawcircle">Send a command to the robot to make it draw a circler</string>
+    <string name="content_description_command_button_drawcircle">Send a command to the robot to make it draw a circle</string>
     <string name="hint_drawcircle">precision radius</string>
+
+    <string name="command_title_drawspiral_short">Spiral</string>
+    <string name="command_title_drawspiral_long">Draws a spiral centered on a point, with a number of rings and a radius</string>
+    <string name="command_button_title_drawspiral">Draw</string>
+    <string name="content_description_command_button_drawspiral">Send a command to the robot to make it draw a spiral</string>
+    <string name="hint_drawspiral">x y rings radius</string>
+
 
     <string name="command_bad_parameters">Bad parameters</string>
 
