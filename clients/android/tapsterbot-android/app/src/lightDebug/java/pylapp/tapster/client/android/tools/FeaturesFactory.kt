@@ -22,8 +22,6 @@
 
 package pylapp.tapster.client.android.tools
 
-import android.content.Context
-
 import pylapp.tapster.client.android.networks.HttpClientStub
 import pylapp.tapster.client.android.networks.OkHttpHttpClientSkeleton
 import pylapp.tapster.client.android.tools.properties.AssetsPropertiesReaderSkeleton

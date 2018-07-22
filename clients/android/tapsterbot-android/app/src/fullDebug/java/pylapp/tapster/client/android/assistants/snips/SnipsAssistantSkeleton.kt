@@ -137,7 +137,7 @@ class SnipsAssistantSkeleton : AssistantStub {
         properties.loadProperties(context)
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-        // A directory where the assistant models was unziped.
+        // A directory where the assistant models was unzipped.
         // It should contain the folders ASR dialogue hotword and NLU
         snips = buildInstance(context)
         if (snips == null) {

@@ -28,12 +28,11 @@ import android.preference.PreferenceCategory
 import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
+
 import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.Config
 import pylapp.tapster.client.android.tools.FeaturesFactory
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
-import android.preference.Preference.OnPreferenceChangeListener
-
 
 
 /**

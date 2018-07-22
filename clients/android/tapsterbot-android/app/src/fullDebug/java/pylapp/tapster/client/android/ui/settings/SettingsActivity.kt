@@ -205,7 +205,7 @@ class SettingsActivity : AppCompatActivity() {
         } // End of private fun hideRelatedAssistantFields()
 
         /**
-         * Fills the fields in the screen about the robot so as to display, if defined, the valuestrue
+         * Fills the fields in the screen about the robot so as to display, if defined, the values
          */
         private fun updateFieldsAboutRobotConfig(){
 

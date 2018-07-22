@@ -162,7 +162,7 @@ class TapTargetViewBuilder {
          */
         const val PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_MOVES_TAB_POINTED"
         /**
-         * The key to use to check if the help has been displayed for the 2nd tab (drawingss)
+         * The key to use to check if the help has been displayed for the 2nd tab (drawings)
          */
         const val PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED = "TapTargetViewBuilder.preferences.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED"
         /**
