@@ -80,7 +80,7 @@ class UiNotifierSkeleton(context: Context) : UiNotifierStub {
      */
     override fun displayMessage(context: Activity, type: AssistantMessage.Type, message: String) {
 
-        Log.d("SnipsAssistantSkeleton", "New message: " + message)
+        Log.d("SnipsAssistantSkeleton", "New message: $message" )
 
         // Read in the properties file if we can display the message according to its type
         if (!isMessageTypeDisplayEnabled(type, context)) return

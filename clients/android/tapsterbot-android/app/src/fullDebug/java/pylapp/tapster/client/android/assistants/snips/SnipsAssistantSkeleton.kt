@@ -155,7 +155,7 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         snips!!.onIntentDetectedListener = fun(intentMessage: IntentMessage) {
-            Log.d(LOG_TAG, "received an intent: " + intentMessage)
+            Log.d(LOG_TAG, "received an intent: $intentMessage" )
             handleDetectedIntent(context, intentMessage)
             mNotifier?.displayMessage(context, AssistantMessage.Type.DEBUG, intentMessage.toString())
             snips!!.endSession(intentMessage.sessionId, null)
@@ -173,7 +173,7 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         snips!!.onSessionStartedListener = fun(sessionStartedMessage: SessionStartedMessage) {
-            Log.d(LOG_TAG, "Dialogue session started: " + sessionStartedMessage)
+            Log.d(LOG_TAG, "Dialogue session started: $sessionStartedMessage")
             if (properties.readProperty(PropertiesReaderStub.ENABLE_VIBRATIONS)!!.toBoolean()
                     && preferences.getBoolean(Config.PREFERENCES_ASSISTANT_VIBRATIONS, true)) {
                 mNotifier?.vibrate(context, Config.DURATION_ASSISTANT_SESSION_START)
@@ -183,12 +183,12 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         snips!!.onSessionQueuedListener = fun(sessionQueuedMessage: SessionQueuedMessage) {
-            Log.d(LOG_TAG, "Dialogue session queued: " + sessionQueuedMessage)
+            Log.d(LOG_TAG, "Dialogue session queued: $sessionQueuedMessage")
             return
         }
 
         snips!!.onSessionEndedListener = fun(sessionEndedMessage: SessionEndedMessage) {
-            Log.d(LOG_TAG, "Dialogue session ended: " + sessionEndedMessage)
+            Log.d(LOG_TAG, "Dialogue session ended: $sessionEndedMessage")
             if (properties.readProperty(PropertiesReaderStub.ENABLE_VIBRATIONS)!!.toBoolean()
                     && preferences.getBoolean(Config.PREFERENCES_ASSISTANT_VIBRATIONS, true)) {
                 mNotifier?.vibrate(context, Config.DURATION_ASSISTANT_SESSION_END)
@@ -280,7 +280,7 @@ class SnipsAssistantSkeleton : AssistantStub {
     private fun runStreaming() {
 
         val minBufferSizeInBytes = AudioRecord.getMinBufferSize(FREQUENCY, CHANNEL, ENCODING)
-        Log.d(LOG_TAG, "minBufferSizeInBytes: " + minBufferSizeInBytes)
+        Log.d(LOG_TAG, "minBufferSizeInBytes: $minBufferSizeInBytes")
 
         mRecorder = AudioRecord(MediaRecorder.AudioSource.MIC, FREQUENCY, CHANNEL,
                 ENCODING, minBufferSizeInBytes)

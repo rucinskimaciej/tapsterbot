@@ -109,14 +109,12 @@ class ListOfAssistantDialogueMessagesAdapter : BaseAdapter() {
         val item = getItem(position)
                 ?: throw IllegalStateException("Null message, is the position parameter correct?")
         holder.tvContent.text = Html.fromHtml(item.message)
-        val color: Int
-        when (item.type) {
-            AssistantMessage.Type.INFORMATION -> color = view.context.resources.getColor(R.color.assistantInformationMessageBackgroundColor)
-            AssistantMessage.Type.VERBOSE -> color = view.context.resources.getColor(R.color.assistantVerboseMessageBackgroundColor)
-            AssistantMessage.Type.WARNING -> color = view.context.resources.getColor(R.color.assistantWarningMessageBackgroundColor)
-            AssistantMessage.Type.ALERT -> color = view.context.resources.getColor(R.color.assistantAlertMessageBackgroundColor)
-            AssistantMessage.Type.DEBUG -> color = view.context.resources.getColor(R.color.assistantDebugMessageBackgroundColor)
-            else -> color = view.context.resources.getColor(R.color.assistantDebugMessageBackgroundColor)
+        val color: Int = when (item.type) {
+            AssistantMessage.Type.INFORMATION -> view.context.resources.getColor(R.color.assistantInformationMessageBackgroundColor)
+            AssistantMessage.Type.VERBOSE -> view.context.resources.getColor(R.color.assistantVerboseMessageBackgroundColor)
+            AssistantMessage.Type.WARNING -> view.context.resources.getColor(R.color.assistantWarningMessageBackgroundColor)
+            AssistantMessage.Type.ALERT -> view.context.resources.getColor(R.color.assistantAlertMessageBackgroundColor)
+            AssistantMessage.Type.DEBUG -> view.context.resources.getColor(R.color.assistantDebugMessageBackgroundColor)
         }
         holder.tvContent.setBackgroundColor(color)
         holder.rlParent.setBackgroundColor(color)
@@ -133,12 +131,10 @@ class ListOfAssistantDialogueMessagesAdapter : BaseAdapter() {
      */
     private inner class ViewHolder internal constructor(v: View) {
 
-        internal val tvContent: TextView
-        internal val rlParent: RelativeLayout
+        internal val tvContent: TextView = v.findViewById(R.id.tv_assistant_dialogue_message)
+        internal val rlParent: RelativeLayout = v.findViewById(R.id.rl_assistant_dialogue_messages)
 
         init {
-            tvContent = v.findViewById(R.id.tv_assistant_dialogue_message)
-            rlParent = v.findViewById(R.id.rl_assistant_dialogue_messages)
             v.tag = this
         }
 

@@ -354,7 +354,7 @@ class OkHttpHttpClientSkeleton : HttpClientStub {
                 response.body().use({ responseBody ->
                     if (!response.isSuccessful) {
                         callback?.onFailure("Unexpected code: $response")
-                        throw IOException("Unexpected code " + response)
+                        throw IOException("Unexpected code: $response ")
                     }
                     callback?.onSuccess(responseBody?.string())
                 }) // End of response.body().use
