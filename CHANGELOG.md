@@ -61,7 +61,7 @@
 
 * Android
 	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
-	* refactor elements (settings, action buttons and cards, tabs)
+	* refactor elements (settings, action buttons and cards, tabs, tap targets)
 	* [ON GOING] add new features (draw star / circle / spiral / square / cross / triangle / random pattern, n taps, n swipes)
 	* [ON GOING] clean up sources
 	* [ON GOING] refactor ACRA pop-up
