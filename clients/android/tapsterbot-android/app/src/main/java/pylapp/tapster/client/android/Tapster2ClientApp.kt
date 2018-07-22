@@ -25,8 +25,8 @@ import android.app.Application
 import android.content.Context
 import org.acra.ACRA
 import org.acra.annotation.AcraCore
-import org.acra.annotation.AcraDialog
 import org.acra.annotation.AcraMailSender
+import org.acra.annotation.AcraNotification
 import org.acra.data.StringFormat
 import pylapp.tapster.client.android.tools.FeaturesFactory
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
@@ -40,7 +40,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  * @author pylapp
  * @since 13/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 @AcraCore(
@@ -49,14 +49,13 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
 )
 
 @AcraMailSender(
-        mailTo = "" // TODO Fill this value
+        mailTo = "pylapp.pylapp+test@gmail.com" // TODO Fill this value
 )
 
-@AcraDialog(
-        resText = R.string.acra_crash_title,
-        resCommentPrompt = R.string.acra_crash_description,
-        resTheme = R.style.CrashDialog
-)
+@AcraNotification(
+        resText = R.string.acra_crash_description,
+        resTitle = R.string.acra_crash_title,
+        resChannelName = R.string.acra_notification_channel)
 
 class Tapster2ClientApp : Application() {
 
@@ -67,8 +66,7 @@ class Tapster2ClientApp : Application() {
         super.attachBaseContext(base)
 
         // The following line triggers the initialization of the feature managing crashes of the app
-        if (isCrashReportManagementEnabled()
-                && !ACRA.isACRASenderServiceProcess()) {
+        if (isCrashReportManagementEnabled()) {
             ACRA.init(this)
         }
     }

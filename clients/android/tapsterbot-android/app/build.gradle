@@ -191,8 +191,8 @@ dependencies {
 
     // ACRA: to report crashes
     // https://github.com/ACRA/acra
-    implementation "ch.acra:acra-mail:$acra_version" // Email feature
-    implementation "ch.acra:acra-dialog:$acra_version" // Dialog feature
+    implementation "ch.acra:acra-mail:$acra_version" // Email feature (get reports)
+    implementation "ch.acra:acra-notification:$acra_version" // Notification feature (user interface)
 
     // OkHttp: to send HTTP requests
     // https://github.com/square/okhttp

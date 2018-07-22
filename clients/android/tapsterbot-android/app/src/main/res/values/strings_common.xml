@@ -90,6 +90,7 @@
     <string name="state_command_success">Success</string>
     <string name="state_command_failure">Failure</string>
     <string name="state_command_failure_intent">Unknown intent</string>
+    <string name="acra_notification_channel">Crash report (using ACRA)</string>
 
 </resources>
 

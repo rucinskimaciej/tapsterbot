@@ -27,9 +27,7 @@
     <!-- **************** -->
     <string name="acra_crash_title">Oups&#8230;</string>
     <string name="acra_crash_description">
-        Il semble que l\'application a planté. Souhaitez-vous envoyez un rapport de plantage
-        aux dévleoppeurs pour les aider à régler ce problème ? Vous pouvez ajouter des détails
-        et commentaires ici :
+        L\'application a planté. Souhaitez-vous envoyez un rapport détaillé pour aider à corriger le problème ?
     </string>
 
 </resources>

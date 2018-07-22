@@ -27,8 +27,7 @@
     <!-- **************** -->
     <string name="acra_crash_title">Oh no :-(</string>
     <string name="acra_crash_description">
-        It seems the application crashed. Would you like to send a report to the developers to help
-        to fix this issue? You can add extra information and comments here:
+        The app has crashed. Would you like to send a concise report so as to help to fix this problem?
     </string>
 
 </resources>
