@@ -22,29 +22,16 @@
 
 package pylapp.tapster.client.android.ui.mainscreen;
 
-import android.Manifest;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.ramotion.foldingcell.FoldingCell;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import pylapp.tapster.client.android.R;
-import pylapp.tapster.client.android.networks.HttpClientStub;
-import pylapp.tapster.client.android.tools.Config;
-import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder;
 
 /**
  * Fragment containing commands related to robot draws
