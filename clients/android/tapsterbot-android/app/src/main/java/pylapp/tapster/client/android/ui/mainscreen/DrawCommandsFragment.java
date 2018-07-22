@@ -116,6 +116,21 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         });
 
+        // The cell for the draw circle feature
+        final FoldingCell fcCommandDrawCircle = getActivity().findViewById(R.id.fc_command_drawcircle);
+
+        fcCommandDrawCircle.setOnClickListener(v -> {
+
+            fcCommandDrawCircle.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawCircle.findViewById(R.id.bt_command_action_drawcircle);
+            processButton.setOnClickListener(v2 -> {
+                // TODO Draw star
+            });
+
+        });
+
     }
 
 }

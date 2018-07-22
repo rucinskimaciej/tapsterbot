@@ -88,8 +88,14 @@
 
     <string name="command_title_drawstar_short">Etoile</string>
     <string name="command_title_drawstar_long">Dessine une étoile.</string>
-    <string name="command_button_title_drawstar">Exécuter</string>
+    <string name="command_button_title_drawstar">Dessiner</string>
     <string name="content_description_command_button_drawstar">Envoie une requête au robot pour lui faire dessiner une étoile.</string>
+
+    <string name="command_title_drawcircle_short">Cercle</string>
+    <string name="command_title_drawcircle_long">Dessine un cercle avec une précision et un rayon.</string>
+    <string name="command_button_title_drawcircle">Dessiner</string>
+    <string name="content_description_command_button_drawcircle">Envoie une requête au robot pour lui faire dessiner un cercle.</string>
+    <string name="hint_drawcircle">precision rayon</string>
 
     <string name="command_bad_parameters">Paramètres incorrects</string>
 

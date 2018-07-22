@@ -91,6 +91,12 @@
     <string name="command_button_title_drawstar">Draw</string>
     <string name="content_description_command_button_drawstar">Send a command to the robot to make it draw a star</string>
 
+    <string name="command_title_drawcircle_short">Circle</string>
+    <string name="command_title_drawcircle_long">Draws a circle with a precision and a radius</string>
+    <string name="command_button_title_drawcircle">Draw</string>
+    <string name="content_description_command_button_drawcircle">Send a command to the robot to make it draw a circler</string>
+    <string name="hint_drawcircle">precision radius</string>
+
     <string name="command_bad_parameters">Bad parameters</string>
 
 </resources>

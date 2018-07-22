@@ -25,7 +25,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cv_command_drawstar"
+    android:id="@+id/cv_command_drawcircle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginRight="16dp"
@@ -33,7 +33,7 @@
     android:layout_marginBottom="8dp"
     card_view:cardPreventCornerOverlap="true"
     card_view:cardUseCompatPadding="true"
-    card_view:cardBackgroundColor="@color/screenCommandsDrawStar"
+    card_view:cardBackgroundColor="@color/screenCommandsDrawCircle"
     card_view:cardCornerRadius="@dimen/card_radius"
     card_view:cardElevation="@dimen/card_elevation">
 
@@ -42,10 +42,10 @@
     <com.ramotion.foldingcell.FoldingCell
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/fc_command_drawstar"
+        android:id="@+id/fc_command_drawcircle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/screenCommandsDrawStar"
+        android:background="@color/screenCommandsDrawCircle"
         android:clipChildren="false"
         android:clipToPadding="false"
         folding-cell:animationDuration="1000"
@@ -63,22 +63,32 @@
             tools:ignore="DuplicateIncludedIds">
 
             <TextView
-                android:id="@+id/tv_drawstar"
+                android:id="@+id/tv_drawcircle"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/command_title_drawstar_long"
+                android:text="@string/command_title_drawcircle_long"
                 android:textColor="@color/screenCommandsTextColor"/>
 
-            <Button
-                android:id="@+id/bt_command_action_drawstar"
+            <EditText
+                android:id="@+id/et_params_drawcircle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/command_button_title_drawstar"
-                android:contentDescription="@string/content_description_command_button_drawstar"
+                android:gravity="center"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:hint="@string/hint_drawcircle"/>
+
+            <Button
+                android:id="@+id/bt_command_action_drawcircle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/command_button_title_drawcircle"
+                android:contentDescription="@string/content_description_command_button_drawcircle"
                 tools:ignore="DuplicateIncludedIds" />
 
         </LinearLayout> <!-- End of the unfolded cell -->
@@ -92,7 +102,7 @@
             tools:ignore="DuplicateIncludedIds">
 
             <TextView
-                android:id="@+id/tv_folded_drawstar"
+                android:id="@+id/tv_folded_drawcircle"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textSize="16sp"
@@ -100,7 +110,7 @@
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/command_title_drawstar_short"
+                android:text="@string/command_title_drawcircle_short"
                 android:textColor="@color/screenCommandsTextColor"/>
 
         </LinearLayout>

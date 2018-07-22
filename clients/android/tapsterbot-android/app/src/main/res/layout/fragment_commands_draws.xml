@@ -40,6 +40,9 @@
             <!-- The draw star command -->
             <include layout="@layout/card_command_drawstar"/>
 
+            <!-- The draw circle command -->
+            <include layout="@layout/card_command_drawcircle"/>
+
         </LinearLayout>
 
     </ScrollView>
