@@ -185,6 +185,21 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         });
 
+
+        // The cell for the draw random feature
+        final FoldingCell fcCommandDrawRandom = getActivity().findViewById(R.id.fc_command_drawrandom);
+        fcCommandDrawRandom.setOnClickListener(v -> {
+
+            fcCommandDrawRandom.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawRandom.findViewById(R.id.bt_command_action_drawrandom);
+            processButton.setOnClickListener(v2 -> {
+                // TODO
+            });
+
+        });
+
     }
 
 }

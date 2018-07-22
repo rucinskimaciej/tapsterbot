@@ -121,6 +121,12 @@
     <string name="content_description_command_button_drawtriangle">Envoie une requête au robot pour lui faire dessiner un triangle.</string>
     <string name="hint_drawtriangle">x1 y1 x2 y2 x3 y3</string>
 
+    <string name="command_title_drawrandom_short">Motif aléatoire</string>
+    <string name="command_title_drawrandom_long">Dessine un motif aléatoire avec un nombre donné points principaux et une zone.</string>
+    <string name="command_button_title_drawrandom">Dessiner</string>
+    <string name="content_description_command_button_drawrandom">Envoie une requête au robot pour lui faire dessiner un motif aléatoire.</string>
+    <string name="hint_drawrandom">n longueurMinimale hauteurMinimale longueurMaximale hauteurMaximale</string>
+
     <string name="command_bad_parameters">Paramètres incorrects</string>
 
 </resources>

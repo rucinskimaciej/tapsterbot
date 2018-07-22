@@ -55,6 +55,9 @@
             <!-- The draw triangle command -->
             <include layout="@layout/card_command_drawtriangle"/>
 
+            <!-- The draw random pattern command -->
+            <include layout="@layout/card_command_drawrandom"/>
+
         </LinearLayout>
 
     </ScrollView>
