@@ -61,9 +61,10 @@
 
 * Android
 	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
-	* refactor elements (settings, ...)
-	* add new features [on going]
-	* clean up sources [on going]
+	* refactor elements (settings, action buttons and cards, tabs)
+	* [ON GOING] add new features (draw star / circle / spiral / square / cross / triangle / random pattern, n taps, n swipes)
+	* [ON GOING] clean up sources
+	* [ON GOING] refactor ACRA pop-up
 
 * Documentation
 	* more details in CURL samples
@@ -76,7 +77,6 @@
 ## TODO ;-)
 
 * Add new capabilities to Snips client (in english)
-* Bring Material Theming and new features to Android apps (draw star, circle, spiral, square, cross, triangle, random pattern, stress nputs)
 * Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
 * Update the wiki with more details, screen shots, command lines, ...
 * And maybe cool keynotes (SpeakerDeck) and articles (Medium) ;-)
