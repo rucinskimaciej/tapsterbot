@@ -43,7 +43,7 @@ class LicensesDisplayerSkeleton: LicensesDisplayerStub {
 
         // Assuming the developer of this feature is not a jackass and has written the same
         // amount of entries in each array
-        for (i in 0..5) {
+        for (i in 0..12) {
             val licence: License = when (licenses[i]) {
                 "Apache 2.0" -> ApacheSoftwareLicense20()
                 "MIT" -> MITLicense()
