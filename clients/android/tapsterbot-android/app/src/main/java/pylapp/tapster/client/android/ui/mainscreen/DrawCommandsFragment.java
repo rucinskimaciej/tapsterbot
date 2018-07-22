@@ -143,6 +143,20 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         });
 
+        // The cell for the draw square feature
+        final FoldingCell fcCommandDrawSquare = getActivity().findViewById(R.id.fc_command_drawsquare);
+        fcCommandDrawSquare.setOnClickListener(v -> {
+
+            fcCommandDrawSquare.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawSquare.findViewById(R.id.bt_command_action_drawsquare);
+            processButton.setOnClickListener(v2 -> {
+                // TODO
+            });
+
+        });
+
     }
 
 }

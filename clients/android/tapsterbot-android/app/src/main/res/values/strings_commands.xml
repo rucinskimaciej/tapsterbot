@@ -103,6 +103,11 @@
     <string name="content_description_command_button_drawspiral">Send a command to the robot to make it draw a spiral</string>
     <string name="hint_drawspiral">x y rings radius</string>
 
+    <string name="command_title_drawsquare_short">Square</string>
+    <string name="command_title_drawsquare_long">Draws a square using a precision and a length for the sides</string>
+    <string name="command_button_title_drawsquare">Draw</string>
+    <string name="content_description_command_button_drawsquare">Send a command to the robot to make it draw a square</string>
+    <string name="hint_drawsquare">precision length</string>
 
     <string name="command_bad_parameters">Bad parameters</string>
 
