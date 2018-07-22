@@ -50,6 +50,12 @@
     <string name="content_description_command_button_swipe">Envoie une requête au robot pour faire un swipe.</string>
     <string name="hint_swipe">startX startY endX endY</string>
 
+    <string name="command_title_swipemany_short">Glisser plusieurs fois</string>
+    <string name="command_title_swipemany_long">Swipe d\'un point à un autre plusieurs fois en utilisant les coordonnées 2D du repère du téléphone.</string>
+    <string name="command_button_title_swipemany">Exécuter</string>
+    <string name="content_description_command_button_swipemany">Envoie une requête au robot pour faire plusieurs swipes.</string>
+    <string name="hint_swipemany">n startX startY endX endY</string>
+
     <string name="command_title_dance_short">Danser</string>
     <string name="command_title_dance_long">Fait danser le robot</string>
     <string name="command_button_title_dance">C\'est la fête !</string>

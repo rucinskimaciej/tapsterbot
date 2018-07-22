@@ -47,6 +47,10 @@
             <include layout="@layout/card_command_swipe"
                 tools:ignore="DuplicateIncludedIds" />
 
+            <!-- The n-swipe command -->
+            <include layout="@layout/card_command_nswipe"
+                tools:ignore="DuplicateIncludedIds" />
+
             <!-- The dance command -->
             <include layout="@layout/card_command_dance"
                 tools:ignore="DuplicateIncludedIds" />

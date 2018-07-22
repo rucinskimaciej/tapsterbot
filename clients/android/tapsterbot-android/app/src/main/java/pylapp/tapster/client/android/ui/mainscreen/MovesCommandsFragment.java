@@ -100,6 +100,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
         // The cell for the swipe feature
         initSwipeListener();
 
+        // The cell for the n-swipe feature
+        initSwipeManyListener();
+
         // The cell for the tap feature
         initTapListener();
 
@@ -281,6 +284,32 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
                         Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
+
+            }); // End of processButton.setOnClickListener
+
+        }); // End of  fcCommandSwipe.setOnClickListener
+
+    }
+
+
+    /**
+     * Initializes the listeners for widgets in the folding cell dedicated to n-swipe command
+     */
+    private void initSwipeManyListener() {
+
+        // Get the folding cell
+        final FoldingCell fcCommandSwipeMany = getActivity().findViewById(R.id.fc_command_swipemany);
+
+        // Listener to open / close the cell
+        fcCommandSwipeMany.setOnClickListener(v -> {
+
+            fcCommandSwipeMany.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandSwipeMany.findViewById(R.id.bt_command_action_swipemany);
+            processButton.setOnClickListener(v2 -> {
+
+               // TODO
 
             }); // End of processButton.setOnClickListener
 
