@@ -33,25 +33,25 @@
     <string name="content_description_command_button_getposition">Send a command to the robot to get its 3D position</string>
 
     <string name="command_title_setangles_short">Set angles of arms</string>
-    <string name="command_title_setangles_long">Set the angles of the arms of the robot, i.e. make its servomotors run to reach these angles.</string>
+    <string name="command_title_setangles_long">Set the angles of the arms of the robot, i.e. make its servomotors run to reach these angles. For example: 30 40 50</string>
     <string name="command_button_title_setangles">Process</string>
     <string name="content_description_command_button_setangles">Send a command to the robot to set the angles of the arms</string>
     <string name="hint_setangles">theta1 theta2 theta3</string>
 
     <string name="command_title_setposition_short">Set position 3D</string>
-    <string name="command_title_setposition_long">Set the position of the finger of the robot using 3D coordinates.</string>
+    <string name="command_title_setposition_long">Set the position of the finger of the robot using 3D coordinates. For example: 10 5 -150.</string>
     <string name="command_button_title_setposition">Process</string>
     <string name="content_description_command_button_setposition">Send a command to the robot to set its 3D position</string>
     <string name="hint_setposition">x y z</string>
 
     <string name="command_title_swipe_short">Swipe</string>
-    <string name="command_title_swipe_long">Swipe from a point to another point using device\'s 2D coordinates.</string>
+    <string name="command_title_swipe_long">Swipe from a point to another point using device\'s 2D coordinates. For example: 100 100 350 400.</string>
     <string name="command_button_title_swipe">Process</string>
     <string name="content_description_command_button_swipe">Send a command to the robot to make it swipe</string>
     <string name="hint_swipe">startX startY endX endY</string>
 
     <string name="command_title_swipemany_short">Swipe several times</string>
-    <string name="command_title_swipemany_long">Swipe from a point to another point, several times,  using device\'s 2D coordinates.</string>
+    <string name="command_title_swipemany_long">Swipe from a point to another point, several times,  using device\'s 2D coordinates. For example: 10 100 100 350 400.</string>
     <string name="command_button_title_swipemany">Process</string>
     <string name="content_description_command_button_swipemany">Send a command to the robot to make it swipe several times</string>
     <string name="hint_swipemany">n startX startY endX endY</string>
@@ -62,17 +62,17 @@
     <string name="content_description_command_button_dance">Send a command to the robot to make it dance</string>
 
     <string name="command_title_contactz_short">Get contact point</string>
-    <string name="command_title_contactz_long">Get the contact point, i.e. the Z value in the robot\'s 3D landmark where the finger of the robot touches the screen of the devices</string>
+    <string name="command_title_contactz_long">Get the contact point, i.e. the Z value in the robot\'s 3D landmark where the finger of the robot touches the screen of the devices.</string>
     <string name="command_button_title_contactz">Process</string>
     <string name="content_description_command_button_contactz">Send a command to the robot to get the contact point</string>
 
     <string name="command_title_getstatus_short">Get status</string>
-    <string name="command_title_getstatus_long">Get the status of the robot\'s server</string>
+    <string name="command_title_getstatus_long">Get the status of the robot\'s server.</string>
     <string name="command_button_title_getstatus">Process</string>
     <string name="content_description_command_button_getstatus">Send a command to the robot to get the status of the robot\'s server</string>
 
     <string name="command_title_getangles_short">Get angles of arms</string>
-    <string name="command_title_getangles_long">Get the angles of the arms of the robot</string>
+    <string name="command_title_getangles_long">Get the angles of the arms of the robot.</string>
     <string name="command_button_title_getangles">Process</string>
     <string name="content_description_command_button_getangles">Send a command to the robot to get the angles of the arms</string>
 
@@ -82,13 +82,13 @@
     <string name="content_description_command_button_stopdance">Send a command to the robot to make it stop dancing</string>
 
     <string name="command_title_tap_short">Tap</string>
-    <string name="command_title_tap_long">Tap to a point using device\'s 2D coordinates.</string>
+    <string name="command_title_tap_long">Tap to a point using device\'s 2D coordinates. For example: 350 400</string>
     <string name="command_button_title_tap">Process</string>
     <string name="content_description_command_button_tap">Send a command to the robot to make it tap to a point</string>
     <string name="hint_tap">x y </string>
 
     <string name="command_title_ntap_short">Tap several times</string>
-    <string name="command_title_ntap_long">Tap several times to a point using device\'s 2D coordinates.</string>
+    <string name="command_title_ntap_long">Tap several times to a point using device\'s 2D coordinates. For example: 10 350 400</string>
     <string name="command_button_title_ntap">Process</string>
     <string name="content_description_command_button_ntap">Send a command to the robot to make it tap to a point several times</string>
     <string name="hint_ntap">n x y </string>
@@ -104,37 +104,37 @@
     <string name="content_description_command_button_drawstar">Send a command to the robot to make it draw a star</string>
 
     <string name="command_title_drawcircle_short">Circle</string>
-    <string name="command_title_drawcircle_long">Draws a circle with a precision and a radius</string>
+    <string name="command_title_drawcircle_long">Draws a circle with a a center point and a radius. For example: 350 400 20</string>
     <string name="command_button_title_drawcircle">Draw</string>
     <string name="content_description_command_button_drawcircle">Send a command to the robot to make it draw a circle</string>
     <string name="hint_drawcircle">precision radius</string>
 
     <string name="command_title_drawspiral_short">Spiral</string>
-    <string name="command_title_drawspiral_long">Draws a spiral centered on a point, with a number of rings and a radius</string>
+    <string name="command_title_drawspiral_long">Draws a spiral centered on a point, with a number of rings and a radius. For example: 350 400 15 30</string>
     <string name="command_button_title_drawspiral">Draw</string>
     <string name="content_description_command_button_drawspiral">Send a command to the robot to make it draw a spiral</string>
     <string name="hint_drawspiral">x y rings radius</string>
 
     <string name="command_title_drawsquare_short">Square</string>
-    <string name="command_title_drawsquare_long">Draws a square using a precision and a length for the sides</string>
+    <string name="command_title_drawsquare_long">Draws a square using a precision and a length for the sides. For example: 2 30</string>
     <string name="command_button_title_drawsquare">Draw</string>
     <string name="content_description_command_button_drawsquare">Send a command to the robot to make it draw a square</string>
     <string name="hint_drawsquare">precision length</string>
 
     <string name="command_title_drawcross_short">Cross</string>
-    <string name="command_title_drawcross_long">Draws a cross using 4 points</string>
+    <string name="command_title_drawcross_long">Draws a cross using 4 points. For example: 100 100 400 400 100 400 400 100</string>
     <string name="command_button_title_drawcross">Draw</string>
     <string name="content_description_command_button_drawcross">Send a command to the robot to make it draw a cross</string>
     <string name="hint_drawcross">x1 y1 x2 y2 x3 y3 x4 y4</string>
 
     <string name="command_title_drawtriangle_short">Triangle</string>
-    <string name="command_title_drawtriangle_long">Draw a triangle using 3 points</string>
+    <string name="command_title_drawtriangle_long">Draw a triangle using 3 points: For example: 300 300 300 600 500 600</string>
     <string name="command_button_title_drawtriangle">Draw</string>
     <string name="content_description_command_button_drawtriangle">Send a command to the robot to make it draw a triangle</string>
     <string name="hint_drawtriangle">x1 y1 x2 y2 x3 y3</string>
 
     <string name="command_title_drawrandom_short">Random pattern</string>
-    <string name="command_title_drawrandom_long">Draw a random pattern in a defined area with a number of main points</string>
+    <string name="command_title_drawrandom_long">Draw a random pattern in a defined area with a number of main points. For example: 10</string>
     <string name="command_button_title_drawrandom">Draw</string>
     <string name="content_description_command_button_drawrandom">Send a command to the robot to make it draw a random pattern</string>
     <string name="hint_drawrandom">n minimumWidth minimumHeight maximumWidth maximumHeight</string>
