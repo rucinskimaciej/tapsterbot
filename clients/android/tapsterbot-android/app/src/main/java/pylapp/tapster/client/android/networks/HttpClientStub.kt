@@ -258,6 +258,21 @@ interface HttpClientStub {
     @Throws(IOException::class)
     fun commandDrawCross(x1: Int, y1: Int, x2: Int, y2: Int, x3: Int, y3: Int, x4: Int, y4: Int, callback: HttpClientCallback?): Any?
 
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw triangle" command.
+     *
+     * @param x1 - The X value of the 1st point
+     * @param y1 - The Y value of the 1st point
+     * @param x2 - The X value of the 2nd point
+     * @param y2 - The Y value of the 2nd point
+     * @param x3 - The X value of the 3rd point
+     * @param y3 - The Y value of the 3rd point
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandDrawTriangle(x1: Int, y1: Int, x2: Int, y2: Int, x3: Int, y3: Int, callback: HttpClientCallback?): Any?
 
     /* *************** *
      * INNER INTERFACE *

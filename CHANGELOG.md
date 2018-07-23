@@ -67,7 +67,8 @@
 	* draw a spiral
 	* draw a square
 	* draw a cross
-	* [ON GOING] add new features (triangle / random pattern, n taps, n swipes)
+	* draw a triangle
+	* [ON GOING] add new features (random pattern, n taps, n swipes)
 	* [ON GOING] clean up sources
 	* [ON GOING] display of licenses in full flavor
 	* [ON GOING] update of Snips assistant

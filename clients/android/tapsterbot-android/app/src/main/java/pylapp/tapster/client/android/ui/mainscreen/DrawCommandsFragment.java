@@ -90,39 +90,7 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
         initDrawSpiralListener();
         initDrawSquareListener();
         initDrawCrossListener();
-        /*
-
-        // The cell for the draw triangle feature
-        final FoldingCell fcCommandDrawTriangle = getActivity().findViewById(R.id.fc_command_drawtriangle);
-        fcCommandDrawTriangle.setOnClickListener(v -> {
-
-            fcCommandDrawTriangle.toggle(false);
-
-            // The action button
-            Button processButton = fcCommandDrawTriangle.findViewById(R.id.bt_command_action_drawtriangle);
-            processButton.setOnClickListener(v2 -> {
-                // TODO
-            });
-
-        });
-
-
-        // The cell for the draw random feature
-        final FoldingCell fcCommandDrawRandom = getActivity().findViewById(R.id.fc_command_drawrandom);
-        fcCommandDrawRandom.setOnClickListener(v -> {
-
-            fcCommandDrawRandom.toggle(false);
-
-            // The action button
-            Button processButton = fcCommandDrawRandom.findViewById(R.id.bt_command_action_drawrandom);
-            processButton.setOnClickListener(v2 -> {
-                // TODO
-            });
-
-        });
-
-*/
-
+        initDrawTriangleListener();
     }
 
 
@@ -429,6 +397,79 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
                                     Integer.parseInt(params[5]),
                                     Integer.parseInt(params[6]),
                                     Integer.parseInt(params[7]),
+                                    new HttpClientStub.HttpClientCallback() {
+                                        @Override
+                                        public void onSuccess(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+
+                                        @Override
+                                        public void onFailure(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+                                    }
+                            );
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+                } // End of else
+
+            }); // End of  processButton.setOnClickListener
+
+        }); // End of fcCommandDrawSquare.setOnClickListener
+
+    }
+
+    /**
+     * Initializes the listeners on widgets related to draw triangle command
+     */
+    private void initDrawTriangleListener(){
+
+        // The cell for the draw square feature
+        final FoldingCell fcCommandDrawTriangle = getActivity().findViewById(R.id.fc_command_drawtriangle);
+        fcCommandDrawTriangle.setOnClickListener(v -> {
+
+            fcCommandDrawTriangle.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawTriangle.findViewById(R.id.bt_command_action_drawtriangle);
+            processButton.setOnClickListener(v2 -> {
+
+                // Get parameters
+                EditText textField = fcCommandDrawTriangle.findViewById(R.id.et_params_drawtriangle);
+
+                // Parse and check parameters
+                String content = textField.getText().toString();
+                if (!content.matches(Config.REGEX_COMMAND_DRAW_TRIANGLE)) {
+                    Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
+                            Toast.LENGTH_SHORT).show();
+
+                    // Send request
+                } else {
+
+                    String[] params = content.split(Config.REGEX_PARAMETERS_SEPARATOR);
+
+                    try {
+                        // Update the HTTP client, and send the request if permission is granted
+                        updateHttpClient();
+                        if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                                Manifest.permission.INTERNET)) {
+                            Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                        } else {
+                            mHttpClient.commandDrawTriangle(
+                                    Integer.parseInt(params[0]),
+                                    Integer.parseInt(params[1]),
+                                    Integer.parseInt(params[2]),
+                                    Integer.parseInt(params[3]),
+                                    Integer.parseInt(params[4]),
+                                    Integer.parseInt(params[5]),
                                     new HttpClientStub.HttpClientCallback() {
                                         @Override
                                         public void onSuccess(@Nullable String message) {
