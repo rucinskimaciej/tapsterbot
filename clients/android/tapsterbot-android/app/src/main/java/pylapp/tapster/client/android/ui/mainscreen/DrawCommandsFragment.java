@@ -88,6 +88,7 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
         initDrawStarListener();
         initDrawCircleListener();
         initDrawSpiralListener();
+        initDrawSquareListener();
         /*
 
 
@@ -343,6 +344,74 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
     }
 
+    /**
+     * Initializes the listeners on widgets related to draw square command
+     */
+    private void initDrawSquareListener(){
+
+        // The cell for the draw square feature
+        final FoldingCell fcCommandDrawSquare = getActivity().findViewById(R.id.fc_command_drawsquare);
+        fcCommandDrawSquare.setOnClickListener(v -> {
+
+            fcCommandDrawSquare.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawSquare.findViewById(R.id.bt_command_action_drawsquare);
+            processButton.setOnClickListener(v2 -> {
+
+                // Get parameters
+                EditText textField = fcCommandDrawSquare.findViewById(R.id.et_params_drawsquare);
+
+                // Parse and check parameters
+                String content = textField.getText().toString();
+                if (!content.matches(Config.REGEX_COMMAND_DRAW_SQUARE)) {
+                    Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
+                            Toast.LENGTH_SHORT).show();
+
+                    // Send request
+                } else {
+
+                    String[] params = content.split(Config.REGEX_PARAMETERS_SEPARATOR);
+
+                    try {
+                        // Update the HTTP client, and send the request if permission is granted
+                        updateHttpClient();
+                        if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                                Manifest.permission.INTERNET)) {
+                            Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                        } else {
+                            mHttpClient.commandDrawSquare(
+                                    Integer.parseInt(params[0]),
+                                    Integer.parseInt(params[1]),
+                                    new HttpClientStub.HttpClientCallback() {
+                                        @Override
+                                        public void onSuccess(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+
+                                        @Override
+                                        public void onFailure(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+                                    }
+                            );
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+                } // End of else
+
+            }); // End of  processButton.setOnClickListener
+
+        }); // End of fcCommandDrawSquare.setOnClickListener
+
+    }
 
 }
 

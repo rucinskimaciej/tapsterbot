@@ -326,6 +326,23 @@ class OkHttpHttpClientSkeleton : HttpClientStub {
         return null
     }
 
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw square" command.
+     *
+     * @param n - The precision of the draw, i.e. draw each n points
+     * @param length - The length of the sides of the square
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    override fun commandDrawSquare(n: Int, length: Int, callback: HttpClientStub.HttpClientCallback?): Any? {
+        val url = buildBaseUrl() + Config.ROBOT_URL_PATH_DRAW_SQUARE
+        val json = "{\"n\": \"$n\", \"length\": \"$length\"}"
+        sendPostCommand(url, json, callback)
+        return null
+    }
+
 
     /* ************* *
      * OTHER METHODS *

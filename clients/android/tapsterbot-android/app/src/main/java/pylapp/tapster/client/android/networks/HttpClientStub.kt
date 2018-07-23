@@ -228,6 +228,18 @@ interface HttpClientStub {
     @Throws(IOException::class)
     fun commandDrawSpiral(x: Int, y: Int, n: Int, r: Int, callback: HttpClientCallback?): Any?
 
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw square" command.
+     *
+     * @param n - The precision of the draw, i.e. draw each n points
+     * @param length - The length of the sides of the square
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandDrawSquare(n: Int, length: Int, callback: HttpClientCallback?): Any?
+
 
     /* *************** *
      * INNER INTERFACE *

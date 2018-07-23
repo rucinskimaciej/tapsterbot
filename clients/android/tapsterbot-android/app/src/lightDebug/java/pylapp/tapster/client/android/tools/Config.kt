@@ -161,6 +161,11 @@ class Config {
          */
         const val ROBOT_URL_PATH_DRAW_CROSS = "/drawCross"
 
+        /**
+         * The path for draw triangle command
+         */
+        const val ROBOT_URL_PATH_DRAW_TRIANGLE = "/drawTriangle"
+
         /* **** *
          * Misc *
          * **** */
@@ -194,6 +199,21 @@ class Config {
          * The regular expression to use to check parameters of the draw spiral command
          */
         const val REGEX_COMMAND_DRAW_SPIRAL= "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw square command
+         */
+        const val REGEX_COMMAND_DRAW_SQUARE = "\\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw cross command
+         */
+        const val REGEX_COMMAND_DRAW_CROSS = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} "
+
+        /**
+         * The regular expression to use to check parameters of the draw triangle command
+         */
+        const val REGEX_COMMAND_DRAW_TRIANGLE = "\\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
          * The regular expression to use to check parameters of the set position command

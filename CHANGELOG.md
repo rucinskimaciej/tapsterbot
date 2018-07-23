@@ -62,7 +62,11 @@
 * Android
 	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
 	* refactor elements (settings, action buttons and cards, tabs, tap targets, crash reports)
-	* [ON GOING] add new features (draw star / circle / spiral / square / cross / triangle / random pattern, n taps, n swipes)
+	* draw a circle
+	* draw a star
+	* draw a spiral
+	* draw a square
+	* [ON GOING] add new features (cross / triangle / random pattern, n taps, n swipes)
 	* [ON GOING] clean up sources
 	* [ON GOING] display of licenses in full flavor
 	* [ON GOING] update of Snips assistant
