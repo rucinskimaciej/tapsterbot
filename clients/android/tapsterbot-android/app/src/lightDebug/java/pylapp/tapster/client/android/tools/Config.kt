@@ -146,6 +146,20 @@ class Config {
          */
         const val ROBOT_URL_PATH_DRAW_CIRCLE = "/drawCircle"
 
+        /**
+         * The path for draw spiral command
+         */
+        const val ROBOT_URL_PATH_DRAW_SPIRAL = "/drawSpiral"
+
+        /**
+         * The path for draw square command
+         */
+        const val ROBOT_URL_PATH_DRAW_SQUARE = "/drawSquare"
+
+        /**
+         * The path for draw cross command
+         */
+        const val ROBOT_URL_PATH_DRAW_CROSS = "/drawCross"
 
         /* **** *
          * Misc *
@@ -175,6 +189,11 @@ class Config {
          * The regular expression to use to check parameters of the draw circle command
          */
         const val REGEX_COMMAND_DRAW_CIRCLE = "\\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw spiral command
+         */
+        const val REGEX_COMMAND_DRAW_SPIRAL= "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
          * The regular expression to use to check parameters of the set position command
