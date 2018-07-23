@@ -139,7 +139,7 @@ class Config {
         /**
          * The path for n-swipe command
          */
-        const val ROBOT_URL_PATH_SWIPE_MANY = "/nTwipe"
+        const val ROBOT_URL_PATH_SWIPE_MANY = "/nSwipe"
 
         /**
          * The path for contact point command
@@ -180,6 +180,7 @@ class Config {
          * The path for draw random pattern command
          */
         const val ROBOT_URL_PATH_DRAW_RANDOM_PATTERN = "/drawRandomPattern"
+
 
         /* **** *
          * Misc *

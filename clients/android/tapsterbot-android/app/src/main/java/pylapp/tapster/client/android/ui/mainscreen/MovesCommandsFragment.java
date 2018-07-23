@@ -309,7 +309,50 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
             Button processButton = fcCommandSwipeMany.findViewById(R.id.bt_command_action_swipemany);
             processButton.setOnClickListener(v2 -> {
 
-               // TODO
+                // Get parameters
+                EditText textField = fcCommandSwipeMany.findViewById(R.id.et_params_swipemany);
+
+                // Parse and check parameters
+                String content = textField.getText().toString();
+                if (!content.matches(Config.REGEX_COMMAND_SWIPE_MANY)) {
+                    Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    String[] params = content.split(Config.REGEX_PARAMETERS_SEPARATOR);
+                    try {
+                        // Update the HTTP client, and send the request if permission is granted
+                        updateHttpClient();
+                        if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                                Manifest.permission.INTERNET)) {
+                            Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                        } else {
+                            mHttpClient.commandSwipeMany(
+                                    Integer.parseInt(params[0]),
+                                    Integer.parseInt(params[1]),
+                                    Integer.parseInt(params[2]),
+                                    Integer.parseInt(params[3]),
+                                    Integer.parseInt(params[4]),
+                                    new HttpClientStub.HttpClientCallback() {
+                                        @Override
+                                        public void onSuccess(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+
+                                        @Override
+                                        public void onFailure(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+                                    });
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
 
             }); // End of processButton.setOnClickListener
 
@@ -399,11 +442,52 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
             Button processButton = fcCommandManyTap.findViewById(R.id.bt_command_action_tapmany);
             processButton.setOnClickListener(v2 -> {
 
-                // TODO
+                // Get parameters
+                EditText textField = fcCommandManyTap.findViewById(R.id.et_params_tapmany);
+
+                // Parse and check parameters
+                String content = textField.getText().toString();
+                if (!content.matches(Config.REGEX_COMMAND_TAP_MANY)) {
+                    Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    String[] params = content.split(Config.REGEX_PARAMETERS_SEPARATOR);
+                    try {
+                        // Update the HTTP client, and send the request if permission is granted
+                        updateHttpClient();
+                        if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                                Manifest.permission.INTERNET)) {
+                            Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                        } else {
+                            mHttpClient.commandTapMany(
+                                    Integer.parseInt(params[0]),
+                                    Integer.parseInt(params[1]),
+                                    Integer.parseInt(params[2]),
+                                    new HttpClientStub.HttpClientCallback() {
+                                        @Override
+                                        public void onSuccess(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+
+                                        @Override
+                                        public void onFailure(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+                                    });
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
 
             }); // End of processButton.setOnClickListener
 
-        });
+        }); // End of fcCommandManyTap.setOnClickListener
 
     }
 

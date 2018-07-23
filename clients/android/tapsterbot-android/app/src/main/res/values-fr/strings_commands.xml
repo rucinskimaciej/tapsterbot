@@ -88,7 +88,7 @@
     <string name="hint_tap">x y </string>
 
     <string name="command_title_ntap_short">Taper plusieurs fois</string>
-    <string name="command_title_ntap_long">Tape plusieurs fois sur un point en 2D en utilisant le répère du téléphone. Par exmeple : 10 350 500</string>
+    <string name="command_title_ntap_long">Tape plusieurs fois sur un point en 2D en utilisant le répère du téléphone. Par exemple : 10 350 500</string>
     <string name="command_button_title_ntap">Exécuter</string>
     <string name="content_description_command_button_ntap">Envoie une requête au robot pour le faire taper sur un point plusieurs fois.</string>
     <string name="hint_ntap">n x y </string>

@@ -28,7 +28,7 @@ package pylapp.tapster.client.android.tools
  * @author pylapp
  * @since 08/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class Config {
 
@@ -147,38 +147,129 @@ class Config {
         const val ROBOT_URL_PATH_GET_POSITION = "/position"
 
         /**
-         * The path for commandTap command
+         * The path for tap command
          */
         const val ROBOT_URL_PATH_TAP = "/tap"
 
         /**
-         * The path for commandSwipe command
+         * The path for n-tap command
+         */
+        const val ROBOT_URL_PATH_TAP_MANY = "/nTap"
+
+        /**
+         * The path for swipe command
          */
         const val ROBOT_URL_PATH_SWIPE = "/swipe"
+
+        /**
+         * The path for n-swipe command
+         */
+        const val ROBOT_URL_PATH_SWIPE_MANY = "/nSwipe"
 
         /**
          * The path for contact point command
          */
         const val ROBOT_URL_PATH_CONTACT = "/contactZ"
 
+        /**
+         * The path for draw star command
+         */
+        const val ROBOT_URL_PATH_DRAW_STAR = "/drawStar"
+
+        /**
+         * The path for draw circle command
+         */
+        const val ROBOT_URL_PATH_DRAW_CIRCLE = "/drawCircle"
+
+        /**
+         * The path for draw spiral command
+         */
+        const val ROBOT_URL_PATH_DRAW_SPIRAL = "/drawSpiral"
+
+        /**
+         * The path for draw square command
+         */
+        const val ROBOT_URL_PATH_DRAW_SQUARE = "/drawSquare"
+
+        /**
+         * The path for draw cross command
+         */
+        const val ROBOT_URL_PATH_DRAW_CROSS = "/drawCross"
+
+        /**
+         * The path for draw triangle command
+         */
+        const val ROBOT_URL_PATH_DRAW_TRIANGLE = "/drawTriangle"
+
+        /**
+         * The path for draw random pattern command
+         */
+        const val ROBOT_URL_PATH_DRAW_RANDOM_PATTERN = "/drawRandomPattern"
+
+
         /* **** *
          * Misc *
          * **** */
 
         /**
-         * The regular expression to use to check if parameters are well formed
+         * The regular expression to use to check parameters of the tap command
          */
-        const val REGEX_COMMAND_PARAMETERS_2 = "\\d{1,9} \\d{1,9}"
+        const val REGEX_COMMAND_TAP = "\\d{0,9} \\d{0,9}"
 
         /**
-         * The regular expression to use to check if parameters are well formed
+         * The regular expression to use to check parameters of the n-tap command
          */
-        const val REGEX_COMMAND_PARAMETERS_3 = "\\d{1,9} \\d{1,9} -{0,1}\\d{1,9}"
+        const val REGEX_COMMAND_TAP_MANY = "\\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
-         * The regular expression to use to check if parameters are well formed
+         * The regular expression to use to check parameters of the swipe command
          */
-        const val REGEX_COMMAND_PARAMETERS_4 = "\\d{1,9} \\d{1,9} \\d{1,9} \\d{1,9}"
+        const val REGEX_COMMAND_SWIPE = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the n-swipe command
+         */
+        const val REGEX_COMMAND_SWIPE_MANY = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw circle command
+         */
+        const val REGEX_COMMAND_DRAW_CIRCLE = "\\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw spiral command
+         */
+        const val REGEX_COMMAND_DRAW_SPIRAL= "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw square command
+         */
+        const val REGEX_COMMAND_DRAW_SQUARE = "\\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw cross command
+         */
+        const val REGEX_COMMAND_DRAW_CROSS = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw triangle command
+         */
+        const val REGEX_COMMAND_DRAW_TRIANGLE = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw random pattern command
+         */
+        const val REGEX_COMMAND_DRAW_RANDOM = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the set position command
+         */
+        const val REGEX_COMMAND_SET_POSITION = "-{0,1}\\d{0,9} -{0,1}\\d{0,9} -{0,1}\\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the set angles command
+         */
+        const val REGEX_COMMAND_SET_ANGLES = "\\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
          * The separator to use to separate parameters

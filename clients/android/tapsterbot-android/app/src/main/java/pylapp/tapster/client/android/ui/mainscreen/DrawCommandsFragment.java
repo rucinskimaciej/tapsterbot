@@ -94,7 +94,6 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
         initDrawRandomPatternListener();
     }
 
-
     /**
      * Initializes the listeners on widgets related to draw star command
      */

@@ -69,10 +69,11 @@
 	* draw a cross
 	* draw a triangle
 	* draw a random pattern
-	* [ON GOING] add new features (n taps, n swipes)
+	* tap n times
+	* swipe n times
 	* [ON GOING] clean up sources
 	* [ON GOING] display of licenses in full flavor
-	* [ON GOING] update of Snips assistant
+	* [ON GOING] update of Snips assistant in full flavor
 
 * Documentation
 	* more details in CURL samples

@@ -137,7 +137,7 @@ class OkHttpHttpClientSkeleton : HttpClientStub {
      */
     @Throws(IOException::class)
     override fun commandTapMany(n: Int, x: Int, y: Int, callback: HttpClientStub.HttpClientCallback?): Any? {
-        val url = buildBaseUrl() + Config.ROBOT_URL_PATH_TAP
+        val url = buildBaseUrl() + Config.ROBOT_URL_PATH_TAP_MANY
         val json = "{\"n\": \"$n\", \"x\": \"$x\", \"y\": \"$y\"}"
         sendPostCommand(url, json, callback)
         return null
@@ -158,6 +158,27 @@ class OkHttpHttpClientSkeleton : HttpClientStub {
                               callback: HttpClientStub.HttpClientCallback?): Any? {
         val url = buildBaseUrl() + Config.ROBOT_URL_PATH_SWIPE
         val json = "{\"startX\": \"$startX\", \"startY\": \"$startY\", \"endX\": \"$endX\", \"endY\": \"$endY\"}"
+        sendPostCommand(url, json, callback)
+        return null
+    }
+
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "swipe from (startX,startY) to (endX,endY), n times" command.
+     *
+     * @param n - The number of swipes to made
+     * @param startX - The startX position
+     * @param startY - The startY position
+     * @param endX - The startY position
+     * @param endY - The startY position
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    override fun commandSwipeMany(n: Int, startX: Int, startY: Int, endX: Int, endY: Int,
+                                  callback: HttpClientStub.HttpClientCallback?): Any? {
+        val url = buildBaseUrl() + Config.ROBOT_URL_PATH_SWIPE_MANY
+        val json = "{\"n\": \"$n\", \"startX\": \"$startX\", \"startY\": \"$startY\", \"endX\": \"$endX\", \"endY\": \"$endY\"}"
         sendPostCommand(url, json, callback)
         return null
     }

@@ -94,7 +94,6 @@ interface HttpClientStub {
     @Throws(IOException::class)
     fun commandTapMany(n: Int, x: Int, y: Int, callback: HttpClientCallback?): Any?
 
-
     /**
      * Sends a command through HTTP and returns the result.
      * Here the command is a "swipe from (startX,startY) to (endX,endY)" command.
@@ -108,6 +107,21 @@ interface HttpClientStub {
      */
     @Throws(IOException::class)
     fun commandSwipe(startX: Int, startY: Int, endX: Int, endY: Int, callback: HttpClientCallback?): Any?
+
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "swipe from (startX,startY) to (endX,endY), n times" command.
+     *
+     * @param n - The number of swipes to made
+     * @param startX - The startX position
+     * @param startY - The startY position
+     * @param endX - The startY position
+     * @param endY - The startY position
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandSwipeMany(n: Int, startX: Int, startY: Int, endX: Int, endY: Int, callback: HttpClientCallback?): Any?
 
     /**
      * Sends a command through HTTP and returns the result.

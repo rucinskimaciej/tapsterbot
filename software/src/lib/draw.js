@@ -44,7 +44,7 @@ var calculated, spiralPts;
 
 var baseHeight, baseWidth, canvasHeight, canvasWidth, heightRatio, widthRatio, halfway;
 
-var DRAW_HEIGHT = -150;
+var DRAW_HEIGHT = -152;
 var currentPoint = {x: 0, y: 0, z: -140};
 var penHeight = DRAW_HEIGHT;
 
