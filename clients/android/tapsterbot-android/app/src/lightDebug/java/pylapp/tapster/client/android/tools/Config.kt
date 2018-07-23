@@ -122,14 +122,24 @@ class Config {
         const val ROBOT_URL_PATH_GET_POSITION = "/position"
 
         /**
-         * The path for commandTap command
+         * The path for tap command
          */
         const val ROBOT_URL_PATH_TAP = "/tap"
 
         /**
-         * The path for commandSwipe command
+         * The path for n-tap command
+         */
+        const val ROBOT_URL_PATH_TAP_MANY = "/nTap"
+
+        /**
+         * The path for swipe command
          */
         const val ROBOT_URL_PATH_SWIPE = "/swipe"
+
+        /**
+         * The path for n-swipe command
+         */
+        const val ROBOT_URL_PATH_SWIPE_MANY = "/nTwipe"
 
         /**
          * The path for contact point command
@@ -165,6 +175,11 @@ class Config {
          * The path for draw triangle command
          */
         const val ROBOT_URL_PATH_DRAW_TRIANGLE = "/drawTriangle"
+
+        /**
+         * The path for draw random pattern command
+         */
+        const val ROBOT_URL_PATH_DRAW_RANDOM_PATTERN = "/drawRandomPattern"
 
         /* **** *
          * Misc *
@@ -208,12 +223,17 @@ class Config {
         /**
          * The regular expression to use to check parameters of the draw cross command
          */
-        const val REGEX_COMMAND_DRAW_CROSS = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} "
+        const val REGEX_COMMAND_DRAW_CROSS = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
          * The regular expression to use to check parameters of the draw triangle command
          */
         const val REGEX_COMMAND_DRAW_TRIANGLE = "\\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the draw random pattern command
+         */
+        const val REGEX_COMMAND_DRAW_RANDOM = "\\d{0,9}"
 
         /**
          * The regular expression to use to check parameters of the set position command

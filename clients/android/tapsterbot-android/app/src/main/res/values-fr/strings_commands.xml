@@ -122,7 +122,7 @@
     <string name="hint_drawsquare">precision côté</string>
 
     <string name="command_title_drawcross_short">Croix</string>
-    <string name="command_title_drawcross_long">Dessine une croix en utilisant 4 points. Par exemple : 100 100 400 400 100 400 400 100</string>
+    <string name="command_title_drawcross_long">Dessine une croix en utilisant 4 points et en dessinant avec eux 2 traits. Par exemple : 100 100 400 100 400 400 100 400</string>
     <string name="command_button_title_drawcross">Dessiner</string>
     <string name="content_description_command_button_drawcross">Envoie une requête au robot pour lui faire dessiner une croix.</string>
     <string name="hint_drawcross">x1 y1 x2 y2 x3 y3 x4 y4</string>
