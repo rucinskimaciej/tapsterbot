@@ -25,15 +25,16 @@ import ai.snips.hermes.IntentMessage
 import ai.snips.hermes.SessionEndedMessage
 import ai.snips.hermes.SessionQueuedMessage
 import ai.snips.hermes.SessionStartedMessage
-import ai.snips.megazord.Megazord
-import ai.snips.queries.ontology.Slot
-import ai.snips.queries.ontology.SlotValue
-import android.app.Activity
+import ai.snips.nlu.ontology.Slot
+import ai.snips.nlu.ontology.SlotValue
+import ai.snips.platform.SnipsPlatformClient
 
+import android.app.Activity
 import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
 import android.os.Environment
+import android.os.Process
 import android.preference.PreferenceManager
 import android.text.Html
 import android.util.Log
@@ -55,12 +56,14 @@ import java.io.File
  * so as to deal with assistants.
  * Will use the API of Snips.ai.
  *
- * Source code picked from https://github.com/snipsco/snips-platform-android-demo
+ * More details at https://snips.ai/
+ *
+ * Warning: Wa have to refactor this class to optimize it, Snips initialization is heavy, and we may face to memory leaks problems!
  *
  * @author pylapp
  * @since 02/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 class SnipsAssistantSkeleton : AssistantStub {
 
@@ -89,16 +92,16 @@ class SnipsAssistantSkeleton : AssistantStub {
          */
         private const val ENCODING = AudioFormat.ENCODING_PCM_16BIT
 
-        /**
-         * The Snips platform codename for Android port is Megazord
-         */
-        private var snips: Megazord? = null
-
         /*
          * The log tag
          */
         private val LOG_TAG = SnipsAssistantSkeleton::class.qualifiedName
                 ?: "SnipsAssistantSkeleton"
+
+        /**
+         * The Snips client, might be placed in another class in the near future because of memory leaks issues
+         */
+        var snipsClient: SnipsPlatformClient? = null //FIXME !
 
     }
 
@@ -117,6 +120,11 @@ class SnipsAssistantSkeleton : AssistantStub {
      */
     private var mNotifier: UiNotifierStub? = null
 
+    /**
+     *
+     */
+    private var mContinueStreaming: Boolean = true
+
 
     /* ************************ *
      * METHODS OF AssistantStub *
@@ -129,7 +137,9 @@ class SnipsAssistantSkeleton : AssistantStub {
      */
     override fun startAssistant(context: Activity, callback: (() -> Unit?)?) {
 
-        if (snips != null) return
+        mContinueStreaming = true
+
+        if (snipsClient != null) return
 
         val featureFactory = FeaturesFactory()
         mNotifier = featureFactory.buildUiNotifier(context)
@@ -137,32 +147,30 @@ class SnipsAssistantSkeleton : AssistantStub {
         properties.loadProperties(context)
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-        // A directory where the assistant models was unzipped.
-        // It should contain the folders ASR dialogue hotword and NLU
-        snips = buildInstance(context)
-        if (snips == null) {
+        snipsClient = buildAssistant(context)
+        if (snipsClient == null) {
             Log.e(LOG_TAG, "Snips is null, a problem occurred with assistant's assets!")
             mNotifier?.toastMessage(context, AssistantMessage.Type.ALERT,
                     context.getString(R.string.assistant_error_no_assets_found) ?: "(x_x) *dead*")
             return
         }
 
-        snips!!.onHotwordDetectedListener = fun() {
+        snipsClient!!.onHotwordDetectedListener = fun() {
             Log.d(LOG_TAG, "An hotword was detected !")
             mNotifier?.displayMessage(context, AssistantMessage.Type.INFORMATION,
                     context.getString(R.string.assistant_hotword_detected) ?: ":-)")
             return
         }
 
-        snips!!.onIntentDetectedListener = fun(intentMessage: IntentMessage) {
+        snipsClient!!.onIntentDetectedListener = fun(intentMessage: IntentMessage) {
             Log.d(LOG_TAG, "received an intent: $intentMessage" )
             handleDetectedIntent(context, intentMessage)
             mNotifier?.displayMessage(context, AssistantMessage.Type.DEBUG, intentMessage.toString())
-            snips!!.endSession(intentMessage.sessionId, null)
+            snipsClient!!.endSession(intentMessage.sessionId, null)
             return
         }
 
-        snips!!.onListeningStateChangedListener = fun(isListening: Boolean?) {
+        snipsClient!!.onListeningStateChangedListener = fun(isListening: Boolean?) {
             Log.d(LOG_TAG, "Asr listening state: " + isListening!!)
             val message: String = when (isListening) {
                 true -> context.getString(R.string.assistant_listening) ?: "(^_^)"
@@ -172,7 +180,7 @@ class SnipsAssistantSkeleton : AssistantStub {
             return
         }
 
-        snips!!.onSessionStartedListener = fun(sessionStartedMessage: SessionStartedMessage) {
+        snipsClient!!.onSessionStartedListener = fun(sessionStartedMessage: SessionStartedMessage) {
             Log.d(LOG_TAG, "Dialogue session started: $sessionStartedMessage")
             if (properties.readProperty(PropertiesReaderStub.ENABLE_VIBRATIONS)!!.toBoolean()
                     && preferences.getBoolean(Config.PREFERENCES_ASSISTANT_VIBRATIONS, true)) {
@@ -182,12 +190,12 @@ class SnipsAssistantSkeleton : AssistantStub {
             return
         }
 
-        snips!!.onSessionQueuedListener = fun(sessionQueuedMessage: SessionQueuedMessage) {
+        snipsClient!!.onSessionQueuedListener = fun(sessionQueuedMessage: SessionQueuedMessage) {
             Log.d(LOG_TAG, "Dialogue session queued: $sessionQueuedMessage")
             return
         }
 
-        snips!!.onSessionEndedListener = fun(sessionEndedMessage: SessionEndedMessage) {
+        snipsClient!!.onSessionEndedListener = fun(sessionEndedMessage: SessionEndedMessage) {
             Log.d(LOG_TAG, "Dialogue session ended: $sessionEndedMessage")
             if (properties.readProperty(PropertiesReaderStub.ENABLE_VIBRATIONS)!!.toBoolean()
                     && preferences.getBoolean(Config.PREFERENCES_ASSISTANT_VIBRATIONS, true)) {
@@ -198,22 +206,15 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         // This api is really for debugging purposes and you should not have features depending on its output
-        // If you need us to expose more APIs please do ask !
-        snips!!.onSnipsWatchListener = fun(s: String) {
+        snipsClient!!.onSnipsWatchListener = fun(s: String) {
             mNotifier?.displayMessage(context, AssistantMessage.Type.DEBUG, s)
             parseAndDisplayMessageIfSuitable(context, s)
             return
         }
 
-        // We enabled steaming in the builder, so we need to provide the platform an audio stream. If you don't want
-        // to manage the audio stream do no enable the option, and the snips platform will grab the mic by itself
-        object : Thread() {
-            override fun run() {
-                runStreaming()
-            }
-        }.start()
+        startStreaming()
 
-        snips!!.start() // no way to stop it yet, coming soon
+        snipsClient!!.connect(context)
 
         callback?.invoke()
 
@@ -224,9 +225,9 @@ class SnipsAssistantSkeleton : AssistantStub {
      * @param callback - Something to trigger when action is done, nullable
      */
     override fun stopAssistant(callback: (() -> Unit?)?) {
-        // TODO
         mNotifier?.cleanup()
-        snips?.close()
+        mContinueStreaming = false
+        snipsClient?.disconnect()
         callback?.invoke()
     }
 
@@ -235,9 +236,25 @@ class SnipsAssistantSkeleton : AssistantStub {
      * @param callback - Something to trigger when action is done, nullable
      */
     override fun startSession(callback: (() -> Unit?)?) {
-        if (snips == null) throw NullSnipsException("The Snips object has not been defined")
-        snips!!.startSession(null, null, false, null)
+        if (snipsClient == null) throw NullSnipsException("The Snips object has not been defined")
+        snipsClient!!.startSession(null, ArrayList(), false, null)
         callback?.invoke()
+    }
+
+    /**
+     * Make the assistant in frozen state, a pause
+     */
+    override fun pauseAssistant(callback: (() -> Unit?)?) {
+        mContinueStreaming = false
+        snipsClient?.pause()
+    }
+
+    /**
+     * Resume the assistant, end of the pause
+     */
+    override fun resumeAssistant(callback: (() -> Unit?)?) {
+        startStreaming()
+        snipsClient?.resume()
     }
 
 
@@ -251,9 +268,9 @@ class SnipsAssistantSkeleton : AssistantStub {
      * in the external storage of the device. If the assets are not found, returns null.
      *
      * @param context - The context to use to get preferences
-     * @return [Megazord]? - The Snips service, or null
+     * @return [SnipsPlatformClient]? - The Snips service, or null
      */
-    private fun buildInstance(context: Activity): Megazord? {
+    private fun buildAssistant(context: Activity): SnipsPlatformClient? {
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
         val pathToAssetsOfAssistant = preferences.getString(Config.PREFERENCES_ASSISTANT_ASSETS,
@@ -261,17 +278,37 @@ class SnipsAssistantSkeleton : AssistantStub {
         val assistantDir = File(Environment.getExternalStorageDirectory().toString(), pathToAssetsOfAssistant)
 
         return when (assistantDir.exists() && assistantDir.isDirectory) {
-            true -> Megazord.builder(assistantDir)
-                    .enableDialogue(true) // defaults to true
-                    .enableHotword(true) // defaults to true
-                    .enableSnipsWatchHtml(true) // defaults to false
-                    .enableLogs(true) // defaults to false
-                    .withHotwordSensitivity(0.5f) // defaults to 0.5
-                    .enableStreaming(true) // defaults to false
+            true -> SnipsPlatformClient.Builder(assistantDir)
+                    // Dialogue + ASR + NLU features
+                    .enableDialogue(true)
+                    // Hotword feature
+                    .enableHotword(true)
+                    // Add HTML coloration to Snips watch output
+                    .enableSnipsWatchHtml(true)
+                    // Enable platforms debug logs
+                    .enableLogs(true)
+                    // Hotword sensibility
+                    .withHotwordSensitivity(0.5f)
+                    // True: disable OpenSL integration and send our own sound to the platform
+                    .enableStreaming(true)
                     .build()
             else -> null
         }
 
+    }
+
+
+    /**
+     * Starts the streaming capture
+     */
+    private fun startStreaming(){
+        mContinueStreaming = true
+        object : Thread() {
+            override fun run() {
+                android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_URGENT_AUDIO)
+                runStreaming()
+            }
+        }.start()
     }
 
     /**
@@ -280,21 +317,21 @@ class SnipsAssistantSkeleton : AssistantStub {
     private fun runStreaming() {
 
         val minBufferSizeInBytes = AudioRecord.getMinBufferSize(FREQUENCY, CHANNEL, ENCODING)
-        Log.d(LOG_TAG, "minBufferSizeInBytes: $minBufferSizeInBytes")
 
         mRecorder = AudioRecord(MediaRecorder.AudioSource.MIC, FREQUENCY, CHANNEL,
                 ENCODING, minBufferSizeInBytes)
         mRecorder!!.startRecording()
 
         // In a non demo app, you want to have a way to stop this :)
-        while (true) {
+        while (mContinueStreaming) {
             val buffer = ShortArray(minBufferSizeInBytes / 2)
             mRecorder!!.read(buffer, 0, buffer.size)
-            if (snips != null) {
-                snips!!.sendAudioBuffer(buffer)
+            if (snipsClient != null) {
+                snipsClient!!.sendAudioBuffer(buffer)
             }
         }
 
+        mRecorder!!.stop()
     }
 
     /**

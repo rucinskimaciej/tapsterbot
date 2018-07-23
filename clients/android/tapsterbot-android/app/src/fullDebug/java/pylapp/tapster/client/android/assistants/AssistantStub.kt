@@ -30,7 +30,7 @@ import android.app.Activity
  * @author pylapp
  * @since 02/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 interface AssistantStub {
 
@@ -58,6 +58,15 @@ interface AssistantStub {
      */
     fun stopAssistant(callback: (() -> Unit?)? = null)
 
+    /**
+     * Make the assistant in frozen state, a pause
+     */
+    fun pauseAssistant(callback: (() -> Unit?)? = null)
+
+    /**
+     * Resume the assistant, end of the pause
+     */
+    fun resumeAssistant(callback: (() -> Unit?)? = null)
 
     /* ****************** *
      * INNER ENUMERATIONS *
@@ -115,6 +124,9 @@ interface AssistantStub {
          * Reset the robot to its default state
          */
         RESET("Reset"),
+
+        // TODO Add new commands
+
         /**
          * Unknown / not dealt intent
          */
