@@ -34,6 +34,7 @@ import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
 import android.os.Environment
+import android.os.Looper
 import android.os.Process
 import android.preference.PreferenceManager
 import android.text.Html
@@ -156,14 +157,14 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         snipsClient!!.onHotwordDetectedListener = fun() {
-            Log.d(LOG_TAG, "An hotword was detected !")
+            Log.i(LOG_TAG, "An hotword was detected !")
             mNotifier?.displayMessage(context, AssistantMessage.Type.INFORMATION,
                     context.getString(R.string.assistant_hotword_detected) ?: ":-)")
             return
         }
 
         snipsClient!!.onIntentDetectedListener = fun(intentMessage: IntentMessage) {
-            Log.d(LOG_TAG, "received an intent: $intentMessage" )
+            Log.i(LOG_TAG, "Received an intent: $intentMessage" )
             handleDetectedIntent(context, intentMessage)
             mNotifier?.displayMessage(context, AssistantMessage.Type.DEBUG, intentMessage.toString())
             snipsClient!!.endSession(intentMessage.sessionId, null)
@@ -171,7 +172,7 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         snipsClient!!.onListeningStateChangedListener = fun(isListening: Boolean?) {
-            Log.d(LOG_TAG, "Asr listening state: " + isListening!!)
+            Log.d(LOG_TAG, "ASR listening state: " + isListening!!)
             val message: String = when (isListening) {
                 true -> context.getString(R.string.assistant_listening) ?: "(^_^)"
                 false -> context.getString(R.string.assistant_hotword_detected) ?: "Sleeping"
@@ -205,6 +206,15 @@ class SnipsAssistantSkeleton : AssistantStub {
             return
         }
 
+        snipsClient!!.onPlatformReady = fun(){
+            Log.i(LOG_TAG, "The Snips platform is now ready")
+            startSession()
+        }
+
+        snipsClient!!.onPlatformError = fun(error: SnipsPlatformClient.SnipsPlatformError){
+            Log.e(LOG_TAG, "Error within the Snips platform: ${error.message}")
+        }
+
         // This api is really for debugging purposes and you should not have features depending on its output
         snipsClient!!.onSnipsWatchListener = fun(s: String) {
             mNotifier?.displayMessage(context, AssistantMessage.Type.DEBUG, s)
@@ -214,7 +224,7 @@ class SnipsAssistantSkeleton : AssistantStub {
 
         startStreaming()
 
-        snipsClient!!.connect(context)
+        snipsClient!!.connect(context.applicationContext)
 
         callback?.invoke()
 
@@ -276,6 +286,8 @@ class SnipsAssistantSkeleton : AssistantStub {
         val pathToAssetsOfAssistant = preferences.getString(Config.PREFERENCES_ASSISTANT_ASSETS,
                 context.resources?.getString(R.string.default_value_assistant_assets))
         val assistantDir = File(Environment.getExternalStorageDirectory().toString(), pathToAssetsOfAssistant)
+
+        Looper.prepare()
 
         return when (assistantDir.exists() && assistantDir.isDirectory) {
             true -> SnipsPlatformClient.Builder(assistantDir)
