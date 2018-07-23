@@ -152,19 +152,24 @@ class Config {
          * **** */
 
         /**
-         * The regular expression to use to check if parameters are well formed
+         * The regular expression to use to check parameters of the tap command
          */
-        const val REGEX_COMMAND_PARAMETERS_2 = "\\d{1,9} \\d{1,9}"
+        const val REGEX_COMMAND_TAP = "\\d{0,9} \\d{0,9}"
 
         /**
-         * The regular expression to use to check if parameters are well formed
+         * The regular expression to use to check parameters of the n-tap command
          */
-        const val REGEX_COMMAND_PARAMETERS_3 = "\\d{1,9} \\d{1,9} -{0,1}\\d{1,9}"
+        const val REGEX_COMMAND_TAP_MANY = "\\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
-         * The regular expression to use to check if parameters are well formed
+         * The regular expression to use to check parameters of the swipe command
          */
-        const val REGEX_COMMAND_PARAMETERS_4 = "\\d{1,9} \\d{1,9} \\d{1,9} \\d{1,9}"
+        const val REGEX_COMMAND_SWIPE = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the n-swipe command
+         */
+        const val REGEX_COMMAND_SWIPE_MANY = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
          * The separator to use to separate parameters

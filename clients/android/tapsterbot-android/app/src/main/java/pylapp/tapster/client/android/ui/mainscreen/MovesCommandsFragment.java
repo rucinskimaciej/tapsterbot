@@ -50,7 +50,7 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder;
  * Fragment containing commands related to robot moves
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 2.0.0
  * @since 21/07/2018
  */
 public class MovesCommandsFragment extends AbstractCommandsFragment {
@@ -246,7 +246,7 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
 
                 // Parse and check parameters
                 String content = textField.getText().toString();
-                if (!content.matches(Config.REGEX_COMMAND_PARAMETERS_4)) {
+                if (!content.matches(Config.REGEX_COMMAND_SWIPE)) {
                     Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
                             Toast.LENGTH_SHORT).show();
                 } else {
@@ -339,7 +339,7 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
 
                 // Parse and check parameters
                 String content = textField.getText().toString();
-                if (!content.matches(Config.REGEX_COMMAND_PARAMETERS_2)) {
+                if (!content.matches(Config.REGEX_COMMAND_TAP)) {
                     Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
                             Toast.LENGTH_SHORT).show();
                 } else {
