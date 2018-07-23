@@ -146,12 +146,12 @@ dependencies {
 
     // Snips.ai assistant: the chatbot
 ////    withAssistantImplementation 'net.java.dev.jna:jna:4.5.0@aar'
-    implementation 'net.java.dev.jna:jna:4.5.0@aar'
+    fullImplementation 'net.java.dev.jna:jna:4.5.0@aar'
 
 //    withAssistantImplementation('ai.snips:snips-platform-android:0.52.7@aar') {
 //        transitive = true
 //    }
-    implementation('ai.snips:snips-platform-android:0.52.7@aar') {
+    fullImplementation('ai.snips:snips-platform-android:0.52.7@aar') {
         transitive = true
     }
 
@@ -162,9 +162,11 @@ dependencies {
     // Compat
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
-    // For tests
+    // For designs
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // For tests
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
