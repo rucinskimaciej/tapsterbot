@@ -228,7 +228,7 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
 
                 // Parse and check parameters
                 String content = textField.getText().toString();
-                if (!content.matches(Config.REGEX_COMMAND_PARAMETERS_3)) {
+                if (!content.matches(Config.REGEX_COMMAND_SET_POSITION)) {
                     Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
                             Toast.LENGTH_SHORT).show();
                 } else {
@@ -343,7 +343,7 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
 
                 // Parse and check parameters
                 String content = textField.getText().toString();
-                if (!content.matches(Config.REGEX_COMMAND_PARAMETERS_3)) {
+                if (!content.matches(Config.REGEX_COMMAND_SET_ANGLES)) {
                     Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
                             Toast.LENGTH_SHORT).show();
                 } else {

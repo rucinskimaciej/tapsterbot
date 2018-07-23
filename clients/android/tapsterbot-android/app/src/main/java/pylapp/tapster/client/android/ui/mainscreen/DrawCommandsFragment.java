@@ -235,7 +235,7 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
                 // Parse and check parameters
                 String content = textField.getText().toString();
-                if (!content.matches(Config.REGEX_COMMAND_PARAMETERS_3)) {
+                if (!content.matches(Config.REGEX_COMMAND_DRAW_CIRCLE)) {
                     Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
                             Toast.LENGTH_SHORT).show();
 

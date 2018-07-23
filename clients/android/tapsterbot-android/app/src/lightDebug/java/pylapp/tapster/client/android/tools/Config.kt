@@ -172,6 +172,21 @@ class Config {
         const val REGEX_COMMAND_SWIPE_MANY = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
+         * The regular expression to use to check parameters of the draw circle command
+         */
+        const val REGEX_COMMAND_DRAW_CIRCLE = "\\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the set position command
+         */
+        const val REGEX_COMMAND_SET_POSITION = "-{0,1}\\d{0,9} -{0,1}\\d{0,9} -{0,1}\\d{0,9}"
+
+        /**
+         * The regular expression to use to check parameters of the set angles command
+         */
+        const val REGEX_COMMAND_SET_ANGLES = "\\d{0,9} \\d{0,9} \\d{0,9}"
+
+        /**
          * The separator to use to separate parameters
          */
         const val REGEX_PARAMETERS_SEPARATOR = " "
