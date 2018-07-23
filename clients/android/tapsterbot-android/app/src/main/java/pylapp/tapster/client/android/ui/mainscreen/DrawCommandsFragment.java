@@ -30,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ramotion.foldingcell.FoldingCell;
@@ -38,6 +39,7 @@ import java.io.IOException;
 
 import pylapp.tapster.client.android.R;
 import pylapp.tapster.client.android.networks.HttpClientStub;
+import pylapp.tapster.client.android.tools.Config;
 
 /**
  * Fragment containing commands related to robot draws
@@ -84,60 +86,10 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     @Override
     protected void initListeners() {
 
-        // The cell for the draw star feature
-        final FoldingCell fcCommandDrawStar = getActivity().findViewById(R.id.fc_command_drawstar);
-        fcCommandDrawStar.setOnClickListener(v -> {
+        initDrawStarListener();
+        initDrawCircleListener();
 
-            fcCommandDrawStar.toggle(false);
-
-            // The action button
-            Button processButton = fcCommandDrawStar.findViewById(R.id.bt_command_action_drawstar);
-            processButton.setOnClickListener(v2 -> {
-
-                try {
-                    // Update the HTTP client, and send the request if permission is granted
-                    updateHttpClient();
-                    if (!mPermissionsManager.isPermissionGranted(getActivity(),
-                            Manifest.permission.INTERNET)) {
-                        Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
-                    } else {
-                        mHttpClient.commandDrawStar(new HttpClientStub.HttpClientCallback() {
-                            @Override
-                            public void onSuccess(@Nullable String message) {
-                                getActivity().runOnUiThread(
-                                        () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
-                                );
-                            }
-
-                            @Override
-                            public void onFailure(@Nullable String message) {
-                                getActivity().runOnUiThread(
-                                        () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
-                                );
-                            }
-                        });
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            });
-
-        });
-
-        // The cell for the draw circle feature
-        final FoldingCell fcCommandDrawCircle = getActivity().findViewById(R.id.fc_command_drawcircle);
-        fcCommandDrawCircle.setOnClickListener(v -> {
-
-            fcCommandDrawCircle.toggle(false);
-
-            // The action button
-            Button processButton = fcCommandDrawCircle.findViewById(R.id.bt_command_action_drawcircle);
-            processButton.setOnClickListener(v2 -> {
-                // TODO
-            });
-
-        });
+        /*
 
         // The cell for the draw spiral feature
         final FoldingCell fcCommandDrawSpiral = getActivity().findViewById(R.id.fc_command_drawspiral);
@@ -210,8 +162,128 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
 
         });
 
+*/
 
     }
 
 
+    /**
+     * Initializes the listeners on widgets related to draw star command
+     */
+    private void initDrawStarListener(){
+
+        // The cell for the draw star feature
+        final FoldingCell fcCommandDrawStar = getActivity().findViewById(R.id.fc_command_drawstar);
+        fcCommandDrawStar.setOnClickListener(v -> {
+
+            fcCommandDrawStar.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawStar.findViewById(R.id.bt_command_action_drawstar);
+            processButton.setOnClickListener(v2 -> {
+
+                try {
+                    // Update the HTTP client, and send the request if permission is granted
+                    updateHttpClient();
+                    if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                            Manifest.permission.INTERNET)) {
+                        Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                    } else {
+                        mHttpClient.commandDrawStar(new HttpClientStub.HttpClientCallback() {
+                            @Override
+                            public void onSuccess(@Nullable String message) {
+                                getActivity().runOnUiThread(
+                                        () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                );
+                            }
+
+                            @Override
+                            public void onFailure(@Nullable String message) {
+                                getActivity().runOnUiThread(
+                                        () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                );
+                            }
+                        });
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+
+        });
+
+    }
+
+    /**
+     * Initializes the listeners on widgets related to draw circle command
+     */
+    private void initDrawCircleListener(){
+
+        // The cell for the draw circle feature
+        final FoldingCell fcCommandDrawCircle = getActivity().findViewById(R.id.fc_command_drawcircle);
+        fcCommandDrawCircle.setOnClickListener(v -> {
+
+            fcCommandDrawCircle.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawCircle.findViewById(R.id.bt_command_action_drawcircle);
+            processButton.setOnClickListener(v2 -> {
+
+                // Get parameters
+                EditText textField = fcCommandDrawCircle.findViewById(R.id.et_params_drawcircle);
+
+                // Parse and check parameters
+                String content = textField.getText().toString();
+                if (!content.matches(Config.REGEX_COMMAND_PARAMETERS_3)) {
+                    Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
+                            Toast.LENGTH_SHORT).show();
+
+                // Send request
+                } else {
+
+                    String[] params = content.split(Config.REGEX_PARAMETERS_SEPARATOR);
+
+                    try {
+                        // Update the HTTP client, and send the request if permission is granted
+                        updateHttpClient();
+                        if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                                Manifest.permission.INTERNET)) {
+                            Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                        } else {
+                            mHttpClient.commandDrawCircle(
+                                    Integer.parseInt(params[0]),
+                                    Integer.parseInt(params[1]),
+                                    Integer.parseInt(params[2]),
+                                    new HttpClientStub.HttpClientCallback() {
+                                        @Override
+                                        public void onSuccess(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+
+                                        @Override
+                                        public void onFailure(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+                                    }
+                            );
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+                } // End of else
+
+            }); // End of  processButton.setOnClickListener
+
+        }); // End of  fcCommandDrawCircle.setOnClickListener
+
+    }
+
 }
+

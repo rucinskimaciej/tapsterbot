@@ -201,6 +201,19 @@ interface HttpClientStub {
     @Throws(IOException::class)
     fun commandDrawStar(callback: HttpClientCallback?): Any?
 
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw circle" command.
+     *
+     * @param x - The X value of the center point
+     * @param y - The Y value of the center point
+     * @param r - The radius of the circle
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandDrawCircle(x: Int, y: Int, r: Int, callback: HttpClientCallback?): Any?
+
 
     /* *************** *
      * INNER INTERFACE *

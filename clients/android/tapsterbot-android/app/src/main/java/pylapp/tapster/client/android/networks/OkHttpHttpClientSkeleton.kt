@@ -289,6 +289,24 @@ class OkHttpHttpClientSkeleton : HttpClientStub {
         return null
     }
 
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw circle" command.
+     *
+     * @param x - The X value of the center point
+     * @param y - The Y value of the center point
+     * @param r - The radius of the circle
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    override fun commandDrawCircle(x: Int, y: Int, r: Int, callback: HttpClientStub.HttpClientCallback?): Any? {
+        val url = buildBaseUrl() + Config.ROBOT_URL_PATH_DRAW_CIRCLE
+        val json = "{\"x\": \"$x\", \"y\": \"$y\", \"r\": \"$r\"}"
+        sendPostCommand(url, json, callback)
+        return null
+    }
+
 
     /* ************* *
      * OTHER METHODS *

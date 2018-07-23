@@ -141,6 +141,11 @@ class Config {
          */
         const val ROBOT_URL_PATH_DRAW_STAR = "/drawStar"
 
+        /**
+         * The path for draw circle command
+         */
+        const val ROBOT_URL_PATH_DRAW_CIRCLE = "/drawCircle"
+
 
         /* **** *
          * Misc *
