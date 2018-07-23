@@ -274,6 +274,21 @@ class OkHttpHttpClientSkeleton : HttpClientStub {
         return null
     }
 
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw star" command.
+     *
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    override fun commandDrawStar(callback: HttpClientStub.HttpClientCallback?): Any? {
+        val url = buildBaseUrl() + Config.ROBOT_URL_PATH_DRAW_STAR
+        val json = "{}"
+        sendPostCommand(url, json, callback)
+        return null
+    }
+
 
     /* ************* *
      * OTHER METHODS *

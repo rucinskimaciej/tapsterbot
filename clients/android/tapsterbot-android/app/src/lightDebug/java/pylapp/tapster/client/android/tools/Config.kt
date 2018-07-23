@@ -28,7 +28,7 @@ package pylapp.tapster.client.android.tools
  * @author pylapp
  * @since 08/02/2018
  *
- * @version 2.0.0
+ * @version 2.1.0
  */
 class Config {
 
@@ -135,6 +135,12 @@ class Config {
          * The path for contact point command
          */
         const val ROBOT_URL_PATH_CONTACT = "/contactZ"
+
+        /**
+         * The path for draw star command
+         */
+        const val ROBOT_URL_PATH_DRAW_STAR = "/drawStar"
+
 
         /* **** *
          * Misc *

@@ -31,7 +31,7 @@ import java.io.IOException
  * @author pylapp
  * @since 14/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 interface HttpClientStub {
 
@@ -190,6 +190,16 @@ interface HttpClientStub {
      */
     @Throws(IOException::class)
     fun commandGetContactPoint(callback: HttpClientCallback?): Any?
+
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw star" command.
+     *
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandDrawStar(callback: HttpClientCallback?): Any?
 
 
     /* *************** *
