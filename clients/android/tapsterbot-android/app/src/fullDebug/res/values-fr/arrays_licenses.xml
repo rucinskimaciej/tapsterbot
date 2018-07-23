@@ -38,6 +38,7 @@
         <item>Bibliothèque OkHttp</item>
         <item>Bibliothèque Snips assistant</item>
         <item>Bibliothèque TapTargetView</item>
+        <item>Logo de Tapster</item>
         <item>Image "Move option free icon"</item>
         <item>Image "Settings free icon"</item>
         <item>Image "Create new pencil button free icon"</item>
@@ -56,6 +57,7 @@
         <item>Copyright &#169; 2013 Square, Inc.</item>
         <item>Copyright &#169; Snips.ai</item>
         <item>Copyright &#169; 2016 Keepsafe Software Inc.</item>
+        <item>Copyright &#169; Tapster Robotics, Inc.</item>
         <item>Copyright Dave Gandy</item>
         <item>Copyright Gregor Cresnar</item>
         <item>Copyright Google</item>
@@ -74,6 +76,7 @@
         <item>https://github.com/square/okhttp</item>
         <item>https://snips.ai/</item>
         <item>https://github.com/KeepSafe/TapTargetView</item>
+        <item>https://www.tapster.io/</item>
         <item>https://www.flaticon.com/free-icon/move-option_25476</item>
         <item>https://www.flaticon.com/free-icon/settings_126391</item>
         <item>https://www.flaticon.com/free-icon/create-new-pencil-button_60785</item>
@@ -87,6 +90,7 @@
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>MIT</item>
+        <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>

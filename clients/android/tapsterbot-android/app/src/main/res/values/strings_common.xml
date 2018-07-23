@@ -81,7 +81,7 @@
     <string name="preferences_misc_section_version_title">Version</string>
     <string name="preferences_misc_section_version_summary">\?</string>
     <string name="preferences_misc_section_licenses_title">Licenses</string>
-    <string name="preferences_misc_section_licenses_summary">Click here to see third-party licenses</string>
+    <string name="preferences_misc_section_licenses_summary">Click here to see credits about third-party licenses and images</string>
 
     <!-- **** -->
     <!-- Misc -->
