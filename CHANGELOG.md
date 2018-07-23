@@ -61,7 +61,7 @@
 
 * Android
 	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
-	* refactor elements (settings, action buttons and cards, tabs, tap targets, crash reports)
+	* refactor elements (settings, action buttons and cards, tabs, tap targets, crash reports, licenses dialog)
 	* draw a circle
 	* draw a star
 	* draw a spiral
@@ -72,7 +72,6 @@
 	* tap n times
 	* swipe n times
 	* [ON GOING] clean up sources
-	* [ON GOING] display of licenses in full flavor
 	* [ON GOING] update of Snips assistant in full flavor
 
 * Documentation

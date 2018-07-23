@@ -34,9 +34,14 @@
         <item>Dexter library</item>
         <item>Folding Cell Android library</item>
         <item>Kotlin language</item>
-        <item>LicensesDialog library</item>
+        <item>Licenses Dialog library</item>
         <item>OkHttp library</item>
+        <item>Snips assistant</item>
         <item>TapTargetView library</item>
+        <item>Image "Move option free icon"</item>
+        <item>Image "Settings free icon"</item>
+        <item>Image "Create new pencil button free icon"</item>
+        <item>Image "Chat speech bubbles free icon"</item>
     </string-array>
 
     <!-- The copyrights -->
@@ -49,11 +54,16 @@
         <item>Copyright &#169; 2010&#8211;2018 JetBrains s.r.o.</item>
         <item>Copyright &#169; 2013 Philip Schiffer</item>
         <item>Copyright &#169; 2013 Square, Inc.</item>
+        <item>Copyright &#169; Snips.ai</item>
         <item>Copyright &#169; 2016 Keepsafe Software Inc.</item>
+        <item>Copyright Dave Gandy</item>
+        <item>Copyright Gregor Cresnar</item>
+        <item>Copyright Google</item>
+        <item>Copyright Yannick</item>
     </string-array>
 
     <!-- The URL -->
-    <string-array name="credits_url" tools:ignore="InconsistentArrays">
+    <string-array name="credits_url">
         <item>https://github.com/ACRA/acra</item>
         <item>https://github.com/codemybrainsout/ahoy-onboarding</item>
         <item>https://github.com/aosp-mirror/platform_frameworks_support</item>
@@ -62,7 +72,12 @@
         <item>http://kotlinlang.org/</item>
         <item>https://github.com/PSDev/LicensesDialog</item>
         <item>https://github.com/square/okhttp</item>
+        <item>https://snips.ai/</item>
         <item>https://github.com/KeepSafe/TapTargetView</item>
+        <item>https://www.flaticon.com/free-icon/move-option_25476</item>
+        <item>https://www.flaticon.com/free-icon/settings_126391</item>
+        <item>https://www.flaticon.com/free-icon/create-new-pencil-button_60785</item>
+        <item>https://www.flaticon.com/free-icon/chat-speech-bubbles_12425</item>
     </string-array>
 
     <!-- The licenses -->
@@ -76,6 +91,11 @@
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
+        <item>Apache 2.0</item>
+        <item>CC 3.0 BY</item>
+        <item>Flaticon Basic License</item>
+        <item>CC 3.0 BY</item>
+        <item>CC 3.0 BY</item>
     </string-array>
 
 </resources>

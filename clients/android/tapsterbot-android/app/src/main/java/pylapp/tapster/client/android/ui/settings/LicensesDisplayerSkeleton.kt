@@ -43,13 +43,13 @@ class LicensesDisplayerSkeleton: LicensesDisplayerStub {
 
         // Assuming the developer of this feature is not a jackass and has written the same
         // amount of entries in each array
-        for (i in 0..12) {
+        for (i in 0 until names.size) {
             val licence: License = when (licenses[i]) {
                 "Apache 2.0" -> ApacheSoftwareLicense20()
                 "MIT" -> MITLicense()
                 "CC BY 3.0" -> CreativeCommonsAttribution30Unported() // FIXME
                 "Flaticon Basic License" -> CreativeCommonsAttributionNoDerivs30Unported() // FIXME
-                else -> ApacheSoftwareLicense20() // FIXME Duh
+                else -> ApacheSoftwareLicense20() // FIXME
             }
             notices.addNotice(Notice(names[i], urls[i], copyrights[i], licence))
         }
