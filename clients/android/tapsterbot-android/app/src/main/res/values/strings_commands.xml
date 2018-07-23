@@ -134,7 +134,7 @@
     <string name="hint_drawtriangle">x1 y1 x2 y2 x3 y3</string>
 
     <string name="command_title_drawrandom_short">Random pattern</string>
-    <string name="command_title_drawrandom_long">Draw a random pattern in a defined area with a number of main points. For example: 10</string>
+    <string name="command_title_drawrandom_long">Draw a random pattern in a defined area with a number of main points. For example: 10 100 100 500 650</string>
     <string name="command_button_title_drawrandom">Draw</string>
     <string name="content_description_command_button_drawrandom">Send a command to the robot to make it draw a random pattern</string>
     <string name="hint_drawrandom">n minimumWidth minimumHeight maximumWidth maximumHeight</string>

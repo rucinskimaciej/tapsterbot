@@ -233,7 +233,7 @@ class Config {
         /**
          * The regular expression to use to check parameters of the draw random pattern command
          */
-        const val REGEX_COMMAND_DRAW_RANDOM = "\\d{0,9}"
+        const val REGEX_COMMAND_DRAW_RANDOM = "\\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9} \\d{0,9}"
 
         /**
          * The regular expression to use to check parameters of the set position command

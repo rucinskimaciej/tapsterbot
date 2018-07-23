@@ -83,6 +83,20 @@ interface HttpClientStub {
 
     /**
      * Sends a command through HTTP and returns the result.
+     * Here the command is a "n tap" command.
+     *
+     * @param n - The number of taps to made
+     * @param x - The x position of the point to tap on
+     * @param y - The y position of the point to tap on
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandTapMany(n: Int, x: Int, y: Int, callback: HttpClientCallback?): Any?
+
+
+    /**
+     * Sends a command through HTTP and returns the result.
      * Here the command is a "swipe from (startX,startY) to (endX,endY)" command.
      *
      * @param startX - The startX position
@@ -273,6 +287,21 @@ interface HttpClientStub {
      */
     @Throws(IOException::class)
     fun commandDrawTriangle(x1: Int, y1: Int, x2: Int, y2: Int, x3: Int, y3: Int, callback: HttpClientCallback?): Any?
+
+    /**
+     * Sends a command through HTTP and returns the result.
+     * Here the command is a "draw random pattern" command.
+     *
+     * @param n - The number of main points to use, to draw n-1 strokes
+     * @param minWidth - One of the corner of the area where will be drawn the pattern
+     * @param minHeight - One of the corner of the area where will be drawn the pattern
+     * @param maxWidth - One of the corner of the area where will be drawn the pattern
+     * @param maxHeight - One of the corner of the area where will be drawn the pattern
+     * @param callback - A callback to trigger if needed
+     * @return [Any]?  - Something if suitable
+     */
+    @Throws(IOException::class)
+    fun commandDrawRandomPattern(n: Int, minWidth: Int, minHeight: Int, maxWidth: Int, maxHeight: Int, callback: HttpClientCallback?): Any?
 
     /* *************** *
      * INNER INTERFACE *

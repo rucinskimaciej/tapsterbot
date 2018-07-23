@@ -91,6 +91,7 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
         initDrawSquareListener();
         initDrawCrossListener();
         initDrawTriangleListener();
+        initDrawRandomPatternListener();
     }
 
 
@@ -470,6 +471,78 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
                                     Integer.parseInt(params[3]),
                                     Integer.parseInt(params[4]),
                                     Integer.parseInt(params[5]),
+                                    new HttpClientStub.HttpClientCallback() {
+                                        @Override
+                                        public void onSuccess(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+
+                                        @Override
+                                        public void onFailure(@Nullable String message) {
+                                            getActivity().runOnUiThread(
+                                                    () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
+                                            );
+                                        }
+                                    }
+                            );
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+                } // End of else
+
+            }); // End of  processButton.setOnClickListener
+
+        }); // End of fcCommandDrawSquare.setOnClickListener
+
+    }
+
+    /**
+     * Initializes the listeners on widgets related to draw random pattern command
+     */
+    private void initDrawRandomPatternListener(){
+
+        // The cell for the draw square feature
+        final FoldingCell fcCommandDrawRandomPattern = getActivity().findViewById(R.id.fc_command_drawrandom);
+        fcCommandDrawRandomPattern.setOnClickListener(v -> {
+
+            fcCommandDrawRandomPattern.toggle(false);
+
+            // The action button
+            Button processButton = fcCommandDrawRandomPattern.findViewById(R.id.bt_command_action_drawrandom);
+            processButton.setOnClickListener(v2 -> {
+
+                // Get parameters
+                EditText textField = fcCommandDrawRandomPattern.findViewById(R.id.et_params_drawrandom);
+
+                // Parse and check parameters
+                String content = textField.getText().toString();
+                if (!content.matches(Config.REGEX_COMMAND_DRAW_RANDOM)) {
+                    Toast.makeText(getContext(), getString(R.string.command_bad_parameters),
+                            Toast.LENGTH_SHORT).show();
+
+                // Send request
+                } else {
+
+                    String[] params = content.split(Config.REGEX_PARAMETERS_SEPARATOR);
+
+                    try {
+                        // Update the HTTP client, and send the request if permission is granted
+                        updateHttpClient();
+                        if (!mPermissionsManager.isPermissionGranted(getActivity(),
+                                Manifest.permission.INTERNET)) {
+                            Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
+                        } else {
+                            mHttpClient.commandDrawRandomPattern(
+                                    Integer.parseInt(params[0]),
+                                    Integer.parseInt(params[1]),
+                                    Integer.parseInt(params[2]),
+                                    Integer.parseInt(params[3]),
+                                    Integer.parseInt(params[4]),
                                     new HttpClientStub.HttpClientCallback() {
                                         @Override
                                         public void onSuccess(@Nullable String message) {
