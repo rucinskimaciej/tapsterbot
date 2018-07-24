@@ -229,10 +229,10 @@ class MainActivity : AppCompatActivity() {
         mTabLayout!!.setupWithViewPager(mViewPager)
 
         // Tabs icons
-        mTabLayout!!.getTabAt(0)?.setIcon(R.mipmap.ic_commands_move)
-        mTabLayout!!.getTabAt(1)?.setIcon(R.mipmap.ic_commands_drawings)
-        mTabLayout!!.getTabAt(2)?.setIcon(R.mipmap.ic_commands_configuration)
-        mTabLayout!!.getTabAt(3)?.setIcon(R.mipmap.ic_commands_assistant)
+        mTabLayout!!.getTabAt(0)?.setIcon(R.mipmap.ic_commands_assistant)
+        mTabLayout!!.getTabAt(1)?.setIcon(R.mipmap.ic_commands_move)
+        mTabLayout!!.getTabAt(2)?.setIcon(R.mipmap.ic_commands_drawings)
+        mTabLayout!!.getTabAt(3)?.setIcon(R.mipmap.ic_commands_configuration)
 
     }
 
@@ -264,6 +264,13 @@ class MainActivity : AppCompatActivity() {
             val builder = TapTargetViewBuilder()
             val pointers = ArrayList<TapTargetViewBuilder.Targets>()
 
+
+            // The assistant is in a feature which can be disabled
+            if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()) {
+                pointers.add(TapTargetViewBuilder.Targets.ASSISTANT_TAB)
+                preferences.edit().putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_ASSISTANT_TAB_POINTED, true).apply()
+            }
+
             // The command panel is in a feature which can be disabled
             if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
                 pointers.add(TapTargetViewBuilder.Targets.MOVES_TAB)
@@ -274,12 +281,6 @@ class MainActivity : AppCompatActivity() {
                         .putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_DRAWINGS_TAB_POINTED, true)
                         .putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_COMMANDS_SETTINGS_TAB_POINTED, true)
                         .apply()
-            }
-
-            // The assistant is in a feature which can be disabled
-            if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()) {
-                pointers.add(TapTargetViewBuilder.Targets.ASSISTANT_TAB)
-                preferences.edit().putBoolean(TapTargetViewBuilder.PREFERENCES_KEY_ASSISTANT_TAB_POINTED, true).apply()
             }
 
             if (pointers.size > 0) {
@@ -303,6 +304,11 @@ class MainActivity : AppCompatActivity() {
         val propertiesReader: PropertiesReaderStub = FeaturesFactory().buildPropertiesReader()
         propertiesReader.loadProperties(MainActivity@ this)
 
+        if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()) {
+            mAssistantFragment = AssistantFragment()
+            adapter.addFragment(mAssistantFragment as Fragment, resources.getString(R.string.tab_title_assistant))
+        }
+
         if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_COMMANDS)!!.toBoolean()) {
             mMovesCommandsFragment = MovesCommandsFragment()
             adapter.addFragment(mMovesCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_moves))
@@ -310,11 +316,6 @@ class MainActivity : AppCompatActivity() {
             adapter.addFragment(mDrawsCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_drawings))
             mConfigurationCommandsFragment = ConfigurationCommandsFragment()
             adapter.addFragment(mConfigurationCommandsFragment as Fragment, resources.getString(R.string.tab_title_commands_configuration))
-        }
-
-        if (propertiesReader.readProperty(PropertiesReaderStub.ENABLE_ASSISTANT)!!.toBoolean()) {
-            mAssistantFragment = AssistantFragment()
-            adapter.addFragment(mAssistantFragment as Fragment, resources.getString(R.string.tab_title_assistant))
         }
 
         mViewPager!!.adapter = adapter

@@ -34,7 +34,6 @@ import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
 import android.os.Environment
-import android.os.Looper
 import android.os.Process
 import android.preference.PreferenceManager
 import android.text.Html
@@ -139,11 +138,11 @@ class SnipsAssistantSkeleton : AssistantStub {
     override fun startAssistant(context: Activity, callback: (() -> Unit?)?) {
 
         mContinueStreaming = true
+        val featureFactory = FeaturesFactory()
+        mNotifier = featureFactory.buildUiNotifier(context)
 
         if (snipsClient != null) return
 
-        val featureFactory = FeaturesFactory()
-        mNotifier = featureFactory.buildUiNotifier(context)
         val properties = featureFactory.buildPropertiesReader()
         properties.loadProperties(context)
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -208,7 +207,7 @@ class SnipsAssistantSkeleton : AssistantStub {
 
         snipsClient!!.onPlatformReady = fun(){
             Log.i(LOG_TAG, "The Snips platform is now ready")
-            startSession()
+//            startSession()
         }
 
         snipsClient!!.onPlatformError = fun(error: SnipsPlatformClient.SnipsPlatformError){
@@ -287,8 +286,6 @@ class SnipsAssistantSkeleton : AssistantStub {
                 context.resources?.getString(R.string.default_value_assistant_assets))
         val assistantDir = File(Environment.getExternalStorageDirectory().toString(), pathToAssetsOfAssistant)
 
-        Looper.prepare()
-
         return when (assistantDir.exists() && assistantDir.isDirectory) {
             true -> SnipsPlatformClient.Builder(assistantDir)
                     // Dialogue + ASR + NLU features
@@ -328,6 +325,8 @@ class SnipsAssistantSkeleton : AssistantStub {
      */
     private fun runStreaming() {
 
+        Log.i(LOG_TAG, "Starting audio streaming...")
+
         val minBufferSizeInBytes = AudioRecord.getMinBufferSize(FREQUENCY, CHANNEL, ENCODING)
 
         mRecorder = AudioRecord(MediaRecorder.AudioSource.MIC, FREQUENCY, CHANNEL,
@@ -344,6 +343,8 @@ class SnipsAssistantSkeleton : AssistantStub {
         }
 
         mRecorder!!.stop()
+        Log.i(LOG_TAG, "Audio streaming stopped.")
+
     }
 
     /**

@@ -24,10 +24,7 @@ package pylapp.tapster.client.android.ui.mainscreen
 import android.Manifest
 import android.app.Activity
 import android.content.Context
-import android.os.Build
-import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
+import android.os.*
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -144,16 +141,12 @@ class AssistantFragment : Fragment() {
         askForPermissionsIfNeeded()
 
         // Before initializing the assistant, check if the user has granted the uses we need
-        if (assistant == null) {
-
-            if (mPermissionsGranter!!.isPermissionGranted(activity as Activity,
-                            Manifest.permission.RECORD_AUDIO)
-                    && mPermissionsGranter!!.isPermissionGranted(activity as Activity,
-                            Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                assistant = FeaturesFactory().buildAssistant()
-                startAssistant()
-            }
-
+        if (mPermissionsGranter!!.isPermissionGranted(activity as Activity,
+                        Manifest.permission.RECORD_AUDIO)
+                && mPermissionsGranter!!.isPermissionGranted(activity as Activity,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            assistant = FeaturesFactory().buildAssistant()
+            startAssistant()
         }
 
     }
@@ -194,77 +187,59 @@ class AssistantFragment : Fragment() {
         val dialogLayout = activity!!.findViewById<View>(R.id.ll_assistant_dialogue)
         dialogLayout.visibility = View.GONE
 
-        object : Thread() {
-            override fun run() {
+//        // Note: With Snips 0.57.3, if assistant loaded outside UI Thread, callbacks won't be triggered!
+//        object : Thread() {
+//            override fun run() {
+//
+//                // Start the assistant
+//
+//                Looper.prepare()
 
-                // Start the assistant
+        assistant!!.startAssistant(activity as Activity, {
+            activity!!.runOnUiThread {
+                Toast.makeText(activity,
+                        getString(R.string.snips_service_started),
+                        Toast.LENGTH_LONG).show()
+            }
+        })
 
-//                activity!!.runOnUiThread {
-//                    val button = activity!!.findViewById<View>(R.id.bt_assistant_action) as Button
-//                    button.isEnabled = false
-//                    button.setText(R.string.assistant_loading)
-//                }
+        // Update the GUI and then start a new dialogue session
+        activity!!.runOnUiThread {
 
-                assistant!!.startAssistant(activity as Activity, {
-                    activity!!.runOnUiThread {
-                        Toast.makeText(activity,
-                                getString(R.string.snips_service_started),
-                                Toast.LENGTH_LONG).show()
+            // Is the vibrations disabled?
+            val properties = FeaturesFactory().buildPropertiesReader()
+            properties.loadProperties(activity!!)
+            if (properties.readProperty(PropertiesReaderStub.ENABLE_VIBRATIONS)!!.toBoolean()) {
+
+                // Vibrations enabled in settings?
+                val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+                if (preferences.getBoolean(Config.PREFERENCES_ASSISTANT_VIBRATIONS, true)) {
+
+                    // Notify to the user the assistant has been loaded
+                    val vibrator = activity!!.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                    val durationInMs = 300L
+                    val amplitude = 10
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(durationInMs, amplitude))
+                    } else {
+                        vibrator.vibrate(durationInMs)
                     }
-                })
-
-                // Update the GUI and then start a new dialogue session
-                activity!!.runOnUiThread {
-
-                    // Is the vibrations disabled?
-                    val properties = FeaturesFactory().buildPropertiesReader()
-                    properties.loadProperties(activity!!)
-                    if (properties.readProperty(PropertiesReaderStub.ENABLE_VIBRATIONS)!!.toBoolean()) {
-
-                        // Vibrations enabled in settings?
-                        val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-                        if (preferences.getBoolean(Config.PREFERENCES_ASSISTANT_VIBRATIONS, true)) {
-
-                            // Notify to the user the assistant has been loaded
-                            val vibrator = activity!!.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-                            val durationInMs = 300L
-                            val amplitude = 10
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                                vibrator.vibrate(VibrationEffect.createOneShot(durationInMs, amplitude))
-                            } else {
-                                vibrator.vibrate(durationInMs)
-                            }
-
-                        }
-
-                    }
-
-//                    // Update buttons and layouts
-//                    val button = activity!!.findViewById<View>(R.id.bt_assistant_action) as Button
-//                    button.isEnabled = true
-//                    button.setText(R.string.snips_start_dialog_session)
-//                    button.setOnClickListener {
-//                        // programmatically start a dialogue session
-//                        assistant!!.startSession({
-//                            activity!!.runOnUiThread {
-//                                Toast.makeText(activity,
-//                                        getString(R.string.snips_session_started),
-//                                        Toast.LENGTH_LONG).show()
-//                            }
-//                        })
-//                    }
-
-                    loadingLayout.visibility = View.GONE
-                    dialogLayout.visibility = View.VISIBLE
-
-                    mListViewMessageAdapter = ListOfAssistantDialogueMessagesAdapter()
-                    val listOfMessages: ListView = activity!!.findViewById<View>(R.id.lv_assistant_dialogue_messages) as ListView
-                    listOfMessages.adapter = mListViewMessageAdapter
 
                 }
 
             }
-        }.start()
+
+            loadingLayout.visibility = View.GONE
+            dialogLayout.visibility = View.VISIBLE
+
+            mListViewMessageAdapter = ListOfAssistantDialogueMessagesAdapter()
+            val listOfMessages: ListView = activity!!.findViewById<View>(R.id.lv_assistant_dialogue_messages) as ListView
+            listOfMessages.adapter = mListViewMessageAdapter
+
+        }
+
+//            }
+//        }.start()
 
     } // End of private fun startAssistant()
 
