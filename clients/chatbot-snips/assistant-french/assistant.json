@@ -4,14 +4,14 @@
   "intents" : [ {
     "id" : "pylapp:fr_Get_position",
     "type" : "registry",
-    "version" : "0.0.10",
+    "version" : "0.0.11",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Get_position"
   }, {
     "id" : "pylapp:fr_Set_arms_angles",
     "type" : "registry",
-    "version" : "0.0.9",
+    "version" : "0.0.10",
     "language" : "fr",
     "slots" : [ {
       "name" : "theta1",
@@ -36,7 +36,7 @@
   }, {
     "id" : "pylapp:fr_Set_position",
     "type" : "registry",
-    "version" : "0.0.10",
+    "version" : "0.0.11",
     "language" : "fr",
     "slots" : [ {
       "name" : "x",
@@ -61,7 +61,7 @@
   }, {
     "id" : "pylapp:fr_Swipe",
     "type" : "registry",
-    "version" : "0.0.9",
+    "version" : "0.0.10",
     "language" : "fr",
     "slots" : [ {
       "name" : "startX",
@@ -92,7 +92,7 @@
   }, {
     "id" : "pylapp:fr_Tap_n_times",
     "type" : "registry",
-    "version" : "0.0.4",
+    "version" : "0.0.5",
     "language" : "fr",
     "slots" : [ {
       "name" : "n",
@@ -117,49 +117,105 @@
   }, {
     "id" : "pylapp:fr_Dance",
     "type" : "registry",
-    "version" : "0.0.6",
+    "version" : "0.0.7",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Dance"
   }, {
     "id" : "pylapp:fr_Contact_z",
     "type" : "registry",
-    "version" : "0.0.6",
+    "version" : "0.0.7",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Contact_z"
   }, {
     "id" : "pylapp:fr_Get_status",
     "type" : "registry",
-    "version" : "0.0.7",
+    "version" : "0.0.8",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Get_status"
   }, {
+    "id" : "pylapp:fr_Draw_spiral",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "BkMvKuVEQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris la valeur sur l'axe des abscisses pour le point central",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "Hk12KdN4X",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris la valeur sur l'axe des ordonnées pour le point central",
+      "required" : true
+    }, {
+      "name" : "n",
+      "id" : "SJh2FdENQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris combien d'anneaux je devais dessiner",
+      "required" : true
+    }, {
+      "name" : "r",
+      "id" : "S1nJ5dE4m",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris quel était le rayon de la spirale à dessiner",
+      "required" : true
+    } ],
+    "name" : "fr_Draw_spiral"
+  }, {
+    "id" : "pylapp:fr_Draw_circle",
+    "type" : "registry",
+    "version" : "0.0.1",
+    "language" : "fr",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "HkAXwO4NX",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris la valeur des abscisses du centre du cercle",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "B1DLPd4E7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris la valeur des ordonnées du centre du cercle",
+      "required" : true
+    }, {
+      "name" : "radius",
+      "id" : "HJKDv_4V7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "Je n'ai pas compris quel était le rayon du cercle",
+      "required" : true
+    } ],
+    "name" : "fr_Draw_circle"
+  }, {
     "id" : "pylapp:fr_Get_arms_angles",
     "type" : "registry",
-    "version" : "0.0.8",
+    "version" : "0.0.9",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Get_arms_angles"
   }, {
     "id" : "pylapp:fr_Draw_star",
     "type" : "registry",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Draw_star"
   }, {
     "id" : "pylapp:fr_Stop_dancing",
     "type" : "registry",
-    "version" : "0.0.6",
+    "version" : "0.0.7",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Stop_dancing"
   }, {
     "id" : "pylapp:fr_Draw_triangle",
     "type" : "registry",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "language" : "fr",
     "slots" : [ {
       "name" : "x1",
@@ -202,7 +258,7 @@
   }, {
     "id" : "pylapp:fr_Tap",
     "type" : "registry",
-    "version" : "0.0.12",
+    "version" : "0.0.13",
     "language" : "fr",
     "slots" : [ {
       "name" : "x",
@@ -221,7 +277,7 @@
   }, {
     "id" : "pylapp:fr_Draw_square",
     "type" : "registry",
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "language" : "fr",
     "slots" : [ {
       "name" : "length",
@@ -235,7 +291,7 @@
   }, {
     "id" : "pylapp:fr_Long_tap",
     "type" : "registry",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "language" : "fr",
     "slots" : [ {
       "name" : "x",
@@ -254,7 +310,7 @@
   }, {
     "id" : "pylapp:fr_Draw_random",
     "type" : "registry",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "language" : "fr",
     "slots" : [ {
       "name" : "n",
@@ -267,7 +323,7 @@
   }, {
     "id" : "pylapp:fr_Reset",
     "type" : "registry",
-    "version" : "0.0.6",
+    "version" : "0.0.7",
     "language" : "fr",
     "slots" : [ ],
     "name" : "fr_Reset"

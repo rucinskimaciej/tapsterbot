@@ -196,3 +196,22 @@ Va [combien](n) fois en [x](x) [y](y)
 Va [combien](n) fois sur le point en [x](x) [y](y)
 Je veux que tu tapes [n](n) fois en [x](x) [y](y)
 Tape [n](n) fois en [x](x) [y](y)
+
+**fr_Draw_circle**
+Dessine un cercle en [x](x) [y](y) de rayon [r](r)
+Dessine moi un cercle en [x](x) [y](y) et de rayon [r](r)
+Je veux un cercle centré sur le point [x](x) [y](y) et avec un rayon [r](r)
+Dessine moi un cercle centré sur sur le point en [x](x) [y](y) avec un rayon de longueur [r](r)
+Je veux que tu me dessines un cercle centré sur le point [x](x) [y](y) avec un rayon de taille [r](r)
+Fais moi un cercle en [x](x) [y](y) avec un rayon de [r](r)
+Fais moi un cercle centré sur le point en [x](x) [y](y) avec un rayon de longueur [r](r)
+Je souhaite que tu me dessines un cercle centré sur le point en [x](x) [y](y) avec un rayon de longueur [r](r)
+
+**fr_Draw_spiral**
+Je veux une spirale en [x](x) [y](y) avec [n](n) anneaux et un rayon de [r](r)
+Fais moi une spirale centrée sur le point en [x](x) [y](y) avec [n](n) anneaux et un rayon de longueur [r](r)
+Je souhaite avoir une spirale avec [n](n) anneaux centrée sur le point en [x](x) [y](y) et avec un rayon de longueur [r](r)
+Je voudrais une spirale avec [n](n) anneaux et un rayon de longueur [r](r) et centrée sur le point [x](x) [y](y)
+Dessine moi une spirale centrée sur le point [x](x) [y](y) avec [n](n) anneaux et un rayon [r](r)
+Dessine moi une belle spirale centrée sur [x](x) [y](y) avec un rayon de longueur [r](r) et [n](n) anneaux
+Dessine une spirale en [x](x) [y](y) avec un rayon de [r](r) et [n](n) anneaux

@@ -52,3 +52,14 @@ n, snips/number, true, Combien de points doivent être pris ?
 n, snips/ordinal, true, Combien de fois dois-je taper ?
 x, snips/number, true, Quelle est la valeur sur l'axe des abscisses du point à taper ?
 y, snips/number, true, Quelle est la valeur sur l'axe des ordonnées du point à taper ?
+
+**fr_Draw_circle**
+x, snips/number, true, Je n'ai pas compris la valeur des abscisses du centre du cercle
+y, snips/number, true, Je n'ai pas compris la valeur des ordonnées du centre du cercle
+radius, snips/number, true, Je n'ai pas compris quel était le rayon du cercle
+
+**fr_Draw_spiral**
+x, snips/number, true, Je n'ai pas compris la valeur sur l'axe des abscisses pour le point central
+y, snips/number, true, Je n'ai pas compris la valeur sur l'axe des ordonnées pour le point central
+n, snips/number, true, Je n'ai pas compris combien d'anneaux je devais dessiner
+radius, snips/number, true, Je n'ai pas compris quel était le rayon de la spirale à dessiner
