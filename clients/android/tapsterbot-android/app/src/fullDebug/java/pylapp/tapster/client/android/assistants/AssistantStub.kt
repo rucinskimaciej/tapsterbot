@@ -30,7 +30,7 @@ import android.app.Activity
  * @author pylapp
  * @since 02/02/2018
  *
- * @version 2.0.0
+ * @version 3.0.0
  */
 interface AssistantStub {
 
@@ -124,9 +124,34 @@ interface AssistantStub {
          * Reset the robot to its default state
          */
         RESET("Reset"),
-
-        // TODO Add new commands
-
+        /**
+         * Make the robot tap n times to a point
+         */
+        TAP_MANY("Tap_n_times"),
+        /**
+         * Draw a star
+         */
+        DRAW_STAR("Draw_star"),
+        /**
+         * Draw a triangle
+         */
+        DRAW_TRIANGLE("Draw_triangle"),
+        /**
+         * Draw a square
+         */
+        DRAW_SQUARE("Draw_square"),
+        /**
+         * Draw a circle
+         */
+        DRAW_CIRCLE("Draw_circle"),
+        /**
+         * Draw a spiral
+         */
+        DRAW_SPIRAL("Draw_spiral"),
+        /**
+         * Draw a random pattern
+         */
+        DRAW_RANDOM("Draw_random"),
         /**
          * Unknown / not dealt intent
          */

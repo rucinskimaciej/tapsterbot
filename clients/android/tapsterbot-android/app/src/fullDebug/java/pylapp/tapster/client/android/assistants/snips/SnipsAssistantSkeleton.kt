@@ -63,7 +63,7 @@ import java.io.File
  * @author pylapp
  * @since 02/02/2018
  *
- * @version 2.0.0
+ * @version 3.0.0
  */
 class SnipsAssistantSkeleton : AssistantStub {
 
@@ -369,6 +369,7 @@ class SnipsAssistantSkeleton : AssistantStub {
             rawIntentName.endsWith(AssistantStub.Intents.CONTACT_Z.usageName, true) -> AssistantStub.Intents.CONTACT_Z
             rawIntentName.endsWith(AssistantStub.Intents.DANCE.usageName, true) -> AssistantStub.Intents.DANCE
             rawIntentName.endsWith(AssistantStub.Intents.STOP_DANCE.usageName, true) -> AssistantStub.Intents.STOP_DANCE
+            // TODO
             else -> AssistantStub.Intents.UNKNOWN
         }
 
@@ -457,6 +458,7 @@ class SnipsAssistantSkeleton : AssistantStub {
                             context.getString(R.string.assistant_unknown_intent))
                 })
             }
+            // TODO
         } // End of when (intentName)
 
         if (intentName != AssistantStub.Intents.UNKNOWN) {
