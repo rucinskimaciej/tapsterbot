@@ -71,8 +71,8 @@
 	* draw a random pattern
 	* tap n times
 	* swipe n times
+	* update assistant capabilities
 	* [ON GOING] clean up sources
-	* [ON GOING] update of Snips assistant in full flavor
 
 * Documentation
 	* more details in CURL samples

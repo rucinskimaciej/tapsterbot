@@ -161,11 +161,11 @@ Fais un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2]
 Fais moi un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
 Dessine un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
 Dessine moi un triangle avec le premier point [x1](x1) [y1](y1) le deuxième point [x2](x2) [y2](y2) et le troisième point [x3](x3) [y3](y3)
-Je veux un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
-Fais un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
-Fais moi un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
-Dessine un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
-Dessine moi un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) x3](x3) [y3](y3)
+Je veux un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) [x3](x3) [y3](y3)
+Fais un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) [x3](x3) [y3](y3)
+Fais moi un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) [x3](x3) [y3](y3)
+Dessine un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) [x3](x3) [y3](y3)
+Dessine moi un triangle avec les points [x1](x1) [y1](y1) [x2](x2) [y2](y2) [x3](x3) [y3](y3)
 
 **fr_Draw_random**
 Dessine quelque chose en utilisant [n](n) points
@@ -185,7 +185,7 @@ Dessine moi un truc avec [n](n) points
 Dessine un truc avec [n](n) points
 
 **fr_Tap_n_times**
-Click n fois aux coordonnées [x](x) [y](y)
+Click [n](n) fois aux coordonnées [x](x) [y](y)
 Appuie [n](n) fois sur le point en [x](x) [y](y)
 Appuie [n](n) fois en [x](x) [y](y)
 Bouge [n](n) fois sur le point en [x](x) [y](y)

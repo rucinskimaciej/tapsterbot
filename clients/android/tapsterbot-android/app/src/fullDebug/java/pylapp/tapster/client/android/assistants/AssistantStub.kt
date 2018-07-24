@@ -68,6 +68,7 @@ interface AssistantStub {
      */
     fun resumeAssistant(callback: (() -> Unit?)? = null)
 
+
     /* ****************** *
      * INNER ENUMERATIONS *
      * ****************** */

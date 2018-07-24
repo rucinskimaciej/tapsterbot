@@ -368,8 +368,14 @@ class SnipsAssistantSkeleton : AssistantStub {
             rawIntentName.endsWith(AssistantStub.Intents.GET_ARMS_ANGLES.usageName, true) -> AssistantStub.Intents.GET_ARMS_ANGLES
             rawIntentName.endsWith(AssistantStub.Intents.CONTACT_Z.usageName, true) -> AssistantStub.Intents.CONTACT_Z
             rawIntentName.endsWith(AssistantStub.Intents.DANCE.usageName, true) -> AssistantStub.Intents.DANCE
+            rawIntentName.endsWith(AssistantStub.Intents.TAP_MANY.usageName, true) -> AssistantStub.Intents.TAP_MANY
             rawIntentName.endsWith(AssistantStub.Intents.STOP_DANCE.usageName, true) -> AssistantStub.Intents.STOP_DANCE
-            // TODO
+            rawIntentName.endsWith(AssistantStub.Intents.DRAW_CIRCLE.usageName, true) -> AssistantStub.Intents.DRAW_CIRCLE
+            rawIntentName.endsWith(AssistantStub.Intents.DRAW_RANDOM.usageName, true) -> AssistantStub.Intents.DRAW_RANDOM
+            rawIntentName.endsWith(AssistantStub.Intents.DRAW_SPIRAL.usageName, true) -> AssistantStub.Intents.DRAW_SPIRAL
+            rawIntentName.endsWith(AssistantStub.Intents.DRAW_STAR.usageName, true) -> AssistantStub.Intents.DRAW_STAR
+            rawIntentName.endsWith(AssistantStub.Intents.DRAW_TRIANGLE.usageName, true) -> AssistantStub.Intents.DRAW_TRIANGLE
+            rawIntentName.endsWith(AssistantStub.Intents.DRAW_SQUARE.usageName, true) -> AssistantStub.Intents.DRAW_SQUARE
             else -> AssistantStub.Intents.UNKNOWN
         }
 
@@ -412,6 +418,13 @@ class SnipsAssistantSkeleton : AssistantStub {
             AssistantStub.Intents.TAP -> {
                 httpClient.commandTap(mapOfSlots["x"]!!.toInt(), mapOfSlots["y"]!!.toInt(), callback)
             }
+            AssistantStub.Intents.TAP_MANY -> {
+                httpClient.commandTapMany(
+                        mapOfSlots["n"]!!.toInt(),
+                        mapOfSlots["x"]!!.toInt(),
+                        mapOfSlots["y"]!!.toInt(),
+                        callback)
+            }
             AssistantStub.Intents.SWIPE -> {
                 httpClient.commandSwipe(mapOfSlots["startX"]!!.toInt(),
                         mapOfSlots["startY"]!!.toInt(),
@@ -452,13 +465,53 @@ class SnipsAssistantSkeleton : AssistantStub {
             AssistantStub.Intents.STOP_DANCE -> {
                 httpClient.commandStopDance(callback)
             }
+            AssistantStub.Intents.DRAW_SQUARE -> {
+                httpClient.commandDrawSquare(1, mapOfSlots["length"]!!.toInt(), callback)
+            }
+            AssistantStub.Intents.DRAW_TRIANGLE -> {
+                httpClient.commandDrawTriangle(
+                        mapOfSlots["x1"]!!.toInt(),
+                        mapOfSlots["y1"]!!.toInt(),
+                        mapOfSlots["x2"]!!.toInt(),
+                        mapOfSlots["y2"]!!.toInt(),
+                        mapOfSlots["x3"]!!.toInt(),
+                        mapOfSlots["y3"]!!.toInt(),
+                        callback)
+            }
+            AssistantStub.Intents.DRAW_STAR -> {
+                httpClient.commandDrawStar(callback)
+            }
+            AssistantStub.Intents.DRAW_RANDOM -> {
+                // FIXME Raw value
+                httpClient.commandDrawRandomPattern(
+                        mapOfSlots["n"]!!.toInt(),
+                        100,
+                        100,
+                        500,
+                        700,
+                        callback)
+            }
+            AssistantStub.Intents.DRAW_CIRCLE -> {
+                httpClient.commandDrawCircle(
+                        mapOfSlots["x"]!!.toInt(),
+                        mapOfSlots["y"]!!.toInt(),
+                        mapOfSlots["r"]!!.toInt(),
+                        callback)
+            }
+            AssistantStub.Intents.DRAW_SPIRAL -> {
+                httpClient.commandDrawSpiral(
+                        mapOfSlots["x"]!!.toInt(),
+                        mapOfSlots["y"]!!.toInt(),
+                        mapOfSlots["n"]!!.toInt(),
+                        mapOfSlots["r"]!!.toInt(),
+                        callback)
+            }
             AssistantStub.Intents.UNKNOWN -> {
                 context.runOnUiThread({
                     mNotifier?.displayMessage(context, AssistantMessage.Type.VERBOSE,
                             context.getString(R.string.assistant_unknown_intent))
                 })
             }
-            // TODO
         } // End of when (intentName)
 
         if (intentName != AssistantStub.Intents.UNKNOWN) {

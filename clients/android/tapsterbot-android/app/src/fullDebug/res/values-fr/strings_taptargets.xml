@@ -36,7 +36,7 @@
     <string name="taptarget_tab_settings_description">Besoin de régler le robot ? Vous pouvez trouver des choses ici.</string>
 
     <string name="taptarget_tab_assistant_title">Assistant</string>
-    <string name="taptarget_tab_assistant_description">Un assistant vocal basé sur Snips.ai permet aussi de controler le robot à la voix.</string>
+    <string name="taptarget_tab_assistant_description">Un assistant vocal basé sur Snips.ai vous permet de contrôler le robot à la voix.</string>
 
     <string name="taptarget_tap_title">Exemple de commande</string>
     <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>
