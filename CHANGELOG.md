@@ -45,7 +45,7 @@
 	* draw a spiral
 
 * Snips assistant
-	* french - add intents to draw square, star, triangle, random pattern, tap n times, long tap
+	* french - add intents to draw square, star, triangle, random pattern, tap n times, long tap, circle, spiral
 
 * Python client
 	* long tap
