@@ -70,28 +70,28 @@ class TapTargetViewBuilder {
         // The first tab, with the moves commands
             Targets.MOVES_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
-                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(0)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(1)
                 targetTitleText = context.resources.getString(R.string.taptarget_tab_moves_title)
                 targetDescriptionText = context.resources.getString(R.string.taptarget_tab_moves_description)
             }
         // The second tab, with the drawings commands
             Targets.DRAWINGS_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
-                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(1)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(2)
                 targetTitleText = context.resources.getString(R.string.taptarget_tab_drawings_title)
                 targetDescriptionText = context.resources.getString(R.string.taptarget_tab_drawings_description)
             }
         // The third tab, with the settings commands
             Targets.SETTINGS_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
-                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(2)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(3)
                 targetTitleText = context.resources.getString(R.string.taptarget_tab_settings_title)
                 targetDescriptionText = context.resources.getString(R.string.taptarget_tab_settings_description)
             }
         // The fourth tab, with the panel for the assistant
             Targets.ASSISTANT_TAB -> {
                 val tabLayout = context.findViewById<TabLayout>(R.id.tl_client_screens)
-                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(3)
+                targetView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(0)
                 targetTitleText = context.resources.getString(R.string.taptarget_tab_assistant_title)
                 targetDescriptionText = context.resources.getString(R.string.taptarget_tab_assistant_description)
             }
