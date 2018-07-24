@@ -92,12 +92,12 @@
   }, {
     "id" : "pylapp:fr_Tap_n_times",
     "type" : "registry",
-    "version" : "0.0.5",
+    "version" : "0.0.6",
     "language" : "fr",
     "slots" : [ {
       "name" : "n",
       "id" : "rJST-CpXm",
-      "entityId" : "snips/ordinal",
+      "entityId" : "snips/number",
       "missingQuestion" : "Combien de fois dois-je taper ?",
       "required" : true
     }, {
@@ -138,7 +138,7 @@
   }, {
     "id" : "pylapp:fr_Draw_spiral",
     "type" : "registry",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "language" : "fr",
     "slots" : [ {
       "name" : "x",
@@ -169,7 +169,7 @@
   }, {
     "id" : "pylapp:fr_Draw_circle",
     "type" : "registry",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "language" : "fr",
     "slots" : [ {
       "name" : "x",

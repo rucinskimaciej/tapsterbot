@@ -1,7 +1,6 @@
 {
   "entityNameToFilename": {
-    "snips/ordinal": "e_0.snips", 
-    "snips/number": "e_1.snips"
+    "snips/number": "e_0.snips"
   }, 
   "injectionsEngine": {
     "version": 1
@@ -57,70 +56,35 @@
   "postprocessors": [
     {
       "Regex": {
-        "pattern": "`d415d293-e3c4-4217-b99e-584c79c435a9`START .[^`]*? `d415d293-e3c4-4217-b99e-584c79c435a9`DECOY`EMPTY `d415d293-e3c4-4217-b99e-584c79c435a9`END", 
+        "pattern": "`ba4349c7-de12-4255-8608-c7e4ea05d980`START .[^`]*? `ba4349c7-de12-4255-8608-c7e4ea05d980`DECOY`EMPTY `ba4349c7-de12-4255-8608-c7e4ea05d980`END", 
         "flags": "i", 
         "replacement": "unknownword"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`d415d293-e3c4-4217-b99e-584c79c435a9`START .[^`]*? `d415d293-e3c4-4217-b99e-584c79c435a9`DECOY`INSIDE .*? `d415d293-e3c4-4217-b99e-584c79c435a9`END`DECOY `d415d293-e3c4-4217-b99e-584c79c435a9`END", 
+        "pattern": "`ba4349c7-de12-4255-8608-c7e4ea05d980`START .[^`]*? `ba4349c7-de12-4255-8608-c7e4ea05d980`DECOY`INSIDE .*? `ba4349c7-de12-4255-8608-c7e4ea05d980`END`DECOY `ba4349c7-de12-4255-8608-c7e4ea05d980`END", 
         "flags": "i", 
         "replacement": "unknownword"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`d415d293-e3c4-4217-b99e-584c79c435a9`START`DECOY (.*?) `d415d293-e3c4-4217-b99e-584c79c435a9`END`DECOY", 
+        "pattern": "`ba4349c7-de12-4255-8608-c7e4ea05d980`START`DECOY (.*?) `ba4349c7-de12-4255-8608-c7e4ea05d980`END`DECOY", 
         "flags": "i", 
         "replacement": "unknownword"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`d415d293-e3c4-4217-b99e-584c79c435a9`START (.*?) `d415d293-e3c4-4217-b99e-584c79c435a9`END", 
+        "pattern": "`ba4349c7-de12-4255-8608-c7e4ea05d980`START (.*?) `ba4349c7-de12-4255-8608-c7e4ea05d980`END", 
         "flags": "i", 
         "replacement": "$1"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`d415d293-e3c4-4217-b99e-584c79c435a9`START ", 
-        "flags": "i", 
-        "replacement": ""
-      }
-    }, 
-    {
-      "Regex": {
-        "pattern": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`START .[^`]*? `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`DECOY`EMPTY `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`END", 
-        "flags": "i", 
-        "replacement": "unknownword"
-      }
-    }, 
-    {
-      "Regex": {
-        "pattern": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`START .[^`]*? `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`DECOY`INSIDE .*? `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`END`DECOY `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`END", 
-        "flags": "i", 
-        "replacement": "unknownword"
-      }
-    }, 
-    {
-      "Regex": {
-        "pattern": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`START`DECOY (.*?) `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`END`DECOY", 
-        "flags": "i", 
-        "replacement": "unknownword"
-      }
-    }, 
-    {
-      "Regex": {
-        "pattern": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`START (.*?) `a1114a5f-e3ce-44de-b84b-a22d3cd63e37`END", 
-        "flags": "i", 
-        "replacement": "$1"
-      }
-    }, 
-    {
-      "Regex": {
-        "pattern": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`START ", 
+        "pattern": "`ba4349c7-de12-4255-8608-c7e4ea05d980`START ", 
         "flags": "i", 
         "replacement": ""
       }
@@ -138,32 +102,20 @@
   }, 
   "entitiesFstMap": [
     [
-      406, 
+      302, 
       "__root__"
     ], 
     [
-      407, 
+      303, 
       "e_0.snips"
-    ], 
-    [
-      408, 
-      "e_1.snips"
     ]
   ], 
   "entityNameToDisambigs": {
-    "snips/ordinal": {
-      "start": "`d415d293-e3c4-4217-b99e-584c79c435a9`START", 
-      "end": "`d415d293-e3c4-4217-b99e-584c79c435a9`END", 
-      "empty": [
-        "`d415d293-e3c4-4217-b99e-584c79c435a9`DECOY`EMPTY", 
-        2
-      ]
-    }, 
     "snips/number": {
-      "start": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`START", 
-      "end": "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`END", 
+      "start": "`ba4349c7-de12-4255-8608-c7e4ea05d980`START", 
+      "end": "`ba4349c7-de12-4255-8608-c7e4ea05d980`END", 
       "empty": [
-        "`a1114a5f-e3ce-44de-b84b-a22d3cd63e37`DECOY`EMPTY", 
+        "`ba4349c7-de12-4255-8608-c7e4ea05d980`DECOY`EMPTY", 
         2
       ]
     }
