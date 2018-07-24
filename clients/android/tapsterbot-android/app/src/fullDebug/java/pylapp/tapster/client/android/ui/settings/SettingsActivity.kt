@@ -44,6 +44,9 @@ class SettingsActivity : AppCompatActivity() {
      * COMPANION OBJECT *
      * **************** */
 
+    /**
+     * A simple companion object
+     */
     companion object {
 
         /**

@@ -79,6 +79,8 @@ interface AssistantStub {
      * Indeed, with several bundles / packages / other folders, we may have several declinations for
      * a single intent. For example, the intent "Throw_my_banana" can be declined to "fr_Throw_my_banana"
      * and "en_Throw_my_banana".
+     *
+     * @param usageName - The name, or a fragment of name, of the intent, defined within Snips console
      */
     enum class Intents(val usageName: String) {
         /**

@@ -593,6 +593,8 @@ class SnipsAssistantSkeleton : AssistantStub {
 
     /**
      * An exception to throw if the [SnipsPlatformClient] has not been defined
+     *
+     * @param message - The error message to display
      */
     class NullSnipsException(override val message: String) : IllegalStateException(message)
 
