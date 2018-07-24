@@ -27,6 +27,7 @@
         <item>French (France)</item>
     </string-array>
 
+    <!-- Do not modify -->
     <string-array name="assistant_locale_values">
         <item>English</item>
         <item>French</item>

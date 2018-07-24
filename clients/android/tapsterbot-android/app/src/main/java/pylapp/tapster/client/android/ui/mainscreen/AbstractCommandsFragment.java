@@ -22,6 +22,7 @@
 package pylapp.tapster.client.android.ui.mainscreen;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -48,13 +49,13 @@ public abstract class AbstractCommandsFragment extends Fragment {
     /**
      * The object to use to send HTTP requests
      */
-    protected HttpClientStub mHttpClient;
+    HttpClientStub mHttpClient;
 
     /**
      * The object which checks the permissions granted to the app
      * Permissions may managed, specially for HTTP requests.
      */
-    protected PermissionsManagerStub mPermissionsManager;
+    PermissionsManagerStub mPermissionsManager;
 
     /**
      * Default constructor
@@ -101,8 +102,10 @@ public abstract class AbstractCommandsFragment extends Fragment {
      * Asks for permissions if needed
      */
     private void askForPermissionsIfNeeded() {
-        if (!mPermissionsManager.isPermissionGranted(getActivity(), Manifest.permission.INTERNET)) {
-            mPermissionsManager.askForPermissions(getActivity(), null,
+        Activity activity = getActivity();
+        if (activity != null &&
+                !mPermissionsManager.isPermissionGranted(activity, Manifest.permission.INTERNET)) {
+            mPermissionsManager.askForPermissions(activity, null,
                     Manifest.permission.INTERNET);
         }
     }
@@ -110,7 +113,7 @@ public abstract class AbstractCommandsFragment extends Fragment {
     /**
      * Initializes the HTTP client which will be used to send HTTP requests
      */
-    protected void initHttpClient() {
+    void initHttpClient() {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String serverProtocol = preferences.getString(Config.PREFERENCES_ROBOT_PROTOCOL,
@@ -131,7 +134,7 @@ public abstract class AbstractCommandsFragment extends Fragment {
      * Updates the HTTP client which will be used to send HTTP requests,
      * with values defined in preferences. Checks also the permissions.
      */
-    protected void updateHttpClient() {
+    void updateHttpClient() {
 
         askForPermissionsIfNeeded();
 
@@ -166,7 +169,7 @@ public abstract class AbstractCommandsFragment extends Fragment {
     /**
      * @return boolean - True if the commandTap targets feature is enabled, false otherwise
      */
-    protected boolean isTapTargetsEnabled() {
+    boolean isTapTargetsEnabled() {
         PropertiesReaderStub propertiesReader = new FeaturesFactory().buildPropertiesReader();
         propertiesReader.loadProperties(getActivity());
         return "true".equals(propertiesReader.readProperty(PropertiesReaderStub.ENABLE_GUI_DISPLAY_TAPTARGETS));

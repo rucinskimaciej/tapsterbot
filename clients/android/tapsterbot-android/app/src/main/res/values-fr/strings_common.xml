@@ -35,7 +35,6 @@
 
     <string name="content_description_assistant_loading">Assistant en cours de chargement&#8230;</string>
     <string name="content_description_assistant_message">Messages échangés avec l\'assistant du robot</string>
-    <string name="content_description_button_action">Bouton pour démarrer l\'assistant pour parler avec lui</string>
 
     <!-- **** -->
     <!-- Tabs -->
@@ -52,8 +51,6 @@
 
     <string name="menu_display_settings_screen">Paramètres</string>
     <string name="content_description_menu_display_settings_screen">Affiche les paramètres de l\'application the settings screen</string>
-    <string name="menu_display_credits_screen">Crédits</string>
-    <string name="content_description_menu_display_credits_screen">Affiche les licenses de soutils utilisés dans l\'application</string>
 
     <!-- ******** -->
     <!-- Settings -->
@@ -89,7 +86,6 @@
 
     <string name="state_command_success">Succès</string>
     <string name="state_command_failure">Echec</string>
-    <string name="state_command_failure_intent">Intent non géré</string>
 
 </resources>
 

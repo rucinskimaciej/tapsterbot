@@ -26,19 +26,18 @@
     <!-- For Dexter library -->
     <!-- ****************** -->
 
-    <string name="permission_recordaudio_title">Record audio permission</string>
-    <string name="permission_recordaudio_message">Record audio permission is needed to permit you to talk to the assistant</string>
-    <string name="permission_readexternalstorage_title">Read external storage permission</string>
-    <string name="permission_readexternalstorage_message">Read external storage permission is needed to load the assets and files used by the assistant</string>
+    <string name="permission_recordaudio_title">Autorisation d\'utiliser le micro</string>
+    <string name="permission_recordaudio_message">Cette autorisation doit être donnée pour que vous puissiez parler à l\'assistant.</string>
+    <string name="permission_readexternalstorage_title">Autorisation de lire des fichiers</string>
+    <string name="permission_readexternalstorage_message">Cette autorisation doit être donnée pour que les fichiers de l\'assistant puissent être chargés</string>
+    <string name="permission_internet_title">Autorisation Internet</string>
+    <string name="permission_internet_message">Cette autorisation doit être donnée pour que l\'app pusise envoyer des commandes au robot.</string>
+    <string name="permission_title">Autorisation nécessaire</string>
+    <string name="permission_message">Vous devez accorder cette autorisation</string>
 
-    <string name="permission_internet_title">Internet permission</string>
-    <string name="permission_internet_message">Internet permission is needed to send HTTP requests to the robot\'s server</string>
-    <string name="permission_title">Permission</string>
-    <string name="permission_message">You should grant this permission</string>
-
-    <string name="error_permission_not_granted_internet">You must accord the INTERNET permission to do this action</string>
-    <string name="error_permission_not_granted_recordaudio">You must accord the RECORD AUDIO permission to do this action</string>
-    <string name="error_permission_not_granted_storage">You must accord the READ STORAGE permission to do this action</string>
-
+    <string name="error_permission_not_granted_internet">Vous devez autoriser la permission INTERNET pour faire cette action !</string>
+    <string name="error_permission_not_granted_recordaudio">Vous devez autoriser la permission MICROPHONE pour faire cette action !</string>
+    <string name="error_permission_not_granted_storage">Vous devea autoriser la permission LECTURE DE FICHIERS pour faire cete action !</string>
+    
 </resources>
 

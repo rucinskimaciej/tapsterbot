@@ -151,7 +151,7 @@ class SettingsActivity : AppCompatActivity() {
             val properties = FeaturesFactory().buildPropertiesReader()
             properties.loadProperties(activity)
             return properties.readProperty(PropertiesReaderStub.ENABLE_GUI_DISPLAY_LICENSES)!!.toBoolean()
-        } // End of private fun isDisplayLicensesEnabled(context: Context): Boolean
+        }
 
         /**
          * Hides in the GUI the fields related to licenses

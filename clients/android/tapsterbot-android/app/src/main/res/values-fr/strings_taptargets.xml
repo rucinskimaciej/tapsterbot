@@ -35,9 +35,6 @@
     <string name="taptarget_tab_settings_title">Configuration</string>
     <string name="taptarget_tab_settings_description">Besoin de régler le robot ? Vous pouvez trouver des choses ici.</string>
 
-    <string name="taptarget_commandtab_title">Faire des gests</string>
-    <string name="taptarget_commandtab_description">Vous pouvez trouver ici les commandes du robot pour exécuter des gestes particuliers</string>
-
     <string name="taptarget_tap_title">Exemple de commande</string>
     <string name="taptarget_tap_description">Vous pouvez choisir une commande en cliquant dessus</string>
 

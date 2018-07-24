@@ -31,11 +31,6 @@
         <item name="android:colorBackground">@color/screenBackgroundColor</item>
     </style>
 
-    <!-- For the crash dialog -->
-    <!-- FIXME Make better theme -->
-    <style name="CrashDialog" parent="@android:style/Theme.Material.Dialog"/>
-    <!--<style name="CrashDialog" parent="@android:style/Theme.Dialog"/>--> <!-- old school-->
-
     <!-- Theme for splash screen -->
 
     <style name="SplashTheme" parent="AppTheme">

@@ -35,7 +35,6 @@
 
     <string name="content_description_assistant_loading">Assistant loading&#8230;</string>
     <string name="content_description_assistant_message">Message exchanged between the user and the assistant</string>
-    <string name="content_description_button_action">Button to start the assistant or talk with it</string>
 
     <!-- **** -->
     <!-- Tabs -->
@@ -52,8 +51,6 @@
 
     <string name="menu_display_settings_screen">Settings</string>
     <string name="content_description_menu_display_settings_screen">Display the settings screen</string>
-    <string name="menu_display_credits_screen">Credits</string>
-    <string name="content_description_menu_display_credits_screen">Display the credits and licenses</string>
 
     <!-- ******** -->
     <!-- Settings -->
@@ -89,7 +86,6 @@
 
     <string name="state_command_success">Success</string>
     <string name="state_command_failure">Failure</string>
-    <string name="state_command_failure_intent">Unknown intent</string>
     <string name="acra_notification_channel">Crash report (using ACRA)</string>
 
 </resources>

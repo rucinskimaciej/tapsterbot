@@ -592,7 +592,7 @@ class SnipsAssistantSkeleton : AssistantStub {
      * ************* */
 
     /**
-     * An exception to throw if the [Megazord] has not been defined
+     * An exception to throw if the [SnipsPlatformClient] has not been defined
      */
     class NullSnipsException(override val message: String) : IllegalStateException(message)
 

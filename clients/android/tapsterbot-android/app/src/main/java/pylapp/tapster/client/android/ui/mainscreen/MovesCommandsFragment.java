@@ -86,7 +86,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for the widgets
+     * Initializes the listeners for the widgets.
+     * Should be called in the super class {@link AbstractCommandsFragment} in its onResume() method
+     * so as to be sure elements have been inflated.
      */
     @Override
     protected void initListeners() {
@@ -112,7 +114,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to dance command
+     * Initializes the listeners for widgets in the folding cell dedicated to dance command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDanceListener() {
 
@@ -160,12 +164,14 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to stop dance command
+     * Initializes the listeners for widgets in the folding cell dedicated to stop dance command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initStopDanceListener() {
 
         // The cell for the stop dance feature
-        final FoldingCell fcCommandStopDance = getActivity().findViewById(R.id.fc_command_stopdance);
+        @SuppressWarnings("ConstantConditions") final FoldingCell fcCommandStopDance = getActivity().findViewById(R.id.fc_command_stopdance);
 
         fcCommandStopDance.setOnClickListener(v -> {
 
@@ -208,7 +214,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to swipe command
+     * Initializes the listeners for widgets in the folding cell dedicated to swipe command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initSwipeListener() {
 
@@ -293,7 +301,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
 
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to n-swipe command
+     * Initializes the listeners for widgets in the folding cell dedicated to n-swipe command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initSwipeManyListener() {
 
@@ -361,7 +371,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to tap command
+     * Initializes the listeners for widgets in the folding cell dedicated to tap command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initTapListener() {
 
@@ -426,7 +438,9 @@ public class MovesCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to many tap command
+     * Initializes the listeners for widgets in the folding cell dedicated to many tap command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initManyTapListener() {
 

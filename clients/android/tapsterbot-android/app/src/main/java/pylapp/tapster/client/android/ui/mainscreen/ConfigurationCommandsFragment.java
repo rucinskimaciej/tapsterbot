@@ -81,7 +81,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for the widgets
+     * Initializes the listeners for the widgets.
+     * Should be called in the super class {@link AbstractCommandsFragment} in its onResume() method
+     * so as to be sure elements have been inflated.
      */
     @Override
     protected void initListeners() {
@@ -110,55 +112,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to dance command
-     */
-    private void initDanceListener() {
-
-        // The cell for the dance feature
-        final FoldingCell fcCommandDance = getActivity().findViewById(R.id.fc_command_dance);
-
-        fcCommandDance.setOnClickListener(v -> {
-
-            fcCommandDance.toggle(false);
-
-            // The action button
-            Button processButton = fcCommandDance.findViewById(R.id.bt_command_action_dance);
-            processButton.setOnClickListener(v2 -> {
-                try {
-                    // Update the HTTP client, and send the request if permission is granted
-                    updateHttpClient();
-                    if (!mPermissionsManager.isPermissionGranted(getActivity(),
-                            Manifest.permission.INTERNET)) {
-                        Toast.makeText(getActivity(), R.string.error_permission_not_granted_internet, Toast.LENGTH_LONG).show();
-                    } else {
-                        mHttpClient.commandDance(new HttpClientStub.HttpClientCallback() {
-                            @Override
-                            public void onSuccess(@Nullable String message) {
-                                getActivity().runOnUiThread(
-                                        () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
-                                );
-                            }
-
-                            @Override
-                            public void onFailure(@Nullable String message) {
-                                getActivity().runOnUiThread(
-                                        () -> Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show()
-                                );
-                            }
-                        });
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            });
-
-        });
-
-    }
-
-    /**
-     * Initializes the listeners for widgets in the folding cell dedicated to get position command
+     * Initializes the listeners for widgets in the folding cell dedicated to get position command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initGetPositionListener() {
 
@@ -207,11 +163,14 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to set position command
+     * Initializes the listeners for widgets in the folding cell dedicated to set position command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initSetPositionListener() {
 
         // Get the folding cell
+        //noinspection ConstantConditions
         final FoldingCell fcCommandSetPosition = getActivity().findViewById(R.id.fc_command_setposition);
 
         // The listener to open / close it
@@ -273,7 +232,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to get angles command
+     * Initializes the listeners for widgets in the folding cell dedicated to get angles command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initGetAnglesListener() {
 
@@ -322,7 +283,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to set angles command
+     * Initializes the listeners for widgets in the folding cell dedicated to set angles command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initSetAnglesListener() {
 
@@ -388,7 +351,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to get status command
+     * Initializes the listeners for widgets in the folding cell dedicated to get status command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initGetStatusListener() {
 
@@ -437,7 +402,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to get contact command
+     * Initializes the listeners for widgets in the folding cell dedicated to get contact command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initGetContactZlistener() {
 
@@ -486,7 +453,9 @@ public class ConfigurationCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for widgets in the folding cell dedicated to reset command
+     * Initializes the listeners for widgets in the folding cell dedicated to reset command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initResetListener() {
 

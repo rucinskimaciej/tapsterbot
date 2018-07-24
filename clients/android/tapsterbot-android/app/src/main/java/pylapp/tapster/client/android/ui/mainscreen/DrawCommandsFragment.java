@@ -81,7 +81,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners for the widgets
+     * Initializes the listeners for the widgets.
+     * Should be called in the super class {@link AbstractCommandsFragment} in its onResume() method
+     * so as to be sure elements have been inflated.
      */
     @Override
     protected void initListeners() {
@@ -95,7 +97,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners on widgets related to draw star command
+     * Initializes the listeners on widgets related to draw star command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawStarListener(){
 
@@ -143,7 +147,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners on widgets related to draw circle command
+     * Initializes the listeners on widgets related to draw circle command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawCircleListener(){
 
@@ -213,7 +219,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the widgets for the draw spiral folding cell
+     * Initializes the widgets for the draw spiral folding cell.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawSpiralListener(){
 
@@ -284,7 +292,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners on widgets related to draw square command
+     * Initializes the listeners on widgets related to draw square command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawSquareListener(){
 
@@ -353,7 +363,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners on widgets related to draw cross command
+     * Initializes the listeners on widgets related to draw cross command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawCrossListener(){
 
@@ -428,7 +440,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners on widgets related to draw triangle command
+     * Initializes the listeners on widgets related to draw triangle command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawTriangleListener(){
 
@@ -501,7 +515,9 @@ public class DrawCommandsFragment extends AbstractCommandsFragment {
     }
 
     /**
-     * Initializes the listeners on widgets related to draw random pattern command
+     * Initializes the listeners on widgets related to draw random pattern command.
+     * Should be called within initListeners() method, itself called in the onResume() method to be sure
+     * widgets and layouts have been inflated.
      */
     private void initDrawRandomPatternListener(){
 

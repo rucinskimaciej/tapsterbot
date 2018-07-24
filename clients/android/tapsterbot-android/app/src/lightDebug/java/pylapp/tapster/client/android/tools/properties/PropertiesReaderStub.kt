@@ -33,7 +33,7 @@ isTextToSpeechEnabled
  * @author pylapp
  * @since 07/02/2018
  *
- * @version 1.0.0
+ * @version 2.0.0
  */
 interface PropertiesReaderStub {
 
@@ -73,49 +73,9 @@ interface PropertiesReaderStub {
         const val ENABLE_GUI_COMMANDS = "enable_commands"
 
         /**
-         * Enable or disable the assistant
-         */
-        const val ENABLE_ASSISTANT = "enable_assistant"
-
-        /**
-         * Display debug messages of the assistant
-         */
-        const val ENABLE_ASSISTANT_GUI_DISPLAY_DEBUG_MESSAGES = "enable_assistant_gui_display_debug_messages"
-
-        /**
-         * Display verbose messages of the assistant
-         */
-        const val ENABLE_ASSISTANT_GUI_DISPLAY_VERBOSE_MESSAGES = "enable_assistant_gui_display_verbose_messages"
-
-        /**
-         * Display information messages of the assistant
-         */
-        const val ENABLE_ASSISTANT_GUI_DISPLAY_INFORMATION_MESSAGES = "enable_assistant_gui_display_information_messages"
-
-        /**
-         * Display warning messages of the assistant
-         */
-        const val ENABLE_ASSISTANT_GUI_DISPLAY_WARNING_MESSAGES = "enable_assistant_gui_display_warning_messages"
-
-        /**
-         * Display alert messages of the assistant
-         */
-        const val ENABLE_ASSISTANT_GUI_DISPLAY_ALERT_MESSAGES = "enable_assistant_gui_display_alert_messages"
-
-        /**
-         * Enable or disable Text To Speech
-         */
-        const val ENABLE_ASSISTANT_TTS = "enable_assistant_tts"
-
-        /**
          * Enable of not the crash-report-management feature
          */
         const val ENABLE_CRASH_REPORT_MANAGEMENT = "enable_monitoring_crash"
-
-        /**
-         * Enable or not the vibrations made to notify something to the user
-         */
-        const val ENABLE_VIBRATIONS = "enable_vibrations"
 
     }
 

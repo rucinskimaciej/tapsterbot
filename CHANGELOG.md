@@ -72,7 +72,7 @@
 	* tap n times
 	* swipe n times
 	* update assistant capabilities
-	* [ON GOING] clean up sources
+	* clean sources
 
 * Documentation
 	* more details in CURL samples

@@ -38,7 +38,7 @@ import java.util.*
  *
  * @version 1.0.0
  */
-class AssetsPropertiesReaderSkeleton : PropertiesReaderStub {
+class AssetsPropertiesReaderSkeleton: PropertiesReaderStub {
 
 
     /* ********** *
