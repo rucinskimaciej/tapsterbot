@@ -119,3 +119,61 @@ Go to your initial state
 Reset yourself  
 Reset  
 Be clean
+
+**en_Draw_square**
+I want a square with a length of [length](length)
+I want you draw a square with a length of [length](length)
+Draw a square using a length of [length](length)
+Draw a square with sides of length [length](length)
+I want you draw for me a square with sides of length [length](length)
+I want you draw for me a square with a length of [length](length) for its sides
+Please, draw a square with its sides of length [length](length)
+Could you draw a square with a length of [length](length) for its sides please?
+
+**en_Draw_star**
+Please could you draw for me a lovely star?
+Please could you draw a star?
+I would like a star please
+I want you draw a simple star please
+I want you draw a star
+I want a star
+Draw a star please
+Draw a lovely star
+Draw a simple star
+
+**en_Draw_triangle**
+I want a triangle with the first point [x1](x1) [y1](y1), the second point [x2](x2) [y2](y2) and the third point [x3](x3) [y3](y3)
+Draw me a triangle with the first point [x1](x1) [y1](y1), the second point [x2](x2) [y2](y2) and the third point [x3](x3) [y3](y3)
+I want a triangle with the three points [x1](x1) [y1](y1) [x2](x2) [y2](y2) [x3](x3) [y3](y3)
+Draw a triangle with the first point [x1](x1) [y1](y1) the second point [x2](x2) [y2](y2) and the third point [x3](x3) [y3](y3)
+
+**en_Draw_random**
+Draw for me please something with [n](n) points
+Please could you draw for me something with [n](n) points?
+I want you draw a random pattern wth [n](n) points
+Draw me a random pattern with [n](n) points
+Draw something random using [n](n) points
+Please could you draw something random with [n](n) points?
+I would like a random apttern using [n](n) points
+I would like something random with [n](n) points
+
+**en_Tap_n_times**
+Click on the point at [x](x) [y](y) [n](n) times please
+Could you click [n](n) times on the point at [x](x) [y](y) please?
+Could you tap [n](n) times on the point at [x](x) [y](y) please?
+Tap [n](n) times on the point at [x](x) [y](y)
+Tap [n](n) times on [x](x) [y](y)
+Click [n](n) times on the point at [x](x) [y](y)
+Click [n](n) times on [x](x) [y](y)
+Hit [n](n) times on [x](x) [y](y)
+Hit [n](n) times on point at coordinates [x](x) [y](y)
+I want you tap [n](n) times on [x](x) [y](y)
+
+**en_Draw_circle**
+Draw a circle centered on the point [x](x) [y](y) with a radius of [radius](radius)
+Draw for me a circle with a center point of [x](x) [y](y) and a radius of [radius](radius)
+Please could you draw a circle centered on [x](x) [y](y) using a radius of [radius](radius)?
+I would like a circle with the center on [x](x) [y](y) and a radius [radius](radius)
+Make a circle with a radius of [radius](radius) and a center on [x](x) [y](y)
+Create a circle on [x](x) [y](y) with a radius of [radius](radius)
+Create a circle on [x](x) [y](y) with a radius of [radius](radius)

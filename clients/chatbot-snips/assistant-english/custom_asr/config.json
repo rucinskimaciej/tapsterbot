@@ -1,17 +1,25 @@
 {
+  "entityNameToFilename": {
+    "snips/number": "e_0.snips"
+  }, 
+  "injectionsEngine": {
+    "version": 1
+  }, 
+  "language": "en", 
   "decoderConfig": {
     "useFinalProbs": true, 
     "latticeBeamSize": 1.0, 
     "maxActive": 2000, 
     "minActive": 200, 
-    "acousticScale": 1.0, 
+    "acousticScale": 0.83, 
     "beamSize": 10.0
   }, 
+  "cacheSizeDynamic": 536870912, 
   "asrModel": {
     "version": "0.1.0"
   }, 
   "asrLmAdaptation": {
-    "version": "0.6.10"
+    "version": "0.9.2"
   }, 
   "endpointingRules": {
     "rule3": {
@@ -48,30 +56,37 @@
   "postprocessors": [
     {
       "Regex": {
-        "pattern": "`snipsnumber`START .[^`]*? `snipsnumber`DECOY`EMPTY `snipsnumber`END", 
+        "pattern": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`START .[^`]*? `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`DECOY`EMPTY `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`END", 
         "flags": "i", 
         "replacement": "unknownword"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`snipsnumber`START .[^`]*? `snipsnumber`DECOY`INSIDE .*? `snipsnumber`END`DECOY `snipsnumber`END", 
+        "pattern": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`START .[^`]*? `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`DECOY`INSIDE .*? `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`END`DECOY `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`END", 
         "flags": "i", 
         "replacement": "unknownword"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`snipsnumber`START`DECOY (.*?) `snipsnumber`END`DECOY", 
+        "pattern": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`START`DECOY (.*?) `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`END`DECOY", 
         "flags": "i", 
         "replacement": "unknownword"
       }
     }, 
     {
       "Regex": {
-        "pattern": "`snipsnumber`START (.*?) `snipsnumber`END", 
+        "pattern": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`START (.*?) `2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`END", 
         "flags": "i", 
         "replacement": "$1"
+      }
+    }, 
+    {
+      "Regex": {
+        "pattern": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`START ", 
+        "flags": "i", 
+        "replacement": ""
       }
     }, 
     {
@@ -84,5 +99,25 @@
   ], 
   "asrEngine": {
     "version": "0.1.0"
+  }, 
+  "entitiesFstMap": [
+    [
+      292, 
+      "__root__"
+    ], 
+    [
+      293, 
+      "e_0.snips"
+    ]
+  ], 
+  "entityNameToDisambigs": {
+    "snips/number": {
+      "start": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`START", 
+      "end": "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`END", 
+      "empty": [
+        "`2dd0bf39-5ffa-453c-bef7-6ca0ea98ef7d`DECOY`EMPTY", 
+        4
+      ]
+    }
   }
 }

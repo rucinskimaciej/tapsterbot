@@ -6,6 +6,6 @@ The slots (i.e. some kinds of variables) and the training samples are in the _da
 
 Be aware there is no logic about the Tapster robot here. Only the assistant is defined is this location, and you should integrate it and bind it to the logic of your client or platform (Android, web, Raspberry, etc).  
 
-The Snips' NLU engine's version is **0.12.0**
-
 You can find the _Tapster2 commands (french)_ on the Snips store: https://console.snips.ai/store/fr/bundle_PPn5qxGGbBQ
+
+You may find also the english version on the Snips store.
