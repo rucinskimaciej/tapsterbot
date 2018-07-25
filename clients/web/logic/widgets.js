@@ -111,6 +111,7 @@
     initWidgetsSetAngles();
     initWidgetDance();
     initWidgetStopDance();
+    initWidgetDrawStar();
 
   }
 
@@ -533,3 +534,16 @@
     parameters = parameters.split(" ");
     return '{"theta1": "' + parameters[0] +'", "theta2": "' + parameters[1] + '", "theta3": "' + parameters[2] + '"}';
   }
+
+  /**
+  * Initializes the logic of the widget which sends a "draw star" request
+  */
+  function initWidgetDrawStar(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"draw star\" request...")
+      sendPostRequest(baseUrl+  URL_ROBOT_API_DRAW_STAR, "{}");
+    }
+    document.getElementById("buttonRequestDrawStar").addEventListener("click", sendRequest);
+  }
+

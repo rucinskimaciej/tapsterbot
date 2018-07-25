@@ -166,3 +166,12 @@ SOFTWARE.
 #commandStressSwipe input[type="text"] {
   background-color: #11122B26;
 }
+
+#commandDrawStar {
+  background-color: #e91e63;
+  color: #FFFFFF;
+}
+
+#commandDrawStar input[type="text"] {
+  background-color: #e91e6326;
+}
