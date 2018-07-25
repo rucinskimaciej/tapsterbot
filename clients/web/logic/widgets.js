@@ -205,7 +205,7 @@
         addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-tap-parameters").value+"'");
       } else {
         let baseUrl = getRobotServerUrl();
-        let i = 0;
+        let i = 1;
         let max = params[0];
         let toTrigger = function(){
           if ( i >= max ) clearInterval(interval);
