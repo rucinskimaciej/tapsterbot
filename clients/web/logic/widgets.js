@@ -113,6 +113,7 @@
     initWidgetStopDance();
     initWidgetDrawStar();
     initWidgetDrawCircle();
+    initWidgetDrawSpiral();
 
   }
 
@@ -446,6 +447,26 @@
   }
 
   /**
+  * Initializes the logic of the widget which sends a "draw a spiral" request
+  */
+  function initWidgetDrawSpiral(){
+    let sendRequest = function(){
+      let body = getRequestDrawSpiralParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("draw-spiral-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"draw spiral\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_DRAW_SPIRAL, body);
+      }
+    }
+    document.getElementById("buttonRequestDrawSpiral").addEventListener("click", sendRequest);
+    document.getElementById("draw-spiral-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
+  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
   */
@@ -581,3 +602,19 @@
     parameters = parameters.split(" ");
     return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "r": "' + parameters[2] + '"}';
   }
+
+  /**
+  * Returns the parameters for the draw spiral request, or null if the format is not correct
+  * @return String -
+  */
+  function getRequestDrawSpiralParameters(){
+    let parameters = document.getElementById("draw-spiral-parameters").value;
+    parameters = parameters.trim();
+    if ( ! REGEX_PARAMETER_DRAW_SPIRAL.test(parameters) ){
+      return null;
+    }
+    parameters = parameters.split(" ");
+    return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "r": "' 
+      + parameters[2] + '", "n": "'+parameters[3]+'"}';
+  }
+

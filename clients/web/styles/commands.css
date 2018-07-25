@@ -97,7 +97,6 @@ SOFTWARE.
   border: 3px dashed rgba(255, 255, 255, 1);
 }
 
-
 .actionButton {
   background-color: #6af4b0;
   cursor: pointer;
@@ -173,12 +172,13 @@ SOFTWARE.
   background-color: #11122B26;
 }
 
-#commandDrawStar, #commandDrawCircle {
+#commandDrawStar, #commandDrawCircle, #commandDrawSpiral {
   background-color: #e91e63;
   color: #FFFFFF;
 }
 
 #commandDrawStar input[type="text"],
-#commandDrawCircle input[type="text"] {
+#commandDrawCircle input[type="text"],
+#commandDrawSpiral input[type="text"] {
   background-color: #e91e6326;
 }

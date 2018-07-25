@@ -49,6 +49,7 @@ SOFTWARE.
  let URL_ROBOT_API_STOP_DANCE = "/stopDancing";
  let URL_ROBOT_API_DRAW_STAR = "/drawStar";
  let URL_ROBOT_API_DRAW_CIRCLE = "/drawCircle";
+ let URL_ROBOT_API_DRAW_SPIRAL = "/drawSpiral";
 
 /* ******************** *
  * REGEX FOR PARAMETERS *
@@ -64,6 +65,7 @@ SOFTWARE.
  let REGEX_PARAMETER_SET_POSITION = /^[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+$/;
  let REGEX_PARAMETER_SET_ANGLES = /^[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+$/;
  let REGEX_PARAMETER_DRAW_CIRCLE = /^[0-9]+\s[0-9]+\s[0-9]+$/;
+ let REGEX_PARAMETER_DRAW_SPIRAL = /^[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+$/;
 
 /* ******* *
  * STORAGE *
