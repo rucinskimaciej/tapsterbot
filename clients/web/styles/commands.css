@@ -92,7 +92,6 @@ SOFTWARE.
 }
 
 .actionButton {
-  z-index: 99;
   background-color: #6af4b0;
   cursor: pointer;
   padding: 15px;
