@@ -97,6 +97,7 @@
 
     initWidgetReset();
     initWidgetStatus();
+    initWidgetContactZ();
     initWidgetsTap();
     initWidgetsNTap();
     initWidgetsStressTap();
@@ -123,6 +124,19 @@
     }
     document.getElementById("buttonRequestReset").addEventListener("click", sendRequest);
   }
+
+  /**
+  * Initializes the logic of the widget which sends a "get contact z" request
+  */
+  function initWidgetContactZ(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"get contact z\" request...")
+      sendGetRequest(baseUrl+  URL_ROBOT_API_GET_CONTACT_Z);
+    }
+    document.getElementById("buttonRequestContactZ").addEventListener("click", sendRequest);
+  }
+
 
   /**
   * Initializes the logic of the widget which sends a "status" request

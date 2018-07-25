@@ -25,7 +25,7 @@ SOFTWARE.
 * @file config.js
 * @brief Classic JavaScript file containing configuration to use for the web app
 * @author pylapp
-* @version 1.0.0
+* @version 2.0.0
 * @since 29/03/2018
 */
 
@@ -37,6 +37,7 @@ SOFTWARE.
 
  let URL_ROBOT_API_RESET = "/reset";
  let URL_ROBOT_API_STATUS = "/status";
+ let URL_ROBOT_API_GET_CONTACT_Z = "/contactZ";
  let URL_ROBOT_API_TAP = "/tap";
  let URL_ROBOT_API_SWIPE = "/swipe";
  let URL_ROBOT_API_GET_POSITION = "/position";
