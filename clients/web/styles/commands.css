@@ -92,6 +92,12 @@ SOFTWARE.
   color: #FFFFFF;
 }
 
+.commandBlock input[type=text]:focus {
+  @include box-shadow(0 0 3px rgba(255, 255, 255, 1));
+  border: 3px dashed rgba(255, 255, 255, 1);
+}
+
+
 .actionButton {
   background-color: #6af4b0;
   cursor: pointer;
