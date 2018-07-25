@@ -25,7 +25,7 @@ SOFTWARE.
 * @file header.css
 * @brief Style sheet for the header
 * @author pylapp
-* @version 1.0.0
+* @version 2.0.0
 * @since 23/03/2018
 */
 
@@ -48,7 +48,7 @@ header {
 #mainHeader {
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 99;
   top: 0px;
 }
 

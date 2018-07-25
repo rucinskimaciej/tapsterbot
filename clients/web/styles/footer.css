@@ -25,13 +25,13 @@ SOFTWARE.
 * @file footer.css
 * @brief Style sheet for the footer
 * @author pylapp
-* @version 1.0.0
+* @version 2.0.0
 * @since 29/03/2018
 */
 
 #configUrlOfServer, #clearConsole {
   position: fixed;
-  z-index: 99;
+  z-index: 50;
   outline: none;
   background-color: #455a64;
   color: white;

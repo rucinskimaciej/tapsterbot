@@ -31,6 +31,13 @@
 
   @media screen and (max-width: 600px){
 
+    /* The header */
+
+    #headerLogo {
+      width: 4em;
+      height: 4em;
+    }
+
     /* The commands board  */
 
     h1 {
