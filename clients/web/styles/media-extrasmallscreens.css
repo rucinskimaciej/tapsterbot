@@ -63,6 +63,8 @@
 
     #boardConsole {
       width: 40% !important;
+      height: calc(100% - 70px);
+      margin-top: 20px;
     }
 
     p.errorMessage, p.simpleMessage, p.resultMessage {

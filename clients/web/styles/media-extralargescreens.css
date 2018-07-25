@@ -67,6 +67,9 @@ SOFTWARE.
 
   #boardConsole {
     width: 55% !important;
+    height: 85%;
+    margin-right: 10px;
+    margin-top: 20px;
   }
 
   p.errorMessage, p.simpleMessage, p.resultMessage {

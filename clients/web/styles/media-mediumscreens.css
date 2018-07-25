@@ -30,7 +30,8 @@
   */
 
 
-  @media only screen and (min-width: 768px) {.
+  @media only screen and (min-width: 680px /*768px*/) {
+
 
     /* The commands board  */
 
@@ -67,7 +68,11 @@
     /* The console board  */
 
     #boardConsole {
-      width: 45% !important;
+      width: 40% !important;
+      margin-top: 20px;
+      height: 85%;
+      margin-right: 10px;
+      margin-bottom: 20px;
     }
 
     p.errorMessage, p.simpleMessage, p.resultMessage {
