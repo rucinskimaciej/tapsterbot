@@ -25,7 +25,7 @@
   * @file widgets.js
   * @brief JavaScript file containing the source code of the logic behing the widgets
   * @author pylapp
-  * @version 1.0.0
+  * @version 2.0.0
   * @since 05/04/2018
   */
 
@@ -84,10 +84,7 @@
       if (registerTimer != null) clearTimeout(registerTimer);
       registerTimer = setTimeout(readyToSave, interval)
     }
-    // document.getElementById("setServerUrl").addEventListener("keyup", setUrlOfServerInBase);
-    // document.getElementById("setServerUrl").onkeydown = function(e){
-    //   if ( e.which == 13 /*ENTER key*/ ) readyToSave();
-    // }
+
     document.getElementById("setServerUrl").onkeydown = function(e){
       if ( e.which == 13 /*ENTER key*/ ){
         readyToSave();
@@ -385,6 +382,7 @@
   */
   function getRequestTapParameters(){
     let parameters = document.getElementById("tap-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_TAP.test(parameters) ){
       return null;
     }
@@ -398,6 +396,7 @@
   */
   function getRequestNTapParameters(){
     let parameters = document.getElementById("n-tap-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_N_TAP.test(parameters) ){
       return null;
     }
@@ -410,6 +409,7 @@
   */
   function getRequestStressTapParameters(){
     let parameters = document.getElementById("stress-tap-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_STRESS_TAP.test(parameters) ){
       return null;
     }
@@ -422,6 +422,7 @@
   */
   function getRequestSwipeParameters(){
     let parameters = document.getElementById("swipe-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_SWIPE.test(parameters) ){
       return null;
     }
@@ -436,6 +437,7 @@
   */
   function getRequestNSwipeParameters(){
     let parameters = document.getElementById("n-swipe-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_N_SWIPE.test(parameters) ){
       return null;
     }
@@ -448,6 +450,7 @@
   */
   function getRequestStressSwipeParameters(){
     let parameters = document.getElementById("stress-swipe-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_STRESS_SWIPE.test(parameters) ){
       return null;
     }
@@ -460,6 +463,7 @@
   */
   function getRequestSetPositionParameters(){
     let parameters = document.getElementById("set-position-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_SET_POSITION.test(parameters) ){
       return null;
     }
@@ -473,6 +477,7 @@
   */
   function getRequestSetAnglesParameters(){
     let parameters = document.getElementById("set-angles-parameters").value;
+    parameters = parameters.trim();
     if ( ! REGEX_PARAMETER_SET_ANGLES.test(parameters) ){
       return null;
     }

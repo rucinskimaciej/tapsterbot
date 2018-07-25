@@ -25,7 +25,7 @@ SOFTWARE.
 * @file storage.js
 * @brief Classic JavaScript file which handles with storage things
 * @author pylapp
-* @version 1.0.0
+* @version 2.0.0
 * @since 29/03/2018
 */
 
@@ -40,6 +40,7 @@ SOFTWARE.
 function setRobotServerUrl(url){
   if (typeof(Storage) !== "undefined") {
     console.log("Storage - save value of server's URL - "+url);
+    url = url.trim();
     localStorage.setItem(KEY_STORAGE_SERVER_URL, url);
     return true;
   } else {
@@ -56,6 +57,7 @@ function getRobotServerUrl(){
   if (typeof(Storage) !== "undefined") {
     result = localStorage.getItem(KEY_STORAGE_SERVER_URL);
     if (result == null) result = ""
+    else result = result.trim();
   }
   return result
 }
