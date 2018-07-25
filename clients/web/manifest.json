@@ -1,7 +1,7 @@
 {
   "short_name": "Tapster2 Web Client",
-  "name": "Tapster2 Web Client (v1.1.0)",
-  "description": "Drive your Tapster robot",
+  "name": "Tapster2 Web Client (v2.0.0)",
+  "description": "Drive your Tapster robot with this Progressive Web App",
   "icons": [
     {
       "src": "pictures/logo-x96.png",

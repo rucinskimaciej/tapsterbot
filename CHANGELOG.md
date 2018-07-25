@@ -44,7 +44,7 @@
 	* draw a triangle
 	* draw a spiral
 
-* Snips assistant
+* Snips assistants
 	* french - add intents to draw square, star, triangle, random pattern, circle and spiral, and for tap n times
 	* english - add intents to draw square, star, triangle, random pattern and circle, sand for tap n times
 
@@ -60,9 +60,9 @@
 	* draw a spiral
 	* draw a random pattern
 
-* Android
+* Android app
 	* refactor Android Studio project so as to produce 2 apps: without (light) and with Snips (full)
-	* refactor elements (settings, action buttons and cards, tabs, tap targets, crash reports, licenses dialog)
+	* refactor GUI elements (settings, action buttons and cards, tabs, tap targets) and crash reports feature
 	* draw a circle
 	* draw a star
 	* draw a spiral
@@ -74,6 +74,11 @@
 	* swipe n times
 	* update assistant capabilities
 	* clean sources
+
+* Web app [ON GOING]
+	* refactor GUI elements (colros, elevations, radius, action buttons)
+	* make GUI more responsive
+	* trim parameters of commands
 
 * Documentation
 	* more details in CURL samples
