@@ -75,10 +75,15 @@
 	* update assistant capabilities
 	* clean sources
 
-* Web app [ON GOING]
-	* refactor GUI elements (colros, elevations, radius, action buttons)
-	* make GUI more responsive
+* Web app
+	* refactor GUI elements (colors, elevations, radius, action buttons)
+	* make GUI more responsive and improve a11y
 	* trim parameters of commands
+	* long tap
+	* draw a star
+	* draw a circle
+	* draw a spiral
+	* draw a square
 
 * Documentation
 	* more details in CURL samples
@@ -90,6 +95,5 @@
 
 ## TODO ;-)
 
-* Bring Material Theming and new features to Web app (draw star, circle, spiral, square, triangle, cross, random pattern, stress inputs)
 * Update the wiki with more details, screen shots, command lines, ...
 * And maybe cool keynotes (SpeakerDeck) and articles (Medium) ;-)
