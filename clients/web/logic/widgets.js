@@ -114,6 +114,7 @@
     initWidgetDrawStar();
     initWidgetDrawCircle();
     initWidgetDrawSpiral();
+    initWidgetDrawSquare();
 
   }
 
@@ -467,6 +468,26 @@
   }
 
   /**
+  * Initializes the logic of the widget which sends a "draw a square" request
+  */
+  function initWidgetDrawSquare(){
+    let sendRequest = function(){
+      let body = getRequestDrawSquareParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("draw-square-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"draw square\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_DRAW_SQUARE, body);
+      }
+    }
+    document.getElementById("buttonRequestDrawSquare").addEventListener("click", sendRequest);
+    document.getElementById("draw-square-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
+  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
   */
@@ -618,3 +639,16 @@
       + parameters[2] + '", "n": "'+parameters[3]+'"}';
   }
 
+  /**
+  * Returns the parameters for the draw square request, or null if the format is not correct
+  * @return String -
+  */
+  function getRequestDrawSquareParameters(){
+    let parameters = document.getElementById("draw-square-parameters").value;
+    parameters = parameters.trim();
+    if ( ! REGEX_PARAMETER_DRAW_SQUARE.test(parameters) ){
+      return null;
+    }
+    let PRECISION = 1;
+    return '{"n": "' + PRECISION +'", "length": "' + parameters +'"}';
+  }
