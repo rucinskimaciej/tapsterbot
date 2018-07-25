@@ -25,7 +25,7 @@ SOFTWARE.
 * @file global.css
 * @brief Style sheet for commands board
 * @author pylapp
-* @version 1.0.0
+* @version 2.0.0
 * @since 23/03/2018
 */
 
@@ -116,12 +116,12 @@ SOFTWARE.
 }
 
 #commandReset, #commandStatus {
-  background-color: #1976D2;
+  background-color: #3f51b5;
   color: #FFFFFF;
 }
 
 #commandTap, #commandNTap, #commandStressTap {
-  background-color: #C2185B;
+  background-color: #f44336;
   color: #FFFFFF;
 }
 
@@ -132,7 +132,7 @@ SOFTWARE.
 }
 
 #commandGetPosition, #commandSetPosition {
-  background-color: #AFB42B;
+  background-color: #4caf50;
   color: #FFFFFF;
 }
 
@@ -141,7 +141,7 @@ SOFTWARE.
 }
 
 #commandSetAngles, #commandGetAngles {
-  background-color: #F57C00;
+  background-color: #ff9800;
   color: #FFFFFF;
 }
 
@@ -150,12 +150,12 @@ SOFTWARE.
 }
 
 #commandDance, #commandStopDance {
-  background-color: #512DA8;
+  background-color: #00bcd4;
   color: #FFFFFF;
 }
 
 #commandSwipe, #commandNSwipe, #commandStressSwipe {
-  background-color: #D32F2F;
+  background-color: #f44336;
   color: #FFFFFF;
 }
 
