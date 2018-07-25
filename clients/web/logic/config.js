@@ -39,6 +39,7 @@ SOFTWARE.
  let URL_ROBOT_API_STATUS = "/status";
  let URL_ROBOT_API_GET_CONTACT_Z = "/contactZ";
  let URL_ROBOT_API_TAP = "/tap";
+ let URL_ROBOT_API_N_TAP = "/nTap";
  let URL_ROBOT_API_LONG_TAP = "/longTap";
  let URL_ROBOT_API_SWIPE = "/swipe";
  let URL_ROBOT_API_N_SWIPE = "/nSwipe";

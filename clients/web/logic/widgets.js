@@ -205,16 +205,9 @@
         addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-tap-parameters").value+"'");
       } else {
         let baseUrl = getRobotServerUrl();
-        let i = 1;
-        let max = params[0];
-        let toTrigger = function(){
-          if ( i >= max ) clearInterval(interval);
-          let body = '{"x": "' + params[1] +'", "y": "'+params[2]+'"}';
-          addSimpleMessage("[Request] Sending \"n-tap\" ("+i+"/"+max+") request with parameters \""+body+"\"");
-          sendPostRequest(baseUrl + URL_ROBOT_API_TAP, body);
-          i++;
-        }
-        let interval = setInterval(function(){toTrigger()}, WAIT_TIME_BETWEEN_TAP);
+        let body = '{"n": "'+params[0]+'", "x": "' + params[1] +'", "y": "'+params[2]+'"}';
+        addSimpleMessage("[Request] Sending \"n-tap\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_N_TAP, body);
       }
     }
     document.getElementById("buttonRequestNTap").addEventListener("click", sendRequest);
