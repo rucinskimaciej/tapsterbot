@@ -112,6 +112,7 @@
     initWidgetDance();
     initWidgetStopDance();
     initWidgetDrawStar();
+    initWidgetDrawCircle();
 
   }
 
@@ -413,6 +414,38 @@
   }
 
   /**
+  * Initializes the logic of the widget which sends a "draw star" request
+  */
+  function initWidgetDrawStar(){
+    let sendRequest = function(){
+      let baseUrl = getRobotServerUrl();
+      addSimpleMessage("[Request] Sending \"draw star\" request...")
+      sendPostRequest(baseUrl+  URL_ROBOT_API_DRAW_STAR, "{}");
+    }
+    document.getElementById("buttonRequestDrawStar").addEventListener("click", sendRequest);
+  }
+
+  /**
+  * Initializes the logic of the widget which sends a "draw a circle" request
+  */
+  function initWidgetDrawCircle(){
+    let sendRequest = function(){
+      let body = getRequestDrawCircleParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("draw-circle-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"draw circle\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_DRAW_CIRCLE, body);
+      }
+    }
+    document.getElementById("buttonRequestDrawCircle").addEventListener("click", sendRequest);
+    document.getElementById("draw-circle-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
+  /**
   * Returns the parameters for the tap request, or null if the format is not correct
   * @return String -
   */
@@ -536,14 +569,15 @@
   }
 
   /**
-  * Initializes the logic of the widget which sends a "draw star" request
+  * Returns the parameters for the draw circle request, or null if the format is not correct
+  * @return String -
   */
-  function initWidgetDrawStar(){
-    let sendRequest = function(){
-      let baseUrl = getRobotServerUrl();
-      addSimpleMessage("[Request] Sending \"draw star\" request...")
-      sendPostRequest(baseUrl+  URL_ROBOT_API_DRAW_STAR, "{}");
+  function getRequestDrawCircleParameters(){
+    let parameters = document.getElementById("draw-circle-parameters").value;
+    parameters = parameters.trim();
+    if ( ! REGEX_PARAMETER_DRAW_CIRCLE.test(parameters) ){
+      return null;
     }
-    document.getElementById("buttonRequestDrawStar").addEventListener("click", sendRequest);
+    parameters = parameters.split(" ");
+    return '{"x": "' + parameters[0] +'", "y": "' + parameters[1] + '", "r": "' + parameters[2] + '"}';
   }
-

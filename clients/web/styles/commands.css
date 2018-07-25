@@ -167,11 +167,12 @@ SOFTWARE.
   background-color: #11122B26;
 }
 
-#commandDrawStar {
+#commandDrawStar, #commandDrawCircle {
   background-color: #e91e63;
   color: #FFFFFF;
 }
 
-#commandDrawStar input[type="text"] {
+#commandDrawStar input[type="text"],
+#commandDrawCircle input[type="text"] {
   background-color: #e91e6326;
 }
