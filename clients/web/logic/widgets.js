@@ -233,7 +233,7 @@
         addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("stress-tap-parameters").value+"'");
       } else {
         let baseUrl = getRobotServerUrl();
-        let i = 0;
+        let i = 1;
         let max = params[0];
         let toTrigger = function(){
           if ( i >= max ) clearInterval(interval);
@@ -281,16 +281,9 @@
         addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("n-swipe-parameters").value+"'");
       } else {
         let baseUrl = getRobotServerUrl();
-        let i = 0;
-        let max = params[0];
-        let toTrigger = function(){
-          if ( i >= max ) clearInterval(interval);
-          let body = '{"startX": "' + params[1] + '", "startY": "' + params[2] +'", "endX": "'+params[3] +'", "endY": "' + params[4] + '"}';
-          addSimpleMessage("[Request] Sending \"n-swipe\" ("+i+"/"+max+") request with parameters \""+body+"\"");
-          sendPostRequest(baseUrl + URL_ROBOT_API_SWIPE, body);
-          i++;
-        }
-        let interval = setInterval(function(){toTrigger()}, WAIT_TIME_BETWEEN_SWIPE);
+        let body = '{"n": "'+params[0]+'", "startX": "' + params[1] + '", "startY": "' + params[2] +'", "endX": "'+params[3] +'", "endY": "' + params[4] + '"}';
+        addSimpleMessage("[Request] Sending \"n-swipe\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_N_SWIPE, body);
       }
     }
     document.getElementById("buttonRequestNSwipe").addEventListener("click", sendRequest);
@@ -309,7 +302,7 @@
         addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("stress-swipe-parameters").value+"'");
       } else {
         let baseUrl = getRobotServerUrl();
-        let i = 0;
+        let i = 1;
         let max = params[0];
         let toTrigger = function(){
           if ( i >= max ) clearInterval(interval);
