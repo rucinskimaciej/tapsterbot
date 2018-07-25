@@ -99,6 +99,7 @@
     initWidgetStatus();
     initWidgetContactZ();
     initWidgetsTap();
+    initWidgetsLongTap();
     initWidgetsNTap();
     initWidgetsStressTap();
     initWidgetsSwipe();
@@ -166,6 +167,26 @@
     }
     document.getElementById("buttonRequestTap").addEventListener("click", sendRequest);
     document.getElementById("tap-parameters").onkeydown = function(e){
+      if ( e.which == 13 /*ENTER key*/ ) sendRequest();
+    }
+  }
+
+  /**
+  * Initializes the logic of the widgets which sends a "long tap" request
+  */
+  function initWidgetsLongTap(){
+    let sendRequest = function(){
+      let body = getRequestLongTapParameters();
+      if ( body == null || body.length <= 0 ){
+        addErrorMessage("[Parameters] Not suitable with '"+document.getElementById("long-tap-parameters").value+"'");
+      } else {
+        let baseUrl = getRobotServerUrl();
+        addSimpleMessage("[Request] Sending \"long tap\" request with parameters \""+body+"\"");
+        sendPostRequest(baseUrl + URL_ROBOT_API_LONG_TAP, body);
+      }
+    }
+    document.getElementById("buttonRequestLongTap").addEventListener("click", sendRequest);
+    document.getElementById("long-tap-parameters").onkeydown = function(e){
       if ( e.which == 13 /*ENTER key*/ ) sendRequest();
     }
   }
@@ -402,6 +423,20 @@
     }
     parameters = parameters.split(" ");
     return '{"x": "' + parameters[0] +'", "y": "'+parameters[1]+'"}';
+  }
+
+ /**
+  * Returns the parameters for long-tap request, or null if the format is not correct
+  * @return array -
+  */
+  function getRequestLongTapParameters(){
+    let parameters = document.getElementById("long-tap-parameters").value;
+    parameters = parameters.trim();
+    if ( ! REGEX_PARAMETER_LONG_TAP.test(parameters) ){
+      return null;
+    }
+    parameters = parameters.split(" ");
+    return '{"x": "' + parameters[0] +'", "y": "'+parameters[1]+'", "duration": "'+parameters[2]+'"}';
   }
 
   /**

@@ -120,6 +120,10 @@ Since......: 23/03/2018
     <div id="boardCommands">
         <div id="commands">
 
+          <!-- ************* -->
+          <!-- Configuration -->
+          <!-- ************* -->
+
           <!-- Command reset -->
           <div id="commandReset" class="commandBlock">
             <h1>Reset robot</h1>
@@ -143,6 +147,10 @@ Since......: 23/03/2018
                 <img src="pictures/button-send.svg" alt"Button to get the Z value fo the contact point" />
             </button>
           </div>
+
+          <!-- ***** -->
+          <!-- Moves -->
+          <!-- ***** -->
 
           <!-- Command tap -->
           <div id="commandTap" class="commandBlock">
@@ -168,6 +176,15 @@ Since......: 23/03/2018
             <input id="stress-tap-parameters" type="text" name="stress-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[0-9]+\s[0-9]+"/>
             <button type="submit" id="buttonRequestStressTap" name="command-process" class="actionButton" title="Tap very quickly N times to a point">
                 <img src="pictures/button-send.svg" alt"Button to tap very quickly N times to a point" />
+            </button>
+          </div>
+
+          <!-- Command long-tap -->
+          <div id="commandLongTap" class="commandBlock padder">
+            <h1><label for="long-tap-parameters">Make a long tap at coordinates (x,y) during duration (ms)</label></h1>
+            <input id="long-tap-parameters" type="text" name="long-tap-parameters" placeholder="x y duration" pattern="[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestLongTap" name="command-process" class="actionButton" title="Make a long tap to a point">
+                <img src="pictures/button-send.svg" alt"Button to make a long time to a point" />
             </button>
           </div>
 

@@ -121,13 +121,14 @@ SOFTWARE.
   color: #FFFFFF;
 }
 
-#commandTap, #commandNTap, #commandStressTap {
+#commandTap, #commandNTap, #commandLongTap, #commandStressTap {
   background-color: #f44336;
   color: #FFFFFF;
 }
 
 #commandTap input[type="text"],
 #commandNTap input[type="text"],
+#commandLongTap input[type="text"],
 #commandStressTap input[type="text"] {
   background-color: #11122B26;
 }
