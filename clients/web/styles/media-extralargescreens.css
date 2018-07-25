@@ -25,7 +25,7 @@ SOFTWARE.
 * @file media-extralargescreens.css
 * @brief Style sheet for extra large devices (large laptops and desktops, 1200px and up) (no need for large devices (laptops/desktops, 992px and up))
 * @author pylapp
-* @version 1.0.0
+* @version 2.0.0
 * @since 23/03/2018
 */
 
@@ -40,6 +40,8 @@ SOFTWARE.
   .commandBlock {
     min-width: 250px;
     padding: 0;
+    border-radius: 16px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.16), 0 0 0 0px rgba(0, 0, 0, 0.08);
   }
 
   .commandBlock h1, .commandBlock input, .commandBlock button {
