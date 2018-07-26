@@ -124,12 +124,12 @@ _Note:_ Draws a spiral, using points in 2D device landmark, center on (x,y) with
 
 
 **Draw an SVG picture**  
-_Command:_  curl --data "rawContent=..." http://127.0.0.1:4242/drawSVG
+_Command:_  curl --data "rawContent=..." http://127.0.0.1:4242/drawSvg
 _Exemple of result:_ {"status":0}  
 _Note:_ Draws an SVG picture, where '...' is the XML content of the SVG file
 
 
-**Draw a random pattern (swipe-based)**  
+**Draw a random pattern (swipe-based)** 
 _Command:_   curl --data "n=10&minWidth=100&minHeight=100&maxWidth=350&maxHeight=500" http://127.0.0.1:4242/drawRandomPattern
 _Exemple of result:_ {"status":0}  
 _Note:_ Draws a random pattern using continuous strokes with n points in a defined area (based on device's 2D landmark)
