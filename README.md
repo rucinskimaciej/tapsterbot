@@ -41,8 +41,7 @@
 4. chappie - (tag: vChappie) - Version with Robot Framework keywords to use to drive the bot. Improved Python client. Cleaner files tree.
 5. case - (tag: vCase) - Version with an Android app which embeds an assistant based on [Snips](https://snips.ai/ "Snips.ai").
 6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.
-7. deckard-fix-1 - (tag: vDeckard-1) - Fix defects in cache and manifest so as to make web app installable.
-8. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
+7. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
 8. eve - (tag: vEve) - More features in both sides and clients (stress inputs, multi tap, multi swipes, draw objects...)
 
 ## Wanna help?
@@ -53,9 +52,10 @@
  - ... feel free to make pull requests and forks!
 
 ## Notice
-This fork has been made so as to build a community around Tapster and bring new usages.
+This fork has been made so as to build a community around Tapster and bring new usages for this incredible tool.
 If you read AUTHORS file, you may notice my name appeares twice. Indeed contributions to this project are professional and personal.
 If you want to contact me, please use the appropriate email in the AUTHORS file.
 If you want to blame me or send me cookies for the made work, please refer to the Copyright owner, make the difference between professional and personal contributions (not hard, read the commit message), and contact me ;-)
 
-Feel free to contribute!
+
+This Tapster (Tapster model 2) is free, open source et open hardware, so feel free to contribute!
