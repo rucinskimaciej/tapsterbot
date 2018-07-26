@@ -1,6 +1,6 @@
 # android
 
-Here are an Android client to use so as to drive the robot by sending to it HTTP requests.  
+Here is an Android client to use so as to drive the robot by sending to it HTTP requests.  
 Indeed the Android device and the robot's server should be in the same network: **the server must be reachable by the Android device of course**.
 
 The app may embed also a [Snips.ai-based assistant](https://snips.ai/ "Snips.ai") so as to drive the robot in a more elegant way.  
@@ -47,22 +47,22 @@ Some features can also be disabled or enabled. Feel free to change the true/fals
 <table>
 <tr>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v2.0.0_en_intro1.png" alt="The introduction screen" title="Hello world ;-D" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/screen_captures/v2.0.0_en_intro1.png" alt="The introduction screen" title="Hello world ;-D" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v2.0.0_en_helper1.png" alt="Some helpers to introduce the app" title="Helpers are hre :)" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/screen_captures/v2.0.0_en_helper1.png" alt="Some helpers to introduce the app" title="Helpers are here :)" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v2.0.0_en_commands_inuse.png" alt="The commands board" title="The commands board" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/screen_captures/v2.0.0_en_commands_inuse.png" alt="The commands board" title="The commands board" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v2.0.0_en_comands_assistant.png" alt="The assistant board" title="The assistant board" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/screen_captures/v2.0.0_en_comands_assistant.png" alt="The assistant board" title="The assistant board" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v2.0.0_en_settings.png" alt="The settings screen" title="The settings screen" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/screen_captures/v2.0.0_en_settings.png" alt="The settings screen" title="The settings screen" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/scren_captures/v1.0.0_en_licenses.png" alt="Some licenses" title="The licenses screen" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/android/doc/screen_captures/v1.0.0_en_licenses.png" alt="Some licenses" title="The licenses screen" width="200">
 </td>
 </tr>
 </table>
