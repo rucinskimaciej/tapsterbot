@@ -1,3 +1,3 @@
 # clients folder
 
-Here are stored the clients to use to drive the robot.
+Here are stored the clients and other programs to use in order to drive the robot and send it requests.
