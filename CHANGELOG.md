@@ -46,7 +46,7 @@
 
 * Snips assistants
 	* french - add intents to draw square, star, triangle, random pattern, circle and spiral, and for tap n times
-	* english - add intents to draw square, star, triangle, random pattern and circle, sand for tap n times
+	* english - add intents to draw square, star, triangle, random pattern and circle, and for tap n times
 
 * Python client
 	* long tap
@@ -91,9 +91,4 @@
 	* more details in Robot Framework keywords and wrapper
 
 * Other things
-	* Clean up project by removing useless things
-
-## TODO ;-)
-
-* Update the wiki with more details, screen shots, command lines, ...
-* And maybe cool keynotes (SpeakerDeck) and articles (Medium) ;-)
+	* Clean up project by removing useless files
