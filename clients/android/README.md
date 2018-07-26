@@ -60,7 +60,7 @@ This Android app embeds an assistant, based on [Snips.ai](https://snips.ai/ "Web
 <img src="https://github.com/pylapp/tapsterbot/blob/master/clients/android/doc/screen_captures/v2.0.0_en_commands_inuse.png" alt="The commands board" title="The commands board" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/master/clients/android/doc/screen_captures/v2.0.0_en_comands_assistant.png" alt="The assistant board" title="The assistant board" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/master/clients/android/doc/screen_captures/v2.0.0_fr_commands_assistant.png" alt="The assistant board" title="The assistant board" width="200">
 </td>
 <td>
 <img src="https://github.com/pylapp/tapsterbot/blob/master/clients/android/doc/screen_captures/v2.0.0_en_settings.png" alt="The settings screen" title="The settings screen" width="200">
