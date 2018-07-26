@@ -10,4 +10,4 @@ The training package version is _0.14.0_ and the NLU engine version is _0.15.0_.
 
 You can find the _Tapster2 commands (french)_ on the Snips store: https://console.snips.ai/store/fr/bundle_PPn5qxGGbBQ
 
-You may find also the english version on the Snips store.
+You may find also the english version on the Snips store (_Tapster2 commands (english)_ ): https://console.snips.ai/store/en/bundle_rkqD2NNVvb8
