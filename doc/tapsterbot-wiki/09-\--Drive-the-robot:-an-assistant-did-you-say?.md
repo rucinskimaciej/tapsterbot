@@ -1,3 +1,5 @@
+# Powerful off-the-grid privacy-safe assistant with ASR and NLU: Snips.ai
+
 Because we have a robot which make tests and tap on a device, why not using an assistant to talk to it?
 
 That is the reason why an assistant has been defined, and today integrated to the [Android app](https://github.com/pylapp/tapsterbot/wiki/08-%5C--Drive-the-robot:-Android-client). The chosen solution is [Snips](https://snips.ai).
