@@ -38,7 +38,7 @@ The versions in use for the project are :
 ## Customize the app
 
 You can customize the application for your needs.
-The app embeds the ACRA library which provides mail-sending feature when the app crashes.
+The app embeds the [ACRA](https://github.com/ACRA/acra "GitHub project of ACRA") library which provides mail-sending feature when the app crashes.
 You can define the email to send the crash reports in the _Tapster2ClientApp.kt_ file, in _@AcraMailSender_ tag.
 Some features can also be disabled or enabled. Feel free to change the true/false values in the _features.properties_ in _assets_ folder.
 

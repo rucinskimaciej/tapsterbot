@@ -49,6 +49,9 @@
  - Add controls in server-side and clients-side to prevent the use of bad parameters (i.e. tap on with x=-42 and y=0.666)
  - Plug a camera to the robot to stream the tests
  - Draw a SVG on your screen (or pick it from your files) and send its XML content to the server so as to make the robot paint the thing :)
+ - Integrate Snips assistants within the Progressive Web Apps
+ - Define actions in Snips assistants
+ - Integrate the use of Tapster inside Appium
  - ... feel free to make pull requests and forks!
 
 ## Notice

@@ -15,7 +15,11 @@
   node server.js --address a.b.c.d --port p
 ```
 
-## The most suitable command may be:
+## The most suitable commands may be:
 ```shell
   node server.js --address a.b.c.d --port p --calibration path-to-JSON-file
+```
+or
+```shell
+  node server.js -a a.b.c.d -p p -c path-to-JSON-file
 ```
