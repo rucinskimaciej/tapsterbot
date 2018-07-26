@@ -8,6 +8,6 @@ Be aware there is no logic about the Tapster robot here. Only the assistant is d
 
 The training package version is _0.14.0_ and the NLU engine version is _0.15.0_.
 
-You can find the _Tapster2 commands (french)_ on the Snips store: https://console.snips.ai/store/fr/bundle_PPn5qxGGbBQ
+You can find the _Tapster2 commands (french)_ on the [Snips store](https://console.snips.ai/store/fr/bundle_PPn5qxGGbBQ "Get french Snips assistant").
 
-You may find also the english version on the Snips store (_Tapster2 commands (english)_ ): https://console.snips.ai/store/en/bundle_rkqD2NNVvb8
+You may find also the _Tapster2 commands (english)_ on the [Snips store](https://console.snips.ai/store/en/bundle_rkqD2NNVvb8 "Get english Snips assistant").
