@@ -31,6 +31,9 @@ In english, you can say for examples:
 * Move your pointer to 100 150 -150
 * Swipe from 100 100 to 550 550
 * Click on 42 666
+ay (2018-03-02) Snips is young, specially the Android part :)
 
-### One more thing
-Be aware today (2018-03-02) Snips is young, specially the Android part :)
+### Get assistants from the store
+You can find the _Tapster2 commands (french)_ on the [Snips store](https://console.snips.ai/store/fr/bundle_PPn5qxGGbBQ "Get french Snips assistant").
+
+You may find also the _Tapster2 commands (english)_ on the [Snips store](https://console.snips.ai/store/en/bundle_rkqD2NNVvb8 "Get english Snips assistant").

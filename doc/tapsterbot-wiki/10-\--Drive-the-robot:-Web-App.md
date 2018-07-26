@@ -16,13 +16,11 @@ This web app allows to send HTTP requests to the robot's server, just like the A
 
 <table>
 <tr>
-<table>
-<tr>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/web/doc/scren_captures/v2.0.0_en_smartphone_SamsungGalaxyA3.png" alt="The web app is responsive for smartphones" title="Responsive app for smartphones" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/master/clients/web/doc/screen_captures/v2.0.0_en_smartphone_SamsungGalaxyA3.png" alt="The web app is responsive for smartphones" title="Responsive app for smartphones" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/tapsterbot/blob/case/clients/web/doc/screen_captures/v2.0.0_en_computer_chromium.png" alt="The web app is responsive for computers screens" title="Responsive app for computers" width="200">
+<img src="https://github.com/pylapp/tapsterbot/blob/master/clients/web/doc/screen_captures/v2.0.0_en_computer_chromium.png" alt="The web app is responsive for computers screens" title="Responsive app for computers" width="200">
 </td>
 </tr>
 </table>
