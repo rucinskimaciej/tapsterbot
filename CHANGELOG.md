@@ -92,3 +92,8 @@
 
 * Other things
 	* Clean up project by removing useless files
+
+## Version eve-1
+
+* Improve documentation and wiki with more details and less typo mistakes
+
