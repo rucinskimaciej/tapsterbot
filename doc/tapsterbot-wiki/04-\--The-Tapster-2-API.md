@@ -1,6 +1,6 @@
 # Web HTTP REST API of the robot
 
-The robot's server is listening for HTTP requests. You can use HTTP GET and POST methods with wrapped data to so as to make the robot move.
+The robot's server is listening for HTTP requests. You can use HTTP GET and POST methods with wrapped data so as to make the robot move.
 
 ### HTTP methods in use
 
@@ -35,7 +35,7 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Swipe from (a,b) to (c,d)    	| POST          | /swipe                 				| {'startX': a, 'startY': b, 'endX': c, 'endY', d} 									| Makes the robot swipe from (a, b) to (c, d)																							|
 | Swipe from (a,b) to (c,d) n times | POST      | /nSwipe                 				| {'n': n, startX': a, 'startY': b, 'endX': c, 'endY', d} 							| Makes the robot swipe n times from (a, b) to (c, d)																					|
 | Send keys		    		    | POST          | /sendKeys               				| 						 															| _Not implemented yet_ 																												|
-| Get calibration data   		| GET           | /calibrationData      				| _not defined_       																| Gets the claibration data used by the bot																								|
+| Get calibration data   		| GET           | /calibrationData      				| _not defined_       																| Gets the calibration data used by the bot																								|
 | Set calibration data    		| POST          | /setCalibrationData   				| _JSON format of calibration data_													| Defines the calibration data the robot should use																						|
 | Get the Z-axis value contact 	| GET           | /contactZ		   						| _not defined_																		| Gets the Z-axis value of the robot where the device's screen should be touched														|
 | Draw square					| POST          | /drawSquare		   					| {'n': n, 'length': l}																| Draws a square with a side length valued to l, where n is a divider of l to define the number of points to draw (l/n),  using points based on the robot's landmark|
@@ -45,5 +45,5 @@ This base URL matches the following pattern: https://_robot-address_:_robot-port
 | Draw cross					| POST          | /drawCross		   					| {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3, 'x4': x4, 'y4': y4}	| Draws a cross, using points in the robot's landmark, with two strokes: (x1,y1) -> (x3, y3) and (x2,y2) -> (x4, y4)					|
 | Draw spiral					| POST          | /drawSpiral		   					| {'x': x, 'y': y, 'r': r, 'n': n}													| Draws a spiral with center on (x,y) and the r radius, using points based on the 2D device landmark, and n levels						|
 | Draw SVG						| POST          | /drawSvg		   						| {'rawContent': xml-content}														| Draws an SVG picture based from its content (xml-content). Device should be in landscape mode ;-)										|
-| Draw random pattern			| POST          | /drawRandomPattern					| {'n': n, 'minWidth': miw, 'minHeight': mih, 'maxWidth': maw, 'maxheight': mah}	| Draws a random pattern based on continuous strokes based on n points within a defined aread based on 2D device landmark 				|
-| Tap random points 			| POST          | /tapRandomPoints						| {'n': n, 'minWidth': miw, 'minHeight': mih, 'maxWidth': maw, 'maxheight': mah}	| Taps on n random points within a defined aread based on 2D device landmark 															|
+| Draw random pattern			| POST          | /drawRandomPattern					| {'n': n, 'minWidth': miw, 'minHeight': mih, 'maxWidth': maw, 'maxheight': mah}	| Draws a random pattern based on continuous strokes based on n points within a defined area based on 2D device landmark 				|
+| Tap random points 			| POST          | /tapRandomPoints						| {'n': n, 'minWidth': miw, 'minHeight': mih, 'maxWidth': maw, 'maxheight': mah}	| Taps on n random points within a defined area based on 2D device landmark 															|

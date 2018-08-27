@@ -5,9 +5,9 @@ Indeed the Android device and the robot's server should be in the same network: 
 
 The app may embed also a [Snips.ai-based assistant](https://snips.ai/ "Snips.ai") so as to drive the robot in a more elegant way.  
 We can talk to the assistant (which uses ASR and NLU) so as to make the robot move.  
-With the Android Studio project, you can build this full version of the app using the _ful_ Fragle flavor. If you are looking for onyl the app without assistant (far more lighter), you should buld the app using the _light_ Gradle flavor.  
+With the Android Studio project, you can build this full version of the app using the _full_ Gradle flavor. If you are looking for only the app without assistant (far more lighter), you should build the app using the _light_ Gradle flavor.  
 
-If you want to use this assistant, you must a _Tapster2client_ folde in the external storage of your device. You can also modyfy this apth inside the app's settings. In this folder, you should place another folder **with the assets of the assistant**. These assets are available [here](https://github.com/pylapp/tapsterbot/tree/master/clients/chatbot-snips "Assets of the assistant").
+If you want to use this assistant, you must have a _Tapster2client_ folder in the external storage of your device. You can also modify this path inside the app's settings. In this folder, you should place another folder **with the assets of the assistant**. These assets are available [here](https://github.com/pylapp/tapsterbot/tree/master/clients/chatbot-snips "Assets of the assistant").
 
 ## Install the APK
 
@@ -18,7 +18,7 @@ You can install the Android APK in the device with the following command.
 ```
 _VERSION_ here is the version of the app, and _APK_ is the name of the file you want to use.
 
-There is onlu one APK without the assistant. If you need to the full app, you have to build it using Androdi Studio.
+There is only one APK without the assistant. If you need to the full app, you have to build it using Android Studio.
 Indeed the weight of the full app is incredibly high (200MB) and cannot be uploaded through GitHub.
 
 ## Build the app from sources

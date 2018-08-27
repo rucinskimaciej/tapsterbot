@@ -1,5 +1,7 @@
 # Python client API
 
+## The API
+
 A Python client has been written in order to use the Tapster robot and send to its server the commands to process.
 The Python client provides several methods which match the robot's HTTP API.
 
@@ -35,3 +37,29 @@ The Python client provides several methods which match the robot's HTTP API.
 | robot_drawCross						| x1 ; y1 ; x2 ; y2 ; x3 ; y3 ; x4 ; y4| The 4 points of the cross 																| The server's response                        | Draws a cross with 2 strokes: (x1,y1) -> (x4,y4) and (x2,y2) -> (x3,y3)				 |
 | robot_drawSpiral						| x ; y ; n ; r						   | The point where to start ; the number of rings ; the radius      						| The server's response                        | Draws a spiral starting from (x,y) with n rings and a global r radius		 			 |
 | robot_drawRandom						| n ; minWidth ; minHeight ; maxWidth ; maxHeight | The number of points ; the area to draw 									| The server's response                        | Draws a random pattern with (n-1) strokes in a defined area 							 |
+
+## Use the client
+
+Three types of execution are provided for this client: the interactive mode where you write within the console the commands to process, the light mode where you trigger only one command per program execution, and the file mode where you can provide to the program a list of commands to process.
+
+To start in interactive mode:
+```python
+  python client.py
+```
+
+To start in light mode:
+```python
+  python client.py --light the-command-to-process
+```
+
+To start in file mode:
+```python
+  python client.py --file path-to-the-command-file
+```
+
+If you are look for the formalism of the commands, run:
+
+```python
+  python client.py --help
+```
+
