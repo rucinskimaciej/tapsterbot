@@ -106,4 +106,6 @@
 * Robot Framework
 	* Refactor syntax of wrapper library to match CamelCase
 
+* Other things
+	* Update licences headers so as to have a more suitable email address
 

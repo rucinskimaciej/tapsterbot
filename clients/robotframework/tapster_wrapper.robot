@@ -1,5 +1,5 @@
 # Copyright © 2018 Orange
-# Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+# Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 #
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:

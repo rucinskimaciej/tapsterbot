@@ -2,7 +2,7 @@
 
 /*
 Copyright (c) 2011-2016, Tapster Committers
-Copyright (c) 2016-2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+Copyright (c) 2016-2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 Copyright (c) 2018  Orange
 
 Redistribution and use in source and binary forms, with or without
