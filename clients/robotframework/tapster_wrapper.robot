@@ -1,4 +1,5 @@
 # Copyright © 2018 Orange
+# Copyright (c) 2018  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
 #
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:
@@ -25,7 +26,7 @@
 # File: tapster_wrapper.robot
 # Brief: Robot Framework file providing feature to use so as to click on items with Tapster bot
 # Author: Pierre-Yves Lapersonne
-# Version: 1.1.0
+# Version: 2.0.0
 # Since: 29/05/2018
 
 *** Settings ***
@@ -394,7 +395,7 @@ Swipe N Times
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Swipe using elements id
+Swipe Using Elements Id
     [Documentation]    Swipe from an element to another using their id
     ...    Parameters:
     ...        source_id - id of the start element
@@ -415,7 +416,7 @@ Swipe using elements id
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Swipe using elements text
+Swipe Using Elements Text
     [Documentation]    Swipe from an element to another using their texts
     ...    Parameters:
     ...        source_text - text of the start element
@@ -436,7 +437,7 @@ Swipe using elements text
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Swipe using elements xpath
+Swipe Using Elements Xpath
      [Documentation]    Swipe from an element to another using XPath locators
     ...    Parameters:
     ...        source_xpath - XPath locator to find the start element
@@ -457,7 +458,7 @@ Swipe using elements xpath
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Stress swipes
+Stress Swipes
     [Documentation]    Swipe N times from (a,b) to (c,d) points very quickly
     ...    Parameters:
     ...        N - the number of swipes wich will be made

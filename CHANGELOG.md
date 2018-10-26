@@ -103,4 +103,7 @@
 	* Add missing file for calibration workflow
 	* Fix path of capabilities files inside calibration script
 
+* Robot Framework
+	* Refactor syntax of wrapper library to match CamelCase
+
 
