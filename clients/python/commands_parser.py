@@ -24,7 +24,7 @@ SOFTWARE.
 """
 File.......: commands_parser.py
 Brief......: File including features to use to as to parse commands
-Author.....: pylapp
+Author.....: Pierre-Yves Lapersonne
 Version....: 1.3.0
 Since......: 11/01/2018
 """

@@ -43,7 +43,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  * See: https://github.com/ACRA/acra
  * See: https://snips.gitbook.io/documentation/installing-snips/on-android/using-the-platform-on-android
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 13/02/2018
  *
  * @version 3.0.0

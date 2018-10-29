@@ -24,7 +24,7 @@ SOFTWARE.
 """
 File.......: client.py
 Brief......: The Python client to use soa s to drive the Tapster2 bot
-Author.....: pylapp
+Author.....: Pierre-Yves Lapersonne
 Version....: 2.0.1
 Since......: 10/01/2018
 """

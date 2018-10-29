@@ -37,7 +37,7 @@ import pylapp.tapster.client.android.R
  * so as to deal with an object which can make notifications to the user interface.
  * This pattern is used so as to avoid the assistant to have too many dependencies and code about the UI.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 08/02/2018
  *
  * @version 2.0.0

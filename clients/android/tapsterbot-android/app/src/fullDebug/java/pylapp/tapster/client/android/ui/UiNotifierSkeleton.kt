@@ -45,7 +45,7 @@ import pylapp.tapster.client.android.vox.TextToSpeechStub
  * so as to deal with an object which can make notifications to the user interface.
  * This pattern is used so as to avoid the assistant to have too many dependencies and code about the UI.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 06/02/2018
  *
  * @version 1.0.0

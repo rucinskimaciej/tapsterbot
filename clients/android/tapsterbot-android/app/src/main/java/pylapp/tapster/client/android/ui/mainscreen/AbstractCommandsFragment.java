@@ -39,7 +39,7 @@ import pylapp.tapster.client.android.ui.permissions.PermissionsManagerStub;
 /**
  * Abstract fragment for commands to send to the robot
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 2.0.0
  * @since 05/02/2018
  */

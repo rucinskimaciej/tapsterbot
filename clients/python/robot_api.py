@@ -24,7 +24,7 @@ SOFTWARE.
 """
 File.......: robot-api.py
 Brief......: File including the API of the robot, using HTTP requests
-Author.....: pylapp
+Author.....: Pierre-Yves Lapersonne
 Version....: 1.4.0
 Since......: 10/01/2018
 """

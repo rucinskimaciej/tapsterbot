@@ -33,7 +33,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
 /**
  * The activity for the settings and the preferences
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 06/02/2018
  * @version 2.0.0
  */

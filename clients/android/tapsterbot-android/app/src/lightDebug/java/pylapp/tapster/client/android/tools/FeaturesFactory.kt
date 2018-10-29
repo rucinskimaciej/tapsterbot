@@ -42,7 +42,7 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetHelpersDisplayerSkel
  * impacted by the modifications of the implementations.
  *
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 07/02/2018
  *
  * @version 2.0.0

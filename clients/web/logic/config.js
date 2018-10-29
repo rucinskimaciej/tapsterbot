@@ -24,7 +24,7 @@ SOFTWARE.
 /**
 * @file config.js
 * @brief Classic JavaScript file containing configuration to use for the web app
-* @author pylapp
+* @author Pierre-Yves Lapersonne
 * @version 2.0.0
 * @since 29/03/2018
 */

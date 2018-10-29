@@ -24,7 +24,7 @@ SOFTWARE.
 /**
 * @file network.js
 * @brief JavaScript file containing the source code of code which deals with HTTP requests
-* @author pylapp
+* @author Pierre-Yves Lapersonne
 * @version 1.0.0
 * @since 05/04/2018
 */

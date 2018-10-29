@@ -24,7 +24,7 @@ SOFTWARE.
 """
 File.......: config.py
 Brief......: File including configuration to use and to apply on the client
-Author.....: pylapp
+Author.....: Pierre-Yves Lapersonne
 Version....: 1.3.0
 Since......: 10/01/2018
 """

@@ -60,7 +60,7 @@ import java.io.File
  *
  * Warning: Wa have to refactor this class to optimize it, Snips initialization is heavy, and we may face to memory leaks problems!
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 02/02/2018
  *
  * @version 3.0.0

@@ -44,7 +44,7 @@ import pylapp.tapster.client.android.tools.Config;
 /**
  * Fragment containing commands related to robot configuration and status
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 21/07/2018
  */

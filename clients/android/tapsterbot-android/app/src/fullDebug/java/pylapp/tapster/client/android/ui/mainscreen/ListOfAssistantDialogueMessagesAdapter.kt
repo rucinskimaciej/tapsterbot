@@ -35,7 +35,7 @@ import kotlin.collections.ArrayList
 /**
  * An adapter for the fragment containing a list of messages
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 2.0.0
  * @since 02/02/2018
  */

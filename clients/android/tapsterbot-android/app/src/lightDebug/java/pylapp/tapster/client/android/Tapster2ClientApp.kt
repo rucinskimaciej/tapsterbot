@@ -37,7 +37,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  * Defined here so as to deal with bug reports and metrics using ACRA library.
  * See: https://github.com/ACRA/acra
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 13/02/2018
  *
  * @version 2.0.0

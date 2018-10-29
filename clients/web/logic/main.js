@@ -24,7 +24,7 @@ SOFTWARE.
 /**
 * @file main.js
 * @brief Classic JavaScript file with few things, mainly to start things or initialize others
-* @author pylapp
+* @author Pierre-Yves Lapersonne
 * @version 1.0.0
 * @since 29/03/2018
 */

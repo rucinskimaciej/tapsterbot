@@ -24,7 +24,7 @@ SOFTWARE.
 """
 File.......: glue.py
 Brief......: File including all the Python glue to use for the client, except the API of the bot
-Author.....: pylapp
+Author.....: Pierre-Yves Lapersonne
 Version....: 2.3.0
 Since......: 10/01/2018
 """

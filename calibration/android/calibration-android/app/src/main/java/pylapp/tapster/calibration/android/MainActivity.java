@@ -40,7 +40,7 @@ import android.widget.FrameLayout.LayoutParams;
  * The main screen of the app.
  * Will display the 2D coordinates of each contact point in the layout.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 23/10/2017
  */

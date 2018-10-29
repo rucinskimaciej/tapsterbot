@@ -28,7 +28,7 @@ import java.io.IOException
  * Stub based on design pattern Bridge which provides the declarations of methods to call
  * so as to deal with HTTP requests.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 14/02/2018
  *
  * @version 2.0.0

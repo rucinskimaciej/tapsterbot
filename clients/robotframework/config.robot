@@ -22,7 +22,7 @@
 #
 # File.......: config.robot
 # Brief......: File contaning configuration to apply to kewyrods
-# Author.....: pylapp
+# Author.....: Pierre-Yves Lapersonne
 # Version....: 2.0.0
 # Since......: 17/01/2018
 

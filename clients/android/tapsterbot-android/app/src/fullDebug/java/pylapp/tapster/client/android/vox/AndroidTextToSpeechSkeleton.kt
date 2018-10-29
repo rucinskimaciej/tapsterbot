@@ -39,7 +39,7 @@ import java.util.*
  *
  * This class is also based on design pattern Proxy so as to simplify the use of the native TTS system
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 08/02/2018
  *
  * @version 1.0.0

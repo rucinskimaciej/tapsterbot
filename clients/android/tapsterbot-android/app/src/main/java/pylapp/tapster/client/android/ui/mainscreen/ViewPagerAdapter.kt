@@ -29,7 +29,7 @@ import android.support.v4.app.FragmentPagerAdapter
  * Adapter to use for the fragments in the main screen.
  *
  * @constructor Creates a FragmentPagerAdapter
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 05/02/2018
  *
  * @version 1.0.0

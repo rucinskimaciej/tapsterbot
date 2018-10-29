@@ -32,7 +32,7 @@ import java.io.IOException
  * so as to deal with networks and HTTP requests.
  * Based on OkHttp library (http://square.github.io/okhttp/)
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 14/02/2018
  *
  * @version 1.0.0

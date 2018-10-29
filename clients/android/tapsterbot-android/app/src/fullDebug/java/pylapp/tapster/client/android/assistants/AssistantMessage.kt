@@ -26,7 +26,7 @@ package pylapp.tapster.client.android.assistants
  * A simple class which embeds a message and a status.
  * It can be seen as a bean or a Plain Old Java Object used between the GUI and the assistants
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 2.0.0
  * @since 02/02/2018
  */

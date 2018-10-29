@@ -47,7 +47,7 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder
  * This version possesses only widgets related to Tapster, and not Snips.
  *
  * @constructor Creates a FragmentActivity
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 01/02/2018
  *
  * @version 2.0.0

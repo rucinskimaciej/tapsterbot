@@ -25,7 +25,7 @@ package pylapp.tapster.client.android.tools
 /**
  * Just a configuration file to prevent the use of rax or hard-coded values in the code
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 08/02/2018
  *
  * @version 2.0.0

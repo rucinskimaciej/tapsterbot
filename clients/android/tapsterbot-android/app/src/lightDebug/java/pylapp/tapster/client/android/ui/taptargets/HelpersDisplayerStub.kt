@@ -32,7 +32,7 @@ import android.view.View
  * tap targets are displayed.
  * A library is used, so let's thing a step further in case of the death of this library.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 08/02/2018
  *
  * @version 1.0.0

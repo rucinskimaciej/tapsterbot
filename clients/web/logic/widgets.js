@@ -24,7 +24,7 @@
   /**
   * @file widgets.js
   * @brief JavaScript file containing the source code of the logic behing the widgets
-  * @author pylapp
+  * @author Pierre-Yves Lapersonne
   * @version 2.0.0
   * @since 05/04/2018
   */

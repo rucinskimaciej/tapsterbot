@@ -33,7 +33,7 @@ import java.util.*
  * The goal here is to enable and disable features from the source code, with the "configuration as code"
  * idea. Thus it will be easy to remove or add features for debugging, staging, production releases APK, etc.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 07/02/2018
  *
  * @version 1.0.0

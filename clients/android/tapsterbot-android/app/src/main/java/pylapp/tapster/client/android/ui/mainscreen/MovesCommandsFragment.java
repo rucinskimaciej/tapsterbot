@@ -49,7 +49,7 @@ import pylapp.tapster.client.android.ui.taptargets.TapTargetViewBuilder;
 /**
  * Fragment containing commands related to robot moves
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 2.0.0
  * @since 21/07/2018
  */

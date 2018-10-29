@@ -22,7 +22,7 @@
 #
 # File.......: tapster_keywords.robot
 # Brief......: File contaning Robot Framework keywords to use to as to deal with the Tapster2 bot
-# Author.....: pylapp
+# Author.....: Pierre-Yves Lapersonne
 # Version....: 2.0.0
 # Since......: 17/01/2018
 

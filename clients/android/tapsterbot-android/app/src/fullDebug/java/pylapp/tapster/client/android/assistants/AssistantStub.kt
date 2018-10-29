@@ -27,7 +27,7 @@ import android.app.Activity
  * Stub based on design pattern Bridge which provides the declarations of methods to call
  * so as to deal with assistants
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 02/02/2018
  *
  * @version 3.0.0

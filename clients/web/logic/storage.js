@@ -24,7 +24,7 @@ SOFTWARE.
 /**
 * @file storage.js
 * @brief Classic JavaScript file which handles with storage things
-* @author pylapp
+* @author Pierre-Yves Lapersonne
 * @version 2.0.0
 * @since 29/03/2018
 */

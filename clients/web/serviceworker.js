@@ -25,7 +25,7 @@
   * @file serviceworker.js
   * @brief A service worker to use as a cache system in case of missing Internet / data / network connection.
   *       Please note that you must serve this web app through HTTPS or localhost so as to use Service Workers.
-  * @author pylapp
+  * @author Pierre-Yves Lapersonne
   * @version 1.0.1
   * @since 23/03/2018
   */

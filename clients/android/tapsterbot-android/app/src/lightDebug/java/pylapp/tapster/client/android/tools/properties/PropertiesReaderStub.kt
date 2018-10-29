@@ -30,7 +30,7 @@ import android.content.Context
  * With this pattern, it should be easier to deal with several sources of properties and configurations.
 isTextToSpeechEnabled
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @since 07/02/2018
  *
  * @version 2.0.0

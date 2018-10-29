@@ -24,7 +24,7 @@ SOFTWARE.
 /**
 * @file glue.js
 * @brief Classic JavaScript file which makes the glue between the GUUI and other components
-* @author pylapp
+* @author Pierre-Yves Lapersonne
 * @version 1.0.0
 * @since 29/03/2018
 */
