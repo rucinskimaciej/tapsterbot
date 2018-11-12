@@ -205,6 +205,26 @@ Double Tap To Element With Xpath
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Triple Tap To Point
+    [Documentation]    Make a triple tap to a point.
+    ...    Coordinates in use are based on the 2D device screen landmark.
+    ...    The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
+    ...    Parameters:
+    ...        x - the value on the X axis of the target point
+    ...        y - the value on the Y axis of the target point
+    ...        duration - optional, default valued to DEFAULT_DURATION_MULTI_TAP, duration of the contact
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${x}    ${y}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Triple tap to point    my_session    ${x}    ${y}    ${duration}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Triple Tap To Element With Id
     [Documentation]    Make a triple tap to an element, in portrait mode, which has this id.
     ...    The contact point will be computed according to location and dimension of the widget.
