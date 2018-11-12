@@ -97,7 +97,7 @@
 
 * Improve documentation and wiki with more details and less typo mistakes
 
-## Version eve-2
+## Version "final five"
 
 * Calibration
 	* Add missing file for calibration workflow

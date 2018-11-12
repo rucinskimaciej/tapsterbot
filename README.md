@@ -43,6 +43,7 @@
 6. deckard - (tag: vDeckard) - Version with a Progressive Web App and a version of the server accepting CORS.
 7. dalek - (tag: vDalek) - Version with a wrapper for Robot Framework which provides keywords so as to use for Tapster bot in an easy way (with Appium or other automation tools)
 8. eve - (tag: vEve) - More features in both sides and clients (stress inputs, multi tap, multi swipes, draw objects...)
+9. finalfive - (tag: vFinalfive) - Bug fixes and new Robot Framework keywords
 
 ## Wanna help?
  - Make an iOS app to drive the robot
