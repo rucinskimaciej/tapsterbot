@@ -26,7 +26,7 @@
 # File: tapster_wrapper.robot
 # Brief: Robot Framework file providing feature to use so as to click on items with Tapster bot
 # Author: Pierre-Yves Lapersonne
-# Version: 2.0.0
+# Version: 3.0.0
 # Since: 29/05/2018
 
 *** Settings ***
@@ -152,7 +152,7 @@ Double Tap To Element With Xpath
     ...    The contact point will be computed according to location and dimension of the widget.
     ...    The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
     ...    Parameters:
-    ...        xpathçlocator - the XPath locator to find the element
+    ...        xpath_locator - the XPath locator to find the element
     ...        duration - optional, default valued to DEFAULT_DURATION_MULTI_TAP, duration of the contact
     ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
     ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
@@ -192,13 +192,13 @@ Triple Tap To Element With Text
     ...    The contact point will be computed according to location and dimension of the widget.
     ...    The duration is by default ${DEFAULT_DURATION_MULTI_TAP} (in ms)
     ...    Parameters:
-    ...        text - the text of the target element
+    ...        xpath_locator - the XPath lcoator tor each the element and tap on it
     ...        duration - optional, default valued to DEFAULT_DURATION_MULTI_TAP, duration of the contact
     ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
     ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
     ...    Returns:
     ...        the results of the request send to the robot's server
-    [Arguments]    ${text}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
+    [Arguments]    ${xpath_locator}    ${duration}=${DEFAULT_DURATION_MULTI_TAP}    ${offset_x}=0    ${offset_y}=0
     ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
     ${x} =    Evaluate    ${x}+${offset_x}
     ${y} =    Evaluate    ${y}+${offset_y}
@@ -256,6 +256,24 @@ Tap To Element With Text
     ...        the results of the request send to the robot's server
     [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
     ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element With Xpath
+    [Documentation]    Make a tap to an element, in portrait mode, using this XPath locator.
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    Parameters:
+    ...        xpath_locator - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
     ${x} =    Evaluate    ${x}+${offset_x}
     ${y} =    Evaluate    ${y}+${offset_y}
     tapster_keywords.Create robot session    my_session
