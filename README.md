@@ -53,6 +53,7 @@
  - Integrate Snips assistants within the Progressive Web Apps
  - Define actions in Snips assistants
  - Integrate the use of Tapster inside Appium
+ - Deal with coordinates based on landscape mode of devices
  - ... feel free to make pull requests and forks!
 
 ## Notice
