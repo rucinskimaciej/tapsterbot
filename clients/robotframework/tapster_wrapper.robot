@@ -538,6 +538,72 @@ Stress Swipes
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Stress Swipes Using Elements Id
+    [Documentation]    Swipe from an element to another using their id several times very quickly
+    ...    Parameters:
+    ...        N - the number of swipes to process
+    ...        source_id - id of the start element
+    ...        destination_id - id of the end element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${source_id}    ${destination_id}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Id    ${source_id}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Id    ${destination_id}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Stress swipes    my_session    ${N}    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Stress Swipes Using Elements Text
+    [Documentation]    Swipe from an element to another using their texts values several times very quickly
+    ...    Parameters:
+    ...        N - the number of swipes to process
+    ...        source_text - text of the start element
+    ...        destination_text - text of the end element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${source_text}    ${destination_text}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Text    ${source_text}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Id    ${destination_text}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Stress swipes    my_session    ${N}    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Stress Swipes Using Elements Xpath
+    [Documentation]    Swipe from an element to another several times very quickly using XPath locators to find the elements to use
+    ...    Parameters:
+    ...        N - the number of swipes to process
+    ...        source_xpath - XPath lcoator of the start element
+    ...        destination_xpath - XPath lcoator of the end element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${source_xpath}    ${destination_xpath}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Text    ${source_xpath}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Id    ${destination_xpath}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Stress swipes    my_session    ${N}    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Tap Somewhere To Element With Id
     [Documentation]    Tap somewhere onto the element with this id
     ...    The contact point will be computed according to location and dimension of the widget, sugin a random value.
