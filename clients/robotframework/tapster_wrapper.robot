@@ -635,6 +635,28 @@ Swipe N Times Using Elements Text
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Swipe N Times Using Elements Xpath
+    [Documentation]    Swipe from an element to another using XPath locators, n times
+    ...    Parameters:
+    ...        N - the number of times the swipes will be made
+    ...        source_xpath - XPath locator to get the start element
+    ...        destination_xpath - XPath locator to get the end element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${source_xpath}    ${destination_xpath}    ${offset_x}=0    ${offset_y}=0
+    ${source_x}    ${source_y} =    Get Suitable Contact Point For Widget With Xpath    ${source_xpath}
+    ${source_x} =    Evaluate    ${source_x}+${offset_x}
+    ${source_y} =    Evaluate    ${source_y}+${offset_y}
+    ${destination_x}    ${destination_y} =    Get Suitable Contact Point For Widget With Xpath    ${destination_xpath}
+    ${destination_x} =    Evaluate    ${destination_x}+${offset_x}
+    ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Swipe n times    my_session    ${N}    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Stress Swipes
     [Documentation]    Swipe N times from (a,b) to (c,d) points very quickly
     ...    Parameters:
