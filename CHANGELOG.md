@@ -105,6 +105,25 @@
 
 * Robot Framework
 	* Refactor syntax of wrapper library to match CamelCase syntax
+	* Refactor order of keywords in wrapper
+	* Add missing keywords in wrapper:
+		* tap to a 2D point
+		* long tap to a 2D point
+		* double tap to a 2D point
+		* triple tap to a 2D point
+		* tap to element with XPath locator
+		* tap to element n times with XPath locator
+		* tap somewhere to element using XPath locator
+		* swipe n times using elements' ID
+		* swipe n times using elements' texts
+		* swipe n times using XPath locators
+		* stress taps to element with XPath locator
+		* stress swipes using elements ID
+		* stress swipes using elements' texts
+		* stress swipes using XPath locators
+
+* Documentation
+	* Update documentation about Robot Framework keywords
 
 * Other things
 	* Update licences headers so as to have a more suitable email address
