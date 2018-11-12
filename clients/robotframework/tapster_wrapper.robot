@@ -44,6 +44,228 @@ Resource    ./tapster_keywords.robot
 # Useful keywords
 # ###############
 
+Tap To Point
+    [Documentation]    Make a tap to a 2D point, using coodinates based on the 2D smartphone screen landmark.
+    ...    Parameters:
+    ...        x - the value in the X axis of the target point
+    ...        y - the value in the Y axis of the target point
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${x}    ${y}    ${offset_x}=0    ${offset_y}=0
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element With Id
+    [Documentation]    Make a tap to an element, in portrait mode, which has this id.
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    Parameters:
+    ...        id - the id of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${id}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element With Text
+    [Documentation]    Make a tap to an element, in portrait mode, which has this text.
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    Parameters:
+    ...        text - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element With Xpath
+    [Documentation]    Make a tap to an element, in portrait mode, using this XPath locator.
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    Parameters:
+    ...        xpath_locator - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap Somewhere To Element With Id
+    [Documentation]    Tap somewhere onto the element with this id
+    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
+    ...    If there are several widgets with this id, will keep the 1st.
+    ...    Parameters:
+    ...        id - the id of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${id}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Random Contact Point For Widget With Id    ${id}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap Somewhere To Element With Text
+    [Documentation]    Tap somewhere onto the element with this text
+    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
+    ...    If there are several widgets with this text, will keep the 1st.
+    ...    Parameters:
+    ...        text - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Random Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap Somewhere To Element With Xpath
+    [Documentation]    Tap somewhere onto the element using this XPath locator
+    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
+    ...    If there are several widgets matching this XPath locator, will keep the 1st.
+    ...    Parameters:
+    ...        xpath_locator - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Random Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Landscape Element With Text
+    [Documentation]    Unstable! Keyword "Get Window Width" missing in AppiumLibrary
+    #  Tap to an element, in landscape mode, which has this text.
+    # The contact point will be computed according to location and dimension of the widget.
+    # If there are several widgets with this text, will keep the 1st.
+    [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
+    # Coordinates in landscape mode!
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    # Robot does not care of orientation, need to convert to fake portrait mode
+    ${screen_width} =    Get Window width # Does not work O_o, unknown keyword in AppiumLibrary!
+    ${y} =    Evaluate    ${x}
+    ${x} =    Evaluate    ${screen_width}-${y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${y}    ${x}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Landscape Element With Id
+    [Documentation]    Unstable! Keyword "Get Window Width" missing in AppiumLibrary
+    # Tap to an element, in landscape mode, which has this id.
+    # The contact point will be computed according to location and dimension of the widget.
+    # If there are several widgets with this id, will keep the 1st.
+    [Arguments]    ${id}    ${offset_x}=0    ${offset_y}=0
+    # Coordinates in landscape mode!
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    # Robot does not care of orientation, need to convert to fake portrait mode
+    ${screen_width} =    Get Window width # Does not work O_o, unknown keyword in AppiumLibrary!
+    ${y} =    Evaluate    ${x}
+    ${x} =    Evaluate    ${screen_width}-${y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${y}    ${x}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element N Times With Id
+    [Documentation]    Tap n times to the element with this id
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    If there are several widgets with this id, will keep the 1st.
+    ...    Parameters:
+    ...        N - the number of times the tpa will be made
+    ...        id - the id of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${id}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element N Times With Text
+    [Documentation]    Tap n times to this element with this text
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    If there are several widgets with this id, will keep the 1st.
+    ...    Parameters:
+    ...        N - the number of times the tpa will be made
+    ...        text - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${text}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap To Element N Times With XPath
+    [Documentation]    Tap n times to this element with this XPath locator
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    If there are several widgets with this id, will keep the 1st.
+    ...    Parameters:
+    ...        N - the number of times the tpa will be made
+    ...        xpath_locator - the XPath lcoator to use to get and tap on the element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Long Tap To Point
     [Documentation]    Make a long tap to a point
     ...    Use coordinates based on the 2D device screen landmark.
@@ -285,167 +507,6 @@ Triple Tap To Element With Xpath
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Tap To Point
-    [Documentation]    Make a tap to a 2D point, using coodinates based on the 2D smartphone screen landmark.
-    ...    Parameters:
-    ...        x - the value in the X axis of the target point
-    ...        y - the value in the Y axis of the target point
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${x}    ${y}    ${offset_x}=0    ${offset_y}=0
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Element With Id
-    [Documentation]    Make a tap to an element, in portrait mode, which has this id.
-    ...    The contact point will be computed according to location and dimension of the widget.
-    ...    Parameters:
-    ...        id - the id of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${id}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Element With Text
-    [Documentation]    Make a tap to an element, in portrait mode, which has this text.
-    ...    The contact point will be computed according to location and dimension of the widget.
-    ...    Parameters:
-    ...        text - the text of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Element With Xpath
-    [Documentation]    Make a tap to an element, in portrait mode, using this XPath locator.
-    ...    The contact point will be computed according to location and dimension of the widget.
-    ...    Parameters:
-    ...        xpath_locator - the text of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Reset
-    [Documentation]    Resets the position of the robot's finger
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Reset    my_session
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Swipe
-    [Documentation]    Swipe one time from (a,b) to (c,d) points
-    ...    Parameters:
-    ...        a - the X value of the start point
-    ...        b - the Y value of the start point
-    ...        c - the X value of the end point
-    ...        d - the Y value of the end point
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${a}    ${b}    ${c}    ${d}    ${offset_x}=0    ${offset_y}=0
-    ${new_a} =    Evaluate    ${a}+${offset_x}
-    ${new_b} =    Evaluate    ${b}+${offset_y}
-    ${new_c} =    Evaluate    ${c}+${offset_x}
-    ${new_d} =    Evaluate    ${d}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Swipe    my_session    ${new_a}    ${new_b}    ${new_c}    ${new_d}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Element N Times With Id
-    [Documentation]    Tap n times to the element with this id
-    ...    The contact point will be computed according to location and dimension of the widget.
-    ...    If there are several widgets with this id, will keep the 1st.
-    ...    Parameters:
-    ...        N - the number of times the tpa will be made
-    ...        id - the id of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${N}    ${id}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Element N Times With Text
-    [Documentation]    Tap n times to this element with this text
-    ...    The contact point will be computed according to location and dimension of the widget.
-    ...    If there are several widgets with this id, will keep the 1st.
-    ...    Parameters:
-    ...        N - the number of times the tpa will be made
-    ...        text - the text of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${N}    ${text}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Text    ${text}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Element N Times With XPath
-    [Documentation]    Tap n times to this element with this XPath locator
-    ...    The contact point will be computed according to location and dimension of the widget.
-    ...    If there are several widgets with this id, will keep the 1st.
-    ...    Parameters:
-    ...        N - the number of times the tpa will be made
-    ...        xpath_locator - the XPath lcoator to use to get and tap on the element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${N}    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
 Stresstap To Element With Id
     [Documentation]    Tap n times very quickly to this element with this id
     ...    The contact point will be computed according to location and dimension of the widget.
@@ -506,10 +567,9 @@ Stresstap To Element With XPath
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Swipe N Times
-    [Documentation]    Swipe N times from (a,b) to (c,d) points
+Swipe
+    [Documentation]    Swipe one time from (a,b) to (c,d) points
     ...    Parameters:
-    ...        N - the number of swipes wich will be made
     ...        a - the X value of the start point
     ...        b - the Y value of the start point
     ...        c - the X value of the end point
@@ -518,13 +578,13 @@ Swipe N Times
     ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
     ...    Returns:
     ...        the results of the request send to the robot's server
-    [Arguments]    ${N}    ${a}    ${b}    ${c}    ${d}    ${offset_x}=0    ${offset_y}=0
+    [Arguments]    ${a}    ${b}    ${c}    ${d}    ${offset_x}=0    ${offset_y}=0
     ${new_a} =    Evaluate    ${a}+${offset_x}
     ${new_b} =    Evaluate    ${b}+${offset_y}
     ${new_c} =    Evaluate    ${c}+${offset_x}
     ${new_d} =    Evaluate    ${d}+${offset_y}
     tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Swipe n times    my_session    ${N}    ${new_a}    ${new_b}    ${new_c}    ${new_d}
+    ${response} =    tapster_keywords.Swipe    my_session    ${new_a}    ${new_b}    ${new_c}    ${new_d}
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
@@ -588,6 +648,28 @@ Swipe Using Elements Xpath
     ${destination_y} =    Evaluate    ${destination_y}+${offset_y}
     tapster_keywords.Create robot session    my_session
     ${response} =    tapster_keywords.Swipe    my_session    ${source_x}    ${source_y}    ${destination_x}    ${destination_y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Swipe N Times
+    [Documentation]    Swipe N times from (a,b) to (c,d) points
+    ...    Parameters:
+    ...        N - the number of swipes wich will be made
+    ...        a - the X value of the start point
+    ...        b - the Y value of the start point
+    ...        c - the X value of the end point
+    ...        d - the Y value of the end point
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${a}    ${b}    ${c}    ${d}    ${offset_x}=0    ${offset_y}=0
+    ${new_a} =    Evaluate    ${a}+${offset_x}
+    ${new_b} =    Evaluate    ${b}+${offset_y}
+    ${new_c} =    Evaluate    ${c}+${offset_x}
+    ${new_d} =    Evaluate    ${d}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Swipe n times    my_session    ${N}    ${new_a}    ${new_b}    ${new_c}    ${new_d}
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
@@ -745,97 +827,6 @@ Stress Swipes Using Elements Xpath
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Tap Somewhere To Element With Id
-    [Documentation]    Tap somewhere onto the element with this id
-    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
-    ...    If there are several widgets with this id, will keep the 1st.
-    ...    Parameters:
-    ...        id - the id of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${id}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Random Contact Point For Widget With Id    ${id}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap Somewhere To Element With Text
-    [Documentation]    Tap somewhere onto the element with this text
-    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
-    ...    If there are several widgets with this text, will keep the 1st.
-    ...    Parameters:
-    ...        text - the text of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Random Contact Point For Widget With Text    ${text}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap Somewhere To Element With Xpath
-    [Documentation]    Tap somewhere onto the element using this XPath locator
-    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
-    ...    If there are several widgets matching this XPath locator, will keep the 1st.
-    ...    Parameters:
-    ...        xpath_locator - the text of the target element
-    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
-    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
-    ...    Returns:
-    ...        the results of the request send to the robot's server
-    [Arguments]    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
-    ${x}    ${y} =    Get Random Contact Point For Widget With Xpath    ${xpath_locator}
-    ${x} =    Evaluate    ${x}+${offset_x}
-    ${y} =    Evaluate    ${y}+${offset_y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Landscape Element With Text
-    [Documentation]    Unstable! Keyword "Get Window Width" missing in AppiumLibrary
-    #  Tap to an element, in landscape mode, which has this text.
-    # The contact point will be computed according to location and dimension of the widget.
-    # If there are several widgets with this text, will keep the 1st.
-    [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
-    # Coordinates in landscape mode!
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
-    # Robot does not care of orientation, need to convert to fake portrait mode
-    ${screen_width} =    Get Window width # Does not work O_o, unknown keyword in AppiumLibrary!
-    ${y} =    Evaluate    ${x}
-    ${x} =    Evaluate    ${screen_width}-${y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${y}    ${x}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
-Tap To Landscape Element With Id
-    [Documentation]    Unstable! Keyword "Get Window Width" missing in AppiumLibrary
-    # Tap to an element, in landscape mode, which has this id.
-    # The contact point will be computed according to location and dimension of the widget.
-    # If there are several widgets with this id, will keep the 1st.
-    [Arguments]    ${id}    ${offset_x}=0    ${offset_y}=0
-    # Coordinates in landscape mode!
-    ${x}    ${y} =    Get Suitable Contact Point For Widget With Id    ${id}
-    # Robot does not care of orientation, need to convert to fake portrait mode
-    ${screen_width} =    Get Window width # Does not work O_o, unknown keyword in AppiumLibrary!
-    ${y} =    Evaluate    ${x}
-    ${x} =    Evaluate    ${screen_width}-${y}
-    tapster_keywords.Create robot session    my_session
-    ${response} =    tapster_keywords.Tap to point    my_session    ${y}    ${x}
-    tapster_keywords.Delete robot session    my_session
-    [Return]    ${response}
-
 Draw Random Pattern
     [Documentation]    Draws a random pattern on the screen, using strokes
     ...    Parameters:
@@ -937,6 +928,15 @@ Draw Spiral
     [Arguments]    ${x}    ${y}    ${n}    ${r}
     tapster_keywords.Create robot session    my_session
     ${response} =    tapster_keywords.Draw spiral    my_session    ${x}    ${y}    ${n}    ${r}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Reset
+    [Documentation]    Resets the position of the robot's finger
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Reset    my_session
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
