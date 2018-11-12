@@ -351,6 +351,26 @@ Tap To Element N Times With Text
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
+Tap To Element N Times With XPath
+    [Documentation]    Tap n times to this element with this XPath locator
+    ...    The contact point will be computed according to location and dimension of the widget.
+    ...    If there are several widgets with this id, will keep the 1st.
+    ...    Parameters:
+    ...        N - the number of times the tpa will be made
+    ...        xpath_locator - the XPath lcoator to use to get and tap on the element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${N}    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Suitable Contact Point For Widget With Xpath    ${xpath_locator}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap n times    my_session    ${N}    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
 Stresstap To Element With Id
     [Documentation]    Tap n times very quickly to this element with this id
     ...    The contact point will be computed according to location and dimension of the widget.
