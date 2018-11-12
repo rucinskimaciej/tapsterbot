@@ -642,7 +642,7 @@ Tap Somewhere To Element With Text
     tapster_keywords.Delete robot session    my_session
     [Return]    ${response}
 
-Tap Somewhere To Element With XPath
+Tap Somewhere To Element With Xpath
     [Documentation]    Tap somewhere onto the element using this XPath locator
     ...    The contact point will be computed according to location and dimension of the widget, using a random value.
     ...    If there are several widgets matching this XPath locator, will keep the 1st.
