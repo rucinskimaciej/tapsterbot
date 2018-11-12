@@ -104,7 +104,7 @@
 	* Fix path of capabilities files inside calibration script
 
 * Robot Framework
-	* Refactor syntax of wrapper library to match CamelCase
+	* Refactor syntax of wrapper library to match CamelCase syntax
 
 * Other things
 	* Update licences headers so as to have a more suitable email address
