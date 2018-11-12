@@ -606,7 +606,7 @@ Stress Swipes Using Elements Xpath
 
 Tap Somewhere To Element With Id
     [Documentation]    Tap somewhere onto the element with this id
-    ...    The contact point will be computed according to location and dimension of the widget, sugin a random value.
+    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
     ...    If there are several widgets with this id, will keep the 1st.
     ...    Parameters:
     ...        id - the id of the target element
@@ -625,8 +625,8 @@ Tap Somewhere To Element With Id
 
 Tap Somewhere To Element With Text
     [Documentation]    Tap somewhere onto the element with this text
-    ...    The contact point will be computed according to location and dimension of the widget, sugin a random value.
-    ...    If there are several widgets with this id, will keep the 1st.
+    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
+    ...    If there are several widgets with this text, will keep the 1st.
     ...    Parameters:
     ...        text - the text of the target element
     ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
@@ -635,6 +635,25 @@ Tap Somewhere To Element With Text
     ...        the results of the request send to the robot's server
     [Arguments]    ${text}    ${offset_x}=0    ${offset_y}=0
     ${x}    ${y} =    Get Random Contact Point For Widget With Text    ${text}
+    ${x} =    Evaluate    ${x}+${offset_x}
+    ${y} =    Evaluate    ${y}+${offset_y}
+    tapster_keywords.Create robot session    my_session
+    ${response} =    tapster_keywords.Tap to point    my_session    ${x}    ${y}
+    tapster_keywords.Delete robot session    my_session
+    [Return]    ${response}
+
+Tap Somewhere To Element With XPath
+    [Documentation]    Tap somewhere onto the element using this XPath locator
+    ...    The contact point will be computed according to location and dimension of the widget, using a random value.
+    ...    If there are several widgets matching this XPath locator, will keep the 1st.
+    ...    Parameters:
+    ...        xpath_locator - the text of the target element
+    ...        offset_x - optional, default valued to 0, an offset to apply to X axis for the contact
+    ...        offset_y - optional, default valued to 0, an offset to apply to Y axis for the contact
+    ...    Returns:
+    ...        the results of the request send to the robot's server
+    [Arguments]    ${xpath_locator}    ${offset_x}=0    ${offset_y}=0
+    ${x}    ${y} =    Get Random Contact Point For Widget With Xpath    ${xpath_locator}
     ${x} =    Evaluate    ${x}+${offset_x}
     ${y} =    Evaluate    ${y}+${offset_y}
     tapster_keywords.Create robot session    my_session
