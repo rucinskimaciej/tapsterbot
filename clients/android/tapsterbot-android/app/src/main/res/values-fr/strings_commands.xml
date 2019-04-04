@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MIT License
+    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+
+    <!-- *************** -->
+    <!-- Commands screen -->
+    <!-- *************** -->
+
+    <string name="command_title_getposition_short">Position 3D</string>
+    <string name="command_title_getposition_long">Donne la position 3D du doigt du robot avec des coordonnées 3D dans son repère.</string>
+    <string name="command_button_title_getposition">Exécuter</string>
+    <string name="content_description_command_button_getposition">Envoie une requête au robot pour avoir la psoition 3D de son doigt.</string>
+
+    <string name="command_title_setangles_short">Changer les angles des bras</string>
+    <string name="command_title_setangles_long">Change les angles des bras du robot en faisant bouger ses servomoteurs. Par exemple : 30 10 20</string>
+    <string name="command_button_title_setangles">Exécuter</string>
+    <string name="content_description_command_button_setangles">Envoie une requête au robot pour modifier les angles de ses bras.</string>
+    <string name="hint_setangles">theta1 theta2 theta3</string>
+
+    <string name="command_title_setposition_short">Changer la position 3D</string>
+    <string name="command_title_setposition_long">Change la position 3D du doigt du robot en utilisant le repère 3D du robot. Par exemple : 10 -5 -155</string>
+    <string name="command_button_title_setposition">Exécuter</string>
+    <string name="content_description_command_button_setposition">Envoie une requête au robot pour changer sa position 3D.</string>
+    <string name="hint_setposition">x y z</string>
+
+    <string name="command_title_swipe_short">Glisser</string>
+    <string name="command_title_swipe_long">Swipe d\'un point à un autre en utilisant les coordonnées 2D du repère du téléphone. Par exemple : 100 100 350 500</string>
+    <string name="command_button_title_swipe">Exécuter</string>
+    <string name="content_description_command_button_swipe">Envoie une requête au robot pour faire un swipe.</string>
+    <string name="hint_swipe">startX startY endX endY</string>
+
+    <string name="command_title_swipemany_short">Glisser plusieurs fois</string>
+    <string name="command_title_swipemany_long">Swipe d\'un point à un autre plusieurs fois en utilisant les coordonnées 2D du repère du téléphone. Par exemple : 10 100 100 350 500</string>
+    <string name="command_button_title_swipemany">Exécuter</string>
+    <string name="content_description_command_button_swipemany">Envoie une requête au robot pour faire plusieurs swipes.</string>
+    <string name="hint_swipemany">n startX startY endX endY</string>
+
+    <string name="command_title_dance_short">Danser</string>
+    <string name="command_title_dance_long">Fait danser le robot</string>
+    <string name="command_button_title_dance">C\'est la fête !</string>
+    <string name="content_description_command_button_dance">Envoie une requête au robot pour le faire danser.</string>
+
+    <string name="command_title_contactz_short">Point de contact</string>
+    <string name="command_title_contactz_long">Donne la position en Z du point de contact, c\'est à dire à quelle "hauteur" le doigt du robot touche l\'écran du téléphone.</string>
+    <string name="command_button_title_contactz">Exécuter</string>
+    <string name="content_description_command_button_contactz">Envoie une requête au robot pour avoir le point de contact.</string>
+
+    <string name="command_title_getstatus_short">Status</string>
+    <string name="command_title_getstatus_long">Donne le status du serveur du robot.</string>
+    <string name="command_button_title_getstatus">Exécuter</string>
+    <string name="content_description_command_button_getstatus">Envoie une requête au robot pour obtenir des informations sur le serveur.</string>
+
+    <string name="command_title_getangles_short">Angles des bras</string>
+    <string name="command_title_getangles_long">Donne les angles des bras du robot.</string>
+    <string name="command_button_title_getangles">Exécuter</string>
+    <string name="content_description_command_button_getangles">Envoie une requête au robot pour obtenir les angles de ses bras.</string>
+
+    <string name="command_title_stopdance_short">Arrêter de danser</string>
+    <string name="command_title_stopdance_long">Fait arrêter de danser le robot.</string>
+    <string name="command_button_title_stopdance">Stop</string>
+    <string name="content_description_command_button_stopdance">Envoie une requête au robot pour le faire arrêter de danser.</string>
+
+    <string name="command_title_tap_short">Taper</string>
+    <string name="command_title_tap_long">Tape sur un point en 2D en utilisant le répère du téléphone. Par exemple : 350 500</string>
+    <string name="command_button_title_tap">Exécuter</string>
+    <string name="content_description_command_button_tap">Envoie une requête au robot pour le faire taper sur un point.</string>
+    <string name="hint_tap">x y </string>
+
+    <string name="command_title_ntap_short">Taper plusieurs fois</string>
+    <string name="command_title_ntap_long">Tape plusieurs fois sur un point en 2D en utilisant le répère du téléphone. Par exemple : 10 350 500</string>
+    <string name="command_button_title_ntap">Exécuter</string>
+    <string name="content_description_command_button_ntap">Envoie une requête au robot pour le faire taper sur un point plusieurs fois.</string>
+    <string name="hint_ntap">n x y </string>
+
+    <string name="command_title_reset_short">Reset</string>
+    <string name="command_title_reset_long">Réinitialise la position du robot pour le remettre dans son état initial.</string>
+    <string name="command_button_title_reset">Exécuter</string>
+    <string name="content_description_command_button_reset">Envoie une requête au robot pour le faire remettre dans son état initial.</string>
+
+    <string name="command_title_drawstar_short">Etoile</string>
+    <string name="command_title_drawstar_long">Dessine une étoile.</string>
+    <string name="command_button_title_drawstar">Dessiner</string>
+    <string name="content_description_command_button_drawstar">Envoie une requête au robot pour lui faire dessiner une étoile.</string>
+
+    <string name="command_title_drawcircle_short">Cercle</string>
+    <string name="command_title_drawcircle_long">Dessine un cercle avec un point central et un rayon. Par exemple : 350 500 30</string>
+    <string name="command_button_title_drawcircle">Dessiner</string>
+    <string name="content_description_command_button_drawcircle">Envoie une requête au robot pour lui faire dessiner un cercle.</string>
+    <string name="hint_drawcircle">precision rayon</string>
+
+    <string name="command_title_drawspiral_short">Spirale</string>
+    <string name="command_title_drawspiral_long">Dessine une spirale centrée sur un point, avec un nombre d\'anneaux et un rayon. Par exemple : 350 400 15 30</string>
+    <string name="command_button_title_drawspiral">Dessiner</string>
+    <string name="content_description_command_button_drawspiral">Envoie une requête au robot pour lui faire dessiner une spirale.</string>
+    <string name="hint_drawspiral">x y anneaux rayon</string>
+
+    <string name="command_title_drawsquare_short">Carré</string>
+    <string name="command_title_drawsquare_long">Dessine un carré avec une précision et une longueur de côté. Par exemple : 2 30</string>
+    <string name="command_button_title_drawsquare">Dessiner</string>
+    <string name="content_description_command_button_drawsquare">Envoie une requête au robot pour lui faire dessiner un carré.</string>
+    <string name="hint_drawsquare">precision côté</string>
+
+    <string name="command_title_drawcross_short">Croix</string>
+    <string name="command_title_drawcross_long">Dessine une croix en utilisant 4 points et en dessinant avec eux 2 traits. Par exemple : 100 100 400 100 400 400 100 400</string>
+    <string name="command_button_title_drawcross">Dessiner</string>
+    <string name="content_description_command_button_drawcross">Envoie une requête au robot pour lui faire dessiner une croix.</string>
+    <string name="hint_drawcross">x1 y1 x2 y2 x3 y3 x4 y4</string>
+
+    <string name="command_title_drawtriangle_short">Triangle</string>
+    <string name="command_title_drawtriangle_long">Dessine un triangle en utilisant 3 points. Par exemple : 300 300 300 600 500 600</string>
+    <string name="command_button_title_drawtriangle">Dessiner</string>
+    <string name="content_description_command_button_drawtriangle">Envoie une requête au robot pour lui faire dessiner un triangle.</string>
+    <string name="hint_drawtriangle">x1 y1 x2 y2 x3 y3</string>
+
+    <string name="command_title_drawrandom_short">Motif aléatoire</string>
+    <string name="command_title_drawrandom_long">Dessine un motif aléatoire avec un nombre donné points principaux et une zone de dessin. Par exemple : 10 100 100 500 650</string>
+    <string name="command_button_title_drawrandom">Dessiner</string>
+    <string name="content_description_command_button_drawrandom">Envoie une requête au robot pour lui faire dessiner un motif aléatoire.</string>
+    <string name="hint_drawrandom">n longueurMinimale hauteurMinimale longueurMaximale hauteurMaximale</string>
+
+    <string name="command_bad_parameters">Paramètres incorrects</string>
+
+</resources>
+

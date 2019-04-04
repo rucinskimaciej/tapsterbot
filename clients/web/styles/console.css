@@ -1,0 +1,64 @@
+/*
+MIT License
+Copyright (c) 2016-2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/*
+✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
+*/
+
+/**
+* @file console.css
+* @brief Style sheet for console board
+* @author Pierre-Yves Lapersonne
+* @version 1.0.0
+* @since 23/03/2018
+*/
+
+#boardConsole {
+  height: calc(100% - 100px);
+  width: 50%;
+  float: right;
+  padding: 10px;
+  margin: 0;
+  background-color: #F5F5F5;
+  animation: fadein 2s;
+}
+
+#console {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+#configField {
+  width: 100%;
+  height: 10%;
+  display: none;
+}
+
+#setServerUrl {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

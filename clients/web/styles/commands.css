@@ -1,0 +1,197 @@
+/*
+MIT License
+Copyright (c) 2016-2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/*
+✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
+*/
+
+/**
+* @file global.css
+* @brief Style sheet for commands board
+* @author Pierre-Yves Lapersonne
+* @version 2.0.0
+* @since 23/03/2018
+*/
+
+/* Common things **/
+
+#boardCommands {
+  height: 86%;
+  width: 45%;
+  float: left;
+  padding: 10px;
+  background-color: #E0E0E0;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#boardCommands button:active {
+  opacity: 0.5;
+}
+
+#commands {
+  background-color: #E0E0E0;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+
+.actionButton {
+  background-color: #6af4b0;
+  cursor: pointer;
+  padding: 15px;
+  height: 4rem;
+  width: 4rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  border: 1px solid #6af4b0;
+  float: right;
+}
+
+.actionButton > img {
+  display: block;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+}
+
+.padder {
+  margin-bottom: 2em;
+}
+
+.commandBlock {
+  width: calc(100% - 40px);
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.16), 0 0 0 0px rgba(0, 0, 0, 0.08);
+}
+
+.commandBlock h1, .commandBlock input, .commandBlock button {
+  margin-right: 3em;
+}
+
+.commandBlock h1 {
+  width: 50%;
+  text-align: center;
+}
+
+.commandBlock input[type="text"] {
+  min-height: 50px;
+  width: 33%;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Try to improve a11y */
+
+.commandBlock input[type="text"]::placeholder {
+  color: #FFFFFF;
+}
+
+.commandBlock input[type="text"]:focus::placeholder {
+  color: #000000;
+}
+
+.commandBlock input[type=text]:focus {
+  @include box-shadow(0 0 3px rgba(0, 0, 0, 1));
+  border: 3px dashed rgba(0, 0, 0, 1);
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
+/* Cards for commands and their parameters fields */
+
+#commandReset, #commandStatus, #commandContactZ {
+  background-color: #3f51b5;
+  color: #FFFFFF;
+}
+
+#commandTap, #commandNTap, #commandLongTap, #commandStressTap {
+  background-color: #f44336;
+  color: #FFFFFF;
+}
+
+#commandTap input[type="text"],
+#commandNTap input[type="text"],
+#commandLongTap input[type="text"],
+#commandStressTap input[type="text"] {
+  background-color: #11122B26;
+}
+
+#commandGetPosition, #commandSetPosition {
+  background-color: #4caf50;
+  color: #FFFFFF;
+}
+
+#commandSetPosition input[type="text"] {
+  background-color:  #11122B26;
+}
+
+#commandSetAngles, #commandGetAngles {
+  background-color: #ff9800;
+  color: #FFFFFF;
+}
+
+#commandSetAngles input[type="text"] {
+  background-color: #180C0026;
+}
+
+#commandDance, #commandStopDance {
+  background-color: #00bcd4;
+  color: #FFFFFF;
+}
+
+#commandSwipe, #commandNSwipe, #commandStressSwipe {
+  background-color: #f44336;
+  color: #FFFFFF;
+}
+
+#commandSwipe input[type="text"],
+#commandNSwipe input[type="text"],
+#commandStressSwipe input[type="text"] {
+  background-color: #11122B26;
+}
+
+#commandDrawStar, #commandDrawCircle, #commandDrawSpiral, #commandDrawSquare {
+  background-color: #e91e63;
+  color: #FFFFFF;
+}
+
+#commandDrawStar input[type="text"],
+#commandDrawCircle input[type="text"],
+#commandDrawSpiral input[type="text"],
+#commandDrawSquare input[type="text"] {
+  background-color: #c2185b;
+}

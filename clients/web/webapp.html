@@ -1,0 +1,348 @@
+<!DOCTYPE html lang="en">
+<!--
+MIT License
+Copyright (c) 2016-2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一  -->
+
+<!--
+File.......: webapp.html
+Brief......: The PWA / SPA / web app to use to as to drive the Tapster2 robot
+Author.....: Pierre-Yves Lapersonne
+Version....: 2.0.0
+Since......: 23/03/2018
+-->
+
+<html>
+
+  <!-- ************************************ -->
+  <!-- Head: with meta, links, style sheets -->
+  <!-- ************************************ -->
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="Pierre-Yves Lapersonne" />
+    <meta name="publisher" content="Pierre-Yves Lapersonne" />
+    <meta name="identifier-url" content="https://pylapp.github.io" />
+    <meta name="description" content="Web application to use so as to drive and control the Tapster 2 robot by sending to it's server HTTP requests." />
+    <meta name="keywords" content="Tapster robot progressive web app server automation tests drivers" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" />
+
+    <!-- Metas for Twitter -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Tapster2 web client">
+    <meta name="twitter:url" content="https://github.com/pylapp/tapsterbot">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/pylapp/tapsterbot/master/poster.png">
+    <meta name="twitter:description" content="Web application to use so as to drive and mcontorl the Tapster 2 robot by sending to it's server HTTP requests.">
+
+    <!-- Metas for Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tapster2 web client" />
+    <meta property="og:url" content="https://github.com/pylapp/tapsterbot" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/pylapp/tapsterbot/master/poster.png" />
+    <meta property="og:description" content="Web application to use so as to drive and mcontorl the Tapster 2 robot by sending to it's server HTTP requests." />
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="styles/global.css">
+    <link rel="stylesheet" type="text/css" href="styles/header.css">
+    <link rel="stylesheet" type="text/css" href="styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="styles/console.css">
+    <link rel="stylesheet" type="text/css" href="styles/commands.css">
+    <link rel="stylesheet" type="text/css" href="styles/media-extrasmallscreens.css">
+    <link rel="stylesheet" type="text/css" href="styles/media-smallscreens.css">
+    <link rel="stylesheet" type="text/css" href="styles/media-mediumscreens.css">
+    <link rel="stylesheet" type="text/css" href="styles/media-extralargescreens.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="logic/config.js"></script>
+    <script type="text/javascript" src="logic/storage.js"></script>
+    <script type="text/javascript" src="logic/network.js"></script>
+    <script type="text/javascript" src="logic/widgets.js"></script>
+    <script type="text/javascript" src="logic/glue.js"></script>
+    <script type="text/javascript" src="logic/main.js"></script>
+
+
+    <!-- Misc. -->
+    <link rel="icon" href="pictures/favicon.png">
+    <title>Tapster2 web client</title>
+
+    <link rel="manifest" href="./manifest.json">
+
+  </head>
+
+  <!-- **** -->
+  <!-- Body -->
+  <!-- **** -->
+
+  <body>
+
+    <!-- ****** -->
+    <!-- Header -->
+    <!-- ****** -->
+
+    <header id="mainHeader">
+      <div class="header-baseline">
+        <div id="headerSummary">
+          <img id="headerLogo" src="pictures/logo-x144.png" alt="Logo of Tapster web client" />
+        </div>
+      </div>
+    </header>
+
+    <div id="padder" style="hidden: true" class="header-baseline">
+      <div id="headerSummary">
+        <img id="headerLogo" src="pictures/logo-x144.png" alt="Logo of Tapster web client" />
+      </div>
+    </div>
+
+    <!-- ******************** -->
+    <!-- Left board: commands -->
+    <!-- ******************** -->
+
+    <div id="boardCommands">
+        <div id="commands">
+
+          <!-- ************* -->
+          <!-- Configuration -->
+          <!-- ************* -->
+
+          <!-- Command reset -->
+          <div id="commandReset" class="commandBlock">
+            <h1>Reset robot</h1>
+            <button type="submit" id="buttonRequestReset" name="command-process" class="actionButton" title="Reset the position of the robot's arms">
+                <img src="pictures/button-send.svg" alt"Button to reset the position of the robot's arms" />
+            </button>
+          </div>
+
+          <!-- Command status -->
+          <div id="commandStatus" class="commandBlock padder">
+            <h1>Get status</h1>
+            <button type="submit" id="buttonRequestStatus" name="command-process" class="actionButton" title="Get the status of the robot's server">
+                <img src="pictures/button-send.svg" alt"Button to get the status of the robot's server" />
+            </button>
+          </div>
+
+          <!-- Command get contact z -->
+          <div id="commandContactZ" class="commandBlock padder">
+            <h1>Get contact Z</h1>
+            <button type="submit" id="buttonRequestContactZ" name="command-process" class="actionButton" title="Get the Z value of the contact point the robot has registered during calibration">
+                <img src="pictures/button-send.svg" alt"Button to get the Z value fo the contact point" />
+            </button>
+          </div>
+
+          <!-- ***** -->
+          <!-- Moves -->
+          <!-- ***** -->
+
+          <!-- Command tap -->
+          <div id="commandTap" class="commandBlock">
+            <h1><label for="tap-parameters">Tap at coordinates (x,y)</label></h1>
+            <input id="tap-parameters" type="text" name="tap-parameters" placeholder="x y" pattern="[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestTap" name="command-process" class="actionButton" title="Tap to point">
+                <img src="pictures/button-send.svg" alt"Button to tap to a point" />
+            </button>
+          </div>
+
+          <!-- Command n-tap -->
+          <div id="commandNTap" class="commandBlock">
+            <h1><label for="n-tap-parameters">Tap at coordinates (x,y) N times</label></h1>
+            <input id="n-tap-parameters" type="text" name="n-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestNTap" name="command-process" class="actionButton" title="Tap N times to point">
+                <img src="pictures/button-send.svg" alt"Button to tap N times on a point" />
+            </button>
+          </div>
+
+          <!-- Command stress-tap -->
+          <div id="commandStressTap" class="commandBlock padder">
+            <h1><label for="stress-tap-parameters">Tap very quickly at coordinates (x,y) N times</label></h1>
+            <input id="stress-tap-parameters" type="text" name="stress-tap-parameters" placeholder="N x y" pattern="[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestStressTap" name="command-process" class="actionButton" title="Tap very quickly N times to a point">
+                <img src="pictures/button-send.svg" alt"Button to tap very quickly N times to a point" />
+            </button>
+          </div>
+
+          <!-- Command long-tap -->
+          <div id="commandLongTap" class="commandBlock padder">
+            <h1><label for="long-tap-parameters">Make a long tap at coordinates (x,y) during duration (ms)</label></h1>
+            <input id="long-tap-parameters" type="text" name="long-tap-parameters" placeholder="x y duration" pattern="[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestLongTap" name="command-process" class="actionButton" title="Make a long tap to a point">
+                <img src="pictures/button-send.svg" alt"Button to make a long time to a point" />
+            </button>
+          </div>
+
+          <!-- Command swipe -->
+          <div id="commandSwipe" class="commandBlock">
+            <h1><label for="swipe-parameters">Swipe from (a,b) to (c,d)</label></h1>
+            <input id="swipe-parameters" type="text" name="swipe-parameters" placeholder="a b c d" pattern="[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestSwipe" name="command-process" class="actionButton" title="Swipe from a point to another">
+                <img src="pictures/button-send.svg" alt"Button to swipe from a point to another" />
+            </button>
+          </div>
+
+          <!-- Command n-swipe -->
+          <div id="commandNSwipe" class="commandBlock">
+            <h1><label for="n-swipe-parameters">Swipe from (a,b) to (c,d) N times</label></h1>
+            <input id="n-swipe-parameters" type="text" name="n-swipe-parameters" placeholder="N a b c d" pattern="[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestNSwipe" name="command-process" class="actionButton" title="Swipe N times from a point to another">
+                <img src="pictures/button-send.svg" alt"Button to swipe N times from a point to another" />
+            </button>
+          </div>
+
+          <!-- Command stress-swipe -->
+          <div id="commandStressSwipe" class="commandBlock padder">
+            <h1><label for="stress-swipe-parameters">Swipe very quickly from (a,b) to (c,d) N times</label></h1>
+            <input id="stress-swipe-parameters" type="text" name="stress-swipe-parameters" placeholder="N a b c d" pattern="[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestStressSwipe" name="command-process" class="actionButton" title="Swipe very quickly N times from a point to another">
+                <img src="pictures/button-send.svg" alt"Button to swipe very quickly N times from a point to another" />
+            </button>
+          </div>
+
+
+          <!-- **** -->
+          <!-- Misc -->
+          <!-- **** -->
+
+          <!-- Command dance -->
+          <div id="commandDance" class="commandBlock">
+            <h1>Dance</h1>
+            <button type="submit" id="buttonRequestDance" name="command-process" class="actionButton" title="Make the robot dance">
+                <img src="pictures/button-send.svg" alt"Button to make the robot dance" />
+            </button>
+          </div>
+
+          <!-- Command stop dancing -->
+          <div id="commandStopDance" class="commandBlock">
+            <h1>Stop dancing</h1>
+            <button type="submit" id="buttonRequestStopDancing" name="command-process" class="actionButton" title="Make the robot stop dancing">
+                <img src="pictures/button-send.svg" alt"Button to make the robot stop danciong" />
+            </button>
+          </div>
+
+          <!-- Command get-position -->
+          <div id="commandGetPosition" class="commandBlock">
+            <h1>Get the position of the finger</h1>
+            <button type="submit" id="buttonRequestGetPosition" name="command-process" class="actionButton" title="Get the position of the robot's finger">
+                <img src="pictures/button-send.svg" alt"Button to get the position of the finger" />
+            </button>
+          </div>
+
+          <!-- Command set-position -->
+          <div id="commandSetPosition" class="commandBlock padder">
+            <h1><label for="set-position-parameters">Set the position of the finger to (x,y,z)</label></h1>
+            <input id="set-position-parameters" type="text" name="set-position-parameters" placeholder="x y z" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" id="buttonRequestSetPosition" name="command-process" class="actionButton" title="Set the position of the robot's finger">
+                <img src="pictures/button-send.svg" alt"Button to set the position of the finger" />
+            </button>
+          </div>
+
+          <!-- Command get-angles -->
+          <div id="commandGetAngles" class="commandBlock">
+            <h1>Get the angles of the servomotors</h1>
+            <button type="submit" id="buttonRequestGetAngles" name="command-process" class="actionButton" title="Get the angles of the servomotors">
+                <img src="pictures/button-send.svg" alt"Button to get the angles of the robot's servomotors" />
+            </button>
+          </div>
+
+          <!-- Command set-angles -->
+          <div id="commandSetAngles" class="commandBlock padder">
+            <h1><label for="set-angles-parameters">Set the angles of the servomotors to (θ1, θ2, θ3)</label></h1>
+            <input id="set-angles-parameters" type="text" name="set-angles-parameters" placeholder="θ1 θ2 θ3" pattern="[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+\s[-]{0,1}[0-9]+"/>
+            <button type="submit" id="buttonRequestSetAngles" name="command-process" class="actionButton" title="Set the angles of the robot's servomotors">
+                <img src="pictures/button-send.svg" alt"Button to set the angles of the servomotors" />
+            </button>
+          </div>
+
+          <!-- ******** -->
+          <!-- Drawings -->
+          <!-- ******** -->
+
+          <!-- Draw a star -->
+          <div id="commandDrawStar" class="commandBlock">
+            <h1>Draw a star</h1>
+            <button type="submit" id="buttonRequestDrawStar" name="command-process" class="actionButton" title="Make the robot draw a star">
+                <img src="pictures/button-send.svg" alt"Button to make the robot draw a star" />
+            </button>
+          </div>
+
+          <!-- Draw a circle -->
+          <div id="commandDrawCircle" class="commandBlock">
+            <h1><label for="draw-circle-parameters">Draw a circle centered on a point with a radius</label></h1>
+            <input id="draw-circle-parameters" type="text" name="draw-circle-parameters" placeholder="x y radius" pattern="[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestDrawCircle" name="command-process" class="actionButton" title="Make the robot draw a circle">
+                <img src="pictures/button-send.svg" alt"Button to make the robot draw a circle" />
+            </button>
+          </div>
+
+          <!-- Draw a spiral -->
+          <div id="commandDrawSpiral" class="commandBlock">
+            <h1><label for="draw-spiral-parameters">Draw a spiral centered on a point with a radius and a number of rings</label></h1>
+            <input id="draw-spiral-parameters" type="text" name="draw-spiral-parameters" placeholder="x y radius rings" pattern="[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+"/>
+            <button type="submit" id="buttonRequestDrawSpiral" name="command-process" class="actionButton" title="Make the robot draw a spiral">
+                <img src="pictures/button-send.svg" alt"Button to make the robot draw a spiral" />
+            </button>
+          </div>
+
+          <!-- Draw a square -->
+          <div id="commandDrawSquare" class="commandBlock">
+            <h1><label for="draw-square-parameters">Draw a square with a length for the sides</label></h1>
+            <input id="draw-square-parameters" type="text" name="draw-square-parameters" placeholder="length" pattern="[0-9]+\s"/>
+            <button type="submit" id="buttonRequestDrawSquare" name="command-process" class="actionButton" title="Make the robot draw a square">
+                <img src="pictures/button-send.svg" alt"Button to make the robot draw a square" />
+            </button>
+          </div>
+
+        </div>
+    </div> <!-- End of board for commands -->
+
+    <!-- ******************** -->
+    <!-- Right board: console -->
+    <!-- ******************** -->
+
+    <div id="boardConsole">
+      <div id="console">
+        <noscript>
+          <div>
+            <p class="fatalErrorMessage">This web app requires JavaScript. You must have it enabled.</p>
+          </div>
+        </noscript>
+      </div>
+      <div id="configField">
+        <input id="setServerUrl" type="text" name="set-server-url" placeholder="Write the URL of the robot's server" />
+      </div>
+    </div> <!-- End of board for console -->
+
+
+    <!-- ****** -->
+    <!-- Footer -->
+    <!-- ****** -->
+
+    <footer>
+        <button id="clearConsole" title="Make the console empty" style="display: block;">
+          <img src="./pictures/button-clear.svg" alt="Button to clear the console">
+        </button>
+        <button id="configUrlOfServer" title="Define the URL of the robot's server" style="display: block;">
+          <img src="./pictures/button-config.svg" alt="Button to define the URL of the robot's server">
+        </button>
+    </footer>
+
+  </body>
+
+</html>

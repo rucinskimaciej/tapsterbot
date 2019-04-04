@@ -1,0 +1,216 @@
+/*
+    MIT License
+    Copyright (c) 2018  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+ */
+// ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
+
+/* ***********************
+ * To get the dependencies
+ * ***********************/
+
+repositories {
+
+    mavenLocal()
+    jcenter()
+    google()
+    maven {
+        url "https://nexus-repository.snips.ai/repository/snips-maven-releases/" // For Snips
+    }
+    maven {
+        url "https://nexus-repository.snips.ai/repository/snips-maven-snapshots/" // For Snips
+    }
+
+} // End of repositories
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.dokka-android'
+apply plugin: 'com.akaita.android.easylauncher'
+
+/* *****************
+ * App configuration
+ * *****************/
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    // Build types to define group of settings
+    buildTypes {
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
+    } // End of buildTypes
+
+    packagingOptions {
+        exclude 'lib/armeabi/*'
+        exclude 'lib/mips/*'
+        exclude 'lib/mips64/*'
+    } // End of packagingOptions
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    } // End of compileOptions
+
+    // Groups of flavors
+    flavorDimensions "version"
+
+    productFlavors {
+        light {
+            dimension "version"
+            applicationIdSuffix ".light"
+            versionNameSuffix "-light"
+            versionCode 1000
+            versionName "2.0.0"
+        }
+        full /* with assistant */ {
+            dimension "version"
+            applicationIdSuffix ".full"
+            versionNameSuffix "-full"
+            versionCode 2000
+            versionName "2.0.0"
+        }
+    } // End of productFlavors
+
+    // Define the set of sources for variants of the app
+    sourceSets {
+
+        fullDebug {
+            setRoot 'src/fullDebug'
+        }
+
+        lightDebug {
+            setRoot 'src/lightDebug'
+        }
+
+    } // End of sourceSets
+
+    // Default configuration of the app
+    defaultConfig {
+        applicationId "pylapp.tapster.client.android" + applicationIdSuffix
+        minSdkVersion 21
+        targetSdkVersion 27
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    } // End of defaultConfig
+
+} // End of android
+
+// To customize the icons
+easylauncher {
+
+    iconNames "@mipmap/ic_launcher_foreground"
+    foregroundIconNames "@mipmap/ic_launcher_foreground"
+
+    defaultFlavorNaming = true
+
+    productFlavors {
+        light {
+            filters = redRibbonFilter()
+        }
+        full {
+            filters = blueRibbonFilter()
+        }
+    }
+
+} // End of easylauncher
+
+/* *******************
+ * Dependencies to get
+ * *******************/
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Snips.ai assistant: the chatbot
+    fullImplementation 'net.java.dev.jna:jna:4.5.0@aar'
+
+    fullImplementation('ai.snips:snips-platform-android:0.57.3@aar') {
+        transitive = true
+    }
+
+    // Kotlin: programming language
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    // Compat
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    // For designs
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // For tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Card views: to make things more beautiful
+    // http://developer.android.com/training/material/lists-cards.html
+    implementation 'com.android.support:cardview-v7:27.1.1'
+
+    // Folding Cell Android: to make things more beautiful
+    // https://github.com/Ramotion/folding-cell-android
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.1'
+
+    // LicensesDialog: to display third party contents
+    // https://github.com/PSDev/LicensesDialog
+    implementation 'de.psdev.licensesdialog:licensesdialog:1.8.3'
+
+    // Ahoy! Onboarding: a nice intro screen
+    // https://github.com/codemybrainsout/ahoy-onboarding
+    implementation 'com.codemybrainsout.onboarding:onboarder:1.0.4'
+
+    // TapTargetView: to point to elements
+    // https://github.com/KeepSafe/TapTargetView
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.11.0'
+
+    // ACRA: to report crashes
+    // https://github.com/ACRA/acra
+    implementation "ch.acra:acra-mail:$acra_version" // Email feature (get reports)
+    implementation "ch.acra:acra-notification:$acra_version" // Notification feature (user interface)
+
+    // OkHttp: to send HTTP requests
+    // https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+
+    // Dexter: to deal with permissions efficiently
+    // https://github.com/Karumi/Dexter
+    implementation 'com.karumi:dexter:4.2.0'
+
+} // End of dependencies
+
+/* *****
+ * Tasks
+ * *****/
+
+def generatedKotlinDocumentation = "../doc/dokka"
+
+dokka {
+    moduleName = 'data'
+    outputFormat = 'javadoc'
+    outputDirectory = generatedKotlinDocumentation
+    processConfigurations = ['compile']
+    sourceDirs = files('src/main/java')
+} // End of dokka

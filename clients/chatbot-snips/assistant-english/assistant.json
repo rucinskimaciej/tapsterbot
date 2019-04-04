@@ -1,0 +1,294 @@
+{
+  "id" : "proj_MNQ8gkw95oE",
+  "name" : "Tapster2 assistant - en",
+  "intents" : [ {
+    "id" : "pylapp:en_Swipe",
+    "type" : "registry",
+    "version" : "0.0.6",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "startX",
+      "id" : "slot_imported_rJm2QlJDz",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the X value for the start point",
+      "required" : true
+    }, {
+      "name" : "startY",
+      "id" : "slot_imported_HygQhmg1vG",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the Y value for the start point",
+      "required" : true
+    }, {
+      "name" : "endX",
+      "id" : "slot_imported_Hkb7nQlkPG",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the X value for the end point",
+      "required" : true
+    }, {
+      "name" : "endY",
+      "id" : "slot_imported_BJM72XxyDf",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the Y value for the end point",
+      "required" : true
+    } ],
+    "name" : "en_Swipe"
+  }, {
+    "id" : "pylapp:en_Get_position",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Get_position"
+  }, {
+    "id" : "pylapp:en_Draw_circle",
+    "type" : "registry",
+    "version" : "0.0.4",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "ryKriAE4X",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the X axis of the center point",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "S1oUi0NN7",
+      "entityId" : "snips/number",
+      "missingQuestion" : " I did not understand the value on the Y axis of the center point",
+      "required" : true
+    }, {
+      "name" : "radius",
+      "id" : "By1vsCEEQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value of the circle's radius",
+      "required" : true
+    } ],
+    "name" : "en_Draw_circle"
+  }, {
+    "id" : "pylapp:en_Stop_dancing",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Stop_dancing"
+  }, {
+    "id" : "pylapp:en_Draw_random",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "n",
+      "id" : "S1nCDRN4m",
+      "entityId" : "snips/number",
+      "missingQuestion" : "How many points you I use to define the strokes of the pattern?",
+      "required" : true
+    } ],
+    "name" : "en_Draw_random"
+  }, {
+    "id" : "pylapp:en_Set_arms_angles",
+    "type" : "registry",
+    "version" : "0.0.7",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "theta1",
+      "id" : "slot_imported_rJ9yZl1vz",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the theta1 angle",
+      "required" : true
+    }, {
+      "name" : "theta2",
+      "id" : "slot_imported_ByoebgJPz",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the theta2 angle",
+      "required" : true
+    }, {
+      "name" : "theta3",
+      "id" : "slot_imported_S1VWblJvf",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the theta3 angle",
+      "required" : true
+    } ],
+    "name" : "en_Set_arms_angles"
+  }, {
+    "id" : "pylapp:en_Draw_triangle",
+    "type" : "registry",
+    "version" : "0.0.1",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x1",
+      "id" : "ByAwr0ENQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the X axis for the first point",
+      "required" : true
+    }, {
+      "name" : "y1",
+      "id" : "SklqH044Q",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the Y axis for the first point",
+      "required" : true
+    }, {
+      "name" : "x2",
+      "id" : "HkZsSRV4X",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the X axis for the second point",
+      "required" : true
+    }, {
+      "name" : "y2",
+      "id" : "HJhsB0NEQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the Y axis for the second point",
+      "required" : true
+    }, {
+      "name" : "x3",
+      "id" : "Sy33HREE7",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the X axis for the third point",
+      "required" : true
+    }, {
+      "name" : "y3",
+      "id" : "rySprRE47",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the value on the Y axis for the third point",
+      "required" : true
+    } ],
+    "name" : "en_Draw_triangle"
+  }, {
+    "id" : "pylapp:en_Reset",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Reset"
+  }, {
+    "id" : "pylapp:en_Draw_star",
+    "type" : "registry",
+    "version" : "0.0.1",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Draw_star"
+  }, {
+    "id" : "pylapp:en_Tap",
+    "type" : "registry",
+    "version" : "0.0.4",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "slot_imported_SJOILeyDf",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the X value",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "slot_imported_SkedUIgJDG",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the Y value",
+      "required" : true
+    } ],
+    "name" : "en_Tap"
+  }, {
+    "id" : "pylapp:en_Get_status",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Get_status"
+  }, {
+    "id" : "pylapp:en_Get_arms_angles",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Get_arms_angles"
+  }, {
+    "id" : "pylapp:en_Set_position",
+    "type" : "registry",
+    "version" : "0.0.5",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "slot_imported_ByUEfgJwf",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the X value",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "slot_imported_H1-Uzx1Dz",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the Y value",
+      "required" : true
+    }, {
+      "name" : "z",
+      "id" : "slot_imported_ryYIzxkDf",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the Z value",
+      "required" : true
+    } ],
+    "name" : "en_Set_position"
+  }, {
+    "id" : "pylapp:en_Tap_n_times",
+    "type" : "registry",
+    "version" : "0.0.3",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "x",
+      "id" : "HJjGt0ENm",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the X value  ",
+      "required" : true
+    }, {
+      "name" : "y",
+      "id" : "Hy4mYR4EQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "I did not understand the Y value  ",
+      "required" : true
+    }, {
+      "name" : "n",
+      "id" : "B12mtAEEQ",
+      "entityId" : "snips/number",
+      "missingQuestion" : "How many times should I tap on the point?",
+      "required" : true
+    } ],
+    "name" : "en_Tap_n_times"
+  }, {
+    "id" : "pylapp:en_Contact_z",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Contact_z"
+  }, {
+    "id" : "pylapp:en_Dance",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ ],
+    "name" : "en_Dance"
+  }, {
+    "id" : "pylapp:en_Draw_square",
+    "type" : "registry",
+    "version" : "0.0.2",
+    "language" : "en",
+    "slots" : [ {
+      "name" : "length",
+      "id" : "By7vmC44Q",
+      "entityId" : "snips/number",
+      "missingQuestion" : "What is the length of the sides?",
+      "required" : true
+    } ],
+    "name" : "en_Draw_square"
+  } ],
+  "createdAt" : "2018-02-09T15:25:50.635Z",
+  "language" : "en",
+  "version" : {
+    "nluModel" : "0.15.0"
+  },
+  "platform" : {
+    "type" : "raspberrypi"
+  },
+  "asr" : {
+    "type" : "snips"
+  },
+  "analyticsEnabled" : false,
+  "heartbeatEnabled" : true,
+  "hotword" : "hey_snips"
+}

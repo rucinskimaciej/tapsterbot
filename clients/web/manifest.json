@@ -1,0 +1,32 @@
+{
+  "short_name": "Tapster2 Web Client",
+  "name": "Tapster2 Web Client (v2.0.0)",
+  "description": "Drive your Tapster robot with this Progressive Web App",
+  "icons": [
+    {
+      "src": "pictures/logo-x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "pictures/logo-x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "pictures/logo-x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "serviceworker": {
+    "src": "./serviceworker.js",
+    "scope": "/",
+    "update_via_cache": "none"
+  },
+  "start_url": "./webapp.html",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "auto",
+  "lang": "en"
+}

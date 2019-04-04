@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MIT License
+    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- ************************ -->
+    <!-- Colors of the second tab -->
+    <!-- ************************ -->
+
+    <color name="screenCommandsGetPosition">#4caf50</color>
+    <color name="screenCommandsSetPosition">#4caf50</color>
+    <color name="screenCommandsBackSideColorPosition">#80e27e</color>
+
+    <color name="screenCommandsGetAngles">#ff9800</color>
+    <color name="screenCommandsSetAngles">#ff9800</color>
+    <color name="screenCommandsBackSideColorAngles">#ffc947</color>
+
+    <color name="screenCommandsStatus">#3f51b5</color>
+    <color name="screenCommandsContactZ">#3f51b5</color>
+    <color name="screenCommandsReset">#3f51b5</color>
+    <color name="screenCommandsBackSideColorTools">#757de8</color>
+
+    <color name="screenCommandsDance">#00bcd4</color>
+    <color name="screenCommandsStopDance">#00bcd4</color>
+    <color name="screenCommandsBackSideColorDance">#62efff</color>
+
+    <color name="screenCommandsSwipe">#f44336</color>
+    <color name="screenCommandsTap">#f44336</color>
+    <color name="screenCommandsBackSideColorMoves">#ff7961</color>
+
+    <color name="screenCommandsDrawStar">#e91e63</color>
+    <color name="screenCommandsDrawSquare">#e91e63</color>
+    <color name="screenCommandsDrawCircle">#e91e63</color>
+    <color name="screenCommandsDrawTriangle">#e91e63</color>
+    <color name="screenCommandsDrawSpiral">#e91e63</color>
+    <color name="screenCommandsDrawCross">#e91e63</color>
+    <color name="screenCommandsDrawRandom">#e91e63</color>
+    <color name="screenCommandsBackSideColorDraw">#ff6090</color>
+
+    <color name="screenCommandsTextColor">#FFFFFF</color>
+
+</resources>
