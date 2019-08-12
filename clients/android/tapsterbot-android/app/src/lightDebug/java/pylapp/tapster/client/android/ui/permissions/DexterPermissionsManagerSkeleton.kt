@@ -146,17 +146,17 @@ class DexterPermissionsManagerSkeleton: PermissionsManagerStub {
         AlertDialog.Builder(activity)
                 .setTitle(rationaleTitle)
                 .setMessage(rationaleMessage)
-                .setNegativeButton(android.R.string.cancel, { dialog, _
+                .setNegativeButton(android.R.string.cancel) { dialog, _
                     ->
                     dialog.dismiss()
                     token.cancelPermissionRequest()
-                })
-                .setPositiveButton(android.R.string.ok, { dialog, _
+                }
+                .setPositiveButton(android.R.string.ok) { dialog, _
                     ->
                     dialog.dismiss()
                     token.continuePermissionRequest()
-                })
-                .setOnDismissListener({ _ -> token.cancelPermissionRequest() })
+                }
+                .setOnDismissListener { token.cancelPermissionRequest() }
                 .show()
 
     }
