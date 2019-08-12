@@ -1,6 +1,6 @@
 /*
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -28,7 +28,7 @@ package pylapp.tapster.client.android.tools
  * @author Pierre-Yves Lapersonne
  * @since 08/02/2018
  *
- * @version 2.1.0
+ * @version 2.2.0
  */
 class Config {
 
@@ -75,6 +75,11 @@ class Config {
          * The key in the preferences screen for the licenses
          */
         const val PREFERENCES_APP_LICENSES = "pref_key_about_licenses"
+
+        /**
+         * The key in the preferences screen for the details about the author
+         */
+        const val PREFERENCES_APP_AUTHOR = "pref_key_about_author"
 
 
         /* ********************** *

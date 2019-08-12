@@ -1,6 +1,6 @@
 /*
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -21,7 +21,9 @@
 
 package pylapp.tapster.client.android.ui.settings
 
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.preference.*
 import android.support.v7.app.AppCompatActivity
@@ -35,7 +37,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  *
  * @author Pierre-Yves Lapersonne
  * @since 06/02/2018
- * @version 2.0.0
+ * @version 2.1.0
  */
 class SettingsActivity : AppCompatActivity() {
 
@@ -137,6 +139,12 @@ class SettingsActivity : AppCompatActivity() {
                 if (!isTtsEnabled()) hideRelatedTtsFields()
             }
 
+            // Deal with author section
+            val authorField = findPreference(Config.PREFERENCES_APP_AUTHOR)
+            authorField.setOnPreferenceClickListener {
+                displayAuthorPage()
+            }
+
         } // End of public void onCreate( Bundle savedInstanceState )
 
         /**
@@ -146,6 +154,16 @@ class SettingsActivity : AppCompatActivity() {
             FeaturesFactory().buildLicensesDisplayer().displayLicenses(activity)
             return true
         } // End of private fun displayLicenses()
+
+        /**
+         * Triggers the display of the author's page, i.e. its website
+         */
+        private fun displayAuthorPage(): Boolean {
+            val webPageIntent = Intent(Intent.ACTION_VIEW)
+            webPageIntent.data = Uri.parse("https://pylapersonne.info")
+            startActivity(webPageIntent)
+            return true
+        } // End of private fun displayAuthorPage()
 
         /**
          * Returns if the feature about licenses display is enabled or not
@@ -165,7 +183,7 @@ class SettingsActivity : AppCompatActivity() {
             val category = findPreference(Config.PREFERENCES_CATEGORY_ABOUT) as PreferenceCategory
             val preferenceToRemove = findPreference(Config.PREFERENCES_APP_LICENSES)
             category.removePreference(preferenceToRemove)
-        }
+        } // End of private fun hideRelatedLicensesFields()
 
         /**
          * Returns if the feature about TTS is enabled or not

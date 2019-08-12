@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -74,6 +74,8 @@
     <string name="preferences_assistant_vibrations_enable_title">Vibrations</string>
     <string name="preferences_assistant_vibrations_enable_summary">Cocher pour activer les vibrations provoquées par l\'assistant.</string>
 
+    <string name="preferences_misc_section_author_title">Auteur</string>
+    <string name="preferences_misc_section_author_summary">Pierre-Yves Lapersonne</string>
     <string name="preferences_misc_section">A propos de l\'app</string>
     <string name="preferences_misc_section_version_title">Version</string>
     <string name="preferences_misc_section_version_summary">\?</string>
@@ -86,6 +88,7 @@
 
     <string name="state_command_success">Succès</string>
     <string name="state_command_failure">Echec</string>
+    <string name="acra_notification_channel">Rapport de plantage (via ACRA)</string>
 
 </resources>
 

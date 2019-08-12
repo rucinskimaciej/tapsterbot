@@ -1,6 +1,6 @@
 /*
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -29,10 +29,13 @@ import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 
-import pylapp.tapster.client.android.R
 import pylapp.tapster.client.android.tools.Config
 import pylapp.tapster.client.android.tools.FeaturesFactory
 import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
+
+import android.content.Intent
+import android.net.Uri
+import pylapp.tapster.client.android.R
 
 
 /**
@@ -40,7 +43,7 @@ import pylapp.tapster.client.android.tools.properties.PropertiesReaderStub
  *
  * @author Pierre-Yves Lapersonne
  * @since 06/02/2018
- * @version 2.0.0
+ * @version 2.1.0
  */
 class SettingsActivity : AppCompatActivity() {
 
@@ -134,8 +137,14 @@ class SettingsActivity : AppCompatActivity() {
                 hideRelatedLicensesFields()
             }
 
-        } // End of public void onCreate( Bundle savedInstanceState )
+            // Deal with author section
+            val authorField = findPreference(Config.PREFERENCES_APP_AUTHOR)
+            authorField.setOnPreferenceClickListener {
+                displayAuthorPage()
+            }
 
+
+        } // End of public void onCreate( Bundle savedInstanceState )
 
         /**
          * Triggers the display of the widget which contains the licenses
@@ -143,7 +152,17 @@ class SettingsActivity : AppCompatActivity() {
         private fun displayLicenses(): Boolean {
             FeaturesFactory().buildLicensesDisplayer().displayLicenses(activity)
             return true
-        } // End of private fun displayLicenses()
+        }
+
+        /**
+         * Triggers the display of the author's page, i.e. its website
+         */
+        private fun displayAuthorPage(): Boolean {
+            val webPageIntent = Intent(Intent.ACTION_VIEW)
+            webPageIntent.data = Uri.parse("https://pylapersonne.info")
+            startActivity(webPageIntent)
+            return true
+        }
 
         /**
          * Returns if the feature about licenses display is enabled or not
