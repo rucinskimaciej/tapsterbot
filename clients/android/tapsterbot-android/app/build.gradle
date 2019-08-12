@@ -155,10 +155,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     // Compat
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 
     // For designs
-    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     // For tests
@@ -168,7 +168,7 @@ dependencies {
 
     // Card views: to make things more beautiful
     // http://developer.android.com/training/material/lists-cards.html
-    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 
     // Folding Cell Android: to make things more beautiful
     // https://github.com/Ramotion/folding-cell-android

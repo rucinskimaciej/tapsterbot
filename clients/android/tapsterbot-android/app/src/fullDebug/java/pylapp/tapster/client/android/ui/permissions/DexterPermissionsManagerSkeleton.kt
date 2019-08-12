@@ -1,6 +1,6 @@
 /*
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -44,7 +44,7 @@ import pylapp.tapster.client.android.R
  * @author Pierre-Yves Lapersonne
  * @since 21/02/2018
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 class DexterPermissionsManagerSkeleton : PermissionsManagerStub {
 
@@ -148,17 +148,17 @@ class DexterPermissionsManagerSkeleton : PermissionsManagerStub {
         AlertDialog.Builder(activity)
                 .setTitle(rationaleTitle)
                 .setMessage(rationaleMessage)
-                .setNegativeButton(android.R.string.cancel, { dialog, which
+                .setNegativeButton(android.R.string.cancel) { dialog, _
                     ->
                     dialog.dismiss()
                     token.cancelPermissionRequest()
-                })
-                .setPositiveButton(android.R.string.ok, { dialog, which
+                }
+                .setPositiveButton(android.R.string.ok) { dialog, _
                     ->
                     dialog.dismiss()
                     token.continuePermissionRequest()
-                })
-                .setOnDismissListener({ dialog -> token.cancelPermissionRequest() })
+                }
+                .setOnDismissListener { _ -> token.cancelPermissionRequest() }
                 .show()
 
     }

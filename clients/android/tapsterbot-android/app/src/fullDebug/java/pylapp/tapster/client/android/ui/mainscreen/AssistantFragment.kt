@@ -195,13 +195,13 @@ class AssistantFragment : Fragment() {
 //
 //                Looper.prepare()
 
-        assistant!!.startAssistant(activity as Activity, {
+        assistant!!.startAssistant(activity as Activity) {
             activity!!.runOnUiThread {
                 Toast.makeText(activity,
                         getString(R.string.snips_service_started),
                         Toast.LENGTH_LONG).show()
             }
-        })
+        }
 
         // Update the GUI and then start a new dialogue session
         activity!!.runOnUiThread {

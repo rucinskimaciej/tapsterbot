@@ -1,6 +1,6 @@
 /*
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -63,7 +63,7 @@ import java.io.File
  * @author Pierre-Yves Lapersonne
  * @since 02/02/2018
  *
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SnipsAssistantSkeleton : AssistantStub {
 
@@ -314,7 +314,7 @@ class SnipsAssistantSkeleton : AssistantStub {
         mContinueStreaming = true
         object : Thread() {
             override fun run() {
-                android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_URGENT_AUDIO)
+                Process.setThreadPriority(Process.THREAD_PRIORITY_URGENT_AUDIO)
                 runStreaming()
             }
         }.start()
@@ -393,23 +393,23 @@ class SnipsAssistantSkeleton : AssistantStub {
         // The callback to use
         val callback = object : HttpClientStub.HttpClientCallback {
             override fun onSuccess(message: String?) {
-                context.runOnUiThread({
+                context.runOnUiThread {
                     if (message != null && message.isNotEmpty()) {
                         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(context, context.getString(R.string.state_command_success), Toast.LENGTH_LONG).show()
                     }
-                })
+                }
             }
 
             override fun onFailure(message: String?) {
-                context.runOnUiThread({
+                context.runOnUiThread {
                     if (message != null && message.isNotEmpty()) {
                         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(context, context.getString(R.string.state_command_failure), Toast.LENGTH_LONG).show()
                     }
-                })
+                }
             }
         }
 
@@ -507,18 +507,18 @@ class SnipsAssistantSkeleton : AssistantStub {
                         callback)
             }
             AssistantStub.Intents.UNKNOWN -> {
-                context.runOnUiThread({
+                context.runOnUiThread {
                     mNotifier?.displayMessage(context, AssistantMessage.Type.VERBOSE,
                             context.getString(R.string.assistant_unknown_intent))
-                })
+                }
             }
         } // End of when (intentName)
 
         if (intentName != AssistantStub.Intents.UNKNOWN) {
-            context.runOnUiThread({
+            context.runOnUiThread {
                 mNotifier?.displayMessage(context, AssistantMessage.Type.VERBOSE,
                         context.getString(R.string.assistant_command_sent))
-            })
+            }
         }
 
     }
