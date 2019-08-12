@@ -87,9 +87,8 @@ class UiNotifierSkeleton(context: Context) : UiNotifierStub {
 
         // If we are here, the message can be displayed
         context.runOnUiThread {
-            var listOfMessages = context.findViewById<ListView>(R.id.lv_assistant_dialogue_messages)
+            val listOfMessages = context.findViewById<ListView>(R.id.lv_assistant_dialogue_messages)
             if (listOfMessages != null) {
-                listOfMessages = listOfMessages
                 if (listOfMessages.adapter == null) return@runOnUiThread
                 val listOfMessagesAdapter = listOfMessages.adapter as ListOfAssistantDialogueMessagesAdapter
                 listOfMessagesAdapter.messages.add(AssistantMessage(type, message))

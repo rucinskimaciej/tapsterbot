@@ -158,7 +158,7 @@ class DexterPermissionsManagerSkeleton : PermissionsManagerStub {
                     dialog.dismiss()
                     token.continuePermissionRequest()
                 }
-                .setOnDismissListener { _ -> token.cancelPermissionRequest() }
+                .setOnDismissListener { token.cancelPermissionRequest() }
                 .show()
 
     }
