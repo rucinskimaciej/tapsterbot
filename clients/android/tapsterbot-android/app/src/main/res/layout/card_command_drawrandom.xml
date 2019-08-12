@@ -40,7 +40,6 @@
 
     <!-- The folding cell with interesting animation -->
     <com.ramotion.foldingcell.FoldingCell
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
         android:id="@+id/fc_command_drawrandom"
         android:layout_width="match_parent"
