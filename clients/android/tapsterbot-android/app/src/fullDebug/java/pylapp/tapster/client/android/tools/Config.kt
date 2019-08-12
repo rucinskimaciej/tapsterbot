@@ -106,6 +106,11 @@ class Config {
          */
         const val PREFERENCES_APP_AUTHOR = "pref_key_about_author"
 
+        /**
+         * The key in the preferences screen for the details about the project
+         */
+        const val PREFERENCES_APP_PROJECT = "pref_key_about_project"
+
         /* ********************** *
          * Related to robot's URL *
          * ********************** */

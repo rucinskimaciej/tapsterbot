@@ -76,11 +76,13 @@
 
     <string name="preferences_misc_section_author_title">Auteur</string>
     <string name="preferences_misc_section_author_summary">Pierre-Yves Lapersonne</string>
-    <string name="preferences_misc_section">A propos de l\'app</string>
+    <string name="preferences_misc_section_project_title">Projet</string>
+    <string name="preferences_misc_section_project_summary">Tapper pour en savoir d\'avantage sur le projet </string>
+    <string name="preferences_misc_section">À propos de l\'app</string>
     <string name="preferences_misc_section_version_title">Version</string>
     <string name="preferences_misc_section_version_summary">\?</string>
     <string name="preferences_misc_section_licenses_title">Licences</string>
-    <string name="preferences_misc_section_licenses_summary">Cliquer pour voir les licences des outils et images tiers utilisés</string>
+    <string name="preferences_misc_section_licenses_summary">Tapper pour voir les licences des outils et images tiers utilisés</string>
 
     <!-- **** -->
     <!-- Misc -->

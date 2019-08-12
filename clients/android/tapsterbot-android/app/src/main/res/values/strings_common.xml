@@ -76,6 +76,8 @@
 
     <string name="preferences_misc_section_author_title">Author</string>
     <string name="preferences_misc_section_author_summary">Pierre-Yves Lapersonne</string>
+    <string name="preferences_misc_section_project_title">Project</string>
+    <string name="preferences_misc_section_project_summary">Tap to get more details about the project</string>
     <string name="preferences_misc_section">About the app</string>
     <string name="preferences_misc_section_version_title">Version</string>
     <string name="preferences_misc_section_version_summary">\?</string>

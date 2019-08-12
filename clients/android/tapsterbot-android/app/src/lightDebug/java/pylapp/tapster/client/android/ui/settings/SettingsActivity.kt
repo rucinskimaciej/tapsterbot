@@ -143,6 +143,11 @@ class SettingsActivity : AppCompatActivity() {
                 displayAuthorPage()
             }
 
+            // Deal with project section
+            val projectField = findPreference(Config.PREFERENCES_APP_PROJECT)
+            projectField.setOnPreferenceClickListener {
+                displayProjectPage()
+            }
 
         } // End of public void onCreate( Bundle savedInstanceState )
 
@@ -160,6 +165,16 @@ class SettingsActivity : AppCompatActivity() {
         private fun displayAuthorPage(): Boolean {
             val webPageIntent = Intent(Intent.ACTION_VIEW)
             webPageIntent.data = Uri.parse("https://pylapersonne.info")
+            startActivity(webPageIntent)
+            return true
+        }
+
+        /**
+         * Triggers the display of the author's page, i.e. its website
+         */
+        private fun displayProjectPage(): Boolean {
+            val webPageIntent = Intent(Intent.ACTION_VIEW)
+            webPageIntent.data = Uri.parse("https://github.com/pylapp/tapsterbot")
             startActivity(webPageIntent)
             return true
         }

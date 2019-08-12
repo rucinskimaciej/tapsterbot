@@ -78,6 +78,11 @@
             android:title="@string/preferences_misc_section_author_title"
             android:summary="@string/preferences_misc_section_author_summary" />
 
+        <Preference
+            android:key="pref_key_about_project"
+            android:title="@string/preferences_misc_section_project_title"
+            android:summary="@string/preferences_misc_section_project_summary" />
+        
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -145,6 +145,12 @@ class SettingsActivity : AppCompatActivity() {
                 displayAuthorPage()
             }
 
+            // Deal with project section
+            val projectField = findPreference(Config.PREFERENCES_APP_PROJECT)
+            projectField.setOnPreferenceClickListener {
+                displayProjectPage()
+            }
+
         } // End of public void onCreate( Bundle savedInstanceState )
 
         /**
@@ -164,6 +170,16 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(webPageIntent)
             return true
         } // End of private fun displayAuthorPage()
+
+        /**
+         * Triggers the display of the author's page, i.e. its website
+         */
+        private fun displayProjectPage(): Boolean {
+            val webPageIntent = Intent(Intent.ACTION_VIEW)
+            webPageIntent.data = Uri.parse("https://github.com/pylapp/tapsterbot")
+            startActivity(webPageIntent)
+            return true
+        } // End of private fun displayProjectPage()
 
         /**
          * Returns if the feature about licenses display is enabled or not
