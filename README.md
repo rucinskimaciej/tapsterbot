@@ -58,9 +58,7 @@
 
 ## Notice
 This fork has been made so as to build a community around Tapster and bring new usages for this incredible tool.
-If you read AUTHORS file, you may notice my name appeares twice. Indeed contributions to this project are professional and personal.
 If you want to contact me, please use the appropriate email in the AUTHORS file.
-If you want to blame me or send me cookies for the made work, please refer to the Copyright owner, make the difference between professional and personal contributions (not hard, read the commit message), and contact me ;-)
 
 
 This Tapster (Tapster model 2) is free, open source et open hardware, so feel free to contribute!

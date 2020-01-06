@@ -1,6 +1,6 @@
 /*
     MIT License
-    Copyright (c) 2018 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
+    Copyright (c) 2018 - 2019 Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -48,7 +48,7 @@ import pylapp.tapster.client.android.vox.TextToSpeechStub
  * @author Pierre-Yves Lapersonne
  * @since 06/02/2018
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UiNotifierSkeleton(context: Context) : UiNotifierStub {
 
@@ -87,9 +87,8 @@ class UiNotifierSkeleton(context: Context) : UiNotifierStub {
 
         // If we are here, the message can be displayed
         context.runOnUiThread {
-            var listOfMessages = context.findViewById<ListView>(R.id.lv_assistant_dialogue_messages)
+            val listOfMessages = context.findViewById<ListView>(R.id.lv_assistant_dialogue_messages)
             if (listOfMessages != null) {
-                listOfMessages = listOfMessages as ListView
                 if (listOfMessages.adapter == null) return@runOnUiThread
                 val listOfMessagesAdapter = listOfMessages.adapter as ListOfAssistantDialogueMessagesAdapter
                 listOfMessagesAdapter.messages.add(AssistantMessage(type, message))
