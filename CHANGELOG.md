@@ -128,3 +128,10 @@
 * Other things
 	* Update licences headers so as to have a more suitable email address
 
+
+## On going version
+
+* Pull request
+	* #1 Support iPhoneX with storyboard, launch storyboard
+
+	
